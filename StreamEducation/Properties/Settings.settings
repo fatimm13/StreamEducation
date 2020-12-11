@@ -2,23 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="StreamEducation.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="HOSTNAME" Type="System.String" Scope="Application">
-      <Value Profile="(Default)"> rds-mysql-ingreq-2021.cobadwnzalab.eu-central-1.rds.amazonaws.com</Value>
-    </Setting>
-    <Setting Name="PORT" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">3306</Value>
-    </Setting>
-    <Setting Name="SQUEMA" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">apsgrupo03</Value>
-    </Setting>
-    <Setting Name="USER" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">grupo03</Value>
-    </Setting>
-    <Setting Name="PASSWORD" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">morenomoreno2021</Value>
-    </Setting>
-    <Setting Name="Valor" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="COMPLETE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">server=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com;user=grupo03;database=apsgrupo03;port=3306;password=morenomoreno2021</Value>
     </Setting>
   </Settings>
 </SettingsFile>

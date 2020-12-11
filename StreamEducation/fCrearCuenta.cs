@@ -20,6 +20,11 @@ namespace StreamEducation
         //TODO: Que haga cosas
         private void bAceptar_Click(object sender, EventArgs e)
         {
+            if (tNombre.Text!="" && tCorreo.Text != "" && tContrasena1.Text != "" && tContrasena1.Text.Equals(tContrasena2.Text))
+            {
+                Usuario u = new Usuario(tNombre.Text, tCorreo.Text, tContrasena1.Text);
+                
+            }
             this.Close();
         }
     }

@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
 
-namespace BDLibrary
+namespace StreamEducation
 {
     public class BDLibrary
     {
@@ -175,6 +175,7 @@ namespace BDLibrary
 
     public class SQLSERVERDB : BDLibrary
     {
+
         public SQLSERVERDB(string server, string instancia, string BD)
         {
             origen_datos = BD;

@@ -25,58 +25,11 @@ namespace StreamEducation.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(" rds-mysql-ingreq-2021.cobadwnzalab.eu-central-1.rds.amazonaws.com")]
-        public string HOSTNAME {
+        [global::System.Configuration.DefaultSettingValueAttribute("server=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com;user=grupo03;" +
+            "database=apsgrupo03;port=3306;password=morenomoreno2021")]
+        public string COMPLETE {
             get {
-                return ((string)(this["HOSTNAME"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
-        public int PORT {
-            get {
-                return ((int)(this["PORT"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("apsgrupo03")]
-        public string SQUEMA {
-            get {
-                return ((string)(this["SQUEMA"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("grupo03")]
-        public string USER {
-            get {
-                return ((string)(this["USER"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("morenomoreno2021")]
-        public string PASSWORD {
-            get {
-                return ((string)(this["PASSWORD"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Valor {
-            get {
-                return ((string)(this["Valor"]));
-            }
-            set {
-                this["Valor"] = value;
+                return ((string)(this["COMPLETE"]));
             }
         }
     }
