@@ -16,5 +16,11 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+
+        //TODO: Que haga cosas
+        private void bAceptar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

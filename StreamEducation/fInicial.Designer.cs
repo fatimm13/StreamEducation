@@ -56,6 +56,7 @@ namespace StreamEducation
             this.linkLabel2.TabIndex = 19;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "· Colabora";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -70,6 +71,7 @@ namespace StreamEducation
             this.linkLabel1.TabIndex = 18;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "· Nuestra Misión";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // monthCalendar1
             // 
@@ -124,6 +126,7 @@ namespace StreamEducation
             this.bIniciarSesion.TabIndex = 7;
             this.bIniciarSesion.Text = "Iniciar Sesión";
             this.bIniciarSesion.UseVisualStyleBackColor = true;
+            this.bIniciarSesion.Click += new System.EventHandler(this.bIniciarSesion_Click);
             // 
             // bRegistrarse
             // 
@@ -135,6 +138,7 @@ namespace StreamEducation
             this.bRegistrarse.TabIndex = 6;
             this.bRegistrarse.Text = "Registrarse";
             this.bRegistrarse.UseVisualStyleBackColor = true;
+            this.bRegistrarse.Click += new System.EventHandler(this.bRegistrarse_Click);
             // 
             // bForo
             // 
@@ -149,6 +153,7 @@ namespace StreamEducation
             this.bForo.Size = new System.Drawing.Size(283, 290);
             this.bForo.TabIndex = 21;
             this.bForo.UseVisualStyleBackColor = true;
+            this.bForo.Click += new System.EventHandler(this.bForo_Click);
             // 
             // bActividades
             // 
@@ -162,6 +167,7 @@ namespace StreamEducation
             this.bActividades.Size = new System.Drawing.Size(283, 290);
             this.bActividades.TabIndex = 22;
             this.bActividades.UseVisualStyleBackColor = true;
+            this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
             // 
             // bCurso
             // 

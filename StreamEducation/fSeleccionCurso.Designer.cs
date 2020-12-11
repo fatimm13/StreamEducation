@@ -31,21 +31,20 @@ namespace StreamEducation
         {
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bPerfil = new System.Windows.Forms.Button();
             this.bRegistrarse = new System.Windows.Forms.Button();
             this.bIniciarSesion = new System.Windows.Forms.Button();
             this.tDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bInicio = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bCrearCurso = new System.Windows.Forms.Button();
             this.lCursos = new System.Windows.Forms.ListBox();
             this.labelRecurso = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +62,7 @@ namespace StreamEducation
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.bPerfil);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.bRegistrarse);
             this.panel1.Controls.Add(this.bIniciarSesion);
@@ -72,14 +71,15 @@ namespace StreamEducation
             this.panel1.Size = new System.Drawing.Size(1238, 56);
             this.panel1.TabIndex = 35;
             // 
-            // pictureBox1
+            // bPerfil
             // 
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Location = new System.Drawing.Point(1183, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.bPerfil.Location = new System.Drawing.Point(1185, 9);
+            this.bPerfil.Name = "bPerfil";
+            this.bPerfil.Size = new System.Drawing.Size(39, 34);
+            this.bPerfil.TabIndex = 3;
+            this.bPerfil.Text = "Perfil";
+            this.bPerfil.UseVisualStyleBackColor = true;
+            this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click);
             // 
             // bRegistrarse
             // 
@@ -89,6 +89,7 @@ namespace StreamEducation
             this.bRegistrarse.TabIndex = 1;
             this.bRegistrarse.Text = "Registrarse";
             this.bRegistrarse.UseVisualStyleBackColor = true;
+            this.bRegistrarse.Click += new System.EventHandler(this.bRegistrarse_Click);
             // 
             // bIniciarSesion
             // 
@@ -98,6 +99,7 @@ namespace StreamEducation
             this.bIniciarSesion.TabIndex = 0;
             this.bIniciarSesion.Text = "Iniciar Sesion";
             this.bIniciarSesion.UseVisualStyleBackColor = true;
+            this.bIniciarSesion.Click += new System.EventHandler(this.bIniciarSesion_Click);
             // 
             // tDescripcion
             // 
@@ -121,16 +123,16 @@ namespace StreamEducation
             this.label1.TabIndex = 4;
             this.label1.Text = "Descripción:";
             // 
-            // button1
+            // bInicio
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(52, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 56);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Inicio 🏠";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bInicio.Location = new System.Drawing.Point(52, 28);
+            this.bInicio.Name = "bInicio";
+            this.bInicio.Size = new System.Drawing.Size(143, 56);
+            this.bInicio.TabIndex = 0;
+            this.bInicio.Text = "Inicio 🏠";
+            this.bInicio.UseVisualStyleBackColor = true;
+            this.bInicio.Click += new System.EventHandler(this.bInicio_Click);
             // 
             // label2
             // 
@@ -142,14 +144,15 @@ namespace StreamEducation
             this.label2.TabIndex = 39;
             this.label2.Text = "Público";
             // 
-            // button2
+            // bCrearCurso
             // 
-            this.button2.Location = new System.Drawing.Point(953, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Crear Curso";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bCrearCurso.Location = new System.Drawing.Point(953, 106);
+            this.bCrearCurso.Name = "bCrearCurso";
+            this.bCrearCurso.Size = new System.Drawing.Size(75, 23);
+            this.bCrearCurso.TabIndex = 38;
+            this.bCrearCurso.Text = "Crear Curso";
+            this.bCrearCurso.UseVisualStyleBackColor = true;
+            this.bCrearCurso.Click += new System.EventHandler(this.bCrearCurso_Click);
             // 
             // lCursos
             // 
@@ -192,7 +195,7 @@ namespace StreamEducation
             // 
             this.groupBox1.Controls.Add(this.tDescripcion);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.bInicio);
             this.groupBox1.Location = new System.Drawing.Point(13, 71);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(274, 599);
@@ -206,19 +209,18 @@ namespace StreamEducation
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.bCrearCurso);
             this.Controls.Add(this.lCursos);
             this.Controls.Add(this.labelRecurso);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "fSeleccionCurso";
             this.ShowIcon = false;
             this.Text = "Seleccion Curso";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -231,18 +233,18 @@ namespace StreamEducation
 
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bRegistrarse;
         private System.Windows.Forms.Button bIniciarSesion;
         private System.Windows.Forms.TextBox tDescripcion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bInicio;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bCrearCurso;
         private System.Windows.Forms.ListBox lCursos;
         private System.Windows.Forms.Label labelRecurso;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button bPerfil;
     }
 }

@@ -16,5 +16,21 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+
+        private void bBorrarCuenta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bActualizar_Click(object sender, EventArgs e)
+        {
+            fActualizarPerfil ventana = new fActualizarPerfil();
+            ventana.ShowDialog();
+        }
     }
 }
