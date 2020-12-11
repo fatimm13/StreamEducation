@@ -14,3 +14,27 @@ C:\Users\FATIMA\source\repos\StreamEducation\StreamEducation\obj\Debug\StreamEdu
 C:\Users\FATIMA\source\repos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearDebate.resources
 C:\Users\FATIMA\source\repos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearForo.resources
 C:\Users\FATIMA\source\repos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fIniciarSesion.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\bin\Debug\StreamEducation.exe.config
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\bin\Debug\StreamEducation.exe
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\bin\Debug\StreamEducation.pdb
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fActualizarPerfil.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fConfirmacion.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearCuenta.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearCurso.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearDebate.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearForo.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCurso.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fError.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fForo.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fInicial.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fIniciarSesion.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fOpcionesAdmin.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fPerfil.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fRecurso.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fSeleccionCurso.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.Properties.Resources.resources
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.exe
+C:\Users\Usuario\Desktop\Universidad\3ºCarrera\Ingeniería de Requisitos\StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.pdb

@@ -16,5 +16,13 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+
+        private void bCurso_Click(object sender, EventArgs e)
+        {
+            fSeleccionCurso ventana= new fSeleccionCurso();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace StreamEducation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fCrearCuenta());
+            Application.Run(new fInicial());
         }
     }
 }
