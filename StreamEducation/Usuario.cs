@@ -21,6 +21,37 @@ namespace StreamEducation
         private bool rolProfesor;
         private bool rolAdmin;
 
+        public Usuario(int identificador)
+        {
+
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT * FROM tUsuario WHERE id = " + identificador + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                if (rdr.Read())
+                {
+                    id = identificador;
+                    nombre = (string)rdr[1];
+                    correo = (string)rdr[2];
+                    biografia = (string)rdr[4];
+                    escuela = (string)rdr[5];
+                    pais = (string)rdr[6];
+                    rolProfesor = (bool)rdr[7];
+                    rolAdmin = (bool)rdr[8];
+                }
+
+            }
+            catch
+            {
+                throw new Error("Error al buscar usuario por id");
+            }
+
+        }
+
         public Usuario(string c, string p)
         {
 
@@ -47,7 +78,7 @@ namespace StreamEducation
                     escuela = (string)rdr[5];
                     pais = (string)rdr[6];
                     rolProfesor = (bool)rdr[7];
-                    rolAdmin = (bool)rdr[7];
+                    rolAdmin = (bool)rdr[8];
                 }
 
             }
@@ -57,6 +88,7 @@ namespace StreamEducation
             }
 
         }
+
         public Usuario(string n, string c, string p)
         {
             try 
@@ -67,6 +99,9 @@ namespace StreamEducation
                     + c + "', '" + p + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
+                string query2 = "SELECT MAX(id) FROM tUsuario WHERE correo = '" + c + "';";
+                MySqlCommand cmd2 = new MySqlCommand(query2, miBD);
+                id = (int)cmd2.ExecuteScalar();
                 nombre = n;
                 correo = c;
             }
@@ -94,6 +129,7 @@ namespace StreamEducation
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 nombre = value;
+                miBD.Close();
             }
         }
         public string Correo
@@ -108,6 +144,7 @@ namespace StreamEducation
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 correo = value;
+                miBD.Close();
             }
         }
         public string Biografia
@@ -122,6 +159,7 @@ namespace StreamEducation
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 biografia = value;
+                miBD.Close();
             }
         }
         public string Escuela
@@ -136,6 +174,7 @@ namespace StreamEducation
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 escuela = value;
+                miBD.Close();
             }
         }
         public string Pais
@@ -150,6 +189,7 @@ namespace StreamEducation
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 pais = value;
+                miBD.Close();
             }
         }
 
