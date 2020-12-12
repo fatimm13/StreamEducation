@@ -13,10 +13,12 @@ namespace StreamEducation
     public partial class fIniciarSesion : Form
     {
         private Usuario usuario;
-    
-        public fIniciarSesion(ref Usuario user)
+
+        public Usuario Valor { get { return usuario; } }
+
+        public fIniciarSesion()
         {
-            usuario = user;
+            usuario = null;
             InitializeComponent();
         }
 

@@ -33,7 +33,7 @@ namespace StreamEducation
 
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
-            fIniciarSesion ventana = new fIniciarSesion(ref usuario);
+            fIniciarSesion ventana = new fIniciarSesion();
             ventana.ShowDialog();
         }
 
