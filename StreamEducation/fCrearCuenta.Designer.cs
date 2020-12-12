@@ -56,7 +56,7 @@ namespace StreamEducation
             // 
             this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.bAceptar.Location = new System.Drawing.Point(462, 342);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(56, 28);
             this.bAceptar.TabIndex = 2;
@@ -112,7 +112,7 @@ namespace StreamEducation
             // 
             this.tNombre.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tNombre.Location = new System.Drawing.Point(258, 112);
-            this.tNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNombre.Margin = new System.Windows.Forms.Padding(2);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(261, 27);
             this.tNombre.TabIndex = 7;
@@ -121,26 +121,26 @@ namespace StreamEducation
             // 
             this.tContrasena1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tContrasena1.Location = new System.Drawing.Point(258, 211);
-            this.tContrasena1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tContrasena1.Margin = new System.Windows.Forms.Padding(2);
             this.tContrasena1.Name = "tContrasena1";
             this.tContrasena1.PasswordChar = '*';
             this.tContrasena1.Size = new System.Drawing.Size(261, 27);
-            this.tContrasena1.TabIndex = 8;
+            this.tContrasena1.TabIndex = 9;
             // 
             // tCorreo
             // 
             this.tCorreo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tCorreo.Location = new System.Drawing.Point(258, 162);
-            this.tCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.tCorreo.Name = "tCorreo";
             this.tCorreo.Size = new System.Drawing.Size(261, 27);
-            this.tCorreo.TabIndex = 9;
+            this.tCorreo.TabIndex = 8;
             // 
             // tContrasena2
             // 
             this.tContrasena2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tContrasena2.Location = new System.Drawing.Point(258, 267);
-            this.tContrasena2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tContrasena2.Margin = new System.Windows.Forms.Padding(2);
             this.tContrasena2.Name = "tContrasena2";
             this.tContrasena2.PasswordChar = '*';
             this.tContrasena2.Size = new System.Drawing.Size(261, 27);
@@ -161,7 +161,7 @@ namespace StreamEducation
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "fCrearCuenta";
             this.ShowIcon = false;
