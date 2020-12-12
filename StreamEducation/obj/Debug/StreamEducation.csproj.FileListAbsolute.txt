@@ -132,3 +132,42 @@ C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\bin\
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\bin\Debug\MySql.Data.xml
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.csproj.CopyComplete
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\StreamEducation.exe.config
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\StreamEducation.exe
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\StreamEducation.pdb
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\MySql.Data.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\Google.Protobuf.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\Zstandard.Net.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\Renci.SshNet.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\System.Memory.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\System.Buffers.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\bin\Debug\MySql.Data.xml
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.csprojAssemblyReference.cache
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.exe.config
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fActualizarPerfil.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fConfirmacion.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearCuenta.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearCurso.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearDebate.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearForo.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCurso.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fError.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fForo.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fInicial.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fIniciarSesion.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fOpcionesAdmin.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fPerfil.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fRecurso.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fSeleccionCurso.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.Properties.Resources.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.csproj.GenerateResource.cache
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.csproj.CoreCompileInputs.cache
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.csproj.CopyComplete
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.exe
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.pdb

@@ -55,8 +55,8 @@ namespace StreamEducation
         public Usuario(string c, string p)
         {
 
-            //try
-            //{
+            try
+            {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
                 string query = "SELECT * FROM tUsuario WHERE correo = '" + c + "';";
@@ -74,25 +74,24 @@ namespace StreamEducation
                     }
                     id = (int)rdr[0];
                     nombre = (string)rdr[1];
-                    biografia = (string)rdr[4];
-                    escuela = (string)rdr[5];
-                    pais = (string)rdr[6];
+                    if (rdr[4] != DBNull.Value) { biografia = (string)rdr[4]; }
+                    if (rdr[5] != DBNull.Value) { escuela = (string)rdr[5]; }
+                    if (rdr[6] != DBNull.Value) { pais = (string)rdr[6]; }
                     rolProfesor = (int)rdr[7] == 1;
                     rolAdmin = (int)rdr[8] == 1;
                 }
 
-            //}
-            /*catch(Exception ex)
+            }
+            catch (Exception ex)
             {
-                fError ventana = new fError(ex.Message);
-                ventana.ShowDialog();
-            }*/
+                throw new Error(ex.Message);
+            }
 
         }
 
         public Usuario(string n, string c, string p)
         {
-            try 
+            try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
@@ -110,9 +109,9 @@ namespace StreamEducation
             {
                 throw new Error("Error al crear cuenta");
             }
-            
+
         }
-        
+
         public int Id
         {
             get { return id; }
@@ -124,7 +123,7 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                
+
                 string query = "UPDATE tUsuario SET nombre = '" + value
                         + "' WHERE id = " + id + ";";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
