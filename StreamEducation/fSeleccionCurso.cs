@@ -52,6 +52,19 @@ namespace StreamEducation
         private void fSeleccionCurso_Load(object sender, EventArgs e)
         {
             Recarga();
+            foreach (Curso c in Curso.listaCursos())
+            {
+                lCursos.Items.Add(c);
+                if (c.Publico)
+                {
+                    lPublico.Items.Add("✔️");
+                }
+                else
+                {
+                    lPublico.Items.Add("❌");
+                }
+                
+            }
         }
         private void Recarga()
         {
@@ -60,6 +73,16 @@ namespace StreamEducation
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
             bCrearCurso.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
+        }
+
+        private void lCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GestorGlobal.CursoActivo = (Curso)lCursos.SelectedItem;
+            this.Visible = false;
+            fCurso ventana = new fCurso();
+            ventana.ShowDialog();
+            Recarga();
+            this.Visible = true;
         }
     }
 }

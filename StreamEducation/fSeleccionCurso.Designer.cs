@@ -44,6 +44,8 @@ namespace StreamEducation
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lPublico = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -138,11 +140,11 @@ namespace StreamEducation
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(849, 167);
+            this.label2.Location = new System.Drawing.Point(837, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 18);
             this.label2.TabIndex = 39;
-            this.label2.Text = "Público";
+            this.label2.Text = "Publico";
             // 
             // bCrearCurso
             // 
@@ -158,11 +160,14 @@ namespace StreamEducation
             // 
             this.lCursos.BackColor = System.Drawing.SystemColors.Control;
             this.lCursos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lCursos.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lCursos.FormattingEnabled = true;
+            this.lCursos.ItemHeight = 18;
             this.lCursos.Location = new System.Drawing.Point(329, 188);
             this.lCursos.Name = "lCursos";
-            this.lCursos.Size = new System.Drawing.Size(699, 416);
+            this.lCursos.Size = new System.Drawing.Size(426, 414);
             this.lCursos.TabIndex = 37;
+            this.lCursos.SelectedIndexChanged += new System.EventHandler(this.lCursos_SelectedIndexChanged);
             // 
             // labelRecurso
             // 
@@ -202,11 +207,35 @@ namespace StreamEducation
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             // 
+            // lPublico
+            // 
+            this.lPublico.BackColor = System.Drawing.SystemColors.Control;
+            this.lPublico.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lPublico.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPublico.FormattingEnabled = true;
+            this.lPublico.ItemHeight = 18;
+            this.lPublico.Location = new System.Drawing.Point(862, 188);
+            this.lPublico.Name = "lPublico";
+            this.lPublico.Size = new System.Drawing.Size(71, 414);
+            this.lPublico.TabIndex = 40;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(467, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 18);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Nombre";
+            // 
             // fSeleccionCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lPublico);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bCrearCurso);
@@ -247,5 +276,7 @@ namespace StreamEducation
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bPerfil;
+        private System.Windows.Forms.ListBox lPublico;
+        private System.Windows.Forms.Label label3;
     }
 }

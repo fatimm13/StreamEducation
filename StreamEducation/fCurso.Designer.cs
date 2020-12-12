@@ -185,7 +185,6 @@ namespace StreamEducation
             // 
             this.tDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tDescripcion.Enabled = false;
             this.tDescripcion.Location = new System.Drawing.Point(9, 117);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
@@ -210,7 +209,7 @@ namespace StreamEducation
             this.bInicio.Name = "bInicio";
             this.bInicio.Size = new System.Drawing.Size(143, 56);
             this.bInicio.TabIndex = 0;
-            this.bInicio.Text = "Inicio 🏠";
+            this.bInicio.Text = "Volver";
             this.bInicio.UseVisualStyleBackColor = true;
             this.bInicio.Click += new System.EventHandler(this.bInicio_Click);
             // 
