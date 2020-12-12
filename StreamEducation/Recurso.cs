@@ -17,14 +17,14 @@ namespace StreamEducation
         private string nombre;
         private string link;
 
-        public Recurso(int id)
+        public Recurso(int miId)
         {
 
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT * FROM tRecurso WHERE id = " + id + ";";
+                string query = "SELECT * FROM tRecurso WHERE id = " + miId + ";";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -43,23 +43,23 @@ namespace StreamEducation
             }
 
         }
-        public Recurso(Curso c, string n, string l)
+        public Recurso(Curso miCurso, string miNombre, string miLink)
         {
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tRecurso (curso,nombre,link) VALUES(" + c.Id + ", '"
-                    + n + "', '" + l + "');";
+                string query = "INSERT INTO tRecurso (curso,nombre,link) VALUES(" + miCurso.Id + ", '"
+                    + miNombre + "', '" + miLink + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
 
-                string query2 = "SELECT MAX(id) FROM tRecurso WHERE curso= '" +c.Id +"';";
+                string query2 = "SELECT MAX(id) FROM tRecurso WHERE curso= '" +miCurso.Id +"';";
                 MySqlCommand cmd2 = new MySqlCommand(query2, miBD);
                 id = (int) cmd2.ExecuteScalar();
-                curso = c;
-                nombre = n;
-                link = l;
+                curso = miCurso;
+                nombre = miNombre;
+                link = miLink;
             }
             catch
             {

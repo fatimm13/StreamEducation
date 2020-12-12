@@ -38,6 +38,23 @@ namespace StreamEducation
         private void fPerfil_Load(object sender, EventArgs e)
         {
             labelNombre.Text = usuario.Nombre;
+            if (usuario.RolAdmin)
+            {
+                labelRol.Text = "Administrador";
+            }
+            else if (usuario.RolProfesor)
+            {
+                labelRol.Text = "Profesor";
+            }
+            else
+            {
+                labelRol.Text = "Estudiante";
+            }
+            if (usuario.Escuela == null) { labelEscuela.Text = "No especificada"; } else { labelEscuela.Text = usuario.Escuela; }
+            if (usuario.Pais == null) { labelPais.Text = "No especificado"; } else { labelPais.Text = usuario.Pais; }
+            if (usuario.Biografia == null) { tBio.Text = "Biografía no especificada"; } else { tBio.Text = usuario.Biografia; }
         }
+
+
     }
 }

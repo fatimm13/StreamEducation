@@ -16,14 +16,14 @@ namespace StreamEducation
         private string nombre;
         private string descripcion;
 
-        public Curso(int i)
+        public Curso(int miId)
         {
 
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT * FROM tCurso WHERE id = " + i + ";";
+                string query = "SELECT * FROM tCurso WHERE id = " + miId + ";";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -42,23 +42,23 @@ namespace StreamEducation
             }
 
         }
-        public Curso( Usuario p, string n, string d)
+        public Curso( Usuario miProfesor, string miNombre, string miDescripcion)
         {
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tCurso (profesor,nombre,descripcion) VALUES(" + p.Id + ", '"
-                    + n + "', '" + d + "');";
+                string query = "INSERT INTO tCurso (profesor,nombre,descripcion) VALUES(" + miProfesor.Id + ", '"
+                    + miNombre + "', '" + miDescripcion + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
 
-                string query2 = "SELECT MAX(id) FROM tCurso WHERE profesor = '" + p.Id +"';";
+                string query2 = "SELECT MAX(id) FROM tCurso WHERE profesor = '" + miProfesor.Id +"';";
                 MySqlCommand cmd2 = new MySqlCommand(query2, miBD);
                 id = (int)cmd2.ExecuteScalar();
-                profesor = p;
-                nombre = n;
-                descripcion = d;
+                profesor = miProfesor;
+                nombre = miNombre;
+                descripcion = miDescripcion;
 
             }
             catch

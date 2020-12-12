@@ -21,20 +21,20 @@ namespace StreamEducation
         private bool rolProfesor;
         private bool rolAdmin;
 
-        public Usuario(int identificador)
+        public Usuario(int miId)
         {
 
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT * FROM tUsuario WHERE id = " + identificador + ";";
+                string query = "SELECT * FROM tUsuario WHERE id = " + miId + ";";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 if (rdr.Read())
                 {
-                    id = identificador;
+                    id = miId;
                     nombre = (string)rdr[1];
                     correo = (string)rdr[2];
                     biografia = (string)rdr[4];
@@ -52,14 +52,14 @@ namespace StreamEducation
 
         }
 
-        public Usuario(string c, string p)
+        public Usuario(string miCorreo, string miContrasena)
         {
 
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT * FROM tUsuario WHERE correo = '" + c + "';";
+                string query = "SELECT * FROM tUsuario WHERE correo = '" + miCorreo + "';";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -67,7 +67,7 @@ namespace StreamEducation
                 {
                     correo = (string)rdr[2];
                     string password = (string)rdr[3];
-                    if (!password.Equals(p))
+                    if (!password.Equals(miContrasena))
                     {
                         correo = password = null;
                         throw new Error("Correo o Contraseña Incorrecta: ");
@@ -89,21 +89,21 @@ namespace StreamEducation
 
         }
 
-        public Usuario(string n, string c, string p)
+        public Usuario(string miNombre, string miCorreo, string miContrasena)
         {
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tUsuario (nombre,correo,contrasena) VALUES('" + n + "', '"
-                    + c + "', '" + p + "');";
+                string query = "INSERT INTO tUsuario (nombre,correo,contrasena) VALUES('" + miNombre + "', '"
+                    + miCorreo + "', '" + miContrasena + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
-                string query2 = "SELECT MAX(id) FROM tUsuario WHERE correo = '" + c + "';";
+                string query2 = "SELECT MAX(id) FROM tUsuario WHERE correo = '" + miCorreo + "';";
                 MySqlCommand cmd2 = new MySqlCommand(query2, miBD);
                 id = (int)cmd2.ExecuteScalar();
-                nombre = n;
-                correo = c;
+                nombre = miNombre;
+                correo = miCorreo;
             }
             catch
             {
@@ -191,6 +191,43 @@ namespace StreamEducation
                 pais = value;
                 miBD.Close();
             }
+        }
+
+
+        public bool RolProfesor
+        {
+            get { return rolProfesor; }
+            /*
+            set
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "UPDATE tUsuario SET rolProfesor = " + value
+                        + " WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                rolProfesor = value;
+                miBD.Close();
+            }
+            */
+        }
+
+        public bool RolAdmin
+        {
+            get { return rolAdmin; }
+            /*
+            set
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "UPDATE tUsuario SET rolAdmin = " + value
+                        + " WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                rolProfesor = value;
+                miBD.Close();
+            }
+            */
         }
 
     }
