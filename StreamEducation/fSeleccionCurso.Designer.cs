@@ -219,6 +219,7 @@ namespace StreamEducation
             this.Name = "fSeleccionCurso";
             this.ShowIcon = false;
             this.Text = "Seleccion Curso";
+            this.Load += new System.EventHandler(this.fSeleccionCurso_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

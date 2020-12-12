@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace StreamEducation
 {
-    public partial class fForo : Form
+    public partial class fDebate : Form
     {
-        public fForo()
+        public fDebate()
         {
             InitializeComponent();
+        }
+
+        private void fDebate_Load(object sender, EventArgs e)
+        {
+            Recarga();
         }
 
         private void bInicio_Click(object sender, EventArgs e)
@@ -22,19 +27,10 @@ namespace StreamEducation
             this.Close();
         }
 
-        private void bPerfil_Click(object sender, EventArgs e)
-        {
-            fPerfil ventana = new fPerfil();
-            ventana.ShowDialog();
-            Recarga();
-        }
-
-
-
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
             fIniciarSesion ventana = new fIniciarSesion();
-            ventana.ShowDialog(); 
+            ventana.ShowDialog();
             Recarga();
         }
 
@@ -45,15 +41,10 @@ namespace StreamEducation
             Recarga();
         }
 
-        private void bAddDebate_Click(object sender, EventArgs e)
+        private void bPerfil_Click(object sender, EventArgs e)
         {
-            fCrearDebate ventana = new fCrearDebate();
+            fPerfil ventana = new fPerfil();
             ventana.ShowDialog();
-            Recarga();
-        }
-
-        private void fForo_Load(object sender, EventArgs e)
-        {
             Recarga();
         }
         private void Recarga()

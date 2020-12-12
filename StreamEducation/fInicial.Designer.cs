@@ -40,6 +40,7 @@ namespace StreamEducation
             this.bForo = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
             this.bCurso = new System.Windows.Forms.Button();
+            this.bPerfil = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +78,7 @@ namespace StreamEducation
             // 
             this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 1);
             this.monthCalendar1.Location = new System.Drawing.Point(743, 122);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(6);
             this.monthCalendar1.MaximumSize = new System.Drawing.Size(376, 164);
             this.monthCalendar1.MinimumSize = new System.Drawing.Size(376, 164);
             this.monthCalendar1.Name = "monthCalendar1";
@@ -99,7 +100,7 @@ namespace StreamEducation
             this.panel2.BackColor = System.Drawing.SystemColors.Desktop;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Location = new System.Drawing.Point(22, 76);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1184, 8);
             this.panel2.TabIndex = 11;
@@ -108,10 +109,11 @@ namespace StreamEducation
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.bPerfil);
             this.panel1.Controls.Add(this.bIniciarSesion);
             this.panel1.Controls.Add(this.bRegistrarse);
             this.panel1.Location = new System.Drawing.Point(126, 122);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 164);
             this.panel1.TabIndex = 12;
@@ -120,7 +122,7 @@ namespace StreamEducation
             // 
             this.bIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bIniciarSesion.Location = new System.Drawing.Point(16, 93);
-            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.bIniciarSesion.Name = "bIniciarSesion";
             this.bIniciarSesion.Size = new System.Drawing.Size(260, 46);
             this.bIniciarSesion.TabIndex = 7;
@@ -132,7 +134,7 @@ namespace StreamEducation
             // 
             this.bRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRegistrarse.Location = new System.Drawing.Point(16, 18);
-            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(2);
             this.bRegistrarse.Name = "bRegistrarse";
             this.bRegistrarse.Size = new System.Drawing.Size(260, 49);
             this.bRegistrarse.TabIndex = 6;
@@ -182,6 +184,16 @@ namespace StreamEducation
             this.bCurso.UseVisualStyleBackColor = true;
             this.bCurso.Click += new System.EventHandler(this.bCurso_Click);
             // 
+            // bPerfil
+            // 
+            this.bPerfil.Location = new System.Drawing.Point(83, 18);
+            this.bPerfil.Name = "bPerfil";
+            this.bPerfil.Size = new System.Drawing.Size(131, 121);
+            this.bPerfil.TabIndex = 23;
+            this.bPerfil.Text = "Perfil";
+            this.bPerfil.UseVisualStyleBackColor = true;
+            this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click);
+            // 
             // fInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,11 +208,12 @@ namespace StreamEducation
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "fInicial";
             this.ShowIcon = false;
             this.Text = "Inicial";
+            this.Load += new System.EventHandler(this.fInicial_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,5 +233,6 @@ namespace StreamEducation
         private System.Windows.Forms.Button bCurso;
         private System.Windows.Forms.Button bForo;
         private System.Windows.Forms.Button bActividades;
+        private System.Windows.Forms.Button bPerfil;
     }
 }

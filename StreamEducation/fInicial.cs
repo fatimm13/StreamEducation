@@ -12,18 +12,18 @@ namespace StreamEducation
 {
     public partial class fInicial : Form
     {
-        private Usuario usuario;
         public fInicial()
         {
-            usuario = null;
+            GestorGlobal.UsuarioActivo = null;
             InitializeComponent();
         }
 
         private void bCurso_Click(object sender, EventArgs e)
         {
-            fSeleccionCurso ventana= new fSeleccionCurso(ref usuario);
+            fSeleccionCurso ventana= new fSeleccionCurso();
             this.Visible = false;
             ventana.ShowDialog();
+            Recarga();
             this.Visible = true;
         }
 
@@ -33,6 +33,7 @@ namespace StreamEducation
             fForo ventana = new fForo();
             this.Visible = false;
             ventana.ShowDialog();
+            Recarga();
             this.Visible = true;
         }
 
@@ -41,6 +42,7 @@ namespace StreamEducation
             fRecurso ventana = new fRecurso();
             this.Visible = false;
             ventana.ShowDialog();
+            Recarga();
             this.Visible = true;
         }
 
@@ -48,13 +50,14 @@ namespace StreamEducation
         {
             fCrearCuenta ventana = new fCrearCuenta();
             ventana.ShowDialog();
+            Recarga();
         }
 
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
             fIniciarSesion ventana = new fIniciarSesion();
             ventana.ShowDialog();
-            usuario = ventana.Valor;
+            Recarga();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -74,5 +77,25 @@ namespace StreamEducation
             // Navigate to a URL.
             System.Diagnostics.Process.Start("http://www.uma.es");
         }
+        private void bPerfil_Click(object sender, EventArgs e)
+        {
+            fPerfil ventana = new fPerfil();
+            ventana.ShowDialog();
+            Recarga();
+        }
+        private void fInicial_Load(object sender, EventArgs e)
+        {
+            Recarga();
+        }
+
+        private void Recarga()
+        {
+            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            bRegistrarse.Visible = !usuarioIniciado;
+            bIniciarSesion.Visible = !usuarioIniciado;
+            bPerfil.Visible = usuarioIniciado;
+        }
+
+        
     }
 }

@@ -229,7 +229,22 @@ namespace StreamEducation
             }
             */
         }
-
+        public void Borrar()
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "DELETE FROM tUsuario WHERE id = " + id + ";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            id = -1;
+            nombre = null;
+            correo = null;
+            biografia = null;
+            escuela = null;
+            pais = null;
+            rolProfesor = false;
+            rolAdmin = false;
+        }
     }
 
 }

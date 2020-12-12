@@ -12,10 +12,8 @@ namespace StreamEducation
 {
     public partial class fSeleccionCurso : Form
     {
-        private Usuario usuario;
-        public fSeleccionCurso(ref Usuario user)
+        public fSeleccionCurso()
         {
-            usuario = user;
             InitializeComponent();
         }
         private void bInicio_Click(object sender, EventArgs e)
@@ -25,28 +23,42 @@ namespace StreamEducation
 
         private void bPerfil_Click(object sender, EventArgs e)
         {
-            fPerfil ventana = new fPerfil(ref usuario);
+            fPerfil ventana = new fPerfil();
             ventana.ShowDialog();
+            Recarga();
         }
-
-
 
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
             fIniciarSesion ventana = new fIniciarSesion();
             ventana.ShowDialog();
+            Recarga();
         }
 
         private void bRegistrarse_Click(object sender, EventArgs e)
         {
             fCrearCuenta ventana = new fCrearCuenta();
             ventana.ShowDialog();
+            Recarga();
         }
 
         private void bCrearCurso_Click(object sender, EventArgs e)
         {
             fCrearCurso ventana = new fCrearCurso();
             ventana.ShowDialog();
+            Recarga();
+        }
+
+        private void fSeleccionCurso_Load(object sender, EventArgs e)
+        {
+            Recarga();
+        }
+        private void Recarga()
+        {
+            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            bRegistrarse.Visible = !usuarioIniciado;
+            bIniciarSesion.Visible = !usuarioIniciado;
+            bPerfil.Visible = usuarioIniciado;
         }
     }
 }

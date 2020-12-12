@@ -12,13 +12,8 @@ namespace StreamEducation
 {
     public partial class fIniciarSesion : Form
     {
-        private Usuario usuario;
-
-        public Usuario Valor { get { return usuario; } }
-
         public fIniciarSesion()
         {
-            usuario = null;
             InitializeComponent();
         }
 
@@ -27,7 +22,7 @@ namespace StreamEducation
         {
             if (tCorreo.Text != "" && tContrasena.Text != "")
             {
-                usuario = new Usuario(tCorreo.Text, tContrasena.Text);
+                GestorGlobal.UsuarioActivo = new Usuario(tCorreo.Text, tContrasena.Text);
                 this.Close();
             }
             else

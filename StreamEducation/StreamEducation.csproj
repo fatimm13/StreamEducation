@@ -65,8 +65,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestorGlobal.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="Debate.cs" />
+    <Compile Include="fDebate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fDebate.Designer.cs">
+      <DependentUpon>fDebate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Foro.cs" />
     <Compile Include="Recurso.cs" />
     <Compile Include="Usuario.cs" />
@@ -198,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fOpcionesAdmin.resx">
       <DependentUpon>fOpcionesAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fDebate.resx">
+      <DependentUpon>fDebate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fPerfil.resx">
       <DependentUpon>fPerfil.cs</DependentUpon>

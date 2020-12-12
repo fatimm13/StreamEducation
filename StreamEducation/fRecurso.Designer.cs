@@ -43,10 +43,10 @@ namespace StreamEducation
             this.label1 = new System.Windows.Forms.Label();
             this.bInicio = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bPerfil = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bPerfil = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -194,6 +194,16 @@ namespace StreamEducation
             this.panel1.Size = new System.Drawing.Size(1238, 56);
             this.panel1.TabIndex = 12;
             // 
+            // bPerfil
+            // 
+            this.bPerfil.Location = new System.Drawing.Point(1185, 9);
+            this.bPerfil.Name = "bPerfil";
+            this.bPerfil.Size = new System.Drawing.Size(39, 34);
+            this.bPerfil.TabIndex = 5;
+            this.bPerfil.Text = "Perfil";
+            this.bPerfil.UseVisualStyleBackColor = true;
+            this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -225,16 +235,6 @@ namespace StreamEducation
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
-            // bPerfil
-            // 
-            this.bPerfil.Location = new System.Drawing.Point(1185, 9);
-            this.bPerfil.Name = "bPerfil";
-            this.bPerfil.Size = new System.Drawing.Size(39, 34);
-            this.bPerfil.TabIndex = 5;
-            this.bPerfil.Text = "Perfil";
-            this.bPerfil.UseVisualStyleBackColor = true;
-            this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click);
-            // 
             // fRecurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +255,7 @@ namespace StreamEducation
             this.Name = "fRecurso";
             this.ShowIcon = false;
             this.Text = "Recurso";
+            this.Load += new System.EventHandler(this.fRecurso_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

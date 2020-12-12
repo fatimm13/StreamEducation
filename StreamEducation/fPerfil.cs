@@ -12,10 +12,8 @@ namespace StreamEducation
 {
     public partial class fPerfil : Form
     {
-        Usuario usuario;
-        public fPerfil(ref Usuario user)
+        public fPerfil()
         {
-            usuario = user;
             InitializeComponent();
         }
 
@@ -37,6 +35,7 @@ namespace StreamEducation
 
         private void fPerfil_Load(object sender, EventArgs e)
         {
+            Usuario usuario = GestorGlobal.UsuarioActivo;
             labelNombre.Text = usuario.Nombre;
             if (usuario.RolAdmin)
             {
