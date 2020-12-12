@@ -49,7 +49,7 @@ namespace StreamEducation
             // 
             this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.bAceptar.Location = new System.Drawing.Point(194, 41);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(76, 35);
             this.bAceptar.TabIndex = 6;
@@ -61,7 +61,7 @@ namespace StreamEducation
             // 
             this.bRechazar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.bRechazar.Location = new System.Drawing.Point(284, 41);
-            this.bRechazar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bRechazar.Margin = new System.Windows.Forms.Padding(2);
             this.bRechazar.Name = "bRechazar";
             this.bRechazar.Size = new System.Drawing.Size(76, 35);
             this.bRechazar.TabIndex = 7;
@@ -77,11 +77,12 @@ namespace StreamEducation
             this.Controls.Add(this.bRechazar);
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.labelError);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "fConfirmacion";
             this.ShowIcon = false;
             this.Text = "Confirmar";
+            this.Load += new System.EventHandler(this.fConfirmacion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

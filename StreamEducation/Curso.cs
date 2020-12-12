@@ -38,7 +38,7 @@ namespace StreamEducation
             }
             catch
             {
-                throw new Error("Error recuperando curso con su id");
+                throw new Error("Error recuperando curso con su id: " +miId);
             }
 
         }

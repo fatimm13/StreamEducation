@@ -45,7 +45,7 @@ namespace StreamEducation
             // 
             this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.bAceptar.Location = new System.Drawing.Point(518, 349);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(56, 28);
             this.bAceptar.TabIndex = 14;
@@ -57,7 +57,7 @@ namespace StreamEducation
             // 
             this.tBiografia.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBiografia.Location = new System.Drawing.Point(39, 220);
-            this.tBiografia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tBiografia.Margin = new System.Windows.Forms.Padding(2);
             this.tBiografia.Multiline = true;
             this.tBiografia.Name = "tBiografia";
             this.tBiografia.Size = new System.Drawing.Size(452, 158);
@@ -78,7 +78,7 @@ namespace StreamEducation
             // 
             this.tNombre.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tNombre.Location = new System.Drawing.Point(142, 73);
-            this.tNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tNombre.Margin = new System.Windows.Forms.Padding(2);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(348, 27);
             this.tNombre.TabIndex = 19;
@@ -131,7 +131,7 @@ namespace StreamEducation
             // 
             this.tPais.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tPais.Location = new System.Drawing.Point(142, 149);
-            this.tPais.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tPais.Margin = new System.Windows.Forms.Padding(2);
             this.tPais.Name = "tPais";
             this.tPais.Size = new System.Drawing.Size(348, 27);
             this.tPais.TabIndex = 20;
@@ -140,7 +140,7 @@ namespace StreamEducation
             // 
             this.tEscuela.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tEscuela.Location = new System.Drawing.Point(142, 110);
-            this.tEscuela.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tEscuela.Margin = new System.Windows.Forms.Padding(2);
             this.tEscuela.Name = "tEscuela";
             this.tEscuela.Size = new System.Drawing.Size(348, 27);
             this.tEscuela.TabIndex = 21;
@@ -160,11 +160,12 @@ namespace StreamEducation
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.tBiografia);
             this.Controls.Add(this.label5);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "fActualizarPerfil";
             this.ShowIcon = false;
             this.Text = "Actualizar Perfil";
+            this.Load += new System.EventHandler(this.fActualizarPerfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

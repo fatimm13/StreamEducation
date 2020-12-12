@@ -19,7 +19,15 @@ namespace StreamEducation
 
         private void bBorrarCuenta_Click(object sender, EventArgs e)
         {
-
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.UsuarioActivo.Borrar();
+                GestorGlobal.UsuarioActivo = null;
+                this.Close();
+            }
+            
         }
 
         private void bVolver_Click(object sender, EventArgs e)
@@ -31,17 +39,17 @@ namespace StreamEducation
         {
             fActualizarPerfil ventana = new fActualizarPerfil();
             ventana.ShowDialog();
+            Recarga();
         }
 
         private void fPerfil_Load(object sender, EventArgs e)
         {
-            Usuario usuario = GestorGlobal.UsuarioActivo;
-            labelNombre.Text = usuario.Nombre;
-            if (usuario.RolAdmin)
+            Recarga();
+            if (GestorGlobal.UsuarioActivo.RolAdmin)
             {
                 labelRol.Text = "Administrador";
             }
-            else if (usuario.RolProfesor)
+            else if (GestorGlobal.UsuarioActivo.RolProfesor)
             {
                 labelRol.Text = "Profesor";
             }
@@ -49,11 +57,16 @@ namespace StreamEducation
             {
                 labelRol.Text = "Estudiante";
             }
+            foreach (Curso c in GestorGlobal.UsuarioActivo.getCursos()) lCursos.Items.Add(c.Nombre);
+        }
+        private void Recarga()
+        {
+            Usuario usuario = GestorGlobal.UsuarioActivo;
+            labelNombre.Text = usuario.Nombre;
+            
             if (usuario.Escuela == null) { labelEscuela.Text = "No especificada"; } else { labelEscuela.Text = usuario.Escuela; }
             if (usuario.Pais == null) { labelPais.Text = "No especificado"; } else { labelPais.Text = usuario.Pais; }
             if (usuario.Biografia == null) { tBio.Text = "Biografía no especificada"; } else { tBio.Text = usuario.Biografia; }
         }
-
-
     }
 }

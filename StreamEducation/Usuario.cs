@@ -37,13 +37,12 @@ namespace StreamEducation
                     id = miId;
                     nombre = (string)rdr[1];
                     correo = (string)rdr[2];
-                    biografia = (string)rdr[4];
-                    escuela = (string)rdr[5];
-                    pais = (string)rdr[6];
-                    rolProfesor = (bool)rdr[7];
-                    rolAdmin = (bool)rdr[8];
+                    if (rdr[4] != DBNull.Value) { biografia = (string)rdr[4]; }
+                    if (rdr[5] != DBNull.Value) { escuela = (string)rdr[5]; }
+                    if (rdr[6] != DBNull.Value) { pais = (string)rdr[6]; }
+                    rolProfesor = (int)rdr[7] == 1;
+                    rolAdmin = (int)rdr[8] == 1;
                 }
-
             }
             catch
             {
@@ -244,6 +243,25 @@ namespace StreamEducation
             pais = null;
             rolProfesor = false;
             rolAdmin = false;
+        }
+
+        public List<Curso> getCursos()
+        {
+            List<Curso> lista = new List<Curso>();
+
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "SELECT curso FROM tCursoUsuario WHERE usuario = '" + this.id + "';";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while(rdr.Read())
+            {
+                int c = (int)rdr[0];
+                lista.Add(new Curso(c));
+            }
+
+            return lista;
         }
     }
 

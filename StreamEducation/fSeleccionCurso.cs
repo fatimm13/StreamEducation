@@ -59,6 +59,7 @@ namespace StreamEducation
             bRegistrarse.Visible = !usuarioIniciado;
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
+            bCrearCurso.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
         }
     }
 }
