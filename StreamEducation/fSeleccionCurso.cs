@@ -47,6 +47,19 @@ namespace StreamEducation
             fCrearCurso ventana = new fCrearCurso();
             ventana.ShowDialog();
             Recarga();
+            foreach (Curso c in Curso.listaCursos())
+            {
+                lCursos.Items.Add(c);
+                if (c.Publico)
+                {
+                    lPublico.Items.Add("✔️");
+                }
+                else
+                {
+                    lPublico.Items.Add("❌");
+                }
+
+            }
         }
 
         private void fSeleccionCurso_Load(object sender, EventArgs e)

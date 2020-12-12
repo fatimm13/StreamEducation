@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 namespace StreamEducation
 {
@@ -60,6 +61,25 @@ namespace StreamEducation
                 throw new Error("Error al cargar de BD.");
             }
         }
+        public List<Debate> getDebates()
+        {
+            List<Debate> lista = new List<Debate>();
+
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "SELECT ID FROM tDebate WHERE FORO=" + this.id + ";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                int c = (int)rdr[0];
+                lista.Add(new Debate(c));
+            }
+            miBD.Close();
+
+            return lista;
+        }
         public int Id
         {
             get { return id; }
@@ -82,6 +102,10 @@ namespace StreamEducation
         public Curso Curso
         {
             get { return curso; }
+        }
+        public override string ToString()
+        {
+            return nombre;
         }
     }
 }

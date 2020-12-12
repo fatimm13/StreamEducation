@@ -110,6 +110,10 @@ namespace StreamEducation
                 link = value;
             }
         }
-
+        
+        public override string ToString()
+        {
+            return nombre;
+        }
     }
 }

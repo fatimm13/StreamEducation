@@ -43,6 +43,7 @@ namespace StreamEducation
                     rolProfesor = (int)rdr[7] == 1;
                     rolAdmin = (int)rdr[8] == 1;
                 }
+
             }
             catch
             {
@@ -243,6 +244,7 @@ namespace StreamEducation
             pais = null;
             rolProfesor = false;
             rolAdmin = false;
+            miBD.Close();
         }
 
         public List<Curso> getCursos()
@@ -260,8 +262,12 @@ namespace StreamEducation
                 int c = (int)rdr[0];
                 lista.Add(new Curso(c));
             }
-
+            miBD.Close();
             return lista;
+        }
+        public override string ToString()
+        {
+            return nombre;
         }
     }
 

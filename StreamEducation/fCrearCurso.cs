@@ -20,6 +20,10 @@ namespace StreamEducation
         //TODO: Pues eso, que haga cosas
         private void bAceptar_Click(object sender, EventArgs e)
         {
+            if (GestorGlobal.UsuarioActivo !=null && tNombre.Text != "")
+            {
+                new Curso(GestorGlobal.UsuarioActivo,tNombre.Text,tDescripcion.Text);
+            }
             this.Close();
         }
     }

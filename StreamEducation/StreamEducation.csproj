@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMensaje.Designer.cs">
+      <DependentUpon>fMensaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestorGlobal.cs" />
     <Compile Include="Curso.cs" />
     <Compile Include="Debate.cs" />
@@ -75,6 +81,7 @@
       <DependentUpon>fDebate.cs</DependentUpon>
     </Compile>
     <Compile Include="Foro.cs" />
+    <Compile Include="Mensaje.cs" />
     <Compile Include="Recurso.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Error.cs" />
@@ -208,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fDebate.resx">
       <DependentUpon>fDebate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMensaje.resx">
+      <DependentUpon>fMensaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fPerfil.resx">
       <DependentUpon>fPerfil.cs</DependentUpon>

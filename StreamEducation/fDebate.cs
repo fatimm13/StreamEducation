@@ -20,6 +20,7 @@ namespace StreamEducation
         private void fDebate_Load(object sender, EventArgs e)
         {
             Recarga();
+            foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
         }
 
         private void bInicio_Click(object sender, EventArgs e)
@@ -53,6 +54,9 @@ namespace StreamEducation
             bRegistrarse.Visible = !usuarioIniciado;
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
+            bAddMensaje.Visible = usuarioIniciado;
         }
+
+        
     }
 }

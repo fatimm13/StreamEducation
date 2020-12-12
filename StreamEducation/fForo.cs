@@ -55,6 +55,12 @@ namespace StreamEducation
         private void fForo_Load(object sender, EventArgs e)
         {
             Recarga();
+            foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
+            {
+                lForo.Items.Add(d);
+                lCreador.Items.Add(d.Creador);
+                lIntervenciones.Items.Add(d.intervenciones());
+            }
         }
         private void Recarga()
         {
@@ -62,6 +68,21 @@ namespace StreamEducation
             bRegistrarse.Visible = !usuarioIniciado;
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
+            labelForo.Text = GestorGlobal.ForoActivo.Nombre;
+            tDescripcion.Text = GestorGlobal.ForoActivo.Descripcion;
         }
+
+        private void lForo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lForo.SelectedIndex >= 0)
+            {
+                GestorGlobal.DebateActivo = (Debate) lForo.SelectedItem;
+                fDebate ventana = new fDebate();
+                this.Visible = false;
+                ventana.ShowDialog();
+                Recarga();
+            }
+        }
+        
     }
 }

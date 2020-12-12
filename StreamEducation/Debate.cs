@@ -15,7 +15,6 @@ namespace StreamEducation
         private string nombre;
         private Foro foro;
         private Usuario creador;
-        private DateTime fecha;
         private string descripcion;
 
         public Debate(int miId)
@@ -34,8 +33,7 @@ namespace StreamEducation
                     nombre = (string)rdr[1];
                     foro = new Foro((int)rdr[2]);
                     creador = new Usuario((int)rdr[3]);
-                    fecha = new DateTime((int)rdr[4]);
-                    descripcion = (string)rdr[5];
+                    descripcion = (string)rdr[4];
                 }
 
             }
@@ -50,9 +48,7 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                DateTime now = DateTime.Now;
-                string sqldate = now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-                string query = "INSERT INTO tDebate VALUES ('" + miNombre+ "'," + miForo.Id + "," + miCreador.Id + ",'" + sqldate + "','" + miDescripcion + "';";
+                string query = "INSERT INTO tDebate VALUES ('" + miNombre+ "'," + miForo.Id + "," + miCreador.Id + "," + miDescripcion + "';";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 query = "SELECT max(ID) FROM tDebate WHERE creador=" + miCreador.Id + ";";
@@ -61,7 +57,6 @@ namespace StreamEducation
                 nombre = miNombre;
                 foro = miForo;
                 creador = miCreador;
-                fecha = now;
                 descripcion = miDescripcion;
 
             }
@@ -70,6 +65,20 @@ namespace StreamEducation
                 throw new Error("Error al cargar de BD.");
             }
         }
+
+        internal string  intervenciones()
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "SELECT count(*) FROM tMensaje WHERE debate=" +id + ";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+
+            object res = cmd.ExecuteScalar();
+            miBD.Close();
+
+            return res.ToString();
+        }
+
         public int Id
         {
             get { return id; }
@@ -89,13 +98,32 @@ namespace StreamEducation
             get { return creador; }
         }
 
-        public DateTime Fecha
-        {
-            get { return fecha; }
-        }
         public string Descripcion
         {
             get { return descripcion; }
+        }
+        public List<Mensaje> getMensajes()
+        {
+            List<Mensaje> lista = new List<Mensaje>();
+
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "SELECT ID FROM tMensaje WHERE debate=" + this.id + ";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                int c = (int)rdr[0];
+                lista.Add(new Mensaje(c));
+            }
+            miBD.Close();
+
+            return lista;
+        }
+        public override string ToString()
+        {
+            return nombre;
         }
     }
     

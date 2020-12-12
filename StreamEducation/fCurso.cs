@@ -46,6 +46,12 @@ namespace StreamEducation
 
         private void fCurso_Load(object sender, EventArgs e)
         {
+            Curso curso = GestorGlobal.CursoActivo;
+            if (curso!=null)
+            {
+                foreach (Recurso r in curso.getRecursos()) lRecursos.Items.Add(r);
+                foreach (Foro f in curso.getForos()) lForos.Items.Add(f);
+            }
             Recarga();
         }
         private void Recarga()
@@ -56,6 +62,28 @@ namespace StreamEducation
             bPerfil.Visible = usuarioIniciado;
             labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
             tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
+        }
+
+        private void lRecursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lRecursos.SelectedIndex>=0)   System.Diagnostics.Process.Start(((Recurso)lRecursos.SelectedItem).Link);
+        }
+
+        private void bCrearCurso_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lForos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lForos.SelectedIndex >= 0)
+            {
+                GestorGlobal.ForoActivo = (Foro) lForos.SelectedItem;
+                fForo ventana = new fForo();
+                this.Visible = false;
+                ventana.ShowDialog();
+                Recarga();
+            }
         }
     }
 }

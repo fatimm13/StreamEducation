@@ -36,6 +36,7 @@ namespace StreamEducation
                     descripcion = (string)rdr[3];
                     esPublico = (int)rdr[4] == 1;
                 }
+                miBD.Close();
 
             }
             catch
@@ -61,7 +62,7 @@ namespace StreamEducation
                 profesor = miProfesor;
                 nombre = miNombre;
                 descripcion = miDescripcion;
-
+                miBD.Close();
             }
             catch
             {
@@ -142,10 +143,48 @@ namespace StreamEducation
                 int c = (int)rdr[0];
                 lista.Add(new Curso(c));
             }
+            miBD.Close();
+            return lista;
+        }
+        public List<Recurso> getRecursos()
+        {
+            List<Recurso> lista = new List<Recurso>();
+
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "SELECT ID FROM tRecurso WHERE CURSO="+this.id+";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                int c = (int)rdr[0];
+                lista.Add(new Recurso(c));
+            }
+            miBD.Close();
+            return lista;
+        }
+        public List<Foro> getForos()
+        {
+            List<Foro> lista = new List<Foro>();
+
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "SELECT ID FROM tForo WHERE CURSO=" + this.id + ";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                int c = (int)rdr[0];
+                lista.Add(new Foro(c));
+            }
+            miBD.Close();
             return lista;
         }
         public override string ToString()
         {
+
             return nombre;
         }
     }
