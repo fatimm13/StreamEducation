@@ -37,9 +37,9 @@ namespace StreamEducation
                     id = miId;
                     nombre = (string)rdr[1];
                     correo = (string)rdr[2];
-                    if (rdr[4] != DBNull.Value) { biografia = (string)rdr[4]; }
-                    if (rdr[5] != DBNull.Value) { escuela = (string)rdr[5]; }
-                    if (rdr[6] != DBNull.Value) { pais = (string)rdr[6]; }
+                    biografia = (string)rdr[4];
+                    escuela = (string)rdr[5];
+                    pais = (string)rdr[6];
                     rolProfesor = (int)rdr[7] == 1;
                     rolAdmin = (int)rdr[8] == 1;
                 }
@@ -73,9 +73,9 @@ namespace StreamEducation
                     }
                     id = (int)rdr[0];
                     nombre = (string)rdr[1];
-                    if (rdr[4] != DBNull.Value) { biografia = (string)rdr[4]; }
-                    if (rdr[5] != DBNull.Value) { escuela = (string)rdr[5]; }
-                    if (rdr[6] != DBNull.Value) { pais = (string)rdr[6]; }
+                    biografia = (string)rdr[4];
+                    escuela = (string)rdr[5];
+                    pais = (string)rdr[6];
                     rolProfesor = (int)rdr[7] == 1;
                     rolAdmin = (int)rdr[8] == 1;
                 }

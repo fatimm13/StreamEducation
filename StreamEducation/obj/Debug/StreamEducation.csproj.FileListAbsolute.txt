@@ -211,3 +211,4 @@ C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\Ingenieria
 C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.exe
 C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.pdb
 D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fDebate.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fDebate.resources

@@ -63,10 +63,9 @@ namespace StreamEducation
         {
             Usuario usuario = GestorGlobal.UsuarioActivo;
             labelNombre.Text = usuario.Nombre;
-            
-            if (usuario.Escuela == null) { labelEscuela.Text = "No especificada"; } else { labelEscuela.Text = usuario.Escuela; }
-            if (usuario.Pais == null) { labelPais.Text = "No especificado"; } else { labelPais.Text = usuario.Pais; }
-            if (usuario.Biografia == null) { tBio.Text = "Biografía no especificada"; } else { tBio.Text = usuario.Biografia; }
+            labelEscuela.Text = usuario.Escuela;
+            labelPais.Text = usuario.Pais;
+            tBio.Text = usuario.Biografia;
         }
     }
 }

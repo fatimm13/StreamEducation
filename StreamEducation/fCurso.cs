@@ -55,14 +55,7 @@ namespace StreamEducation
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
             labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
-            if (GestorGlobal.CursoActivo.Descripcion == null)
-            {
-                tDescripcion.Text = "No hay descripcion del curso especificada";
-            }
-            else
-            {
-                tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
-            }
+            tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
         }
     }
 }
