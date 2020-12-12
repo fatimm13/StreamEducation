@@ -12,8 +12,10 @@ namespace StreamEducation
 {
     public partial class fPerfil : Form
     {
-        public fPerfil()
+        Usuario usuario;
+        public fPerfil(ref Usuario user)
         {
+            usuario = user;
             InitializeComponent();
         }
 
@@ -31,6 +33,11 @@ namespace StreamEducation
         {
             fActualizarPerfil ventana = new fActualizarPerfil();
             ventana.ShowDialog();
+        }
+
+        private void fPerfil_Load(object sender, EventArgs e)
+        {
+            labelNombre.Text = usuario.Nombre;
         }
     }
 }

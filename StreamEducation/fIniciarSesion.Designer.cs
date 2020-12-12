@@ -41,7 +41,7 @@ namespace StreamEducation
             // 
             this.tContrasena.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tContrasena.Location = new System.Drawing.Point(190, 232);
-            this.tContrasena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tContrasena.Margin = new System.Windows.Forms.Padding(2);
             this.tContrasena.Name = "tContrasena";
             this.tContrasena.PasswordChar = '*';
             this.tContrasena.Size = new System.Drawing.Size(332, 27);
@@ -51,7 +51,7 @@ namespace StreamEducation
             // 
             this.tCorreo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tCorreo.Location = new System.Drawing.Point(190, 137);
-            this.tCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.tCorreo.Name = "tCorreo";
             this.tCorreo.Size = new System.Drawing.Size(332, 27);
             this.tCorreo.TabIndex = 13;
@@ -82,7 +82,7 @@ namespace StreamEducation
             // 
             this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.bAceptar.Location = new System.Drawing.Point(466, 334);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(56, 28);
             this.bAceptar.TabIndex = 10;
@@ -112,11 +112,12 @@ namespace StreamEducation
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "fIniciarSesion";
             this.ShowIcon = false;
             this.Text = "Iniciar Sesion";
+            this.Load += new System.EventHandler(this.fIniciarSesion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

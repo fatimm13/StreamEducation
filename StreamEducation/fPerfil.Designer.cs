@@ -236,11 +236,12 @@ namespace StreamEducation
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.bBorrarCuenta);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "fPerfil";
             this.ShowIcon = false;
             this.Text = "Perfil";
+            this.Load += new System.EventHandler(this.fPerfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picturePerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

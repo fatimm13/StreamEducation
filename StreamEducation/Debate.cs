@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StreamEducation
 {
-    class Debate
+    public class Debate
     {
         private static string CONNECTION = Properties.Settings.Default.COMPLETE;
 
@@ -30,8 +30,6 @@ namespace StreamEducation
 
                 if (rdr.Read())
                 {
-                    
-                    
                     this.id = (int)rdr[0];
                     nombre = (string)rdr[1];
                     foro = new Foro((int)rdr[2]);
@@ -71,6 +69,33 @@ namespace StreamEducation
             {
                 throw new Error("Error al cargar de BD.");
             }
+        }
+        public int Id
+        {
+            get { return id; }
+        }
+        public string Nombre
+        {
+            get { return nombre; }
+        }
+
+        public Foro Foro
+        {
+            get { return foro; }
+        }
+
+        public Usuario Creador
+        {
+            get { return creador; }
+        }
+
+        public DateTime Fecha
+        {
+            get { return fecha; }
+        }
+        public string Descripcion
+        {
+            get { return descripcion; }
         }
     }
     

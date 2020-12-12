@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StreamEducation
 {
-    class Curso
+    public class Curso
     {
         private static string CONNECTION = Properties.Settings.Default.COMPLETE;
         

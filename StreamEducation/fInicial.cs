@@ -12,14 +12,16 @@ namespace StreamEducation
 {
     public partial class fInicial : Form
     {
+        private Usuario usuario;
         public fInicial()
         {
+            usuario = null;
             InitializeComponent();
         }
 
         private void bCurso_Click(object sender, EventArgs e)
         {
-            fSeleccionCurso ventana= new fSeleccionCurso();
+            fSeleccionCurso ventana= new fSeleccionCurso(ref usuario);
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
@@ -50,7 +52,7 @@ namespace StreamEducation
 
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
-            fIniciarSesion ventana = new fIniciarSesion();
+            fIniciarSesion ventana = new fIniciarSesion(ref usuario);
             ventana.ShowDialog();
         }
 

@@ -2,7 +2,7 @@
 
 namespace StreamEducation
 {
-    class Foro
+    public class Foro
     {
         private static string CONNECTION = Properties.Settings.Default.COMPLETE;
 
@@ -23,8 +23,6 @@ namespace StreamEducation
 
                 if (rdr.Read())
                 {
-
-
                     this.id = id;
                     nombre = (string)rdr[1];
                     descripcion = (string)rdr[2];
@@ -61,6 +59,28 @@ namespace StreamEducation
                 throw new Error("Error al cargar de BD.");
             }
         }
-        public string Id { get; internal set; }
+        public int Id
+        {
+            get { return id; }
+        }
+        public string Nombre
+        {
+            get { return nombre; }
+        }
+
+        public string Descripcion
+        {
+            get { return descripcion; }
+        }
+
+        public Usuario Creador
+        {
+            get { return creador; }
+        }
+
+        public Curso Curso
+        {
+            get { return curso; }
+        }
     }
 }

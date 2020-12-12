@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StreamEducation
 {
-    class Usuario
+    public class Usuario
     {
         private static string CONNECTION = Properties.Settings.Default.COMPLETE;
 
@@ -55,8 +55,8 @@ namespace StreamEducation
         public Usuario(string c, string p)
         {
 
-            try
-            {
+            //try
+            //{
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
                 string query = "SELECT * FROM tUsuario WHERE correo = '" + c + "';";
@@ -77,15 +77,16 @@ namespace StreamEducation
                     biografia = (string)rdr[4];
                     escuela = (string)rdr[5];
                     pais = (string)rdr[6];
-                    rolProfesor = (bool)rdr[7];
-                    rolAdmin = (bool)rdr[8];
+                    rolProfesor = (int)rdr[7] == 1;
+                    rolAdmin = (int)rdr[8] == 1;
                 }
 
-            }
-            catch
+            //}
+            /*catch(Exception ex)
             {
-                throw new Error("Usuario o Contraseña Incorrecta: ");
-            }
+                fError ventana = new fError(ex.Message);
+                ventana.ShowDialog();
+            }*/
 
         }
 
