@@ -49,6 +49,7 @@ namespace StreamEducation
                     rolProfesor = (bool)rdr[7];
                     rolAdmin = (bool)rdr[7];
                 }
+
             }
             catch
             {
@@ -58,20 +59,24 @@ namespace StreamEducation
         }
         public Usuario(string n, string c, string p)
         {
-
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "INSERT INTO tUsuario (nombre,correo,contrasena) VALUES('" + n + "', '"
-                + c + "', '" + p + "');";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            nombre = n;
-            correo = c;
-
+            try 
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "INSERT INTO tUsuario (nombre,correo,contrasena) VALUES('" + n + "', '"
+                    + c + "', '" + p + "');";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                nombre = n;
+                correo = c;
+            }
+            catch
+            {
+                throw new Error("Error al crear cuenta");
+            }
+            
         }
-
-
-        /*
+        
         public int Id
         {
             get { return id; }
@@ -81,9 +86,13 @@ namespace StreamEducation
             get { return nombre; }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME,USER,PASSWORD);
-                miBD.Update("UPDATE tUsuario SET nombre = '" + value
-                        + "' WHERE id = " + id + ";");
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                
+                string query = "UPDATE tUsuario SET nombre = '" + value
+                        + "' WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
                 nombre = value;
             }
         }
@@ -92,9 +101,12 @@ namespace StreamEducation
             get { return correo; }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, USER, PASSWORD);
-                miBD.Update("UPDATE tUsuario SET correo = '" + value
-                        + "' WHERE id = " + id + ";");
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "UPDATE tUsuario SET correo = '" + value
+                        + "' WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
                 correo = value;
             }
         }
@@ -103,10 +115,13 @@ namespace StreamEducation
             get { return biografia; }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, USER, PASSWORD);
-                miBD.Update("UPDATE tUsuario SET biografia = '" + value
-                        + "' WHERE id = " + id + ";");
-                correo = value;
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "UPDATE tUsuario SET biografia = '" + value
+                        + "' WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                biografia = value;
             }
         }
         public string Escuela
@@ -114,9 +129,12 @@ namespace StreamEducation
             get { return escuela; }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, USER, PASSWORD);
-                miBD.Update("UPDATE tUsuario SET escuela = '" + value
-                        + "' WHERE id = " + id + ";");
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "UPDATE tUsuario SET escuela = '" + value
+                        + "' WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
                 escuela = value;
             }
         }
@@ -125,14 +143,15 @@ namespace StreamEducation
             get { return pais; }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME, USER, PASSWORD);
-                miBD.Update("UPDATE tUsuario SET pais = '" + value
-                        + "' WHERE id = " + id + ";");
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "UPDATE tUsuario SET pais = '" + value
+                        + "' WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
                 pais = value;
             }
         }
-
-        */
 
     }
 
