@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Collections.Generic;
+using System;
 
 namespace StreamEducation
 {
@@ -43,13 +44,12 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tForo VALUES ('" + miNombre + "'," + miDescripcion + "," + miCreador.Id + "," + miCurso.Id + ";";
+                string query = "INSERT INTO tForo (nombre, descripcion, creador, curso) VALUES ('" + miNombre + "', '" + miDescripcion + "','" + miCreador.Id + "','" + miCurso.Id + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
-                query = "SELECT max(ID) FROM tForo WHERE creador="+miCreador.Id+";";
-                cmd = new MySqlCommand(query, miBD);
-                //TODO: este int se puso a proposito?
-                id = (int)cmd.ExecuteScalar(); 
+                string query2 = "SELECT max(ID) FROM tForo WHERE creador="+miCreador.Id+";";
+                MySqlCommand cmd2 = new MySqlCommand(query2, miBD);
+                id = (int)cmd2.ExecuteScalar(); 
                 nombre = miNombre;
                 descripcion = miDescripcion;
                 creador = miCreador;

@@ -27,7 +27,6 @@ namespace StreamEducation
                 GestorGlobal.UsuarioActivo = null;
                 this.Close();
             }
-            
         }
 
         private void bVolver_Click(object sender, EventArgs e)
@@ -39,12 +38,12 @@ namespace StreamEducation
         {
             fActualizarPerfil ventana = new fActualizarPerfil();
             ventana.ShowDialog();
-            Recarga();
+            Actualiza();
         }
 
         private void fPerfil_Load(object sender, EventArgs e)
         {
-            Recarga();
+            Actualiza();
             if (GestorGlobal.UsuarioActivo.RolAdmin)
             {
                 labelRol.Text = "Administrador";
@@ -59,13 +58,12 @@ namespace StreamEducation
             }
             foreach (Curso c in GestorGlobal.UsuarioActivo.getCursos()) lCursos.Items.Add(c.Nombre);
         }
-        private void Recarga()
+        private void Actualiza()
         {
-            Usuario usuario = GestorGlobal.UsuarioActivo;
-            labelNombre.Text = usuario.Nombre;
-            labelEscuela.Text = usuario.Escuela;
-            labelPais.Text = usuario.Pais;
-            tBio.Text = usuario.Biografia;
+            labelNombre.Text = GestorGlobal.UsuarioActivo.Nombre;
+            labelEscuela.Text = GestorGlobal.UsuarioActivo.Escuela;
+            labelPais.Text = GestorGlobal.UsuarioActivo.Pais;
+            tBio.Text = GestorGlobal.UsuarioActivo.Biografia;
         }
     }
 }

@@ -55,6 +55,18 @@ namespace StreamEducation
             bRegistrarse.Visible = !usuarioIniciado;
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
+        }
+
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.UsuarioActivo = null;
+                Recarga();
+            }
         }
     }
 }

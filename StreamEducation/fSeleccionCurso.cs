@@ -28,6 +28,17 @@ namespace StreamEducation
             Recarga();
         }
 
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.UsuarioActivo = null;
+                Recarga();
+            }
+        }
+
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
             fIniciarSesion ventana = new fIniciarSesion();
@@ -46,19 +57,11 @@ namespace StreamEducation
         {
             fCrearCurso ventana = new fCrearCurso();
             ventana.ShowDialog();
-            Recarga();
-            foreach (Curso c in Curso.listaCursos())
+            Curso curso = ventana.Valor;
+            if (curso != null)
             {
-                lCursos.Items.Add(c);
-                if (c.Publico)
-                {
-                    lPublico.Items.Add("✔️");
-                }
-                else
-                {
-                    lPublico.Items.Add("❌");
-                }
-
+                lCursos.Items.Add(curso);
+                lPublico.Items.Add("✔️");
             }
         }
 
@@ -68,15 +71,8 @@ namespace StreamEducation
             foreach (Curso c in Curso.listaCursos())
             {
                 lCursos.Items.Add(c);
-                if (c.Publico)
-                {
-                    lPublico.Items.Add("✔️");
-                }
-                else
-                {
-                    lPublico.Items.Add("❌");
-                }
-                
+                if (c.Publico) { lPublico.Items.Add("✔️"); }
+                else { lPublico.Items.Add("❌"); }
             }
         }
         private void Recarga()
@@ -85,6 +81,7 @@ namespace StreamEducation
             bRegistrarse.Visible = !usuarioIniciado;
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
             bCrearCurso.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
         }
 
@@ -97,5 +94,6 @@ namespace StreamEducation
             Recarga();
             this.Visible = true;
         }
+
     }
 }

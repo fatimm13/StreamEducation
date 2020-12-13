@@ -10,23 +10,29 @@ using System.Windows.Forms;
 
 namespace StreamEducation
 {
-    public partial class fCrearForo : Form
+    public partial class fCrearMensaje : Form
     {
-        public Foro foro;
+        public Mensaje mensaje;
 
-        public Foro Valor { get { return foro; } }
+        public Mensaje Valor { get { return mensaje; } }
 
-        public fCrearForo()
+        public fCrearMensaje()
         {
             InitializeComponent();
-            foro = null;
+            mensaje = null;
+        }
+
+        private void fCrearMensaje_Load(object sender, EventArgs e)
+        {
+            labelForo.Text = GestorGlobal.ForoActivo.Nombre;
+            labelDebate.Text = GestorGlobal.DebateActivo.Nombre;
         }
 
         private void bAceptar_Click(object sender, EventArgs e)
         {
-            if (GestorGlobal.UsuarioActivo != null && tForo.Text != "")
+            if (GestorGlobal.UsuarioActivo != null && tNombre.Text != "")
             {
-                foro = new Foro(tForo.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, GestorGlobal.CursoActivo);
+                mensaje = new Mensaje(tNombre.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, GestorGlobal.DebateActivo);
                 this.Close();
             }
             else

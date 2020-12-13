@@ -28,9 +28,7 @@ namespace StreamEducation
             else
             {
                 fError ventana = new fError("Faltan parametros");
-                this.Visible = false;
                 ventana.ShowDialog();
-                this.Visible = true;
             }
             
         }

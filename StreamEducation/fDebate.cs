@@ -19,12 +19,18 @@ namespace StreamEducation
 
         private void fDebate_Load(object sender, EventArgs e)
         {
+            labelForo.Text = GestorGlobal.ForoActivo.Nombre;
+            labelDebate.Text = GestorGlobal.DebateActivo.Nombre;
+            tDescripcion.Text = GestorGlobal.DebateActivo.Descripcion;
+            labelCreador.Text = GestorGlobal.DebateActivo.Creador.Nombre;
+            labelCurso.Text = GestorGlobal.ForoActivo.Curso.Nombre;
             Recarga();
             foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
         }
 
         private void bInicio_Click(object sender, EventArgs e)
         {
+            GestorGlobal.DebateActivo = null;
             this.Close();
         }
 
@@ -42,12 +48,24 @@ namespace StreamEducation
             Recarga();
         }
 
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.UsuarioActivo = null;
+                Recarga();
+            }
+        }
+
         private void bPerfil_Click(object sender, EventArgs e)
         {
             fPerfil ventana = new fPerfil();
             ventana.ShowDialog();
             Recarga();
         }
+
         private void Recarga()
         {
             bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
@@ -55,8 +73,19 @@ namespace StreamEducation
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
             bAddMensaje.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
+            bAddMensaje.Visible = usuarioIniciado;
         }
 
-        
+        private void bAddMensaje_Click(object sender, EventArgs e)
+        {
+            fCrearMensaje ventana = new fCrearMensaje();
+            ventana.ShowDialog();
+            Mensaje mensaje = ventana.Valor;
+            if (mensaje != null)
+            {
+                lMensajes.Items.Add(mensaje);
+            }
+        }
     }
 }

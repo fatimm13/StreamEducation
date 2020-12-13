@@ -48,7 +48,7 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tDebate VALUES ('" + miNombre+ "'," + miForo.Id + "," + miCreador.Id + "," + miDescripcion + "';";
+                string query = "INSERT INTO tDebate (nombre, foro, creador, descripcion) VALUES ('" + miNombre+ "','" + miForo.Id + "','" + miCreador.Id + "','" + miDescripcion + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 query = "SELECT max(ID) FROM tDebate WHERE creador=" + miCreador.Id + ";";

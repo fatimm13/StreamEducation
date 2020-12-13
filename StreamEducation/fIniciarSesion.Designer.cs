@@ -40,30 +40,29 @@ namespace StreamEducation
             // tContrasena
             // 
             this.tContrasena.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tContrasena.Location = new System.Drawing.Point(190, 232);
-            this.tContrasena.Margin = new System.Windows.Forms.Padding(2);
+            this.tContrasena.Location = new System.Drawing.Point(253, 285);
+            this.tContrasena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tContrasena.Name = "tContrasena";
             this.tContrasena.PasswordChar = '*';
-            this.tContrasena.Size = new System.Drawing.Size(332, 27);
+            this.tContrasena.Size = new System.Drawing.Size(441, 32);
             this.tContrasena.TabIndex = 14;
             // 
             // tCorreo
             // 
             this.tCorreo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tCorreo.Location = new System.Drawing.Point(190, 137);
-            this.tCorreo.Margin = new System.Windows.Forms.Padding(2);
+            this.tCorreo.Location = new System.Drawing.Point(253, 169);
+            this.tCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tCorreo.Name = "tCorreo";
-            this.tCorreo.Size = new System.Drawing.Size(332, 27);
+            this.tCorreo.Size = new System.Drawing.Size(441, 32);
             this.tCorreo.TabIndex = 13;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 234);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(69, 288);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 18);
+            this.label3.Size = new System.Drawing.Size(136, 25);
             this.label3.TabIndex = 12;
             this.label3.Text = "Contraseña:";
             // 
@@ -71,20 +70,19 @@ namespace StreamEducation
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(52, 140);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(69, 172);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 18);
+            this.label2.Size = new System.Drawing.Size(89, 25);
             this.label2.TabIndex = 11;
             this.label2.Text = "Correo:";
             // 
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.bAceptar.Location = new System.Drawing.Point(466, 334);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.bAceptar.Location = new System.Drawing.Point(619, 411);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(56, 28);
+            this.bAceptar.Size = new System.Drawing.Size(75, 34);
             this.bAceptar.TabIndex = 10;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -94,25 +92,24 @@ namespace StreamEducation
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(37, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 26);
+            this.label1.Size = new System.Drawing.Size(458, 34);
             this.label1.TabIndex = 9;
             this.label1.Text = "Rellene los siguientes campos:";
             // 
             // fIniciarSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 410);
+            this.ClientSize = new System.Drawing.Size(804, 505);
             this.Controls.Add(this.tContrasena);
             this.Controls.Add(this.tCorreo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "fIniciarSesion";
             this.ShowIcon = false;

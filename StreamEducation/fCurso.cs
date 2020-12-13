@@ -18,6 +18,7 @@ namespace StreamEducation
         }
         private void bInicio_Click(object sender, EventArgs e)
         {
+            GestorGlobal.CursoActivo = null;
             this.Close();
         }
 
@@ -28,7 +29,16 @@ namespace StreamEducation
             Recarga();
         }
 
-
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.UsuarioActivo = null;
+                Recarga();
+            }
+        }
 
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
@@ -46,12 +56,14 @@ namespace StreamEducation
 
         private void fCurso_Load(object sender, EventArgs e)
         {
-            Curso curso = GestorGlobal.CursoActivo;
-            if (curso!=null)
+            if (GestorGlobal.CursoActivo != null)
             {
-                foreach (Recurso r in curso.getRecursos()) lRecursos.Items.Add(r);
-                foreach (Foro f in curso.getForos()) lForos.Items.Add(f);
+                foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos()) lRecursos.Items.Add(r);
+                foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
             }
+            labelProfesor.Text = GestorGlobal.CursoActivo.Profesor.Nombre;
+            labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
+            tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
             Recarga();
         }
         private void Recarga()
@@ -60,18 +72,14 @@ namespace StreamEducation
             bRegistrarse.Visible = !usuarioIniciado;
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
-            labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
-            tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
+            bCerrarSesion.Visible = usuarioIniciado;
+            bCrearForo.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
+            bCrearRecurso.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
         }
 
         private void lRecursos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(lRecursos.SelectedIndex>=0)   System.Diagnostics.Process.Start(((Recurso)lRecursos.SelectedItem).Link);
-        }
-
-        private void bCrearCurso_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void lForos_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,5 +93,22 @@ namespace StreamEducation
                 Recarga();
             }
         }
+
+        private void bCrearForo_Click(object sender, EventArgs e)
+        {
+            fCrearForo ventana = new fCrearForo();
+            ventana.ShowDialog();
+            Foro foro = ventana.Valor;
+            if (foro != null)
+            {
+                lForos.Items.Add(foro);
+            }
+        }
+
+        private void bCrearRecurso_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

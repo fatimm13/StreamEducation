@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fCrearMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCrearMensaje.Designer.cs">
+      <DependentUpon>fCrearMensaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMensaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fCrearForo.resx">
       <DependentUpon>fCrearForo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCrearMensaje.resx">
+      <DependentUpon>fCrearMensaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fCurso.resx">
       <DependentUpon>fCurso.cs</DependentUpon>

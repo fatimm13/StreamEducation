@@ -12,19 +12,27 @@ namespace StreamEducation
 {
     public partial class fCrearCurso : Form
     {
+        private Curso curso;
+
+        public Curso Valor { get { return curso; } }
         public fCrearCurso()
         {
             InitializeComponent();
+            curso = null;
         }
 
-        //TODO: Pues eso, que haga cosas
         private void bAceptar_Click(object sender, EventArgs e)
         {
             if (GestorGlobal.UsuarioActivo !=null && tNombre.Text != "")
             {
-                new Curso(GestorGlobal.UsuarioActivo,tNombre.Text,tDescripcion.Text);
+                curso = new Curso(GestorGlobal.UsuarioActivo,tNombre.Text,tDescripcion.Text);
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                fError ventana = new fError("Faltan parametros.");
+                ventana.ShowDialog();
+            }
         }
     }
 }

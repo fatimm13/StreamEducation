@@ -126,6 +126,7 @@ namespace StreamEducation
             this.Name = "fCrearDebate";
             this.ShowIcon = false;
             this.Text = "Crear Debate";
+            this.Load += new System.EventHandler(this.fCrearDebate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

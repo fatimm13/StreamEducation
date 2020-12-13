@@ -37,20 +37,19 @@ namespace StreamEducation
             // 
             this.labelError.AutoSize = true;
             this.labelError.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.Location = new System.Drawing.Point(98, 27);
-            this.labelError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelError.Location = new System.Drawing.Point(112, 33);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(210, 18);
+            this.labelError.Size = new System.Drawing.Size(262, 25);
             this.labelError.TabIndex = 4;
             this.labelError.Text = "<< Mensaje de error >>";
             // 
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.bAceptar.Location = new System.Drawing.Point(165, 71);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAceptar.Location = new System.Drawing.Point(220, 87);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(56, 28);
+            this.bAceptar.Size = new System.Drawing.Size(75, 34);
             this.bAceptar.TabIndex = 5;
             this.bAceptar.Text = "OK";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -58,12 +57,12 @@ namespace StreamEducation
             // 
             // fError
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 132);
+            this.ClientSize = new System.Drawing.Size(537, 162);
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.labelError);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "fError";
             this.ShowIcon = false;

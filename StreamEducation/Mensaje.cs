@@ -51,7 +51,7 @@ namespace StreamEducation
                 miBD.Open();
                 DateTime now = DateTime.Now;
                 string sqldate = now.ToString("yyyy-MM-dd HH:mm:ss.fff");
-                string query = "INSERT INTO tMensaje VALUES (" + miDebate.Id + "," + miCreador.Id + ", '" + miNombre + "','" + miDescripcion + "','" + sqldate + "';";
+                string query = "INSERT INTO tMensaje (debate, creador, nombre, descripcion, fecha) VALUES ('" + miDebate.Id + "','" + miCreador.Id + "', '" + miNombre + "','" + miDescripcion + "','" + sqldate + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 query = "SELECT max(ID) FROM tMensaje WHERE creador=" + miCreador.Id + ";";
@@ -97,8 +97,7 @@ namespace StreamEducation
         }
         public override string ToString()
         {
-            string s = "Mensaje de: " + creador.ToString() + "    Enviado el "+fecha+" \n Titulo:"+nombre+"\n \n Mensaje:"+descripcion;
-            return s;
+            return "Mensaje de: " + creador.ToString() + "    Enviado el "+fecha+" \n Titulo:"+nombre+"\n \n Mensaje:"+descripcion;
         }
     }
 

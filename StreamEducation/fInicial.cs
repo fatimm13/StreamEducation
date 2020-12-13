@@ -15,35 +15,22 @@ namespace StreamEducation
         public fInicial()
         {
             GestorGlobal.UsuarioActivo = null;
+            GestorGlobal.CursoActivo = null;
+            GestorGlobal.ForoActivo = null;
+            GestorGlobal.DebateActivo = null;
             InitializeComponent();
         }
 
-        private void bCurso_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            fSeleccionCurso ventana= new fSeleccionCurso();
-            this.Visible = false;
-            ventana.ShowDialog();
-            Recarga();
-            this.Visible = true;
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://drive.google.com/file/d/1WakPIcN9tgiAz7gyVG1FTTK-CngAbkLp/view?usp=sharing");
         }
 
-        //TODO: Crear el foro inicial
-        private void bForo_Click(object sender, EventArgs e)
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            fForo ventana = new fForo();
-            this.Visible = false;
-            ventana.ShowDialog();
-            Recarga();
-            this.Visible = true;
-        }
-
-        private void bActividades_Click(object sender, EventArgs e)
-        {
-            fRecurso ventana = new fRecurso();
-            this.Visible = false;
-            ventana.ShowDialog();
-            Recarga();
-            this.Visible = true;
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("http://www.uma.es");
         }
 
         private void bRegistrarse_Click(object sender, EventArgs e)
@@ -60,29 +47,42 @@ namespace StreamEducation
             Recarga();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            // Specify that the link was visited.
-            this.linkLabel1.LinkVisited = true;
-
-            // Navigate to a URL.
-            System.Diagnostics.Process.Start("https://informatica.cv.uma.es/pluginfile.php/397985/mod_resource/content/1/Informa%CC%81tica%20ApS19.pdf");
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            // Specify that the link was visited.
-            this.linkLabel1.LinkVisited = true;
-
-            // Navigate to a URL.
-            System.Diagnostics.Process.Start("http://www.uma.es");
-        }
         private void bPerfil_Click(object sender, EventArgs e)
         {
             fPerfil ventana = new fPerfil();
             ventana.ShowDialog();
             Recarga();
         }
+
+        private void bCurso_Click(object sender, EventArgs e)
+        {
+            fSeleccionCurso ventana = new fSeleccionCurso();
+            this.Visible = false;
+            ventana.ShowDialog();
+            Recarga();
+            this.Visible = true;
+        }
+
+        //TODO: Crear el foro inicial
+        private void bForo_Click(object sender, EventArgs e)
+        {
+            fForo ventana = new fForo();
+            this.Visible = false;
+            ventana.ShowDialog();
+            Recarga();
+            this.Visible = true;
+        }
+
+        //TODO: Crear actividades publicas
+        private void bActividades_Click(object sender, EventArgs e)
+        {
+            fRecurso ventana = new fRecurso();
+            this.Visible = false;
+            ventana.ShowDialog();
+            Recarga();
+            this.Visible = true;
+        }
+
         private void fInicial_Load(object sender, EventArgs e)
         {
             Recarga();
@@ -94,8 +94,18 @@ namespace StreamEducation
             bRegistrarse.Visible = !usuarioIniciado;
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
         }
 
-        
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.UsuarioActivo = null;
+                Recarga();
+            }
+        }
     }
 }

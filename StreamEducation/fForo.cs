@@ -19,6 +19,7 @@ namespace StreamEducation
 
         private void bInicio_Click(object sender, EventArgs e)
         {
+            GestorGlobal.ForoActivo = null;
             this.Close();
         }
 
@@ -29,7 +30,16 @@ namespace StreamEducation
             Recarga();
         }
 
-
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.UsuarioActivo = null;
+                Recarga();
+            }
+        }
 
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
@@ -49,11 +59,21 @@ namespace StreamEducation
         {
             fCrearDebate ventana = new fCrearDebate();
             ventana.ShowDialog();
-            Recarga();
+            Debate debate = ventana.Valor;
+            if (debate != null)
+            {
+                lForo.Items.Add(debate);
+                lCreador.Items.Add(debate.Creador);
+                lIntervenciones.Items.Add(debate.intervenciones());
+            }
         }
 
         private void fForo_Load(object sender, EventArgs e)
         {
+            labelForo.Text = GestorGlobal.ForoActivo.Nombre;
+            tDescripcion.Text = GestorGlobal.ForoActivo.Descripcion;
+            labelCreador.Text = GestorGlobal.ForoActivo.Creador.Nombre;
+            labelCurso.Text = GestorGlobal.ForoActivo.Curso.Nombre;
             Recarga();
             foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
             {
@@ -68,8 +88,8 @@ namespace StreamEducation
             bRegistrarse.Visible = !usuarioIniciado;
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
-            labelForo.Text = GestorGlobal.ForoActivo.Nombre;
-            tDescripcion.Text = GestorGlobal.ForoActivo.Descripcion;
+            bCerrarSesion.Visible = usuarioIniciado;
+            bAddDebate.Visible = usuarioIniciado;
         }
 
         private void lForo_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,8 +101,9 @@ namespace StreamEducation
                 this.Visible = false;
                 ventana.ShowDialog();
                 Recarga();
+                this.Visible = true;
             }
         }
-        
+
     }
 }
