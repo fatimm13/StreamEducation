@@ -31,7 +31,8 @@ namespace StreamEducation
                     creador = new Usuario((int)rdr[3]);
                     curso = new Curso((int) rdr[4]);
                 }
-
+                rdr.Close();
+                miBD.Close();
             }
             catch
             {
@@ -54,7 +55,7 @@ namespace StreamEducation
                 descripcion = miDescripcion;
                 creador = miCreador;
                 curso = miCurso;
-
+                miBD.Close();
             }
             catch
             {
@@ -76,6 +77,7 @@ namespace StreamEducation
                 int c = (int)rdr[0];
                 lista.Add(new Debate(c));
             }
+            rdr.Close();
             miBD.Close();
 
             return lista;

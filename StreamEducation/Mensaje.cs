@@ -37,6 +37,8 @@ namespace StreamEducation
                     descripcion = (string)rdr[4];
                     fecha = (string)rdr[5];
                 }
+                rdr.Close();
+                miBD.Close();
             }
             catch
             {
@@ -62,6 +64,8 @@ namespace StreamEducation
                 nombre = miNombre;
                 descripcion = miDescripcion;
                 fecha = sqldate;
+
+                miBD.Close();
             }
             catch
             {

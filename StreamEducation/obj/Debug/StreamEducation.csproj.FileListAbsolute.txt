@@ -216,3 +216,4 @@ C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\Stream
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMensaje.resources
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMensaje.resources
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearMensaje.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearMensaje.resources

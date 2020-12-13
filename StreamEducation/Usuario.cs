@@ -43,7 +43,7 @@ namespace StreamEducation
                     rolProfesor = (int)rdr[7] == 1;
                     rolAdmin = (int)rdr[8] == 1;
                 }
-
+                miBD.Close();
             }
             catch
             {
@@ -80,7 +80,7 @@ namespace StreamEducation
                     rolProfesor = (int)rdr[7] == 1;
                     rolAdmin = (int)rdr[8] == 1;
                 }
-
+                miBD.Close();
             }
             catch (Exception ex)
             {
@@ -104,6 +104,8 @@ namespace StreamEducation
                 id = (int)cmd2.ExecuteScalar();
                 nombre = miNombre;
                 correo = miCorreo;
+                miBD.Close();
+                
             }
             catch
             {
@@ -262,6 +264,7 @@ namespace StreamEducation
                 int c = (int)rdr[0];
                 lista.Add(new Curso(c));
             }
+            rdr.Close();
             miBD.Close();
             return lista;
         }

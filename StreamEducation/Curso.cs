@@ -36,6 +36,7 @@ namespace StreamEducation
                     descripcion = (string)rdr[3];
                     esPublico = (int)rdr[4] == 1;
                 }
+                rdr.Close();
                 miBD.Close();
 
             }
@@ -104,6 +105,7 @@ namespace StreamEducation
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 nombre = value;
+
                 miBD.Close();
             }
         }
@@ -143,6 +145,7 @@ namespace StreamEducation
                 int c = (int)rdr[0];
                 lista.Add(new Curso(c));
             }
+            rdr.Close();
             miBD.Close();
             return lista;
         }
@@ -161,6 +164,7 @@ namespace StreamEducation
                 int c = (int)rdr[0];
                 lista.Add(new Recurso(c));
             }
+            rdr.Close();
             miBD.Close();
             return lista;
         }
@@ -179,6 +183,7 @@ namespace StreamEducation
                 int c = (int)rdr[0];
                 lista.Add(new Foro(c));
             }
+            rdr.Close();
             miBD.Close();
             return lista;
         }

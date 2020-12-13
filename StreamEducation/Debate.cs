@@ -35,7 +35,8 @@ namespace StreamEducation
                     creador = new Usuario((int)rdr[3]);
                     descripcion = (string)rdr[4];
                 }
-
+                rdr.Close();
+                miBD.Close();
             }
             catch
             {
@@ -59,6 +60,7 @@ namespace StreamEducation
                 creador = miCreador;
                 descripcion = miDescripcion;
 
+                miBD.Close();
             }
             catch
             {
@@ -74,6 +76,7 @@ namespace StreamEducation
             MySqlCommand cmd = new MySqlCommand(query, miBD);
 
             object res = cmd.ExecuteScalar();
+
             miBD.Close();
 
             return res.ToString();
@@ -117,6 +120,7 @@ namespace StreamEducation
                 int c = (int)rdr[0];
                 lista.Add(new Mensaje(c));
             }
+            rdr.Close();
             miBD.Close();
 
             return lista;
