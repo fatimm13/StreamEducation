@@ -71,6 +71,12 @@
     <Compile Include="fCrearMensaje.Designer.cs">
       <DependentUpon>fCrearMensaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="fInscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fInscripcion.Designer.cs">
+      <DependentUpon>fInscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMensaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fIniciarSesion.resx">
       <DependentUpon>fIniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fInscripcion.resx">
+      <DependentUpon>fInscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMostrarMensaje.resx">
       <DependentUpon>fMostrarMensaje.cs</DependentUpon>

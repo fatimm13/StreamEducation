@@ -71,15 +71,18 @@ namespace StreamEducation
                     if (!password.Equals(miContrasena))
                     {
                         correo = password = null;
-                        throw new Error("Correo o Contraseña Incorrecta: ");
+                        id = -2;
                     }
-                    id = (int)rdr[0];
-                    nombre = (string)rdr[1];
-                    biografia = (string)rdr[4];
-                    escuela = (string)rdr[5];
-                    pais = (string)rdr[6];
-                    rolProfesor = (int)rdr[7] == 1;
-                    rolAdmin = (int)rdr[8] == 1;
+                    else
+                    {
+                        id = (int)rdr[0];
+                        nombre = (string)rdr[1];
+                        biografia = (string)rdr[4];
+                        escuela = (string)rdr[5];
+                        pais = (string)rdr[6];
+                        rolProfesor = (int)rdr[7] == 1;
+                        rolAdmin = (int)rdr[8] == 1;
+                    }
                 }
                 else
                 {

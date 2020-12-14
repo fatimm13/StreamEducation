@@ -22,15 +22,20 @@ namespace StreamEducation
             if (tCorreo.Text != "" && tContrasena.Text != "")
             {
                 Usuario usuario = new Usuario(tCorreo.Text, tContrasena.Text);
-                if (usuario.Id != -1)
+                if (usuario.Id >= 0)
                 {
                     GestorGlobal.UsuarioActivo = usuario;
                     this.Close();
                 }
-                else
+                else if (usuario.Id == -1)
                 {
                     usuario = null;
-                    fError ventana = new fError("Usuario no registrado");
+                    fError ventana = new fError("Usuario no registrado.");
+                    ventana.ShowDialog();
+                } else if (usuario.Id == -2)
+                {
+                    usuario = null;
+                    fError ventana = new fError("Contraseña errónea.");
                     ventana.ShowDialog();
                 }
             }
