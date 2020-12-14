@@ -17,13 +17,22 @@ namespace StreamEducation
             InitializeComponent();
         }
 
-        //TODO: Que haga cosas
         private void bAceptar_Click(object sender, EventArgs e)
         {
             if (tCorreo.Text != "" && tContrasena.Text != "")
             {
-                GestorGlobal.UsuarioActivo = new Usuario(tCorreo.Text, tContrasena.Text);
-                this.Close();
+                Usuario usuario = new Usuario(tCorreo.Text, tContrasena.Text);
+                if (usuario.Id != -1)
+                {
+                    GestorGlobal.UsuarioActivo = usuario;
+                    this.Close();
+                }
+                else
+                {
+                    usuario = null;
+                    fError ventana = new fError("Usuario no registrado");
+                    ventana.ShowDialog();
+                }
             }
             else
             {

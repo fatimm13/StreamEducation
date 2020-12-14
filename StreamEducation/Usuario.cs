@@ -81,11 +81,15 @@ namespace StreamEducation
                     rolProfesor = (int)rdr[7] == 1;
                     rolAdmin = (int)rdr[8] == 1;
                 }
+                else
+                {
+                    id = -1;
+                }
                 miBD.Close();
             }
-            catch (Exception ex)
+            catch
             {
-                throw new Error(ex.Message);
+                throw new Error("Error al iniciar sesion.");
             }
 
         }
