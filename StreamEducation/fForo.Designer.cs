@@ -49,11 +49,12 @@ namespace StreamEducation
             this.bInicio = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bCerrarSesion = new System.Windows.Forms.Button();
             this.bPerfil = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lCreador = new System.Windows.Forms.ListBox();
             this.lIntervenciones = new System.Windows.Forms.ListBox();
-            this.bCerrarSesion = new System.Windows.Forms.Button();
+            this.bBorrar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -152,10 +153,10 @@ namespace StreamEducation
             this.lForo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lForo.FormattingEnabled = true;
             this.lForo.ItemHeight = 20;
-            this.lForo.Location = new System.Drawing.Point(439, 230);
+            this.lForo.Location = new System.Drawing.Point(439, 250);
             this.lForo.Margin = new System.Windows.Forms.Padding(4);
             this.lForo.Name = "lForo";
-            this.lForo.Size = new System.Drawing.Size(385, 480);
+            this.lForo.Size = new System.Drawing.Size(385, 460);
             this.lForo.TabIndex = 33;
             this.lForo.SelectedIndexChanged += new System.EventHandler(this.lForo_SelectedIndexChanged);
             // 
@@ -295,6 +296,17 @@ namespace StreamEducation
             this.panel1.Size = new System.Drawing.Size(1650, 68);
             this.panel1.TabIndex = 31;
             // 
+            // bCerrarSesion
+            // 
+            this.bCerrarSesion.Location = new System.Drawing.Point(1449, 16);
+            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
+            this.bCerrarSesion.Name = "bCerrarSesion";
+            this.bCerrarSesion.Size = new System.Drawing.Size(104, 38);
+            this.bCerrarSesion.TabIndex = 6;
+            this.bCerrarSesion.Text = "Cerrar Sesion";
+            this.bCerrarSesion.UseVisualStyleBackColor = true;
+            this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
+            // 
             // bPerfil
             // 
             this.bPerfil.Location = new System.Drawing.Point(1580, 14);
@@ -324,10 +336,10 @@ namespace StreamEducation
             this.lCreador.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lCreador.FormattingEnabled = true;
             this.lCreador.ItemHeight = 20;
-            this.lCreador.Location = new System.Drawing.Point(867, 230);
+            this.lCreador.Location = new System.Drawing.Point(867, 250);
             this.lCreador.Margin = new System.Windows.Forms.Padding(4);
             this.lCreador.Name = "lCreador";
-            this.lCreador.Size = new System.Drawing.Size(310, 480);
+            this.lCreador.Size = new System.Drawing.Size(310, 460);
             this.lCreador.TabIndex = 39;
             // 
             // lIntervenciones
@@ -337,28 +349,29 @@ namespace StreamEducation
             this.lIntervenciones.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lIntervenciones.FormattingEnabled = true;
             this.lIntervenciones.ItemHeight = 20;
-            this.lIntervenciones.Location = new System.Drawing.Point(1198, 231);
+            this.lIntervenciones.Location = new System.Drawing.Point(1198, 251);
             this.lIntervenciones.Margin = new System.Windows.Forms.Padding(4);
             this.lIntervenciones.Name = "lIntervenciones";
-            this.lIntervenciones.Size = new System.Drawing.Size(157, 480);
+            this.lIntervenciones.Size = new System.Drawing.Size(157, 460);
             this.lIntervenciones.TabIndex = 40;
             // 
-            // bCerrarSesion
+            // bBorrar
             // 
-            this.bCerrarSesion.Location = new System.Drawing.Point(1449, 16);
-            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
-            this.bCerrarSesion.Name = "bCerrarSesion";
-            this.bCerrarSesion.Size = new System.Drawing.Size(104, 38);
-            this.bCerrarSesion.TabIndex = 6;
-            this.bCerrarSesion.Text = "Cerrar Sesion";
-            this.bCerrarSesion.UseVisualStyleBackColor = true;
-            this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
+            this.bBorrar.Location = new System.Drawing.Point(1100, 148);
+            this.bBorrar.Margin = new System.Windows.Forms.Padding(4);
+            this.bBorrar.Name = "bBorrar";
+            this.bBorrar.Size = new System.Drawing.Size(115, 28);
+            this.bBorrar.TabIndex = 41;
+            this.bBorrar.Text = "Borrar foro";
+            this.bBorrar.UseVisualStyleBackColor = true;
+            this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
             // fForo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.Controls.Add(this.bBorrar);
             this.Controls.Add(this.lIntervenciones);
             this.Controls.Add(this.lCreador);
             this.Controls.Add(this.bAddDebate);
@@ -414,5 +427,6 @@ namespace StreamEducation
         private System.Windows.Forms.Label labelCreador;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button bCerrarSesion;
+        private System.Windows.Forms.Button bBorrar;
     }
 }

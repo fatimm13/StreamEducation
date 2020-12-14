@@ -103,6 +103,23 @@ namespace StreamEducation
         {
             return "Mensaje de: " + creador.ToString() + "    Enviado el "+fecha+" \n Titulo:"+nombre+"\n \n Mensaje:"+descripcion;
         }
+
+        public void Borrar()
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "DELETE FROM tMensaje WHERE id = " + id + ";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            miBD.Close();
+            id = -1;
+            debate = null;
+            creador = null;
+            nombre = null;
+            descripcion = null;
+            fecha = null;
+        }
+
     }
 
 }

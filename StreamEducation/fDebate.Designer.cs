@@ -36,6 +36,12 @@ namespace StreamEducation
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelCurso = new System.Windows.Forms.Label();
+            this.labelCreador = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tDescripcion = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.bInicio = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bCerrarSesion = new System.Windows.Forms.Button();
@@ -45,12 +51,7 @@ namespace StreamEducation
             this.bIniciarSesion = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.labelDebate = new System.Windows.Forms.Label();
-            this.labelCurso = new System.Windows.Forms.Label();
-            this.labelCreador = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tDescripcion = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.bBorrar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,7 +59,7 @@ namespace StreamEducation
             // 
             // bAddMensaje
             // 
-            this.bAddMensaje.Location = new System.Drawing.Point(1256, 197);
+            this.bAddMensaje.Location = new System.Drawing.Point(1256, 225);
             this.bAddMensaje.Margin = new System.Windows.Forms.Padding(4);
             this.bAddMensaje.Name = "bAddMensaje";
             this.bAddMensaje.Size = new System.Drawing.Size(115, 28);
@@ -103,6 +104,7 @@ namespace StreamEducation
             this.lMensajes.Name = "lMensajes";
             this.lMensajes.Size = new System.Drawing.Size(932, 520);
             this.lMensajes.TabIndex = 43;
+            this.lMensajes.SelectedIndexChanged += new System.EventHandler(this.lMensajes_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -139,6 +141,76 @@ namespace StreamEducation
             this.groupBox1.Size = new System.Drawing.Size(365, 737);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
+            // 
+            // labelCurso
+            // 
+            this.labelCurso.AutoSize = true;
+            this.labelCurso.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurso.Location = new System.Drawing.Point(25, 296);
+            this.labelCurso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCurso.Name = "labelCurso";
+            this.labelCurso.Size = new System.Drawing.Size(126, 20);
+            this.labelCurso.TabIndex = 15;
+            this.labelCurso.Text = "NombreCurso";
+            // 
+            // labelCreador
+            // 
+            this.labelCreador.AutoSize = true;
+            this.labelCreador.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreador.Location = new System.Drawing.Point(25, 179);
+            this.labelCreador.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCreador.Name = "labelCreador";
+            this.labelCreador.Size = new System.Drawing.Size(144, 20);
+            this.labelCreador.TabIndex = 14;
+            this.labelCreador.Text = "NombreCreador";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(8, 260);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 25);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Curso:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 143);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Creador:";
+            // 
+            // tDescripcion
+            // 
+            this.tDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tDescripcion.Enabled = false;
+            this.tDescripcion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tDescripcion.Location = new System.Drawing.Point(12, 407);
+            this.tDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.tDescripcion.Multiline = true;
+            this.tDescripcion.Name = "tDescripcion";
+            this.tDescripcion.ReadOnly = true;
+            this.tDescripcion.Size = new System.Drawing.Size(345, 322);
+            this.tDescripcion.TabIndex = 11;
+            this.tDescripcion.Text = "No hay descripción";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 368);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 25);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Descripción:";
             // 
             // bInicio
             // 
@@ -243,81 +315,23 @@ namespace StreamEducation
             this.labelDebate.TabIndex = 50;
             this.labelDebate.Text = "NombreDebate";
             // 
-            // labelCurso
+            // bBorrar
             // 
-            this.labelCurso.AutoSize = true;
-            this.labelCurso.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurso.Location = new System.Drawing.Point(25, 296);
-            this.labelCurso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelCurso.Name = "labelCurso";
-            this.labelCurso.Size = new System.Drawing.Size(126, 20);
-            this.labelCurso.TabIndex = 15;
-            this.labelCurso.Text = "NombreCurso";
-            // 
-            // labelCreador
-            // 
-            this.labelCreador.AutoSize = true;
-            this.labelCreador.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreador.Location = new System.Drawing.Point(25, 179);
-            this.labelCreador.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelCreador.Name = "labelCreador";
-            this.labelCreador.Size = new System.Drawing.Size(144, 20);
-            this.labelCreador.TabIndex = 14;
-            this.labelCreador.Text = "NombreCreador";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 260);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 25);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Curso:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 143);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 25);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Creador:";
-            // 
-            // tDescripcion
-            // 
-            this.tDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tDescripcion.Enabled = false;
-            this.tDescripcion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tDescripcion.Location = new System.Drawing.Point(12, 407);
-            this.tDescripcion.Margin = new System.Windows.Forms.Padding(4);
-            this.tDescripcion.Multiline = true;
-            this.tDescripcion.Name = "tDescripcion";
-            this.tDescripcion.ReadOnly = true;
-            this.tDescripcion.Size = new System.Drawing.Size(345, 322);
-            this.tDescripcion.TabIndex = 11;
-            this.tDescripcion.Text = "No hay descripción";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 368);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 25);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Descripción:";
+            this.bBorrar.Location = new System.Drawing.Point(1124, 226);
+            this.bBorrar.Margin = new System.Windows.Forms.Padding(4);
+            this.bBorrar.Name = "bBorrar";
+            this.bBorrar.Size = new System.Drawing.Size(115, 28);
+            this.bBorrar.TabIndex = 51;
+            this.bBorrar.Text = "Borrar debate";
+            this.bBorrar.UseVisualStyleBackColor = true;
+            this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
             // fDebate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.Controls.Add(this.bBorrar);
             this.Controls.Add(this.labelDebate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.bAddMensaje);
@@ -367,5 +381,6 @@ namespace StreamEducation
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tDescripcion;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button bBorrar;
     }
 }

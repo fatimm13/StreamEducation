@@ -129,6 +129,23 @@ namespace StreamEducation
         {
             return nombre;
         }
+
+        public void Borrar()
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "DELETE FROM tDebate WHERE id = " + id + ";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            miBD.Close();
+            id = -1;
+            nombre = null;
+            foro = null;
+            creador = null;
+            descripcion = null;
+
+        }
+
     }
     
 }

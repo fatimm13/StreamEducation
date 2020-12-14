@@ -192,5 +192,21 @@ namespace StreamEducation
 
             return nombre;
         }
+
+        public void Borrar()
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "DELETE FROM tCurso WHERE id = " + id + ";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            miBD.Close();
+            id = -1;
+            profesor = null;
+            nombre = null;
+            descripcion = null;
+            esPublico = false;
+        }
+
     }
 }

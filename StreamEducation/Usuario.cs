@@ -43,6 +43,7 @@ namespace StreamEducation
                     rolProfesor = (int)rdr[7] == 1;
                     rolAdmin = (int)rdr[8] == 1;
                 }
+                rdr.Close();
                 miBD.Close();
             }
             catch

@@ -90,6 +90,7 @@ namespace StreamEducation
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
             bAddDebate.Visible = usuarioIniciado;
+            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
         }
 
         private void lForo_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,5 +106,16 @@ namespace StreamEducation
             }
         }
 
+        private void bBorrar_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.ForoActivo.Borrar();
+                GestorGlobal.ForoActivo = null;
+                this.Close();
+            }
+        }
     }
 }

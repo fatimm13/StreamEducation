@@ -75,6 +75,7 @@ namespace StreamEducation
             bAddMensaje.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
             bAddMensaje.Visible = usuarioIniciado;
+            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
         }
 
         private void bAddMensaje_Click(object sender, EventArgs e)
@@ -85,6 +86,27 @@ namespace StreamEducation
             if (mensaje != null)
             {
                 lMensajes.Items.Add(mensaje);
+            }
+        }
+
+        private void bBorrar_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.DebateActivo.Borrar();
+                GestorGlobal.DebateActivo = null;
+                this.Close();
+            }
+        }
+
+        private void lMensajes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lMensajes.SelectedIndex >= 0)
+            {
+                fMostrarMensaje ventana = new fMostrarMensaje((Mensaje)lMensajes.SelectedItem);
+                ventana.ShowDialog();
             }
         }
     }

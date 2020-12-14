@@ -74,7 +74,7 @@ namespace StreamEducation
         }
         public Curso Curso
         {
-            get { return Curso; }
+            get { return curso; }
         }
 
         public string Nombre
@@ -115,5 +115,20 @@ namespace StreamEducation
         {
             return nombre;
         }
+
+        public void Borrar()
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "DELETE FROM tRecurso WHERE id = " + id + ";";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            miBD.Close();
+            id = -1;
+            curso = null;
+            nombre = null;
+            link = null;
+        }
+
     }
 }
