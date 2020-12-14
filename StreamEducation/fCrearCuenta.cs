@@ -32,20 +32,24 @@ namespace StreamEducation
         {
             if (tNombre.Text!="" && tCorreo.Text != "" && tContrasena1.Text != "" && tContrasena2.Text != "")
             {
-                if (tContrasena1.Text.Equals(tContrasena2.Text) )
-                {
-                    new Usuario(tNombre.Text, tCorreo.Text, tContrasena1.Text);
-                    this.Close();
-                }
-                else if (esCorreoValido(tCorreo.Text))
+                if (!esCorreoValido(tCorreo.Text))
                 {
                     fError ventana = new fError("Formato de correo inválido.");
                     ventana.ShowDialog();
                 }
                 else
                 {
-                    fError ventana = new fError("Las contraseñas no coinciden.");
-                    ventana.ShowDialog();
+                    if (tContrasena1.Text.Equals(tContrasena2.Text))
+                    {
+
+                        new Usuario(tNombre.Text, tCorreo.Text, tContrasena1.Text);
+                        this.Close();
+                    }
+                    else
+                    {
+                        fError ventana = new fError("Las contraseñas no coinciden.");
+                        ventana.ShowDialog();
+                    }
                 }
             }
             else
