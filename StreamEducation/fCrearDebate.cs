@@ -12,21 +12,18 @@ namespace StreamEducation
 {
     public partial class fCrearDebate : Form
     {
-        public Debate debate;
-
-        public Debate Valor { get { return debate; } }
+       
 
         public fCrearDebate()
         {
             InitializeComponent();
-            debate = null;
         }
 
         private void bAceptar_Click(object sender, EventArgs e)
         {
             if (GestorGlobal.UsuarioActivo != null && tDebate.Text != "")
             {
-                debate = new Debate(tDebate.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, GestorGlobal.ForoActivo);
+                new Debate(tDebate.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, GestorGlobal.ForoActivo);
                 this.Close();
             }
             else

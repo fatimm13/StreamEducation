@@ -35,11 +35,13 @@ namespace StreamEducation
                     nombre = (string)rdr[2];
                     link = (string)rdr[3];
                 }
-
+                rdr.Close();
+                miBD.Close();
             }
             catch
             {
-                throw new Error("Recurso Incorrecto: ");
+                fError ventana = new fError("Recurso Incorrecto: ");
+                ventana.ShowDialog();
             }
 
         }
@@ -63,7 +65,8 @@ namespace StreamEducation
             }
             catch
             {
-                throw new Error("Error al crear recurso");
+                fError ventana = new fError("Error al crear recurso");
+                ventana.ShowDialog();
             }
 
         }

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -22,9 +23,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -76,12 +77,6 @@
     </Compile>
     <Compile Include="fInscripcion.Designer.cs">
       <DependentUpon>fInscripcion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fMensaje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fMensaje.Designer.cs">
-      <DependentUpon>fMensaje.cs</DependentUpon>
     </Compile>
     <Compile Include="fMostrarMensaje.cs">
       <SubType>Form</SubType>
@@ -242,9 +237,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fDebate.resx">
       <DependentUpon>fDebate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fMensaje.resx">
-      <DependentUpon>fMensaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fPerfil.resx">
       <DependentUpon>fPerfil.cs</DependentUpon>

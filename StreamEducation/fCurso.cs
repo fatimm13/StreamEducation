@@ -12,6 +12,7 @@ namespace StreamEducation
 {
     public partial class fCurso : Form
     {
+        
         public fCurso()
         {
             InitializeComponent();
@@ -75,6 +76,7 @@ namespace StreamEducation
             bCerrarSesion.Visible = usuarioIniciado;
             bCrearForo.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
             bCrearRecurso.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
+            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
         }
 
         private void lRecursos_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,7 +92,10 @@ namespace StreamEducation
                 fForo ventana = new fForo();
                 this.Visible = false;
                 ventana.ShowDialog();
+                this.Visible = true;
                 Recarga();
+                lForos.Items.Clear();
+                foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
             }
         }
 
@@ -98,11 +103,8 @@ namespace StreamEducation
         {
             fCrearForo ventana = new fCrearForo();
             ventana.ShowDialog();
-            Foro foro = ventana.Valor;
-            if (foro != null)
-            {
-                lForos.Items.Add(foro);
-            }
+            lForos.Items.Clear();
+            foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
         }
 
         private void bCrearRecurso_Click(object sender, EventArgs e)
@@ -110,5 +112,16 @@ namespace StreamEducation
 
         }
 
+        private void bBorrar_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.CursoActivo.Borrar();
+                GestorGlobal.CursoActivo = null;
+                this.Close();
+            }
+        }
     }
 }

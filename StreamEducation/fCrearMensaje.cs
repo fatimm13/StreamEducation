@@ -12,14 +12,11 @@ namespace StreamEducation
 {
     public partial class fCrearMensaje : Form
     {
-        public Mensaje mensaje;
-
-        public Mensaje Valor { get { return mensaje; } }
+       
 
         public fCrearMensaje()
         {
             InitializeComponent();
-            mensaje = null;
         }
 
         private void fCrearMensaje_Load(object sender, EventArgs e)
@@ -32,7 +29,7 @@ namespace StreamEducation
         {
             if (GestorGlobal.UsuarioActivo != null && tNombre.Text != "")
             {
-                mensaje = new Mensaje(tNombre.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, GestorGlobal.DebateActivo);
+                new Mensaje(tNombre.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, GestorGlobal.DebateActivo);
                 this.Close();
             }
             else

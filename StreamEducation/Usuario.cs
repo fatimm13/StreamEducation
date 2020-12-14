@@ -92,7 +92,8 @@ namespace StreamEducation
             }
             catch
             {
-                throw new Error("Error al iniciar sesion.");
+                fError ventana = new fError("Error iniciando sesión.");
+                ventana.ShowDialog();
             }
 
         }

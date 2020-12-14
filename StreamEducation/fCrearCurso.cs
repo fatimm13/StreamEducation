@@ -12,20 +12,18 @@ namespace StreamEducation
 {
     public partial class fCrearCurso : Form
     {
-        private Curso curso;
-
-        public Curso Valor { get { return curso; } }
+        
+        
         public fCrearCurso()
         {
             InitializeComponent();
-            curso = null;
         }
 
         private void bAceptar_Click(object sender, EventArgs e)
         {
             if (GestorGlobal.UsuarioActivo !=null && tNombre.Text != "")
             {
-                curso = new Curso(GestorGlobal.UsuarioActivo,tNombre.Text,tDescripcion.Text);
+                new Curso(GestorGlobal.UsuarioActivo,tNombre.Text,tDescripcion.Text);
                 this.Close();
             }
             else

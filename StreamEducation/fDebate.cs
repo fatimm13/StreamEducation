@@ -25,6 +25,7 @@ namespace StreamEducation
             labelCreador.Text = GestorGlobal.DebateActivo.Creador.Nombre;
             labelCurso.Text = GestorGlobal.ForoActivo.Curso.Nombre;
             Recarga();
+            lMensajes.Items.Clear();
             foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
         }
 
@@ -75,18 +76,15 @@ namespace StreamEducation
             bAddMensaje.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
             bAddMensaje.Visible = usuarioIniciado;
-            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
+            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
         }
 
         private void bAddMensaje_Click(object sender, EventArgs e)
         {
             fCrearMensaje ventana = new fCrearMensaje();
             ventana.ShowDialog();
-            Mensaje mensaje = ventana.Valor;
-            if (mensaje != null)
-            {
-                lMensajes.Items.Add(mensaje);
-            }
+            lMensajes.Items.Clear();
+            foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
         }
 
         private void bBorrar_Click(object sender, EventArgs e)
@@ -107,6 +105,8 @@ namespace StreamEducation
             {
                 fMostrarMensaje ventana = new fMostrarMensaje((Mensaje)lMensajes.SelectedItem);
                 ventana.ShowDialog();
+                lMensajes.Items.Clear();
+                foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
             }
         }
     }

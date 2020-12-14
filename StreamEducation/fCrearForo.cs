@@ -12,21 +12,18 @@ namespace StreamEducation
 {
     public partial class fCrearForo : Form
     {
-        public Foro foro;
 
-        public Foro Valor { get { return foro; } }
 
         public fCrearForo()
         {
             InitializeComponent();
-            foro = null;
         }
 
         private void bAceptar_Click(object sender, EventArgs e)
         {
             if (GestorGlobal.UsuarioActivo != null && tForo.Text != "")
             {
-                foro = new Foro(tForo.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, GestorGlobal.CursoActivo);
+                new Foro(tForo.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, GestorGlobal.CursoActivo);
                 this.Close();
             }
             else

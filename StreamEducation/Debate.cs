@@ -40,7 +40,8 @@ namespace StreamEducation
             }
             catch
             {
-                throw new Error("Error al cargar de BD.");
+                fError ventana = new fError("Error al cargar de BD.");
+                ventana.ShowDialog();
             }
         }
         public Debate(string miNombre, string miDescripcion, Usuario miCreador, Foro miForo)
@@ -64,7 +65,8 @@ namespace StreamEducation
             }
             catch
             {
-                throw new Error("Error al cargar de BD.");
+                fError ventana = new fError("Error al cargar de BD.");
+                ventana.ShowDialog();
             }
         }
 

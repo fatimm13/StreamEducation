@@ -59,12 +59,14 @@ namespace StreamEducation
         {
             fCrearDebate ventana = new fCrearDebate();
             ventana.ShowDialog();
-            Debate debate = ventana.Valor;
-            if (debate != null)
+            lForo.Items.Clear();
+            lCreador.Items.Clear();
+            lIntervenciones.Items.Clear();
+            foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
             {
-                lForo.Items.Add(debate);
-                lCreador.Items.Add(debate.Creador);
-                lIntervenciones.Items.Add(debate.intervenciones());
+                lForo.Items.Add(d);
+                lCreador.Items.Add(d.Creador);
+                lIntervenciones.Items.Add(d.intervenciones());
             }
         }
 
@@ -90,7 +92,7 @@ namespace StreamEducation
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
             bAddDebate.Visible = usuarioIniciado;
-            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
+            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.ForoActivo.Creador.Id || GestorGlobal.UsuarioActivo.RolAdmin);
         }
 
         private void lForo_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,6 +105,15 @@ namespace StreamEducation
                 ventana.ShowDialog();
                 Recarga();
                 this.Visible = true;
+                lForo.Items.Clear();
+                lCreador.Items.Clear();
+                lIntervenciones.Items.Clear();
+                foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
+                {
+                    lForo.Items.Add(d);
+                    lCreador.Items.Add(d.Creador);
+                    lIntervenciones.Items.Add(d.intervenciones());
+                }
             }
         }
 

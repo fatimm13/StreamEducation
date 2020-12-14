@@ -42,7 +42,8 @@ namespace StreamEducation
             }
             catch
             {
-                throw new Error("Error recuperando curso con su id: " +miId);
+                fError ventana = new fError("Error recuperando curso con su id: " +miId);
+                ventana.ShowDialog();
             }
 
         }
@@ -67,7 +68,8 @@ namespace StreamEducation
             }
             catch
             {
-                throw new Error("Error al crear curso");
+                fError ventana = new fError("Error al crear curso");
+                ventana.ShowDialog();
             }
 
         }

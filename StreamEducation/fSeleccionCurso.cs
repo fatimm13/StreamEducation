@@ -57,11 +57,13 @@ namespace StreamEducation
         {
             fCrearCurso ventana = new fCrearCurso();
             ventana.ShowDialog();
-            Curso curso = ventana.Valor;
-            if (curso != null)
+            lCursos.Items.Clear();
+            lPublico.Items.Clear();
+            foreach (Curso c in Curso.listaCursos())
             {
-                lCursos.Items.Add(curso);
-                lPublico.Items.Add("✔️");
+                lCursos.Items.Add(c);
+                if (c.Publico) { lPublico.Items.Add("✔️"); }
+                else { lPublico.Items.Add("❌"); }
             }
         }
 
@@ -93,6 +95,14 @@ namespace StreamEducation
             ventana.ShowDialog();
             Recarga();
             this.Visible = true;
+            lCursos.Items.Clear();
+            lPublico.Items.Clear();
+            foreach (Curso c in Curso.listaCursos())
+            {
+                lCursos.Items.Add(c);
+                if (c.Publico) { lPublico.Items.Add("✔️"); }
+                else { lPublico.Items.Add("❌"); }
+            }
         }
 
     }
