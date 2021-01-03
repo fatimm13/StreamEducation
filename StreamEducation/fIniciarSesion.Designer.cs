@@ -80,10 +80,10 @@ namespace StreamEducation
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(606, 411);
+            this.bAceptar.Location = new System.Drawing.Point(593, 411);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(88, 34);
+            this.bAceptar.Size = new System.Drawing.Size(101, 34);
             this.bAceptar.TabIndex = 10;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -102,10 +102,10 @@ namespace StreamEducation
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(339, 411);
+            this.button1.Location = new System.Drawing.Point(323, 411);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(222, 34);
+            this.button1.Size = new System.Drawing.Size(238, 34);
             this.button1.TabIndex = 15;
             this.button1.Text = "Recuperar contraseña";
             this.button1.UseVisualStyleBackColor = true;

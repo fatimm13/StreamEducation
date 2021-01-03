@@ -19,6 +19,7 @@ namespace StreamEducation
         private string pais;
 
         private bool rolProfesor;
+        private bool rolAsociacion;
         private bool rolAdmin;
 
         private int pregunta;
@@ -44,9 +45,10 @@ namespace StreamEducation
                     escuela = (string)rdr[5];
                     pais = (string)rdr[6];
                     rolProfesor = (int)rdr[7] == 1;
-                    rolAdmin = (int)rdr[8] == 1;
-                    pregunta = (int)rdr[9];
-                    respuesta = (string)rdr[10];
+                    rolAsociacion = (int)rdr[8] == 1;
+                    rolAdmin = (int)rdr[9] == 1;
+                    pregunta = (int)rdr[10];
+                    respuesta = (string)rdr[11];
                 }
                 rdr.Close();
                 miBD.Close();
@@ -86,9 +88,10 @@ namespace StreamEducation
                         escuela = (string)rdr[5];
                         pais = (string)rdr[6];
                         rolProfesor = (int)rdr[7] == 1;
-                        rolAdmin = (int)rdr[8] == 1;
-                        pregunta = (int)rdr[9];
-                        respuesta = (string)rdr[10];
+                        rolAsociacion = (int)rdr[8] == 1;
+                        rolAdmin = (int)rdr[9] == 1;
+                        pregunta = (int)rdr[10];
+                        respuesta = (string)rdr[11];
                     }
                 }
                 else
@@ -105,14 +108,14 @@ namespace StreamEducation
 
         }
 
-        public Usuario(string miNombre, string miCorreo, string miContrasena, bool esProfesor, bool esAdmin, int miPregunta, string miRespuesta)
+        public Usuario(string miNombre, string miCorreo, string miContrasena, bool esProfesor, bool esAsociacion, bool esAdmin, int miPregunta, string miRespuesta)
         {
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tUsuario (nombre,correo,contrasena, rolProfesor, rolAdmin, pregunta, respuesta) VALUES('" + miNombre + "', '"
-                    + miCorreo + "', '" + miContrasena + "', '" + (esProfesor ? 1 : 0) + "', '" + (esAdmin ? 1 : 0) + "', '" + miPregunta + "', '" + miRespuesta + "');";
+                string query = "INSERT INTO tUsuario (nombre,correo,contrasena, rolProfesor, rolAsociacion, rolAdmin, pregunta, respuesta) VALUES('" + miNombre + "', '"
+                    + miCorreo + "', '" + miContrasena + "', '" + (esProfesor ? 1 : 0) + "', '" + (esAsociacion? 1 : 0) + "', '" + (esAdmin ? 1 : 0) + "', '" + miPregunta + "', '" + miRespuesta + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 string query2 = "SELECT MAX(id) FROM tUsuario WHERE correo = '" + miCorreo + "';";
@@ -121,6 +124,7 @@ namespace StreamEducation
                 nombre = miNombre;
                 correo = miCorreo;
                 rolProfesor = esProfesor;
+                rolAsociacion = esAsociacion;
                 rolAdmin = esAdmin;
                 pregunta = miPregunta;
                 respuesta = miRespuesta;

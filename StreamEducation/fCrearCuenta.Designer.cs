@@ -59,10 +59,10 @@ namespace StreamEducation
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(602, 493);
+            this.bAceptar.Location = new System.Drawing.Point(590, 493);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(88, 34);
+            this.bAceptar.Size = new System.Drawing.Size(100, 34);
             this.bAceptar.TabIndex = 2;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@ namespace StreamEducation
             this.tRespuesta.Location = new System.Drawing.Point(77, 495);
             this.tRespuesta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tRespuesta.Name = "tRespuesta";
-            this.tRespuesta.Size = new System.Drawing.Size(502, 32);
+            this.tRespuesta.Size = new System.Drawing.Size(477, 32);
             this.tRespuesta.TabIndex = 27;
             // 
             // fCrearCuenta
