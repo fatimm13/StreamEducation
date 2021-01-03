@@ -29,11 +29,6 @@ namespace StreamEducation
             }
         }
 
-        private void bVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void bActualizar_Click(object sender, EventArgs e)
         {
             fActualizarPerfil ventana = new fActualizarPerfil();
@@ -64,6 +59,13 @@ namespace StreamEducation
             labelEscuela.Text = GestorGlobal.UsuarioActivo.Escuela;
             labelPais.Text = GestorGlobal.UsuarioActivo.Pais;
             tBio.Text = GestorGlobal.UsuarioActivo.Biografia;
+        }
+
+        private void bMensajeria_Click(object sender, EventArgs e)
+        {
+            fMensajeria ventana = new fMensajeria();
+            ventana.ShowDialog();
+            Actualiza();
         }
     }
 }

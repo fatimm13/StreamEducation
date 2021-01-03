@@ -231,3 +231,8 @@ D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducati
 D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarMensaje.resources
 D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMensajeria.resources
 D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fTodosUsuarios.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarMensajePrivado.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fNoticias.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearMensajePrivado.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarContrasena.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fRecuperarContrasena.resources

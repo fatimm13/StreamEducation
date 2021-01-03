@@ -173,7 +173,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fMostrarMensajePrivado";
             this.ShowIcon = false;
-            this.Text = "fMostrarMensajePrivado";
+            this.Text = "Mensaje Privado";
             this.ResumeLayout(false);
             this.PerformLayout();
 

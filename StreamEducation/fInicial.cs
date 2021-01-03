@@ -67,7 +67,7 @@ namespace StreamEducation
         private void bForo_Click(object sender, EventArgs e)
         {
             GestorGlobal.ForoActivo = new Foro(0);
-            fForo ventana = new fForo();
+            fNoticias ventana = new fNoticias();
             this.Visible = false;
             ventana.ShowDialog();
             Recarga();
