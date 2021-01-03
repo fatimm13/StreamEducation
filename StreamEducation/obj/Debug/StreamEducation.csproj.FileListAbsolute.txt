@@ -220,3 +220,8 @@ C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fInscripcion.resources
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarMensaje.resources
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearRecurso.resources
+C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearMensaje.resources
+C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearRecurso.resources
+C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fInscripcion.resources
+C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarMensaje.resources
+C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fDebate.resources
