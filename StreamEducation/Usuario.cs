@@ -98,14 +98,14 @@ namespace StreamEducation
 
         }
 
-        public Usuario(string miNombre, string miCorreo, string miContrasena)
+        public Usuario(string miNombre, string miCorreo, string miContrasena, bool esProfesor, bool esAdmin)
         {
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tUsuario (nombre,correo,contrasena) VALUES('" + miNombre + "', '"
-                    + miCorreo + "', '" + miContrasena + "');";
+                string query = "INSERT INTO tUsuario (nombre,correo,contrasena, rolProfesor, rolAdmin) VALUES('" + miNombre + "', '"
+                    + miCorreo + "', '" + miContrasena + "', '" + (esProfesor ? 1 : 0) + "', '" + (esAdmin ? 1 : 0) + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 string query2 = "SELECT MAX(id) FROM tUsuario WHERE correo = '" + miCorreo + "';";
@@ -113,6 +113,8 @@ namespace StreamEducation
                 id = (int)cmd2.ExecuteScalar();
                 nombre = miNombre;
                 correo = miCorreo;
+                rolProfesor = esProfesor;
+                rolAdmin = esAdmin;
                 miBD.Close();
                 
             }

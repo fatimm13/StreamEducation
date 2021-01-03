@@ -30,7 +30,7 @@ namespace StreamEducation
         }
         private void bAceptar_Click(object sender, EventArgs e)
         {
-            if (tNombre.Text!="" && tCorreo.Text != "" && tContrasena1.Text != "" && tContrasena2.Text != "")
+            if (tNombre.Text!="" && tCorreo.Text != "" && tContrasena1.Text != "" && tContrasena2.Text != "" && comboRol.SelectedIndex >= 0)
             {
                 if (!esCorreoValido(tCorreo.Text))
                 {
@@ -41,8 +41,15 @@ namespace StreamEducation
                 {
                     if (tContrasena1.Text.Equals(tContrasena2.Text))
                     {
-
-                        new Usuario(tNombre.Text, tCorreo.Text, tContrasena1.Text);
+                        bool profesor = false;
+                        bool admin = false;
+                        if (comboRol.SelectedIndex == 1) {
+                            profesor = true;
+                        } else if (comboRol.SelectedIndex == 2)
+                        {
+                            admin = true;
+                        }
+                        new Usuario(tNombre.Text, tCorreo.Text, tContrasena1.Text, profesor, admin);
                         this.Close();
                     }
                     else
@@ -57,6 +64,11 @@ namespace StreamEducation
                 fError ventana = new fError("Faltan parametros.");
                 ventana.ShowDialog();
             }
+        }
+
+        private void fCrearCuenta_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

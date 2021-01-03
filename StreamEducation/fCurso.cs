@@ -74,14 +74,31 @@ namespace StreamEducation
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
-            bCrearForo.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
-            bCrearRecurso.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
-            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
+            bool usuarioPoder = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
+            bCrearForo.Visible = usuarioPoder;
+            bCrearRecurso.Visible = usuarioPoder;
+            bBorrar.Visible = usuarioPoder;
+            lBorrar.Visible = usuarioPoder;
+            lBorrar.Items.Clear();
+            if (usuarioPoder) {
+                foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos()) lBorrar.Items.Add("🗑️ Borrar");
+            }
         }
 
         private void lRecursos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lRecursos.SelectedIndex>=0)   System.Diagnostics.Process.Start(((Recurso)lRecursos.SelectedItem).Link);
+            if (lRecursos.SelectedIndex >= 0)
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(((Recurso)lRecursos.SelectedItem).Link);
+                }
+                catch
+                {
+                    fError ventana = new fError("Recurso no disponible.");
+                    ventana.ShowDialog();
+                }
+            }
         }
 
         private void lForos_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,7 +126,15 @@ namespace StreamEducation
 
         private void bCrearRecurso_Click(object sender, EventArgs e)
         {
-
+            fCrearRecurso ventana = new fCrearRecurso();
+            ventana.ShowDialog();
+            lRecursos.Items.Clear();
+            lBorrar.Items.Clear();
+            foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos())
+            {
+                lRecursos.Items.Add(r);
+                lBorrar.Items.Add("🗑️ Borrar");
+            }
         }
 
         private void bBorrar_Click(object sender, EventArgs e)
@@ -121,6 +146,28 @@ namespace StreamEducation
                 GestorGlobal.CursoActivo.Borrar();
                 GestorGlobal.CursoActivo = null;
                 this.Close();
+            }
+        }
+
+        private void lBorrar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = lBorrar.SelectedIndex;
+            if (index >= 0)
+            {
+                fConfirmacion ventana = new fConfirmacion();
+                ventana.ShowDialog();
+                if (ventana.Valor)
+                {
+                    Recurso recurso = (Recurso)lRecursos.Items[index];
+                    recurso.Borrar();
+                    lRecursos.Items.Clear();
+                    lBorrar.Items.Clear();
+                    foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos())
+                    {
+                        lRecursos.Items.Add(r);
+                        lBorrar.Items.Add("🗑️ Borrar");
+                    }
+                }
             }
         }
     }

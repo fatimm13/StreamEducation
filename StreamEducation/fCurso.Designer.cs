@@ -56,6 +56,7 @@ namespace StreamEducation
             this.bCrearForo = new System.Windows.Forms.Button();
             this.bCrearRecurso = new System.Windows.Forms.Button();
             this.bBorrar = new System.Windows.Forms.Button();
+            this.lBorrar = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -131,7 +132,7 @@ namespace StreamEducation
             this.lRecursos.Location = new System.Drawing.Point(439, 352);
             this.lRecursos.Margin = new System.Windows.Forms.Padding(4);
             this.lRecursos.Name = "lRecursos";
-            this.lRecursos.Size = new System.Drawing.Size(932, 240);
+            this.lRecursos.Size = new System.Drawing.Size(780, 240);
             this.lRecursos.TabIndex = 31;
             this.lRecursos.SelectedIndexChanged += new System.EventHandler(this.lRecursos_SelectedIndexChanged);
             // 
@@ -352,7 +353,7 @@ namespace StreamEducation
             // 
             // bCrearRecurso
             // 
-            this.bCrearRecurso.Location = new System.Drawing.Point(1254, 323);
+            this.bCrearRecurso.Location = new System.Drawing.Point(1252, 316);
             this.bCrearRecurso.Margin = new System.Windows.Forms.Padding(4);
             this.bCrearRecurso.Name = "bCrearRecurso";
             this.bCrearRecurso.Size = new System.Drawing.Size(117, 28);
@@ -372,11 +373,26 @@ namespace StreamEducation
             this.bBorrar.UseVisualStyleBackColor = true;
             this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
+            // lBorrar
+            // 
+            this.lBorrar.BackColor = System.Drawing.SystemColors.Control;
+            this.lBorrar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lBorrar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBorrar.FormattingEnabled = true;
+            this.lBorrar.ItemHeight = 20;
+            this.lBorrar.Location = new System.Drawing.Point(1254, 352);
+            this.lBorrar.Margin = new System.Windows.Forms.Padding(4);
+            this.lBorrar.Name = "lBorrar";
+            this.lBorrar.Size = new System.Drawing.Size(115, 240);
+            this.lBorrar.TabIndex = 43;
+            this.lBorrar.SelectedIndexChanged += new System.EventHandler(this.lBorrar_SelectedIndexChanged);
+            // 
             // fCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.Controls.Add(this.lBorrar);
             this.Controls.Add(this.bBorrar);
             this.Controls.Add(this.bCrearRecurso);
             this.Controls.Add(this.bCrearForo);
@@ -437,5 +453,6 @@ namespace StreamEducation
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button bCerrarSesion;
         private System.Windows.Forms.Button bBorrar;
+        private System.Windows.Forms.ListBox lBorrar;
     }
 }
