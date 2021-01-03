@@ -84,11 +84,29 @@
     <Compile Include="fInscripcion.Designer.cs">
       <DependentUpon>fInscripcion.cs</DependentUpon>
     </Compile>
+    <Compile Include="fMensajeria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMensajeria.Designer.cs">
+      <DependentUpon>fMensajeria.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMostrarMensaje.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fMostrarMensaje.Designer.cs">
       <DependentUpon>fMostrarMensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMostrarMensajePrivado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMostrarMensajePrivado.Designer.cs">
+      <DependentUpon>fMostrarMensajePrivado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTodosUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTodosUsuarios.Designer.cs">
+      <DependentUpon>fTodosUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="GestorGlobal.cs" />
     <Compile Include="Curso.cs" />
@@ -238,8 +256,14 @@
     <EmbeddedResource Include="fInscripcion.resx">
       <DependentUpon>fInscripcion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fMensajeria.resx">
+      <DependentUpon>fMensajeria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fMostrarMensaje.resx">
       <DependentUpon>fMostrarMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMostrarMensajePrivado.resx">
+      <DependentUpon>fMostrarMensajePrivado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fOpcionesAdmin.resx">
       <DependentUpon>fOpcionesAdmin.cs</DependentUpon>
@@ -255,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fSeleccionCurso.resx">
       <DependentUpon>fSeleccionCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTodosUsuarios.resx">
+      <DependentUpon>fTodosUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -299,6 +326,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\forosImagen.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noticiasImagen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

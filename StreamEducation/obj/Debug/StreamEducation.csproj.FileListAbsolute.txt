@@ -225,3 +225,9 @@ C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\Ingenieria
 C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fInscripcion.resources
 C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarMensaje.resources
 C:\Users\alvar\OneDrive\Documentos\UNIVERSIDAD\Tercero1ºQuatrimestre\IngenieriaDeRequisitos\proyecto\workspace-StreamEducation\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fDebate.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearMensaje.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearRecurso.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fInscripcion.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarMensaje.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMensajeria.resources
+D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fTodosUsuarios.resources

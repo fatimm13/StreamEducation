@@ -38,19 +38,20 @@ namespace StreamEducation
             // 
             this.labelError.AutoSize = true;
             this.labelError.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.Location = new System.Drawing.Point(167, 36);
+            this.labelError.Location = new System.Drawing.Point(105, 26);
+            this.labelError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(213, 25);
+            this.labelError.Size = new System.Drawing.Size(170, 18);
             this.labelError.TabIndex = 5;
             this.labelError.Text = "Confirme su acción:";
             // 
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(129, 83);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bAceptar.Location = new System.Drawing.Point(82, 67);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(125, 43);
+            this.bAceptar.Size = new System.Drawing.Size(105, 35);
             this.bAceptar.TabIndex = 6;
             this.bAceptar.Text = "Aceptar ✔️";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -59,10 +60,10 @@ namespace StreamEducation
             // bRechazar
             // 
             this.bRechazar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRechazar.Location = new System.Drawing.Point(304, 83);
-            this.bRechazar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bRechazar.Location = new System.Drawing.Point(212, 67);
+            this.bRechazar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bRechazar.Name = "bRechazar";
-            this.bRechazar.Size = new System.Drawing.Size(125, 43);
+            this.bRechazar.Size = new System.Drawing.Size(104, 35);
             this.bRechazar.TabIndex = 7;
             this.bRechazar.Text = "Rechazar ❌";
             this.bRechazar.UseVisualStyleBackColor = true;
@@ -70,13 +71,13 @@ namespace StreamEducation
             // 
             // fConfirmacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 162);
+            this.ClientSize = new System.Drawing.Size(401, 132);
             this.Controls.Add(this.bRechazar);
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.labelError);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "fConfirmacion";
             this.ShowIcon = false;
