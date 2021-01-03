@@ -21,6 +21,9 @@ namespace StreamEducation
         private bool rolProfesor;
         private bool rolAdmin;
 
+        private int pregunta;
+        private string respuesta;
+
         public Usuario(int miId)
         {
 
@@ -42,6 +45,8 @@ namespace StreamEducation
                     pais = (string)rdr[6];
                     rolProfesor = (int)rdr[7] == 1;
                     rolAdmin = (int)rdr[8] == 1;
+                    pregunta = (int)rdr[9];
+                    respuesta = (string)rdr[10];
                 }
                 rdr.Close();
                 miBD.Close();
@@ -82,6 +87,8 @@ namespace StreamEducation
                         pais = (string)rdr[6];
                         rolProfesor = (int)rdr[7] == 1;
                         rolAdmin = (int)rdr[8] == 1;
+                        pregunta = (int)rdr[9];
+                        respuesta = (string)rdr[10];
                     }
                 }
                 else
@@ -98,14 +105,14 @@ namespace StreamEducation
 
         }
 
-        public Usuario(string miNombre, string miCorreo, string miContrasena, bool esProfesor, bool esAdmin)
+        public Usuario(string miNombre, string miCorreo, string miContrasena, bool esProfesor, bool esAdmin, int miPregunta, string miRespuesta)
         {
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tUsuario (nombre,correo,contrasena, rolProfesor, rolAdmin) VALUES('" + miNombre + "', '"
-                    + miCorreo + "', '" + miContrasena + "', '" + (esProfesor ? 1 : 0) + "', '" + (esAdmin ? 1 : 0) + "');";
+                string query = "INSERT INTO tUsuario (nombre,correo,contrasena, rolProfesor, rolAdmin, pregunta, respuesta) VALUES('" + miNombre + "', '"
+                    + miCorreo + "', '" + miContrasena + "', '" + (esProfesor ? 1 : 0) + "', '" + (esAdmin ? 1 : 0) + "', '" + miPregunta + "', '" + miRespuesta + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 string query2 = "SELECT MAX(id) FROM tUsuario WHERE correo = '" + miCorreo + "';";
@@ -115,8 +122,9 @@ namespace StreamEducation
                 correo = miCorreo;
                 rolProfesor = esProfesor;
                 rolAdmin = esAdmin;
+                pregunta = miPregunta;
+                respuesta = miRespuesta;
                 miBD.Close();
-                
             }
             catch
             {

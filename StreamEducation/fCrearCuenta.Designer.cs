@@ -41,6 +41,9 @@ namespace StreamEducation
             this.tContrasena2 = new System.Windows.Forms.TextBox();
             this.comboRol = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboPregunta = new System.Windows.Forms.ComboBox();
+            this.tRespuesta = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,11 +58,11 @@ namespace StreamEducation
             // 
             // bAceptar
             // 
-            this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.bAceptar.Location = new System.Drawing.Point(615, 433);
+            this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAceptar.Location = new System.Drawing.Point(602, 493);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(75, 34);
+            this.bAceptar.Size = new System.Drawing.Size(88, 34);
             this.bAceptar.TabIndex = 2;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -79,7 +82,7 @@ namespace StreamEducation
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 170);
+            this.label3.Location = new System.Drawing.Point(72, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 25);
             this.label3.TabIndex = 4;
@@ -89,7 +92,7 @@ namespace StreamEducation
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(72, 231);
+            this.label4.Location = new System.Drawing.Point(72, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 25);
             this.label4.TabIndex = 5;
@@ -99,7 +102,7 @@ namespace StreamEducation
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(72, 300);
+            this.label5.Location = new System.Drawing.Point(72, 269);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(212, 25);
             this.label5.TabIndex = 6;
@@ -117,7 +120,7 @@ namespace StreamEducation
             // tContrasena1
             // 
             this.tContrasena1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tContrasena1.Location = new System.Drawing.Point(343, 228);
+            this.tContrasena1.Location = new System.Drawing.Point(343, 209);
             this.tContrasena1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tContrasena1.Name = "tContrasena1";
             this.tContrasena1.PasswordChar = '*';
@@ -127,7 +130,7 @@ namespace StreamEducation
             // tCorreo
             // 
             this.tCorreo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tCorreo.Location = new System.Drawing.Point(343, 167);
+            this.tCorreo.Location = new System.Drawing.Point(343, 157);
             this.tCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tCorreo.Name = "tCorreo";
             this.tCorreo.Size = new System.Drawing.Size(347, 32);
@@ -136,7 +139,7 @@ namespace StreamEducation
             // tContrasena2
             // 
             this.tContrasena2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tContrasena2.Location = new System.Drawing.Point(343, 297);
+            this.tContrasena2.Location = new System.Drawing.Point(343, 266);
             this.tContrasena2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tContrasena2.Name = "tContrasena2";
             this.tContrasena2.PasswordChar = '*';
@@ -153,7 +156,7 @@ namespace StreamEducation
             "Profesor",
             "Administrador",
             "Asociacion Externa"});
-            this.comboRol.Location = new System.Drawing.Point(343, 371);
+            this.comboRol.Location = new System.Drawing.Point(343, 323);
             this.comboRol.Name = "comboRol";
             this.comboRol.Size = new System.Drawing.Size(347, 33);
             this.comboRol.TabIndex = 22;
@@ -162,17 +165,54 @@ namespace StreamEducation
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(72, 374);
+            this.label6.Location = new System.Drawing.Point(72, 326);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 25);
             this.label6.TabIndex = 23;
             this.label6.Text = "Rol usuario:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(39, 390);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(594, 34);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Pregunta y Respuesta de seguridad:";
+            // 
+            // comboPregunta
+            // 
+            this.comboPregunta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPregunta.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboPregunta.FormattingEnabled = true;
+            this.comboPregunta.Items.AddRange(new object[] {
+            "¿Cual es el nombre de tu primera mascota?",
+            "¿Cual es el nombre de tu primer profesor?",
+            "¿Cuál es tu color favorito?",
+            "¿Cuál es tu canción favorita?"});
+            this.comboPregunta.Location = new System.Drawing.Point(77, 443);
+            this.comboPregunta.Name = "comboPregunta";
+            this.comboPregunta.Size = new System.Drawing.Size(613, 33);
+            this.comboPregunta.TabIndex = 24;
+            // 
+            // tRespuesta
+            // 
+            this.tRespuesta.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tRespuesta.Location = new System.Drawing.Point(77, 495);
+            this.tRespuesta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tRespuesta.Name = "tRespuesta";
+            this.tRespuesta.Size = new System.Drawing.Size(502, 32);
+            this.tRespuesta.TabIndex = 27;
+            // 
             // fCrearCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 503);
+            this.ClientSize = new System.Drawing.Size(803, 582);
+            this.Controls.Add(this.tRespuesta);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.comboPregunta);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboRol);
             this.Controls.Add(this.tContrasena2);
@@ -211,6 +251,9 @@ namespace StreamEducation
         private System.Windows.Forms.TextBox tContrasena2;
         private System.Windows.Forms.ComboBox comboRol;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboPregunta;
+        private System.Windows.Forms.TextBox tRespuesta;
     }
 }
 

@@ -35,13 +35,13 @@ namespace StreamEducation
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bCerrarSesion = new System.Windows.Forms.Button();
             this.bPerfil = new System.Windows.Forms.Button();
             this.bIniciarSesion = new System.Windows.Forms.Button();
             this.bRegistrarse = new System.Windows.Forms.Button();
             this.bForo = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
             this.bCurso = new System.Windows.Forms.Button();
-            this.bCerrarSesion = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,11 +117,23 @@ namespace StreamEducation
             this.panel1.Size = new System.Drawing.Size(398, 201);
             this.panel1.TabIndex = 12;
             // 
+            // bCerrarSesion
+            // 
+            this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCerrarSesion.Location = new System.Drawing.Point(46, 114);
+            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
+            this.bCerrarSesion.Name = "bCerrarSesion";
+            this.bCerrarSesion.Size = new System.Drawing.Size(296, 60);
+            this.bCerrarSesion.TabIndex = 24;
+            this.bCerrarSesion.Text = "Cerrar Sesión";
+            this.bCerrarSesion.UseVisualStyleBackColor = true;
+            this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
+            // 
             // bPerfil
             // 
-            this.bPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPerfil.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPerfil.Location = new System.Drawing.Point(46, 22);
-            this.bPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.bPerfil.Name = "bPerfil";
             this.bPerfil.Size = new System.Drawing.Size(296, 60);
             this.bPerfil.TabIndex = 23;
@@ -131,7 +143,7 @@ namespace StreamEducation
             // 
             // bIniciarSesion
             // 
-            this.bIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bIniciarSesion.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bIniciarSesion.Location = new System.Drawing.Point(21, 114);
             this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bIniciarSesion.Name = "bIniciarSesion";
@@ -143,7 +155,7 @@ namespace StreamEducation
             // 
             // bRegistrarse
             // 
-            this.bRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bRegistrarse.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRegistrarse.Location = new System.Drawing.Point(21, 22);
             this.bRegistrarse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bRegistrarse.Name = "bRegistrarse";
@@ -160,7 +172,7 @@ namespace StreamEducation
             this.bForo.BackgroundImage = global::StreamEducation.Properties.Resources.forosImagen;
             this.bForo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bForo.Location = new System.Drawing.Point(668, 457);
-            this.bForo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bForo.Margin = new System.Windows.Forms.Padding(4);
             this.bForo.MaximumSize = new System.Drawing.Size(377, 357);
             this.bForo.MinimumSize = new System.Drawing.Size(377, 357);
             this.bForo.Name = "bForo";
@@ -175,7 +187,7 @@ namespace StreamEducation
             this.bActividades.BackgroundImage = global::StreamEducation.Properties.Resources.actividadesImagen;
             this.bActividades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bActividades.Location = new System.Drawing.Point(1167, 457);
-            this.bActividades.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bActividades.Margin = new System.Windows.Forms.Padding(4);
             this.bActividades.MaximumSize = new System.Drawing.Size(377, 357);
             this.bActividades.MinimumSize = new System.Drawing.Size(377, 357);
             this.bActividades.Name = "bActividades";
@@ -189,7 +201,7 @@ namespace StreamEducation
             this.bCurso.BackgroundImage = global::StreamEducation.Properties.Resources.cursosImagen1;
             this.bCurso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bCurso.Location = new System.Drawing.Point(168, 457);
-            this.bCurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCurso.Margin = new System.Windows.Forms.Padding(4);
             this.bCurso.MaximumSize = new System.Drawing.Size(377, 357);
             this.bCurso.MinimumSize = new System.Drawing.Size(377, 357);
             this.bCurso.Name = "bCurso";
@@ -197,18 +209,6 @@ namespace StreamEducation
             this.bCurso.TabIndex = 20;
             this.bCurso.UseVisualStyleBackColor = true;
             this.bCurso.Click += new System.EventHandler(this.bCurso_Click);
-            // 
-            // bCerrarSesion
-            // 
-            this.bCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCerrarSesion.Location = new System.Drawing.Point(46, 114);
-            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
-            this.bCerrarSesion.Name = "bCerrarSesion";
-            this.bCerrarSesion.Size = new System.Drawing.Size(296, 60);
-            this.bCerrarSesion.TabIndex = 24;
-            this.bCerrarSesion.Text = "Cerrar Sesión";
-            this.bCerrarSesion.UseVisualStyleBackColor = true;
-            this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
             // 
             // fInicial
             // 

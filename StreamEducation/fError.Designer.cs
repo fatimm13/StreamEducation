@@ -38,7 +38,7 @@ namespace StreamEducation
             // 
             this.labelError.AutoSize = true;
             this.labelError.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.Location = new System.Drawing.Point(74, 67);
+            this.labelError.Location = new System.Drawing.Point(74, 72);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(221, 20);
             this.labelError.TabIndex = 4;
@@ -46,7 +46,7 @@ namespace StreamEducation
             // 
             // bAceptar
             // 
-            this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAceptar.Location = new System.Drawing.Point(220, 107);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
@@ -59,10 +59,10 @@ namespace StreamEducation
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 23);
+            this.label1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(166, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 25);
+            this.label1.Size = new System.Drawing.Size(169, 34);
             this.label1.TabIndex = 6;
             this.label1.Text = "❌ ERROR";
             // 

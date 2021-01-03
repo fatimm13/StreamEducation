@@ -30,7 +30,7 @@ namespace StreamEducation
         }
         private void bAceptar_Click(object sender, EventArgs e)
         {
-            if (tNombre.Text!="" && tCorreo.Text != "" && tContrasena1.Text != "" && tContrasena2.Text != "" && comboRol.SelectedIndex >= 0)
+            if (tNombre.Text!="" && tCorreo.Text != "" && tContrasena1.Text != "" && tContrasena2.Text != "" && comboRol.SelectedIndex >= 0 && comboPregunta.SelectedIndex >= 0 && tRespuesta.Text != "")
             {
                 if (!esCorreoValido(tCorreo.Text))
                 {
@@ -49,7 +49,7 @@ namespace StreamEducation
                         {
                             admin = true;
                         }
-                        new Usuario(tNombre.Text, tCorreo.Text, tContrasena1.Text, profesor, admin);
+                        new Usuario(tNombre.Text, tCorreo.Text, tContrasena1.Text, profesor, admin, comboPregunta.SelectedIndex, tRespuesta.Text);
                         this.Close();
                     }
                     else
