@@ -63,6 +63,7 @@ namespace StreamEducation
                 foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
             }
             labelProfesor.Text = GestorGlobal.CursoActivo.Profesor.Nombre;
+            labelFecha.Text = GestorGlobal.CursoActivo.Fecha;
             labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
             tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
             Recarga();
@@ -169,6 +170,12 @@ namespace StreamEducation
                     }
                 }
             }
+        }
+
+        private void bValorar_Click(object sender, EventArgs e)
+        {
+            fValoracion ventana = new fValoracion();
+            ventana.ShowDialog();
         }
     }
 }

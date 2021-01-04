@@ -16,5 +16,10 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+
+        private void fSeleccionActividades_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

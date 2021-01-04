@@ -79,7 +79,7 @@ namespace StreamEducation
             // 
             this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 1);
             this.monthCalendar1.Location = new System.Drawing.Point(743, 122);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(6);
             this.monthCalendar1.MaximumSize = new System.Drawing.Size(376, 164);
             this.monthCalendar1.MinimumSize = new System.Drawing.Size(376, 164);
             this.monthCalendar1.Name = "monthCalendar1";
@@ -101,7 +101,7 @@ namespace StreamEducation
             this.panel2.BackColor = System.Drawing.SystemColors.Desktop;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Location = new System.Drawing.Point(22, 76);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1184, 8);
             this.panel2.TabIndex = 11;
@@ -115,14 +115,14 @@ namespace StreamEducation
             this.panel1.Controls.Add(this.bIniciarSesion);
             this.panel1.Controls.Add(this.bRegistrarse);
             this.panel1.Location = new System.Drawing.Point(126, 122);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(299, 164);
             this.panel1.TabIndex = 12;
             // 
             // bCerrarSesion
             // 
-            this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCerrarSesion.Location = new System.Drawing.Point(34, 93);
             this.bCerrarSesion.Name = "bCerrarSesion";
             this.bCerrarSesion.Size = new System.Drawing.Size(222, 49);
@@ -133,7 +133,7 @@ namespace StreamEducation
             // 
             // bPerfil
             // 
-            this.bPerfil.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPerfil.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPerfil.Location = new System.Drawing.Point(34, 18);
             this.bPerfil.Name = "bPerfil";
             this.bPerfil.Size = new System.Drawing.Size(222, 49);
@@ -144,11 +144,11 @@ namespace StreamEducation
             // 
             // bIniciarSesion
             // 
-            this.bIniciarSesion.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bIniciarSesion.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bIniciarSesion.Location = new System.Drawing.Point(16, 93);
-            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.bIniciarSesion.Name = "bIniciarSesion";
-            this.bIniciarSesion.Size = new System.Drawing.Size(260, 46);
+            this.bIniciarSesion.Size = new System.Drawing.Size(260, 49);
             this.bIniciarSesion.TabIndex = 7;
             this.bIniciarSesion.Text = "Iniciar Sesión";
             this.bIniciarSesion.UseVisualStyleBackColor = true;
@@ -156,9 +156,9 @@ namespace StreamEducation
             // 
             // bRegistrarse
             // 
-            this.bRegistrarse.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bRegistrarse.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRegistrarse.Location = new System.Drawing.Point(16, 18);
-            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(2);
             this.bRegistrarse.Name = "bRegistrarse";
             this.bRegistrarse.Size = new System.Drawing.Size(260, 49);
             this.bRegistrarse.TabIndex = 6;
@@ -222,7 +222,7 @@ namespace StreamEducation
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "fInicial";
             this.ShowIcon = false;

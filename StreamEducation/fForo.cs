@@ -59,12 +59,12 @@ namespace StreamEducation
         {
             fCrearDebate ventana = new fCrearDebate();
             ventana.ShowDialog();
-            lForo.Items.Clear();
+            lDebate.Items.Clear();
             lCreador.Items.Clear();
             lIntervenciones.Items.Clear();
             foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
             {
-                lForo.Items.Add(d);
+                lDebate.Items.Add(d);
                 lCreador.Items.Add(d.Creador);
                 lIntervenciones.Items.Add(d.intervenciones());
             }
@@ -79,7 +79,7 @@ namespace StreamEducation
             Recarga();
             foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
             {
-                lForo.Items.Add(d);
+                lDebate.Items.Add(d);
                 lCreador.Items.Add(d.Creador);
                 lIntervenciones.Items.Add(d.intervenciones());
             }
@@ -97,20 +97,20 @@ namespace StreamEducation
 
         private void lForo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lForo.SelectedIndex >= 0)
+            if (lDebate.SelectedIndex >= 0)
             {
-                GestorGlobal.DebateActivo = (Debate) lForo.SelectedItem;
+                GestorGlobal.DebateActivo = (Debate) lDebate.SelectedItem;
                 fDebate ventana = new fDebate();
                 this.Visible = false;
                 ventana.ShowDialog();
                 Recarga();
                 this.Visible = true;
-                lForo.Items.Clear();
+                lDebate.Items.Clear();
                 lCreador.Items.Clear();
                 lIntervenciones.Items.Clear();
                 foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
                 {
-                    lForo.Items.Add(d);
+                    lDebate.Items.Add(d);
                     lCreador.Items.Add(d.Creador);
                     lIntervenciones.Items.Add(d.intervenciones());
                 }

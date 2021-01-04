@@ -39,18 +39,11 @@ namespace StreamEducation
         private void fPerfil_Load(object sender, EventArgs e)
         {
             Actualiza();
-            if (GestorGlobal.UsuarioActivo.RolAdmin)
-            {
-                labelRol.Text = "Administrador";
-            }
-            else if (GestorGlobal.UsuarioActivo.RolProfesor)
-            {
-                labelRol.Text = "Profesor";
-            }
-            else
-            {
-                labelRol.Text = "Estudiante";
-            }
+            bOpciones.Visible = GestorGlobal.UsuarioActivo.RolAdmin;
+            if (GestorGlobal.UsuarioActivo.RolAdmin) { labelRol.Text = "Administrador"; }
+            else if (GestorGlobal.UsuarioActivo.RolProfesor) { labelRol.Text = "Profesor"; }
+            else if (GestorGlobal.UsuarioActivo.RolAsociacion) { labelRol.Text = "Asociacion"; }
+            else { labelRol.Text = "Estudiante"; }
             foreach (Curso c in GestorGlobal.UsuarioActivo.getCursos()) lCursos.Items.Add(c.Nombre);
         }
         private void Actualiza()
@@ -65,7 +58,11 @@ namespace StreamEducation
         {
             fMensajeria ventana = new fMensajeria();
             ventana.ShowDialog();
-            Actualiza();
+        }
+
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

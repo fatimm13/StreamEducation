@@ -16,5 +16,16 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+
+        private void bAceptar_Click(object sender, EventArgs e)
+        {
+            DateTime fecha = dateTimePicker.Value;
+            string sqldate = fecha.ToString("yyyy-MM-dd");
+        }
+
+        private void fCrearActividad_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

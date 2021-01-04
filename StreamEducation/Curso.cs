@@ -16,6 +16,7 @@ namespace StreamEducation
         private string nombre;
         private string descripcion;
         private bool esPublico;
+        private string fecha;
 
         public Curso(int miId)
         {
@@ -35,6 +36,7 @@ namespace StreamEducation
                     nombre = (string)rdr[2];
                     descripcion = (string)rdr[3];
                     esPublico = (int)rdr[4] == 1;
+                    fecha = (string)rdr[5];
                 }
                 rdr.Close();
                 miBD.Close();
@@ -47,14 +49,14 @@ namespace StreamEducation
             }
 
         }
-        public Curso( Usuario miProfesor, string miNombre, string miDescripcion)
+        public Curso( Usuario miProfesor, string miNombre, string miDescripcion, bool publico, string miFecha)
         {
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tCurso (profesor,nombre,descripcion) VALUES(" + miProfesor.Id + ", '"
-                    + miNombre + "', '" + miDescripcion + "');";
+                string query = "INSERT INTO tCurso (profesor, nombre, descripcion, publico, fecha) VALUES("
+                    + miProfesor.Id + ", '" + miNombre + "', '" + miDescripcion + "', '" + (publico ? 1 : 0) + "', '" + miFecha + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
 
@@ -64,6 +66,8 @@ namespace StreamEducation
                 profesor = miProfesor;
                 nombre = miNombre;
                 descripcion = miDescripcion;
+                esPublico = publico;
+                fecha = miFecha;
                 miBD.Close();
             }
             catch
@@ -132,6 +136,11 @@ namespace StreamEducation
             get { return esPublico; }
         }
 
+        public string Fecha
+        {
+            get { return fecha; }
+        }
+
         public static List<Curso> listaCursos()
         {
             List<Curso> lista = new List<Curso>();
@@ -191,7 +200,6 @@ namespace StreamEducation
         }
         public override string ToString()
         {
-
             return nombre;
         }
 
@@ -208,6 +216,7 @@ namespace StreamEducation
             nombre = null;
             descripcion = null;
             esPublico = false;
+            fecha = null;
         }
 
     }

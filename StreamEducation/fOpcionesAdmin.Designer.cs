@@ -39,8 +39,9 @@ namespace StreamEducation
             this.bAceptar = new System.Windows.Forms.Button();
             this.tBiografia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboRol = new System.Windows.Forms.ComboBox();
             this.bEliminar = new System.Windows.Forms.Button();
+            this.comboRol = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tEscuela
@@ -49,7 +50,7 @@ namespace StreamEducation
             this.tEscuela.Location = new System.Drawing.Point(146, 115);
             this.tEscuela.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tEscuela.Name = "tEscuela";
-            this.tEscuela.Size = new System.Drawing.Size(348, 27);
+            this.tEscuela.Size = new System.Drawing.Size(394, 27);
             this.tEscuela.TabIndex = 31;
             // 
             // tPais
@@ -58,7 +59,7 @@ namespace StreamEducation
             this.tPais.Location = new System.Drawing.Point(146, 153);
             this.tPais.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tPais.Name = "tPais";
-            this.tPais.Size = new System.Drawing.Size(348, 27);
+            this.tPais.Size = new System.Drawing.Size(394, 27);
             this.tPais.TabIndex = 30;
             // 
             // tNombre
@@ -67,7 +68,7 @@ namespace StreamEducation
             this.tNombre.Location = new System.Drawing.Point(146, 77);
             this.tNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(348, 27);
+            this.tNombre.Size = new System.Drawing.Size(394, 27);
             this.tNombre.TabIndex = 29;
             // 
             // label4
@@ -106,21 +107,21 @@ namespace StreamEducation
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(25, 31);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 26);
+            this.label1.Size = new System.Drawing.Size(227, 26);
             this.label1.TabIndex = 25;
             this.label1.Text = "Datos personales";
             // 
             // bAceptar
             // 
-            this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.bAceptar.Location = new System.Drawing.Point(522, 353);
+            this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAceptar.Location = new System.Drawing.Point(381, 403);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(56, 28);
+            this.bAceptar.Size = new System.Drawing.Size(160, 34);
             this.bAceptar.TabIndex = 24;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -133,49 +134,67 @@ namespace StreamEducation
             this.tBiografia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tBiografia.Multiline = true;
             this.tBiografia.Name = "tBiografia";
-            this.tBiografia.Size = new System.Drawing.Size(452, 97);
+            this.tBiografia.Size = new System.Drawing.Size(498, 97);
             this.tBiografia.TabIndex = 23;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(39, 202);
+            this.label5.Location = new System.Drawing.Point(39, 193);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 18);
             this.label5.TabIndex = 22;
             this.label5.Text = "Biografía:";
             // 
-            // comboRol
-            // 
-            this.comboRol.FormattingEnabled = true;
-            this.comboRol.Location = new System.Drawing.Point(53, 358);
-            this.comboRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboRol.Name = "comboRol";
-            this.comboRol.Size = new System.Drawing.Size(92, 21);
-            this.comboRol.TabIndex = 32;
-            this.comboRol.Text = "Rol";
-            // 
             // bEliminar
             // 
-            this.bEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.bEliminar.Location = new System.Drawing.Point(383, 353);
+            this.bEliminar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEliminar.Location = new System.Drawing.Point(195, 403);
             this.bEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bEliminar.Name = "bEliminar";
-            this.bEliminar.Size = new System.Drawing.Size(110, 28);
+            this.bEliminar.Size = new System.Drawing.Size(160, 34);
             this.bEliminar.TabIndex = 33;
             this.bEliminar.Text = "Eliminar Usuario";
             this.bEliminar.UseVisualStyleBackColor = true;
             this.bEliminar.Click += new System.EventHandler(this.bEliminar_Click);
             // 
+            // comboRol
+            // 
+            this.comboRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboRol.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboRol.FormattingEnabled = true;
+            this.comboRol.Items.AddRange(new object[] {
+            "Estudiante",
+            "Profesor",
+            "Administrador",
+            "Asociacion Externa"});
+            this.comboRol.Location = new System.Drawing.Point(146, 346);
+            this.comboRol.Margin = new System.Windows.Forms.Padding(2);
+            this.comboRol.Name = "comboRol";
+            this.comboRol.Size = new System.Drawing.Size(394, 26);
+            this.comboRol.TabIndex = 34;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(39, 349);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 18);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Rol:";
+            // 
             // fOpcionesAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(603, 412);
-            this.Controls.Add(this.bEliminar);
+            this.ClientSize = new System.Drawing.Size(603, 471);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboRol);
+            this.Controls.Add(this.bEliminar);
             this.Controls.Add(this.tEscuela);
             this.Controls.Add(this.tPais);
             this.Controls.Add(this.tNombre);
@@ -208,7 +227,8 @@ namespace StreamEducation
         private System.Windows.Forms.Button bAceptar;
         private System.Windows.Forms.TextBox tBiografia;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboRol;
         private System.Windows.Forms.Button bEliminar;
+        private System.Windows.Forms.ComboBox comboRol;
+        private System.Windows.Forms.Label label6;
     }
 }

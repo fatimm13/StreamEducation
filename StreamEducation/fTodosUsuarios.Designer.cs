@@ -31,49 +31,51 @@ namespace StreamEducation
         {
             this.lUsuarios = new System.Windows.Forms.ListBox();
             this.bBuscar = new System.Windows.Forms.Button();
-            this.tForo = new System.Windows.Forms.TextBox();
+            this.tUsuario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lUsuarios
             // 
             this.lUsuarios.BackColor = System.Drawing.SystemColors.Control;
             this.lUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lUsuarios.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lUsuarios.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUsuarios.FormattingEnabled = true;
-            this.lUsuarios.ItemHeight = 17;
-            this.lUsuarios.Location = new System.Drawing.Point(12, 75);
+            this.lUsuarios.ItemHeight = 25;
+            this.lUsuarios.Location = new System.Drawing.Point(16, 92);
+            this.lUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lUsuarios.Name = "lUsuarios";
-            this.lUsuarios.Size = new System.Drawing.Size(719, 340);
+            this.lUsuarios.Size = new System.Drawing.Size(959, 400);
             this.lUsuarios.TabIndex = 45;
             // 
             // bBuscar
             // 
             this.bBuscar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBuscar.Location = new System.Drawing.Point(661, 27);
-            this.bBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.bBuscar.Location = new System.Drawing.Point(881, 33);
+            this.bBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bBuscar.Name = "bBuscar";
-            this.bBuscar.Size = new System.Drawing.Size(70, 28);
+            this.bBuscar.Size = new System.Drawing.Size(93, 34);
             this.bBuscar.TabIndex = 47;
             this.bBuscar.Text = "Buscar";
             this.bBuscar.UseVisualStyleBackColor = true;
             // 
-            // tForo
+            // tUsuario
             // 
-            this.tForo.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tForo.Location = new System.Drawing.Point(12, 27);
-            this.tForo.Margin = new System.Windows.Forms.Padding(2);
-            this.tForo.Name = "tForo";
-            this.tForo.Size = new System.Drawing.Size(630, 27);
-            this.tForo.TabIndex = 46;
+            this.tUsuario.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tUsuario.Location = new System.Drawing.Point(16, 33);
+            this.tUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tUsuario.Name = "tUsuario";
+            this.tUsuario.Size = new System.Drawing.Size(839, 32);
+            this.tUsuario.TabIndex = 46;
             // 
             // fTodosUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 453);
+            this.ClientSize = new System.Drawing.Size(1020, 558);
             this.Controls.Add(this.bBuscar);
-            this.Controls.Add(this.tForo);
+            this.Controls.Add(this.tUsuario);
             this.Controls.Add(this.lUsuarios);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "fTodosUsuarios";
             this.ShowIcon = false;
@@ -86,6 +88,6 @@ namespace StreamEducation
         #endregion
         private System.Windows.Forms.ListBox lUsuarios;
         private System.Windows.Forms.Button bBuscar;
-        private System.Windows.Forms.TextBox tForo;
+        private System.Windows.Forms.TextBox tUsuario;
     }
 }

@@ -45,21 +45,19 @@ namespace StreamEducation
             // 
             this.labelCreador.AutoSize = true;
             this.labelCreador.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreador.Location = new System.Drawing.Point(117, 60);
-            this.labelCreador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCreador.Location = new System.Drawing.Point(174, 101);
             this.labelCreador.Name = "labelCreador";
-            this.labelCreador.Size = new System.Drawing.Size(118, 18);
+            this.labelCreador.Size = new System.Drawing.Size(155, 25);
             this.labelCreador.TabIndex = 54;
             this.labelCreador.Text = "___________";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 60);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(64, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 18);
+            this.label7.Size = new System.Drawing.Size(83, 25);
             this.label7.TabIndex = 53;
             this.label7.Text = "Autor:";
             // 
@@ -67,31 +65,29 @@ namespace StreamEducation
             // 
             this.labelFecha.AutoSize = true;
             this.labelFecha.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFecha.Location = new System.Drawing.Point(374, 96);
-            this.labelFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFecha.Location = new System.Drawing.Point(517, 154);
             this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(118, 18);
+            this.labelFecha.Size = new System.Drawing.Size(155, 25);
             this.labelFecha.TabIndex = 52;
             this.labelFecha.Text = "___________";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(308, 96);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(426, 154);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 18);
+            this.label6.Size = new System.Drawing.Size(85, 25);
             this.label6.TabIndex = 51;
             this.label6.Text = "Fecha:";
             // 
             // bBorrar
             // 
-            this.bBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.bBorrar.Location = new System.Drawing.Point(448, 354);
-            this.bBorrar.Margin = new System.Windows.Forms.Padding(2);
+            this.bBorrar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBorrar.Location = new System.Drawing.Point(456, 432);
+            this.bBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(49, 28);
+            this.bBorrar.Size = new System.Drawing.Size(126, 38);
             this.bBorrar.TabIndex = 50;
             this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
@@ -99,11 +95,10 @@ namespace StreamEducation
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(117, 24);
-            this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNombre.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.Location = new System.Drawing.Point(174, 49);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(118, 18);
+            this.labelNombre.Size = new System.Drawing.Size(178, 29);
             this.labelNombre.TabIndex = 49;
             this.labelNombre.Text = "___________";
             // 
@@ -112,34 +107,34 @@ namespace StreamEducation
             this.tMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tMensaje.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tMensaje.Enabled = false;
-            this.tMensaje.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tMensaje.Location = new System.Drawing.Point(36, 129);
+            this.tMensaje.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tMensaje.Location = new System.Drawing.Point(84, 193);
+            this.tMensaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tMensaje.Multiline = true;
             this.tMensaje.Name = "tMensaje";
             this.tMensaje.ReadOnly = true;
             this.tMensaje.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.tMensaje.Size = new System.Drawing.Size(536, 202);
+            this.tMensaje.Size = new System.Drawing.Size(668, 208);
             this.tMensaje.TabIndex = 48;
             this.tMensaje.Text = "Insertar mensaje";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 24);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 18);
+            this.label3.Size = new System.Drawing.Size(117, 29);
             this.label3.TabIndex = 47;
             this.label3.Text = "Asunto:";
             // 
             // bAceptar
             // 
-            this.bAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.bAceptar.Location = new System.Drawing.Point(516, 354);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bAceptar.Location = new System.Drawing.Point(626, 432);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(56, 28);
+            this.bAceptar.Size = new System.Drawing.Size(126, 38);
             this.bAceptar.TabIndex = 45;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -147,19 +142,18 @@ namespace StreamEducation
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 96);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(64, 154);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 18);
+            this.label4.Size = new System.Drawing.Size(112, 25);
             this.label4.TabIndex = 44;
             this.label4.Text = "Mensaje:";
             // 
             // fMostrarMensajePrivado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 410);
+            this.ClientSize = new System.Drawing.Size(807, 505);
             this.Controls.Add(this.labelCreador);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelFecha);
@@ -170,6 +164,7 @@ namespace StreamEducation
             this.Controls.Add(this.label3);
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.label4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "fMostrarMensajePrivado";
             this.ShowIcon = false;

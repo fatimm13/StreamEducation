@@ -54,36 +54,36 @@ namespace StreamEducation
             this.tDebate.Location = new System.Drawing.Point(171, 150);
             this.tDebate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDebate.Name = "tDebate";
-            this.tDebate.Size = new System.Drawing.Size(487, 32);
+            this.tDebate.Size = new System.Drawing.Size(474, 32);
             this.tDebate.TabIndex = 12;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(52, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 25);
+            this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 11;
             this.label2.Text = "Debate:";
             // 
             // labelForo
             // 
             this.labelForo.AutoSize = true;
-            this.labelForo.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelForo.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelForo.Location = new System.Drawing.Point(165, 52);
             this.labelForo.Name = "labelForo";
-            this.labelForo.Size = new System.Drawing.Size(235, 34);
+            this.labelForo.Size = new System.Drawing.Size(213, 34);
             this.labelForo.TabIndex = 13;
             this.labelForo.Text = "___________";
             // 
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(686, 412);
+            this.bAceptar.Location = new System.Drawing.Point(668, 408);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(86, 34);
+            this.bAceptar.Size = new System.Drawing.Size(108, 40);
             this.bAceptar.TabIndex = 16;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -96,16 +96,16 @@ namespace StreamEducation
             this.tDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
-            this.tDescripcion.Size = new System.Drawing.Size(601, 183);
+            this.tDescripcion.Size = new System.Drawing.Size(588, 183);
             this.tDescripcion.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(52, 225);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 25);
+            this.label3.Size = new System.Drawing.Size(152, 25);
             this.label3.TabIndex = 14;
             this.label3.Text = "Descripción:";
             // 

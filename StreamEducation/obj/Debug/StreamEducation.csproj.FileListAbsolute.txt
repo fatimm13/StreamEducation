@@ -236,3 +236,16 @@ D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducati
 D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearMensajePrivado.resources
 D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarContrasena.resources
 D:\Daniel\Estudios\Universidad\Requisitos\Trabajo2\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fRecuperarContrasena.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fActividad.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearActividad.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fSeleccionActividades.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearMensajePrivado.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fInscripcionesPendientes.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMensajeria.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarContrasena.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarMensajePrivado.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fNoticias.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fRecuperarContrasena.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fTodosUsuarios.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fUsuariosInscritos.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fValoracion.resources

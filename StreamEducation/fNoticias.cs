@@ -60,26 +60,13 @@ namespace StreamEducation
             fCrearDebate ventana = new fCrearDebate();
             ventana.ShowDialog();
             lNoticias.Items.Clear();
-            lCreador.Items.Clear();
-            lComentarios.Items.Clear();
-            foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
-            {
-                lNoticias.Items.Add(d);
-                lCreador.Items.Add(d.Creador);
-                lComentarios.Items.Add(d.intervenciones());
-            }
+            foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
         }
 
         private void fNoticias_Load(object sender, EventArgs e)
         {
-            tDescripcion.Text = GestorGlobal.ForoActivo.Descripcion;
             Recarga();
-            foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
-            {
-                lNoticias.Items.Add(d);
-                lCreador.Items.Add(d.Creador);
-                lComentarios.Items.Add(d.intervenciones());
-            }
+            foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
         }
         private void Recarga()
         {
@@ -88,7 +75,7 @@ namespace StreamEducation
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
-            bAddDebate.Visible = usuarioIniciado;
+            bAddNoticia.Visible = usuarioIniciado;
         }
 
         private void lForo_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,14 +89,7 @@ namespace StreamEducation
                 Recarga();
                 this.Visible = true;
                 lNoticias.Items.Clear();
-                lCreador.Items.Clear();
-                lComentarios.Items.Clear();
-                foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
-                {
-                    lNoticias.Items.Add(d);
-                    lCreador.Items.Add(d.Creador);
-                    lComentarios.Items.Add(d.intervenciones());
-                }
+                foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
             }
         }
     }

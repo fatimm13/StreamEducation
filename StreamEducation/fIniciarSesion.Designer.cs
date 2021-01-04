@@ -35,7 +35,7 @@ namespace StreamEducation
             this.label2 = new System.Windows.Forms.Label();
             this.bAceptar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bRecuperar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tContrasena
@@ -80,10 +80,10 @@ namespace StreamEducation
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(593, 411);
+            this.bAceptar.Location = new System.Drawing.Point(559, 408);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(101, 34);
+            this.bAceptar.Size = new System.Drawing.Size(135, 37);
             this.bAceptar.TabIndex = 10;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -99,23 +99,23 @@ namespace StreamEducation
             this.label1.TabIndex = 9;
             this.label1.Text = "Rellene los siguientes campos:";
             // 
-            // button1
+            // bRecuperar
             // 
-            this.button1.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(323, 411);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 34);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Recuperar contraseña";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bRecuperar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bRecuperar.Location = new System.Drawing.Point(253, 408);
+            this.bRecuperar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bRecuperar.Name = "bRecuperar";
+            this.bRecuperar.Size = new System.Drawing.Size(260, 37);
+            this.bRecuperar.TabIndex = 15;
+            this.bRecuperar.Text = "Recuperar contraseña";
+            this.bRecuperar.UseVisualStyleBackColor = true;
             // 
             // fIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 505);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bRecuperar);
             this.Controls.Add(this.tContrasena);
             this.Controls.Add(this.tCorreo);
             this.Controls.Add(this.label3);
@@ -141,6 +141,6 @@ namespace StreamEducation
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bAceptar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bRecuperar;
     }
 }

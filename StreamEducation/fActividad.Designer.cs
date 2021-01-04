@@ -35,6 +35,9 @@ namespace StreamEducation
             this.lRecursos = new System.Windows.Forms.ListBox();
             this.labelActividad = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bValorar = new System.Windows.Forms.Button();
+            this.labelOrganizador = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bInicio = new System.Windows.Forms.Button();
@@ -48,8 +51,8 @@ namespace StreamEducation
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label3 = new System.Windows.Forms.Label();
-            this.labelOrganizador = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelFecha = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,28 +62,30 @@ namespace StreamEducation
             // 
             this.lBorrar.BackColor = System.Drawing.SystemColors.Control;
             this.lBorrar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lBorrar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBorrar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lBorrar.FormattingEnabled = true;
-            this.lBorrar.ItemHeight = 17;
-            this.lBorrar.Location = new System.Drawing.Point(942, 198);
+            this.lBorrar.ItemHeight = 18;
+            this.lBorrar.Location = new System.Drawing.Point(877, 256);
             this.lBorrar.Name = "lBorrar";
-            this.lBorrar.Size = new System.Drawing.Size(86, 391);
+            this.lBorrar.Size = new System.Drawing.Size(126, 396);
             this.lBorrar.TabIndex = 60;
             // 
             // bBorrar
             // 
-            this.bBorrar.Location = new System.Drawing.Point(925, 98);
+            this.bBorrar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBorrar.Location = new System.Drawing.Point(859, 116);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(101, 23);
+            this.bBorrar.Size = new System.Drawing.Size(157, 30);
             this.bBorrar.TabIndex = 59;
-            this.bBorrar.Text = "Borrar actividad";
+            this.bBorrar.Text = "Borrar Actividad";
             this.bBorrar.UseVisualStyleBackColor = true;
             // 
             // bCrearRecurso
             // 
-            this.bCrearRecurso.Location = new System.Drawing.Point(925, 156);
+            this.bCrearRecurso.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCrearRecurso.Location = new System.Drawing.Point(859, 212);
             this.bCrearRecurso.Name = "bCrearRecurso";
-            this.bCrearRecurso.Size = new System.Drawing.Size(101, 23);
+            this.bCrearRecurso.Size = new System.Drawing.Size(157, 30);
             this.bCrearRecurso.TabIndex = 58;
             this.bCrearRecurso.Text = "Crear Recurso";
             this.bCrearRecurso.UseVisualStyleBackColor = true;
@@ -89,12 +94,12 @@ namespace StreamEducation
             // 
             this.lRecursos.BackColor = System.Drawing.SystemColors.Control;
             this.lRecursos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lRecursos.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRecursos.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lRecursos.FormattingEnabled = true;
-            this.lRecursos.ItemHeight = 17;
-            this.lRecursos.Location = new System.Drawing.Point(329, 198);
+            this.lRecursos.ItemHeight = 18;
+            this.lRecursos.Location = new System.Drawing.Point(327, 256);
             this.lRecursos.Name = "lRecursos";
-            this.lRecursos.Size = new System.Drawing.Size(585, 391);
+            this.lRecursos.Size = new System.Drawing.Size(510, 396);
             this.lRecursos.TabIndex = 51;
             // 
             // labelActividad
@@ -102,7 +107,7 @@ namespace StreamEducation
             this.labelActividad.AutoSize = true;
             this.labelActividad.BackColor = System.Drawing.SystemColors.Control;
             this.labelActividad.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActividad.Location = new System.Drawing.Point(479, 94);
+            this.labelActividad.Location = new System.Drawing.Point(497, 110);
             this.labelActividad.Name = "labelActividad";
             this.labelActividad.Size = new System.Drawing.Size(245, 32);
             this.labelActividad.TabIndex = 56;
@@ -110,6 +115,9 @@ namespace StreamEducation
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labelFecha);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.bValorar);
             this.groupBox1.Controls.Add(this.labelOrganizador);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.tDescripcion);
@@ -121,33 +129,63 @@ namespace StreamEducation
             this.groupBox1.TabIndex = 44;
             this.groupBox1.TabStop = false;
             // 
+            // bValorar
+            // 
+            this.bValorar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bValorar.Location = new System.Drawing.Point(10, 142);
+            this.bValorar.Name = "bValorar";
+            this.bValorar.Size = new System.Drawing.Size(242, 30);
+            this.bValorar.TabIndex = 60;
+            this.bValorar.Text = "⭐ Valorar Actividad";
+            this.bValorar.UseVisualStyleBackColor = true;
+            // 
+            // labelOrganizador
+            // 
+            this.labelOrganizador.AutoSize = true;
+            this.labelOrganizador.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOrganizador.Location = new System.Drawing.Point(18, 245);
+            this.labelOrganizador.Name = "labelOrganizador";
+            this.labelOrganizador.Size = new System.Drawing.Size(177, 18);
+            this.labelOrganizador.TabIndex = 7;
+            this.labelOrganizador.Text = "NombreOrganizacion";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(9, 208);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(149, 23);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Organizador:";
+            // 
             // tDescripcion
             // 
             this.tDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tDescripcion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tDescripcion.Location = new System.Drawing.Point(9, 239);
+            this.tDescripcion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tDescripcion.Location = new System.Drawing.Point(9, 411);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.ReadOnly = true;
-            this.tDescripcion.Size = new System.Drawing.Size(259, 350);
+            this.tDescripcion.Size = new System.Drawing.Size(259, 182);
             this.tDescripcion.TabIndex = 5;
             this.tDescripcion.Text = "InsertarDescripcion";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 207);
+            this.label1.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 373);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 18);
+            this.label1.Size = new System.Drawing.Size(143, 23);
             this.label1.TabIndex = 4;
             this.label1.Text = "Descripción:";
             // 
             // bInicio
             // 
             this.bInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bInicio.Location = new System.Drawing.Point(52, 28);
+            this.bInicio.Location = new System.Drawing.Point(64, 46);
             this.bInicio.Name = "bInicio";
             this.bInicio.Size = new System.Drawing.Size(143, 56);
             this.bInicio.TabIndex = 0;
@@ -158,10 +196,10 @@ namespace StreamEducation
             // 
             this.labelRecurso.AutoSize = true;
             this.labelRecurso.BackColor = System.Drawing.SystemColors.Control;
-            this.labelRecurso.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRecurso.Location = new System.Drawing.Point(323, 94);
+            this.labelRecurso.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecurso.Location = new System.Drawing.Point(306, 110);
             this.labelRecurso.Name = "labelRecurso";
-            this.labelRecurso.Size = new System.Drawing.Size(150, 32);
+            this.labelRecurso.Size = new System.Drawing.Size(167, 32);
             this.labelRecurso.TabIndex = 47;
             this.labelRecurso.Text = "Actividad:";
             // 
@@ -180,18 +218,20 @@ namespace StreamEducation
             // 
             // bCerrarSesion
             // 
-            this.bCerrarSesion.Location = new System.Drawing.Point(1093, 11);
+            this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCerrarSesion.Location = new System.Drawing.Point(968, 9);
             this.bCerrarSesion.Name = "bCerrarSesion";
-            this.bCerrarSesion.Size = new System.Drawing.Size(78, 31);
+            this.bCerrarSesion.Size = new System.Drawing.Size(136, 38);
             this.bCerrarSesion.TabIndex = 38;
             this.bCerrarSesion.Text = "Cerrar Sesion";
             this.bCerrarSesion.UseVisualStyleBackColor = true;
             // 
             // bPerfil
             // 
-            this.bPerfil.Location = new System.Drawing.Point(1185, 10);
+            this.bPerfil.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPerfil.Location = new System.Drawing.Point(1124, 10);
             this.bPerfil.Name = "bPerfil";
-            this.bPerfil.Size = new System.Drawing.Size(39, 34);
+            this.bPerfil.Size = new System.Drawing.Size(94, 37);
             this.bPerfil.TabIndex = 37;
             this.bPerfil.Text = "Perfil";
             this.bPerfil.UseVisualStyleBackColor = true;
@@ -208,18 +248,20 @@ namespace StreamEducation
             // 
             // bRegistrarse
             // 
-            this.bRegistrarse.Location = new System.Drawing.Point(1149, 11);
+            this.bRegistrarse.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bRegistrarse.Location = new System.Drawing.Point(1095, 9);
             this.bRegistrarse.Name = "bRegistrarse";
-            this.bRegistrarse.Size = new System.Drawing.Size(75, 31);
+            this.bRegistrarse.Size = new System.Drawing.Size(124, 38);
             this.bRegistrarse.TabIndex = 1;
             this.bRegistrarse.Text = "Registrarse";
             this.bRegistrarse.UseVisualStyleBackColor = true;
             // 
             // bIniciarSesion
             // 
-            this.bIniciarSesion.Location = new System.Drawing.Point(1054, 11);
+            this.bIniciarSesion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bIniciarSesion.Location = new System.Drawing.Point(942, 9);
             this.bIniciarSesion.Name = "bIniciarSesion";
-            this.bIniciarSesion.Size = new System.Drawing.Size(78, 31);
+            this.bIniciarSesion.Size = new System.Drawing.Size(140, 37);
             this.bIniciarSesion.TabIndex = 0;
             this.bIniciarSesion.Text = "Iniciar Sesion";
             this.bIniciarSesion.UseVisualStyleBackColor = true;
@@ -243,32 +285,32 @@ namespace StreamEducation
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(326, 157);
+            this.label3.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(323, 219);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 18);
+            this.label3.Size = new System.Drawing.Size(115, 23);
             this.label3.TabIndex = 50;
             this.label3.Text = "Recursos:";
             // 
-            // labelOrganizador
+            // labelFecha
             // 
-            this.labelOrganizador.AutoSize = true;
-            this.labelOrganizador.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOrganizador.Location = new System.Drawing.Point(14, 152);
-            this.labelOrganizador.Name = "labelOrganizador";
-            this.labelOrganizador.Size = new System.Drawing.Size(153, 17);
-            this.labelOrganizador.TabIndex = 7;
-            this.labelOrganizador.Text = "NombreOrganizacion";
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha.Location = new System.Drawing.Point(18, 327);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(135, 18);
+            this.labelFecha.TabIndex = 62;
+            this.labelFecha.Text = "FechaComienzo";
             // 
-            // label7
+            // label4
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 115);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 18);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Organizador:";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(9, 290);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(190, 23);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Fecha comienzo:";
             // 
             // fActividad
             // 
@@ -322,5 +364,8 @@ namespace StreamEducation
         private System.Windows.Forms.Label labelOrganizador;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button bValorar;
+        private System.Windows.Forms.Label labelFecha;
+        private System.Windows.Forms.Label label4;
     }
 }

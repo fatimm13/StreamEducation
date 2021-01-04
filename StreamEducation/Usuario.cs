@@ -254,6 +254,12 @@ namespace StreamEducation
             }
             */
         }
+
+        public bool RolAsociacion
+        {
+            get { return rolAsociacion; }
+        }
+
         public void Borrar()
         {
             MySqlConnection miBD = new MySqlConnection(CONNECTION);

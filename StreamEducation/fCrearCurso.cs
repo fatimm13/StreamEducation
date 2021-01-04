@@ -23,7 +23,9 @@ namespace StreamEducation
         {
             if (GestorGlobal.UsuarioActivo !=null && tNombre.Text != "")
             {
-                new Curso(GestorGlobal.UsuarioActivo,tNombre.Text,tDescripcion.Text);
+                DateTime fecha = dateTimePicker.Value;
+                string sqldate = fecha.ToString("dd-MM-yyyy");
+                new Curso(GestorGlobal.UsuarioActivo,tNombre.Text,tDescripcion.Text, cbPublico.Checked, sqldate);
                 this.Close();
             }
             else
@@ -31,6 +33,11 @@ namespace StreamEducation
                 fError ventana = new fError("Faltan parametros.");
                 ventana.ShowDialog();
             }
+        }
+
+        private void fCrearCurso_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

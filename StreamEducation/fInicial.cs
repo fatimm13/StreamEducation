@@ -77,7 +77,7 @@ namespace StreamEducation
         //TODO: Crear actividades publicas
         private void bActividades_Click(object sender, EventArgs e)
         {
-            fRecurso ventana = new fRecurso();
+            fSeleccionActividades ventana = new fSeleccionActividades();
             this.Visible = false;
             ventana.ShowDialog();
             Recarga();
