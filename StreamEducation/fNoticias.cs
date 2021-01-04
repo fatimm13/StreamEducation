@@ -75,7 +75,7 @@ namespace StreamEducation
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
-            bAddNoticia.Visible = usuarioIniciado;
+            bAddNoticia.Visible = usuarioIniciado && GestorGlobal.UsuarioActivo.RolAdmin;
         }
 
         private void lForo_SelectedIndexChanged(object sender, EventArgs e)

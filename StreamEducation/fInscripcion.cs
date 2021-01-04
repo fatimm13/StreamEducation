@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,13 @@ namespace StreamEducation
     public partial class fInscripcion : Form
     {
 
-        private bool confirmado;
-
-        public bool Valor { get { return confirmado; } }
-
-        public fInscripcion()
+        private int usuario;
+        private int curso;
+        public fInscripcion(int c,int u)
         {
             InitializeComponent();
+            usuario = u;
+            curso = c;
         }
 
         private void fInscripcion_Load(object sender, EventArgs e)
@@ -29,13 +30,30 @@ namespace StreamEducation
 
         private void bAceptar_Click(object sender, EventArgs e)
         {
-            confirmado = true;
+            try
+            {
+                string CONNECTION = Properties.Settings.Default.COMPLETE;
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "INSERT INTO tInscripcion (curso,usuario) VALUES(" + curso+ ", '"
+                    + usuario + "');";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+
+                
+            }
+            catch
+            {
+                fError ventana = new fError("Error al inscribirse.");
+                ventana.ShowDialog();
+                this.Close();
+            }
             this.Close();
         }
 
         private void bRechazar_Click(object sender, EventArgs e)
         {
-            confirmado = false;
+            
             this.Close();
         }
     }

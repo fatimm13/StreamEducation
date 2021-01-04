@@ -63,7 +63,7 @@ namespace StreamEducation
             this.lUsuarios.FormattingEnabled = true;
             this.lUsuarios.ItemHeight = 25;
             this.lUsuarios.Location = new System.Drawing.Point(31, 98);
-            this.lUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.lUsuarios.Name = "lUsuarios";
             this.lUsuarios.Size = new System.Drawing.Size(840, 400);
             this.lUsuarios.TabIndex = 48;
@@ -76,10 +76,11 @@ namespace StreamEducation
             this.lExpulsar.FormattingEnabled = true;
             this.lExpulsar.ItemHeight = 25;
             this.lExpulsar.Location = new System.Drawing.Point(896, 98);
-            this.lExpulsar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lExpulsar.Margin = new System.Windows.Forms.Padding(4);
             this.lExpulsar.Name = "lExpulsar";
             this.lExpulsar.Size = new System.Drawing.Size(93, 400);
             this.lExpulsar.TabIndex = 51;
+            this.lExpulsar.SelectedIndexChanged += new System.EventHandler(this.lExpulsar_SelectedIndexChanged);
             // 
             // fUsuariosInscritos
             // 
@@ -90,7 +91,7 @@ namespace StreamEducation
             this.Controls.Add(this.bBuscar);
             this.Controls.Add(this.tUsuario);
             this.Controls.Add(this.lUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "fUsuariosInscritos";
             this.ShowIcon = false;

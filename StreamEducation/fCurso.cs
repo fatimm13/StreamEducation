@@ -184,5 +184,17 @@ namespace StreamEducation
         {
             System.Diagnostics.Process.Start("https://docs.google.com/forms/u/0/");
         }
+
+        private void bInscritos_Click(object sender, EventArgs e)
+        {
+            fUsuariosInscritos ventana = new fUsuariosInscritos();
+            ventana.ShowDialog();
+        }
+
+        private void bPeticiones_Click(object sender, EventArgs e)
+        {
+            fInscripcionesPendientes ventana = new fInscripcionesPendientes();
+            ventana.ShowDialog();
+        }
     }
 }

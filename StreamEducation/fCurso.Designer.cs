@@ -30,8 +30,8 @@ namespace StreamEducation
         private void InitializeComponent()
         {
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.bPeticiones = new System.Windows.Forms.Button();
+            this.bInscritos = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lRecursos = new System.Windows.Forms.ListBox();
@@ -73,27 +73,29 @@ namespace StreamEducation
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
             // 
-            // button4
+            // bPeticiones
             // 
-            this.button4.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(1191, 761);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(180, 38);
-            this.button4.TabIndex = 35;
-            this.button4.Text = "Ver";
-            this.button4.UseVisualStyleBackColor = true;
+            this.bPeticiones.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPeticiones.Location = new System.Drawing.Point(1191, 761);
+            this.bPeticiones.Margin = new System.Windows.Forms.Padding(4);
+            this.bPeticiones.Name = "bPeticiones";
+            this.bPeticiones.Size = new System.Drawing.Size(180, 38);
+            this.bPeticiones.TabIndex = 35;
+            this.bPeticiones.Text = "🧑";
+            this.bPeticiones.UseVisualStyleBackColor = true;
+            this.bPeticiones.Click += new System.EventHandler(this.bPeticiones_Click);
             // 
-            // button3
+            // bInscritos
             // 
-            this.button3.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1191, 702);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 41);
-            this.button3.TabIndex = 34;
-            this.button3.Text = "Ver";
-            this.button3.UseVisualStyleBackColor = true;
+            this.bInscritos.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bInscritos.Location = new System.Drawing.Point(1191, 702);
+            this.bInscritos.Margin = new System.Windows.Forms.Padding(4);
+            this.bInscritos.Name = "bInscritos";
+            this.bInscritos.Size = new System.Drawing.Size(180, 41);
+            this.bInscritos.TabIndex = 34;
+            this.bInscritos.Text = "📖";
+            this.bInscritos.UseVisualStyleBackColor = true;
+            this.bInscritos.Click += new System.EventHandler(this.bInscritos_Click);
             // 
             // label6
             // 
@@ -125,7 +127,7 @@ namespace StreamEducation
             this.lRecursos.FormattingEnabled = true;
             this.lRecursos.ItemHeight = 25;
             this.lRecursos.Location = new System.Drawing.Point(439, 425);
-            this.lRecursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lRecursos.Margin = new System.Windows.Forms.Padding(4);
             this.lRecursos.Name = "lRecursos";
             this.lRecursos.Size = new System.Drawing.Size(731, 225);
             this.lRecursos.TabIndex = 31;
@@ -162,7 +164,7 @@ namespace StreamEducation
             this.lForos.FormattingEnabled = true;
             this.lForos.ItemHeight = 25;
             this.lForos.Location = new System.Drawing.Point(439, 260);
-            this.lForos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lForos.Margin = new System.Windows.Forms.Padding(4);
             this.lForos.Name = "lForos";
             this.lForos.Size = new System.Drawing.Size(932, 75);
             this.lForos.TabIndex = 29;
@@ -190,9 +192,9 @@ namespace StreamEducation
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.bInicio);
             this.groupBox1.Location = new System.Drawing.Point(17, 87);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(365, 737);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
@@ -223,7 +225,7 @@ namespace StreamEducation
             // 
             this.bValorar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bValorar.Location = new System.Drawing.Point(13, 172);
-            this.bValorar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bValorar.Margin = new System.Windows.Forms.Padding(4);
             this.bValorar.Name = "bValorar";
             this.bValorar.Size = new System.Drawing.Size(323, 37);
             this.bValorar.TabIndex = 61;
@@ -259,7 +261,7 @@ namespace StreamEducation
             this.tDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tDescripcion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tDescripcion.Location = new System.Drawing.Point(12, 497);
-            this.tDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.ReadOnly = true;
@@ -282,7 +284,7 @@ namespace StreamEducation
             // 
             this.bInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bInicio.Location = new System.Drawing.Point(76, 55);
-            this.bInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bInicio.Margin = new System.Windows.Forms.Padding(4);
             this.bInicio.Name = "bInicio";
             this.bInicio.Size = new System.Drawing.Size(191, 69);
             this.bInicio.TabIndex = 0;
@@ -311,7 +313,7 @@ namespace StreamEducation
             this.panel1.Controls.Add(this.bIniciarSesion);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(17, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1650, 68);
             this.panel1.TabIndex = 26;
@@ -320,7 +322,7 @@ namespace StreamEducation
             // 
             this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCerrarSesion.Location = new System.Drawing.Point(1299, 10);
-            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.bCerrarSesion.Name = "bCerrarSesion";
             this.bCerrarSesion.Size = new System.Drawing.Size(181, 47);
             this.bCerrarSesion.TabIndex = 42;
@@ -332,7 +334,7 @@ namespace StreamEducation
             // 
             this.bPerfil.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPerfil.Location = new System.Drawing.Point(1507, 11);
-            this.bPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.bPerfil.Name = "bPerfil";
             this.bPerfil.Size = new System.Drawing.Size(125, 46);
             this.bPerfil.TabIndex = 41;
@@ -344,7 +346,7 @@ namespace StreamEducation
             // 
             this.bRegistrarse.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRegistrarse.Location = new System.Drawing.Point(1468, 10);
-            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(4);
             this.bRegistrarse.Name = "bRegistrarse";
             this.bRegistrarse.Size = new System.Drawing.Size(165, 47);
             this.bRegistrarse.TabIndex = 40;
@@ -356,7 +358,7 @@ namespace StreamEducation
             // 
             this.bIniciarSesion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bIniciarSesion.Location = new System.Drawing.Point(1264, 10);
-            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.bIniciarSesion.Name = "bIniciarSesion";
             this.bIniciarSesion.Size = new System.Drawing.Size(187, 46);
             this.bIniciarSesion.TabIndex = 39;
@@ -379,9 +381,9 @@ namespace StreamEducation
             // 
             this.groupBox2.Controls.Add(this.monthCalendar1);
             this.groupBox2.Location = new System.Drawing.Point(1379, 86);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(289, 737);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
@@ -391,7 +393,7 @@ namespace StreamEducation
             // 
             this.bCrearForo.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCrearForo.Location = new System.Drawing.Point(1188, 209);
-            this.bCrearForo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCrearForo.Margin = new System.Windows.Forms.Padding(4);
             this.bCrearForo.Name = "bCrearForo";
             this.bCrearForo.Size = new System.Drawing.Size(180, 39);
             this.bCrearForo.TabIndex = 39;
@@ -403,7 +405,7 @@ namespace StreamEducation
             // 
             this.bCrearRecurso.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCrearRecurso.Location = new System.Drawing.Point(1189, 373);
-            this.bCrearRecurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCrearRecurso.Margin = new System.Windows.Forms.Padding(4);
             this.bCrearRecurso.Name = "bCrearRecurso";
             this.bCrearRecurso.Size = new System.Drawing.Size(179, 39);
             this.bCrearRecurso.TabIndex = 40;
@@ -415,7 +417,7 @@ namespace StreamEducation
             // 
             this.bBorrar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBorrar.Location = new System.Drawing.Point(1191, 130);
-            this.bBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.bBorrar.Name = "bBorrar";
             this.bBorrar.Size = new System.Drawing.Size(177, 39);
             this.bBorrar.TabIndex = 42;
@@ -431,7 +433,7 @@ namespace StreamEducation
             this.lBorrar.FormattingEnabled = true;
             this.lBorrar.ItemHeight = 25;
             this.lBorrar.Location = new System.Drawing.Point(1191, 425);
-            this.lBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.lBorrar.Name = "lBorrar";
             this.lBorrar.Size = new System.Drawing.Size(177, 225);
             this.lBorrar.TabIndex = 43;
@@ -459,8 +461,8 @@ namespace StreamEducation
             this.Controls.Add(this.bBorrar);
             this.Controls.Add(this.bCrearRecurso);
             this.Controls.Add(this.bCrearForo);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.bPeticiones);
+            this.Controls.Add(this.bInscritos);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lRecursos);
@@ -490,8 +492,8 @@ namespace StreamEducation
 
         #endregion
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button bPeticiones;
+        private System.Windows.Forms.Button bInscritos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox lRecursos;

@@ -278,6 +278,37 @@ namespace StreamEducation
             miBD.Close();
         }
 
+        public void aceptarInscripcion(int curso)
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "INSERT INTO tCursoUsuario VALUES ('"+curso+"','"+id+"');";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            query = "DELETE FROM tInscripcion WHERE curso = " + curso + " and usuario ='" + id + "';";
+            cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            miBD.Close();
+
+        }
+        public void rechazarInscripcion(int curso)
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "DELETE FROM tInscripcion WHERE curso = " + curso + " and usuario ='" + id + "';";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            miBD.Close();
+        }
+        public void expulsar(int curso)
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "DELETE FROM tCursoUsuario WHERE curso = " + curso + " and usuario ='" + id + "';";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            miBD.Close();
+        }
         public List<Curso> getCursos()
         {
             List<Curso> lista = new List<Curso>();

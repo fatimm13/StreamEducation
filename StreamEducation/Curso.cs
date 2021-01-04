@@ -212,6 +212,44 @@ namespace StreamEducation
             cmd.ExecuteNonQuery();
             miBD.Close();
         }
+        public List<Usuario> getUsuarios()
+        {
+            List<Usuario> lista = new List<Usuario>();
+
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "SELECT usuario FROM tCursoUsuario WHERE curso = '" + this.id + "';";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                int c = (int)rdr[0];
+                lista.Add(new Usuario(c));
+            }
+            rdr.Close();
+            miBD.Close();
+            return lista;
+        }
+        public List<Usuario> getPeticiones()
+        {
+            List<Usuario> lista = new List<Usuario>();
+
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "SELECT usuario FROM tInscripcion WHERE curso = '" + this.id + "';";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                int c = (int)rdr[0];
+                lista.Add(new Usuario(c));
+            }
+            rdr.Close();
+            miBD.Close();
+            return lista;
+        }
         public void Borrar()
         {
             MySqlConnection miBD = new MySqlConnection(CONNECTION);
@@ -228,5 +266,6 @@ namespace StreamEducation
             fecha = null;
         }
 
+        
     }
 }

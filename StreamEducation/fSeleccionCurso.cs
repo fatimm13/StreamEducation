@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -89,20 +90,73 @@ namespace StreamEducation
 
         private void lCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GestorGlobal.CursoActivo = (Curso)lCursos.SelectedItem;
-            this.Visible = false;
-            fCurso ventana = new fCurso();
-            ventana.ShowDialog();
-            Recarga();
-            this.Visible = true;
-            lCursos.Items.Clear();
-            lPublico.Items.Clear();
-            foreach (Curso c in Curso.listaCursos())
+            if (lCursos.SelectedIndex >= 0)
             {
-                lCursos.Items.Add(c);
-                if (c.Publico) { lPublico.Items.Add("✔️"); }
-                else { lPublico.Items.Add("❌"); }
+                Curso auxc = (Curso)lCursos.SelectedItem; 
+                if (auxc.Publico || (GestorGlobal.UsuarioActivo!=null && (GestorGlobal.UsuarioActivo.Id == auxc.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin)) )
+                {
+                    GestorGlobal.CursoActivo = auxc;
+                    this.Visible = false;
+                    fCurso ventana = new fCurso();
+                    ventana.ShowDialog();
+                    Recarga();
+                    this.Visible = true;
+                    lCursos.Items.Clear();
+                    lPublico.Items.Clear();
+                    foreach (Curso c in Curso.listaCursos())
+                    {
+                        lCursos.Items.Add(c);
+                        if (c.Publico) { lPublico.Items.Add("✔️"); }
+                        else { lPublico.Items.Add("❌"); }
+                    }
+                }
+                else if(GestorGlobal.UsuarioActivo!=null)
+                {
+                    string CONNECTION = Properties.Settings.Default.COMPLETE;
+                    MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                    miBD.Open();
+                    string query = "SELECT usuario FROM tCursoUsuario WHERE curso = '" + auxc.Id + "' and usuario ='" + GestorGlobal.UsuarioActivo.Id + "';";
+                    MySqlCommand cmd = new MySqlCommand(query, miBD);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    if (rdr.Read())
+                    {
+                        rdr.Close();
+                        miBD.Close();
+                        GestorGlobal.CursoActivo = auxc;
+                        this.Visible = false;
+                        fCurso ventana = new fCurso();
+                        ventana.ShowDialog();
+                        Recarga();
+                        this.Visible = true;
+                        lCursos.Items.Clear();
+                        lPublico.Items.Clear();
+                        foreach (Curso c in Curso.listaCursos())
+                        {
+                            lCursos.Items.Add(c);
+                            if (c.Publico) { lPublico.Items.Add("✔️"); }
+                            else { lPublico.Items.Add("❌"); }
+                        }
+                    }
+                    else
+                    {
+                        rdr.Close();
+                        miBD.Close();
+                        fInscripcion ventana = new fInscripcion(auxc.Id,GestorGlobal.UsuarioActivo.Id);
+                        ventana.ShowDialog();
+
+                    }
+                    
+
+                }
+                else
+                {
+                    fError error = new fError("Debes estar registrado para acceder.");
+                    error.ShowDialog();
+
+                }
             }
+            
+            
         }
 
     }
