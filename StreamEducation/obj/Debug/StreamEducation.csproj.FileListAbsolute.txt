@@ -249,3 +249,19 @@ C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fTodosUsuarios.resources
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fUsuariosInscritos.resources
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fValoracion.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fActividad.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearActividad.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fSeleccionActividades.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearMensajePrivado.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearRecurso.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fInscripcionesPendientes.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMensajeria.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarContrasena.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fMostrarMensajePrivado.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fNoticias.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fRecuperarContrasena.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fTodosUsuarios.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fUsuariosInscritos.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fValoracion.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearRecursoActividad.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fValoraciónActividad.resources

@@ -202,7 +202,16 @@ namespace StreamEducation
         {
             return nombre;
         }
-
+        public void valorar(int nota, string comentario)
+        {
+            MySqlConnection miBD = new MySqlConnection(CONNECTION);
+            miBD.Open();
+            string query = "INSERT INTO tValoracion (curso, nota, comentario) VALUES('"
+                + id + "', '" + nota + "', '" + comentario + "');";
+            MySqlCommand cmd = new MySqlCommand(query, miBD);
+            cmd.ExecuteNonQuery();
+            miBD.Close();
+        }
         public void Borrar()
         {
             MySqlConnection miBD = new MySqlConnection(CONNECTION);

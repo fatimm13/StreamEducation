@@ -16,10 +16,93 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+        private void Recarga()
+        {
+            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            bRegistrarse.Visible = !usuarioIniciado;
+            bIniciarSesion.Visible = !usuarioIniciado;
+            bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
+            bool usuarioPoder = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolAsociacion || GestorGlobal.UsuarioActivo.RolAdmin);
+            bCrearActividad.Visible = usuarioPoder;
+            
+        }
+        private void bCrearActividad_Click(object sender, EventArgs e)
+        {
+            fCrearActividad ventana = new fCrearActividad();
+            ventana.ShowDialog();
+            lActividades.Items.Clear();
+            Recarga();
+            foreach (Actividad a in Actividad.listaActividades())
+            {
+                lActividades.Items.Add(a);
+            }
 
+        }
         private void fSeleccionActividades_Load(object sender, EventArgs e)
         {
+            Recarga();
+            foreach (Actividad a in Actividad.listaActividades())
+            {
+                lActividades.Items.Add(a);
+            }
+        }
 
+        private void bInicio_Click(object sender, EventArgs e)
+        {
+            GestorGlobal.CursoActivo = null;
+            this.Close();
+        }
+
+        private void bPerfil_Click(object sender, EventArgs e)
+        {
+            fPerfil ventana = new fPerfil();
+            ventana.ShowDialog();
+            Recarga();
+        }
+
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.UsuarioActivo = null;
+                Recarga();
+            }
+        }
+
+        private void bIniciarSesion_Click(object sender, EventArgs e)
+        {
+            fIniciarSesion ventana = new fIniciarSesion();
+            ventana.ShowDialog();
+            Recarga();
+        }
+
+        private void bRegistrarse_Click(object sender, EventArgs e)
+        {
+            fCrearCuenta ventana = new fCrearCuenta();
+            ventana.ShowDialog();
+            Recarga();
+        }
+
+        private void lActividades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lActividades.SelectedIndex >= 0)
+            {
+                GestorGlobal.ActividadActiva = (Actividad)lActividades.SelectedItem;
+                this.Visible = false;
+                fActividad ventana = new fActividad();
+                ventana.ShowDialog();
+                Recarga();
+                this.Visible = true;
+                lActividades.Items.Clear();
+                foreach (Actividad a in Actividad.listaActividades())
+                {
+                    lActividades.Items.Add(a);
+                }
+            }
+            
         }
     }
 }

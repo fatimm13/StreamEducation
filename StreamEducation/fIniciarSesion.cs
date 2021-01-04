@@ -51,5 +51,16 @@ namespace StreamEducation
         {
             
         }
+
+        private void bRecuperar_Click(object sender, EventArgs e)
+        {
+            if (tCorreo.Text != "")
+            {
+                fRecuperarContrasena ventana = new fRecuperarContrasena(tCorreo.Text);
+
+                ventana.ShowDialog();
+            }
+            
+        }
     }
 }

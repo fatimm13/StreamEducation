@@ -64,6 +64,7 @@ namespace StreamEducation
             this.bAceptar.TabIndex = 35;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
+            this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
             // 
             // fMostrarContrasena
             // 
@@ -73,7 +74,7 @@ namespace StreamEducation
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.labelConstrasena);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "fMostrarContrasena";
             this.ShowIcon = false;

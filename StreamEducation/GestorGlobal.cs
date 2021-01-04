@@ -12,6 +12,7 @@ namespace StreamEducation
         private static Curso cursoActivo;
         private static Foro foroActivo;
         private static Debate debateActivo;
+        private static Actividad actividadActiva;
 
         public static Usuario UsuarioActivo
         {
@@ -32,6 +33,12 @@ namespace StreamEducation
         {
             get { return debateActivo; }
             set { debateActivo = value; }
+        }
+
+        public static Actividad ActividadActiva 
+        {
+            get { return actividadActiva; }
+            set { actividadActiva = value; }
         }
     }
 }

@@ -55,7 +55,7 @@ namespace StreamEducation
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
                 DateTime now = DateTime.Now;
-                string sqldate = now.ToString("HH:mm del dd-MM-yyyy");
+                string sqldate = now.ToString("dd-MM-yyyy, HH:mm");
                 string query = "INSERT INTO tMensajePrivado (emisor, receptor, fecha, asunto, mensaje) VALUES("
                     + miEmisor.Id + ", '" + miReceptor.Id + "', '" + sqldate + "', '" + asunto + "', '" + mensaje + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);

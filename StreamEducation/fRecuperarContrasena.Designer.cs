@@ -57,6 +57,7 @@ namespace StreamEducation
             this.bAceptar.TabIndex = 29;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
+            this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
             // 
             // tNombre
             // 
@@ -86,7 +87,6 @@ namespace StreamEducation
             this.label1.Size = new System.Drawing.Size(677, 29);
             this.label1.TabIndex = 32;
             this.label1.Text = "Elija su pregunta de confirmación y su respuesta:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboPregunta
             // 
@@ -114,7 +114,7 @@ namespace StreamEducation
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.tNombre);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "fRecuperarContrasena";
             this.ShowIcon = false;

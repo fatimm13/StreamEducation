@@ -12,9 +12,15 @@ namespace StreamEducation
 {
     public partial class fMostrarContrasena : Form
     {
-        public fMostrarContrasena()
+        public fMostrarContrasena(string c)
         {
             InitializeComponent();
+            labelConstrasena.Text = c;
+        }
+
+        private void bAceptar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

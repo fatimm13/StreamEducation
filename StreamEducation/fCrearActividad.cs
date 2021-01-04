@@ -19,8 +19,19 @@ namespace StreamEducation
 
         private void bAceptar_Click(object sender, EventArgs e)
         {
-            DateTime fecha = dateTimePicker.Value;
-            string sqldate = fecha.ToString("yyyy-MM-dd");
+            
+            if (GestorGlobal.UsuarioActivo != null && tNombre.Text != "")
+            {
+                DateTime fecha = dateTimePicker.Value;
+                string sqldate = fecha.ToString("dd-MM-yyyy");
+                new Actividad(GestorGlobal.UsuarioActivo, tNombre.Text, tDescripcion.Text, sqldate);
+                this.Close();
+            }
+            else
+            {
+                fError ventana = new fError("Faltan parametros.");
+                ventana.ShowDialog();
+            }
         }
 
         private void fCrearActividad_Load(object sender, EventArgs e)

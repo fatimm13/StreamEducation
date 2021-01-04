@@ -109,6 +109,7 @@ namespace StreamEducation
             this.bRecuperar.TabIndex = 15;
             this.bRecuperar.Text = "Recuperar contraseña";
             this.bRecuperar.UseVisualStyleBackColor = true;
+            this.bRecuperar.Click += new System.EventHandler(this.bRecuperar_Click);
             // 
             // fIniciarSesion
             // 

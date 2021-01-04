@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace StreamEducation
 {
-    public partial class fValoracion : Form
+    public partial class fCrearRecursoActividad : Form
     {
-        public fValoracion()
+        public fCrearRecursoActividad()
         {
             InitializeComponent();
         }
 
-        private void fValoracion_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
+            labelActividad.Text = GestorGlobal.ActividadActiva.Nombre;
         }
 
-        private void bEnviar_Click(object sender, EventArgs e)
+        private void bAceptar_Click(object sender, EventArgs e)
         {
-            if (GestorGlobal.CursoActivo != null && comboRol.SelectedIndex >= 0 && tDescripcion.Text != "")
+            if (tNombre.Text != "" && tEnlace.Text != "" && comboRecurso.SelectedIndex >= 0)
             {
-                GestorGlobal.CursoActivo.valorar(comboRol.SelectedIndex + 1, tDescripcion.Text);
+                new RecursoActividad(GestorGlobal.ActividadActiva, comboRecurso.SelectedItem + " " + tNombre.Text, tEnlace.Text);
                 this.Close();
             }
             else

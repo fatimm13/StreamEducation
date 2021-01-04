@@ -75,11 +75,13 @@ namespace StreamEducation
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
+            bValorar.Visible = usuarioIniciado;
             bool usuarioPoder = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
             bCrearForo.Visible = usuarioPoder;
             bCrearRecurso.Visible = usuarioPoder;
             bBorrar.Visible = usuarioPoder;
             lBorrar.Visible = usuarioPoder;
+            bFormulario.Visible = usuarioPoder;
             lBorrar.Items.Clear();
             if (usuarioPoder) {
                 foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos()) lBorrar.Items.Add("🗑️ Borrar");
@@ -176,6 +178,11 @@ namespace StreamEducation
         {
             fValoracion ventana = new fValoracion();
             ventana.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/forms/u/0/");
         }
     }
 }

@@ -79,6 +79,18 @@
     <Compile Include="fCrearActividad.Designer.cs">
       <DependentUpon>fCrearActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="fCrearRecursoActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCrearRecursoActividad.Designer.cs">
+      <DependentUpon>fCrearRecursoActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fValoraciónActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fValoraciónActividad.Designer.cs">
+      <DependentUpon>fValoraciónActividad.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSeleccionActividades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,7 @@
     <Compile Include="Mensaje.cs" />
     <Compile Include="MensajePrivado.cs" />
     <Compile Include="Recurso.cs" />
+    <Compile Include="RecursoActividad.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Error.cs" />
     <Compile Include="fActualizarPerfil.cs">
@@ -282,6 +295,9 @@
     <EmbeddedResource Include="fCrearActividad.resx">
       <DependentUpon>fCrearActividad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fCrearRecursoActividad.resx">
+      <DependentUpon>fCrearRecursoActividad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSeleccionActividades.resx">
       <DependentUpon>fSeleccionActividades.cs</DependentUpon>
     </EmbeddedResource>
@@ -374,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fValoracion.resx">
       <DependentUpon>fValoracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fValoraciónActividad.resx">
+      <DependentUpon>fValoraciónActividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
