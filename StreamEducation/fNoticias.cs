@@ -17,9 +17,24 @@ namespace StreamEducation
             InitializeComponent();
         }
 
+        private void fNoticias_Load(object sender, EventArgs e)
+        {
+            Recarga();
+            foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
+        }
+
+        private void Recarga()
+        {
+            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            bRegistrarse.Visible = !usuarioIniciado;
+            bIniciarSesion.Visible = !usuarioIniciado;
+            bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
+            bAddNoticia.Visible = usuarioIniciado && GestorGlobal.UsuarioActivo.RolAdmin;
+        }
+
         private void bInicio_Click(object sender, EventArgs e)
         {
-            GestorGlobal.ForoActivo = null;
             this.Close();
         }
 
@@ -63,21 +78,6 @@ namespace StreamEducation
             foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
         }
 
-        private void fNoticias_Load(object sender, EventArgs e)
-        {
-            Recarga();
-            foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
-        }
-        private void Recarga()
-        {
-            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
-            bRegistrarse.Visible = !usuarioIniciado;
-            bIniciarSesion.Visible = !usuarioIniciado;
-            bPerfil.Visible = usuarioIniciado;
-            bCerrarSesion.Visible = usuarioIniciado;
-            bAddNoticia.Visible = usuarioIniciado && GestorGlobal.UsuarioActivo.RolAdmin;
-        }
-
         private void lForo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lNoticias.SelectedIndex >= 0)
@@ -86,11 +86,13 @@ namespace StreamEducation
                 fMostrarNoticia ventana = new fMostrarNoticia();
                 this.Visible = false;
                 ventana.ShowDialog();
+                GestorGlobal.DebateActivo = null;
                 Recarga();
                 this.Visible = true;
                 lNoticias.Items.Clear();
                 foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
             }
         }
+
     }
 }

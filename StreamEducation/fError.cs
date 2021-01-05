@@ -12,10 +12,10 @@ namespace StreamEducation
 {
     public partial class fError : Form
     {
-        public fError(string v)
+        public fError(string error)
         {
             InitializeComponent();
-            labelError.Text = v;
+            labelError.Text = error;
         }
 
         private void bAceptar_Click(object sender, EventArgs e)

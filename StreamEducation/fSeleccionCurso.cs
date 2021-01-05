@@ -153,7 +153,7 @@ namespace StreamEducation
                     {
                         rdr.Close();
                         miBD.Close();
-                        fInscripcion ventana = new fInscripcion(auxc.Id,GestorGlobal.UsuarioActivo.Id);
+                        fInscripcion ventana = new fInscripcion(auxc.Id);
                         ventana.ShowDialog();
                     }
                 }

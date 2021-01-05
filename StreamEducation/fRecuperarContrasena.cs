@@ -13,41 +13,28 @@ namespace StreamEducation
 {
     public partial class fRecuperarContrasena : Form
     {
-        private string nombre;
-        public fRecuperarContrasena(string n)
+        private string correo;
+        public fRecuperarContrasena(string c)
         {
-            nombre = n;
+            correo = c;
             InitializeComponent();
         }
 
         private void bAceptar_Click(object sender, EventArgs e)
         {
-            string CONNECTION = Properties.Settings.Default.COMPLETE;
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "SELECT contrasena FROM tUsuario WHERE correo = '" + nombre + "' and pregunta ='"+comboPregunta.SelectedIndex+"'and upper(respuesta) = '"+tNombre.Text.ToUpper()+"';";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            if (rdr.Read())
+            String contrasena = Usuario.recuperarContrasena(correo, comboPregunta.SelectedIndex, tRespuesta.Text);
+            if (contrasena != null)
             {
-                
-                string c = (string)rdr[0];
-                fMostrarContrasena ventana = new fMostrarContrasena(c);
-                rdr.Close();
-                miBD.Close();
+                fMostrarContrasena ventana = new fMostrarContrasena(contrasena);
                 ventana.ShowDialog();
                 this.Close();
-
             }
             else
             {
-                rdr.Close();
-                miBD.Close();
-                fError ventana = new fError("Respuesta incorrecta.");
+                fError ventana = new fError("Los datos introducidos no son los correctos.");
                 ventana.ShowDialog();
-
             }
-            
         }
+
     }
 }

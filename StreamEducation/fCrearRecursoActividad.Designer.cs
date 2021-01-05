@@ -43,11 +43,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(94, 157);
+            this.label4.Location = new System.Drawing.Point(81, 146);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 25);
+            this.label4.Size = new System.Drawing.Size(399, 25);
             this.label4.TabIndex = 31;
-            this.label4.Text = "Tipo de recurso:";
+            this.label4.Text = "Tipo del recurso que se va a subir:";
             // 
             // comboRecurso
             // 
@@ -59,7 +59,7 @@
             "🎞️",
             "📄",
             "🔗"});
-            this.comboRecurso.Location = new System.Drawing.Point(592, 143);
+            this.comboRecurso.Location = new System.Drawing.Point(579, 132);
             this.comboRecurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboRecurso.Name = "comboRecurso";
             this.comboRecurso.Size = new System.Drawing.Size(129, 56);
@@ -68,7 +68,7 @@
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(592, 418);
+            this.bAceptar.Location = new System.Drawing.Point(579, 407);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(131, 38);
@@ -80,7 +80,7 @@
             // tEnlace
             // 
             this.tEnlace.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tEnlace.Location = new System.Drawing.Point(222, 338);
+            this.tEnlace.Location = new System.Drawing.Point(209, 327);
             this.tEnlace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tEnlace.Name = "tEnlace";
             this.tEnlace.Size = new System.Drawing.Size(499, 32);
@@ -90,7 +90,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(94, 341);
+            this.label3.Location = new System.Drawing.Point(81, 330);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 27;
@@ -100,7 +100,7 @@
             // 
             this.labelActividad.AutoSize = true;
             this.labelActividad.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActividad.Location = new System.Drawing.Point(238, 73);
+            this.labelActividad.Location = new System.Drawing.Point(225, 62);
             this.labelActividad.Name = "labelActividad";
             this.labelActividad.Size = new System.Drawing.Size(213, 34);
             this.labelActividad.TabIndex = 26;
@@ -109,7 +109,7 @@
             // tNombre
             // 
             this.tNombre.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tNombre.Location = new System.Drawing.Point(222, 243);
+            this.tNombre.Location = new System.Drawing.Point(209, 232);
             this.tNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(499, 32);
@@ -119,7 +119,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(94, 246);
+            this.label2.Location = new System.Drawing.Point(81, 235);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 25);
             this.label2.TabIndex = 24;
@@ -129,7 +129,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 73);
+            this.label1.Location = new System.Drawing.Point(45, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 34);
             this.label1.TabIndex = 23;
@@ -154,7 +154,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Crear Recurso";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.fCrearRecursoActividad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

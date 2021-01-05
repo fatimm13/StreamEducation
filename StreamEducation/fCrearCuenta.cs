@@ -12,10 +12,17 @@ namespace StreamEducation
 {
     public partial class fCrearCuenta : Form
     {
+
         public fCrearCuenta()
         {
             InitializeComponent();
         }
+
+        private void fCrearCuenta_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private static bool esCorreoValido(String inputEmail)
         {
             try
@@ -28,13 +35,14 @@ namespace StreamEducation
                 return false;
             }
         }
+
         private void bAceptar_Click(object sender, EventArgs e)
         {
             if (tNombre.Text!="" && tCorreo.Text != "" && tContrasena1.Text != "" && tContrasena2.Text != "" && comboRol.SelectedIndex >= 0 && comboPregunta.SelectedIndex >= 0 && tRespuesta.Text != "")
             {
                 if (!esCorreoValido(tCorreo.Text))
                 {
-                    fError ventana = new fError("Formato de correo inválido.");
+                    fError ventana = new fError("Formato del correo introducido no valido.");
                     ventana.ShowDialog();
                 }
                 else
@@ -44,35 +52,25 @@ namespace StreamEducation
                         bool profesor = false;
                         bool admin = false;
                         bool asociacion = false;
-                        if (comboRol.SelectedIndex == 1) {
-                            profesor = true;
-                        } else if (comboRol.SelectedIndex == 2)
-                        {
-                            admin = true;
-                        } else if (comboRol.SelectedIndex == 3)
-                        {
-                            asociacion = true;
-                        }
+                        if (comboRol.SelectedIndex == 1) { profesor = true; }
+                        else if (comboRol.SelectedIndex == 2) { admin = true; }
+                        else if (comboRol.SelectedIndex == 3) { asociacion = true; }
                         new Usuario(tNombre.Text, tCorreo.Text, tContrasena1.Text, profesor, asociacion, admin, comboPregunta.SelectedIndex, tRespuesta.Text);
                         this.Close();
                     }
                     else
                     {
-                        fError ventana = new fError("Las contraseñas no coinciden.");
+                        fError ventana = new fError("Las contraseñas introducidas no coinciden.");
                         ventana.ShowDialog();
                     }
                 }
             }
             else
             {
-                fError ventana = new fError("Faltan parametros.");
+                fError ventana = new fError("Faltan parametros por introducir.");
                 ventana.ShowDialog();
             }
         }
 
-        private void fCrearCuenta_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

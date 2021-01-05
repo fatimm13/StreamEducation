@@ -16,6 +16,20 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+
+        private void fActividad_Load(object sender, EventArgs e)
+        {
+            if (GestorGlobal.ActividadActiva != null)
+            {
+                foreach (RecursoActividad r in GestorGlobal.ActividadActiva.getRecursos()) lRecursos.Items.Add(r);
+            }
+            labelOrganizador.Text = GestorGlobal.ActividadActiva.Organizacion.Nombre;
+            labelFecha.Text = GestorGlobal.ActividadActiva.Fecha;
+            labelActividad.Text = GestorGlobal.ActividadActiva.Nombre;
+            tDescripcion.Text = GestorGlobal.ActividadActiva.Descripcion;
+            Recarga();
+        }
+
         private void Recarga()
         {
             bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
@@ -25,20 +39,18 @@ namespace StreamEducation
             bCerrarSesion.Visible = usuarioIniciado;
             bValorar.Visible = usuarioIniciado;
             bool usuarioPoder = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.ActividadActiva.Organizacion.Id || GestorGlobal.UsuarioActivo.RolAdmin);
-
             bCrearRecurso.Visible = usuarioPoder;
             bBorrar.Visible = usuarioPoder;
             lBorrar.Visible = usuarioPoder;
             lBorrar.Items.Clear();
-
             if (usuarioPoder)
             {
                 foreach (RecursoActividad r in GestorGlobal.ActividadActiva.getRecursos()) lBorrar.Items.Add("🗑️ Borrar");
             }
         }
+
         private void bInicio_Click(object sender, EventArgs e)
         {
-            GestorGlobal.ActividadActiva = null;
             this.Close();
         }
 
@@ -74,6 +86,37 @@ namespace StreamEducation
             Recarga();
         }
 
+        private void bValorar_Click(object sender, EventArgs e)
+        {
+            fValoracion ventana = new fValoracion();
+            ventana.ShowDialog();
+        }
+
+        private void bBorrar_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.ActividadActiva.Borrar();
+                GestorGlobal.ActividadActiva = null;
+                this.Close();
+            }
+        }
+
+        private void bCrearRecurso_Click(object sender, EventArgs e)
+        {
+            fCrearRecursoActividad ventana = new fCrearRecursoActividad();
+            ventana.ShowDialog();
+            lRecursos.Items.Clear();
+            lBorrar.Items.Clear();
+            foreach (RecursoActividad r in GestorGlobal.ActividadActiva.getRecursos())
+            {
+                lRecursos.Items.Add(r);
+                lBorrar.Items.Add("🗑️ Borrar");
+            }
+        }
+
         private void lRecursos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lRecursos.SelectedIndex >= 0)
@@ -89,43 +132,6 @@ namespace StreamEducation
                 }
             }
         }
-        private void bBorrar_Click(object sender, EventArgs e)
-        {
-            fConfirmacion ventana = new fConfirmacion();
-            ventana.ShowDialog();
-            if (ventana.Valor)
-            {
-                GestorGlobal.ActividadActiva.Borrar();
-                GestorGlobal.CursoActivo = null;
-                this.Close();
-            }
-        }
-        private void bCrearRecurso_Click(object sender, EventArgs e)
-        {
-            fCrearRecursoActividad ventana = new fCrearRecursoActividad();
-            ventana.ShowDialog();
-            lRecursos.Items.Clear();
-            lBorrar.Items.Clear();
-            foreach (RecursoActividad r in GestorGlobal.ActividadActiva.getRecursos())
-            {
-                lRecursos.Items.Add(r);
-                lBorrar.Items.Add("🗑️ Borrar");
-            }
-        }
-        private void fActividad_Load(object sender, EventArgs e)
-        {
-            if (GestorGlobal.ActividadActiva != null)
-            {
-                foreach (RecursoActividad r in GestorGlobal.ActividadActiva.getRecursos()) lRecursos.Items.Add(r);
-            }
-            labelOrganizador.Text = GestorGlobal.ActividadActiva.Organizacion.Nombre;
-            labelFecha.Text = GestorGlobal.ActividadActiva.Fecha;
-            labelActividad.Text = GestorGlobal.ActividadActiva.Nombre;
-            tDescripcion.Text = GestorGlobal.ActividadActiva.Descripcion;
-            Recarga();
-        }
-
-    
 
         private void lBorrar_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -149,10 +155,5 @@ namespace StreamEducation
             }
         }
 
-        private void bValorar_Click(object sender, EventArgs e)
-        {
-            fValoracion ventana = new fValoracion();
-            ventana.ShowDialog();
-        }
     }
 }

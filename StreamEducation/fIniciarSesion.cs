@@ -17,6 +17,26 @@ namespace StreamEducation
             InitializeComponent();
         }
 
+        private void fIniciarSesion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bRecuperar_Click(object sender, EventArgs e)
+        {
+            if (tCorreo.Text != "")
+            {
+                fRecuperarContrasena ventana = new fRecuperarContrasena(tCorreo.Text);
+                ventana.ShowDialog();
+            }
+            else
+            {
+                fError ventana = new fError("Introduzca antes el correo del que recuperarla.");
+                ventana.ShowDialog();
+            }
+
+        }
+
         private void bAceptar_Click(object sender, EventArgs e)
         {
             if (tCorreo.Text != "" && tContrasena.Text != "")
@@ -30,37 +50,23 @@ namespace StreamEducation
                 else if (usuario.Id == -1)
                 {
                     usuario = null;
-                    fError ventana = new fError("Usuario no registrado.");
+                    fError ventana = new fError("El usuario introducido no esta registrado.");
                     ventana.ShowDialog();
-                } else if (usuario.Id == -2)
+                }
+                else if (usuario.Id == -2)
                 {
                     usuario = null;
-                    fError ventana = new fError("Contraseña errónea.");
+                    fError ventana = new fError("La contraseña introducida no es correcta.");
                     ventana.ShowDialog();
                 }
             }
             else
             {
-                fError ventana = new fError("Faltan parametros");
+                fError ventana = new fError("Faltan parametros por introducir.");
                 ventana.ShowDialog();
             }
             
         }
-
-        private void fIniciarSesion_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void bRecuperar_Click(object sender, EventArgs e)
-        {
-            if (tCorreo.Text != "")
-            {
-                fRecuperarContrasena ventana = new fRecuperarContrasena(tCorreo.Text);
-
-                ventana.ShowDialog();
-            }
-            
-        }
+        
     }
 }

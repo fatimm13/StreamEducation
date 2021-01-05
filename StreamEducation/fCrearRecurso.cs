@@ -12,9 +12,15 @@ namespace StreamEducation
 {
     public partial class fCrearRecurso : Form
     {
+
         public fCrearRecurso()
         {
             InitializeComponent();
+        }
+
+        private void fCrearRecurso_Load(object sender, EventArgs e)
+        {
+            labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
         }
 
         private void bAceptar_Click(object sender, EventArgs e)
@@ -26,14 +32,10 @@ namespace StreamEducation
             }
             else
             {
-                fError ventana = new fError("Faltan parametros.");
+                fError ventana = new fError("Faltan parametros por introducir.");
                 ventana.ShowDialog();
             }
         }
-
-        private void fCrearRecurso_Load(object sender, EventArgs e)
-        {
-            labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
-        }
+       
     }
 }

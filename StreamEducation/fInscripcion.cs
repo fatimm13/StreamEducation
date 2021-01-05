@@ -14,12 +14,11 @@ namespace StreamEducation
     public partial class fInscripcion : Form
     {
 
-        private int usuario;
         private int curso;
-        public fInscripcion(int c,int u)
+
+        public fInscripcion(int c)
         {
             InitializeComponent();
-            usuario = u;
             curso = c;
         }
 
@@ -28,33 +27,16 @@ namespace StreamEducation
 
         }
 
-        private void bAceptar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string CONNECTION = Properties.Settings.Default.COMPLETE;
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-                string query = "INSERT INTO tInscripcion (curso,usuario) VALUES(" + curso+ ", '"
-                    + usuario + "');";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-
-                
-            }
-            catch
-            {
-                fError ventana = new fError("Error al inscribirse.");
-                ventana.ShowDialog();
-                this.Close();
-            }
-            this.Close();
-        }
-
         private void bRechazar_Click(object sender, EventArgs e)
         {
-            
             this.Close();
         }
+
+        private void bAceptar_Click(object sender, EventArgs e)
+        {
+            GestorGlobal.UsuarioActivo.pedirInscripcion(curso);
+            this.Close();
+        }
+
     }
 }

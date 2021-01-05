@@ -40,9 +40,9 @@ namespace StreamEducation
             // 
             this.lAceptar.BackColor = System.Drawing.SystemColors.Control;
             this.lAceptar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAceptar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lAceptar.FormattingEnabled = true;
-            this.lAceptar.ItemHeight = 20;
+            this.lAceptar.ItemHeight = 25;
             this.lAceptar.Location = new System.Drawing.Point(808, 98);
             this.lAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.lAceptar.Name = "lAceptar";
@@ -74,9 +74,9 @@ namespace StreamEducation
             // 
             this.lUsuarios.BackColor = System.Drawing.SystemColors.Control;
             this.lUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lUsuarios.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lUsuarios.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUsuarios.FormattingEnabled = true;
-            this.lUsuarios.ItemHeight = 20;
+            this.lUsuarios.ItemHeight = 25;
             this.lUsuarios.Location = new System.Drawing.Point(31, 98);
             this.lUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.lUsuarios.Name = "lUsuarios";
@@ -88,9 +88,9 @@ namespace StreamEducation
             // 
             this.lRechazar.BackColor = System.Drawing.SystemColors.Control;
             this.lRechazar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lRechazar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRechazar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lRechazar.FormattingEnabled = true;
-            this.lRechazar.ItemHeight = 20;
+            this.lRechazar.ItemHeight = 25;
             this.lRechazar.Location = new System.Drawing.Point(896, 98);
             this.lRechazar.Margin = new System.Windows.Forms.Padding(4);
             this.lRechazar.Name = "lRechazar";
@@ -114,6 +114,7 @@ namespace StreamEducation
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inscripciones Pendientes";
+            this.Load += new System.EventHandler(this.fInscripcionesPendientes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

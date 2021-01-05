@@ -278,28 +278,81 @@ namespace StreamEducation
             miBD.Close();
         }
 
+        public static string recuperarContrasena(string miCorreo, int miPregunta, string miRespuesta)
+        {
+            string contrasena = null;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT contrasena FROM tUsuario WHERE correo = '" + miCorreo + "' and pregunta ='" + miPregunta + "'and upper(respuesta) = '" + miRespuesta.ToUpper() + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read()) { contrasena = (string)rdr[0]; }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar recuperar la contraseña.");
+            }
+            return contrasena;
+        }
+
+        public void pedirInscripcion(int curso)
+        {
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "INSERT INTO tInscripcion (curso, usuario) VALUES('" + curso + "', '" + id + "');";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al realizar la inscripcion.");
+            }
+        }
+
         public void aceptarInscripcion(int curso)
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "INSERT INTO tCursoUsuario VALUES ('"+curso+"','"+id+"');";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            query = "DELETE FROM tInscripcion WHERE curso = " + curso + " and usuario ='" + id + "';";
-            cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
-
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "INSERT INTO tCursoUsuario VALUES ('" + curso + "','" + id + "');";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                query = "DELETE FROM tInscripcion WHERE curso = '" + curso + "' and usuario ='" + id + "';";
+                cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al aceptar la inscripcion.");
+            }
         }
+
         public void rechazarInscripcion(int curso)
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tInscripcion WHERE curso = " + curso + " and usuario ='" + id + "';";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tInscripcion WHERE curso = '" + curso + "' and usuario ='" + id + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al rechazar la inscripcion.");
+            }
         }
+
         public void expulsar(int curso)
         {
             MySqlConnection miBD = new MySqlConnection(CONNECTION);

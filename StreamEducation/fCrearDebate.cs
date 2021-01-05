@@ -12,11 +12,15 @@ namespace StreamEducation
 {
     public partial class fCrearDebate : Form
     {
-       
 
         public fCrearDebate()
         {
             InitializeComponent();
+        }
+
+        private void fCrearDebate_Load(object sender, EventArgs e)
+        {
+            labelForo.Text = GestorGlobal.ForoActivo.Nombre;
         }
 
         private void bAceptar_Click(object sender, EventArgs e)
@@ -28,14 +32,10 @@ namespace StreamEducation
             }
             else
             {
-                fError ventana = new fError("Faltan parametros.");
+                fError ventana = new fError("Faltan parametros por introducir.");
                 ventana.ShowDialog();
             }
         }
 
-        private void fCrearDebate_Load(object sender, EventArgs e)
-        {
-            labelForo.Text = GestorGlobal.ForoActivo.Nombre;
-        }
     }
 }

@@ -26,9 +26,19 @@ namespace StreamEducation
             foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
         }
 
+        private void Recarga()
+        {
+            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            bRegistrarse.Visible = !usuarioIniciado;
+            bIniciarSesion.Visible = !usuarioIniciado;
+            bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
+            bAddMensaje.Visible = usuarioIniciado;
+            bBorrar.Visible = usuarioIniciado && GestorGlobal.UsuarioActivo.RolAdmin;
+        }
+
         private void bInicio_Click(object sender, EventArgs e)
         {
-            GestorGlobal.DebateActivo = null;
             this.Close();
         }
 
@@ -64,18 +74,6 @@ namespace StreamEducation
             Recarga();
         }
 
-        private void Recarga()
-        {
-            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
-            bRegistrarse.Visible = !usuarioIniciado;
-            bIniciarSesion.Visible = !usuarioIniciado;
-            bPerfil.Visible = usuarioIniciado;
-            bAddMensaje.Visible = usuarioIniciado;
-            bCerrarSesion.Visible = usuarioIniciado;
-            bAddMensaje.Visible = usuarioIniciado;
-            bBorrar.Visible = usuarioIniciado && GestorGlobal.UsuarioActivo.RolAdmin;
-        }
-
         private void bAddMensaje_Click(object sender, EventArgs e)
         {
             fCrearMensaje ventana = new fCrearMensaje();
@@ -106,5 +104,6 @@ namespace StreamEducation
                 foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
             }
         }
+
     }
 }

@@ -17,7 +17,7 @@ namespace StreamEducation
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void fCrearRecursoActividad_Load(object sender, EventArgs e)
         {
             labelActividad.Text = GestorGlobal.ActividadActiva.Nombre;
         }
@@ -31,9 +31,10 @@ namespace StreamEducation
             }
             else
             {
-                fError ventana = new fError("Faltan parametros.");
+                fError ventana = new fError("Faltan parametros por introducir.");
                 ventana.ShowDialog();
             }
         }
+        
     }
 }

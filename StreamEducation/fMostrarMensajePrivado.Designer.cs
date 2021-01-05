@@ -33,7 +33,6 @@ namespace StreamEducation
             this.label7 = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.bBorrar = new System.Windows.Forms.Button();
             this.labelNombre = new System.Windows.Forms.Label();
             this.tMensaje = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -81,17 +80,6 @@ namespace StreamEducation
             this.label6.TabIndex = 51;
             this.label6.Text = "Fecha:";
             // 
-            // bBorrar
-            // 
-            this.bBorrar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBorrar.Location = new System.Drawing.Point(456, 432);
-            this.bBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(126, 38);
-            this.bBorrar.TabIndex = 50;
-            this.bBorrar.Text = "Borrar";
-            this.bBorrar.UseVisualStyleBackColor = true;
-            // 
             // labelNombre
             // 
             this.labelNombre.AutoSize = true;
@@ -138,6 +126,7 @@ namespace StreamEducation
             this.bAceptar.TabIndex = 45;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
+            this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
             // 
             // label4
             // 
@@ -158,7 +147,6 @@ namespace StreamEducation
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.bBorrar);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.tMensaje);
             this.Controls.Add(this.label3);
@@ -170,6 +158,7 @@ namespace StreamEducation
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mensaje Privado";
+            this.Load += new System.EventHandler(this.fMostrarMensajePrivado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,7 +170,6 @@ namespace StreamEducation
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button bBorrar;
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.TextBox tMensaje;
         private System.Windows.Forms.Label label3;

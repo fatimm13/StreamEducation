@@ -60,7 +60,7 @@ namespace StreamEducation
             this.bCrearRecurso = new System.Windows.Forms.Button();
             this.bBorrar = new System.Windows.Forms.Button();
             this.lBorrar = new System.Windows.Forms.ListBox();
-            this.bFormulario = new System.Windows.Forms.Button();
+            this.bCrearTest = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -439,24 +439,24 @@ namespace StreamEducation
             this.lBorrar.TabIndex = 43;
             this.lBorrar.SelectedIndexChanged += new System.EventHandler(this.lBorrar_SelectedIndexChanged);
             // 
-            // bFormulario
+            // bCrearTest
             // 
-            this.bFormulario.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bFormulario.Location = new System.Drawing.Point(970, 373);
-            this.bFormulario.Margin = new System.Windows.Forms.Padding(4);
-            this.bFormulario.Name = "bFormulario";
-            this.bFormulario.Size = new System.Drawing.Size(179, 39);
-            this.bFormulario.TabIndex = 44;
-            this.bFormulario.Text = "Crear Formulario";
-            this.bFormulario.UseVisualStyleBackColor = true;
-            this.bFormulario.Click += new System.EventHandler(this.button1_Click);
+            this.bCrearTest.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCrearTest.Location = new System.Drawing.Point(970, 373);
+            this.bCrearTest.Margin = new System.Windows.Forms.Padding(4);
+            this.bCrearTest.Name = "bCrearTest";
+            this.bCrearTest.Size = new System.Drawing.Size(179, 39);
+            this.bCrearTest.TabIndex = 44;
+            this.bCrearTest.Text = "Crear Test";
+            this.bCrearTest.UseVisualStyleBackColor = true;
+            this.bCrearTest.Click += new System.EventHandler(this.bCrearTest_Click);
             // 
             // fCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1685, 838);
-            this.Controls.Add(this.bFormulario);
+            this.Controls.Add(this.bCrearTest);
             this.Controls.Add(this.lBorrar);
             this.Controls.Add(this.bBorrar);
             this.Controls.Add(this.bCrearRecurso);
@@ -523,6 +523,6 @@ namespace StreamEducation
         private System.Windows.Forms.Button bValorar;
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button bFormulario;
+        private System.Windows.Forms.Button bCrearTest;
     }
 }

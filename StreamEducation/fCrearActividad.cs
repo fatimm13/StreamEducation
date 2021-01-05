@@ -17,26 +17,27 @@ namespace StreamEducation
             InitializeComponent();
         }
 
+        private void fCrearActividad_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void bAceptar_Click(object sender, EventArgs e)
         {
             
             if (GestorGlobal.UsuarioActivo != null && tNombre.Text != "")
             {
-                DateTime fecha = dateTimePicker.Value;
-                string sqldate = fecha.ToString("dd-MM-yyyy");
-                new Actividad(GestorGlobal.UsuarioActivo, tNombre.Text, tDescripcion.Text, sqldate);
+                DateTime fechaElegida = dateTimePicker.Value;
+                string fecha = fechaElegida.ToString("dd-MM-yyyy");
+                new Actividad(GestorGlobal.UsuarioActivo, tNombre.Text, tDescripcion.Text, fecha);
                 this.Close();
             }
             else
             {
-                fError ventana = new fError("Faltan parametros.");
+                fError ventana = new fError("Faltan parametros por introducir.");
                 ventana.ShowDialog();
             }
         }
 
-        private void fCrearActividad_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

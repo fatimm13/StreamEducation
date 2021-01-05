@@ -17,9 +17,34 @@ namespace StreamEducation
             InitializeComponent();
         }
 
+        private void fForo_Load(object sender, EventArgs e)
+        {
+            labelForo.Text = GestorGlobal.ForoActivo.Nombre;
+            tDescripcion.Text = GestorGlobal.ForoActivo.Descripcion;
+            labelCreador.Text = GestorGlobal.ForoActivo.Creador.Nombre;
+            labelCurso.Text = GestorGlobal.ForoActivo.Curso.Nombre;
+            Recarga();
+            foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
+            {
+                lDebate.Items.Add(d);
+                lCreador.Items.Add(d.Creador);
+                lIntervenciones.Items.Add(d.intervenciones());
+            }
+        }
+
+        private void Recarga()
+        {
+            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            bRegistrarse.Visible = !usuarioIniciado;
+            bIniciarSesion.Visible = !usuarioIniciado;
+            bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
+            bAddDebate.Visible = usuarioIniciado;
+            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.ForoActivo.Creador.Id || GestorGlobal.UsuarioActivo.RolAdmin);
+        }
+
         private void bInicio_Click(object sender, EventArgs e)
         {
-            GestorGlobal.ForoActivo = null;
             this.Close();
         }
 
@@ -55,6 +80,18 @@ namespace StreamEducation
             Recarga();
         }
 
+        private void bBorrar_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.ForoActivo.Borrar();
+                GestorGlobal.ForoActivo = null;
+                this.Close();
+            }
+        }
+
         private void bAddDebate_Click(object sender, EventArgs e)
         {
             fCrearDebate ventana = new fCrearDebate();
@@ -70,31 +107,6 @@ namespace StreamEducation
             }
         }
 
-        private void fForo_Load(object sender, EventArgs e)
-        {
-            labelForo.Text = GestorGlobal.ForoActivo.Nombre;
-            tDescripcion.Text = GestorGlobal.ForoActivo.Descripcion;
-            labelCreador.Text = GestorGlobal.ForoActivo.Creador.Nombre;
-            labelCurso.Text = GestorGlobal.ForoActivo.Curso.Nombre;
-            Recarga();
-            foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
-            {
-                lDebate.Items.Add(d);
-                lCreador.Items.Add(d.Creador);
-                lIntervenciones.Items.Add(d.intervenciones());
-            }
-        }
-        private void Recarga()
-        {
-            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
-            bRegistrarse.Visible = !usuarioIniciado;
-            bIniciarSesion.Visible = !usuarioIniciado;
-            bPerfil.Visible = usuarioIniciado;
-            bCerrarSesion.Visible = usuarioIniciado;
-            bAddDebate.Visible = usuarioIniciado;
-            bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.ForoActivo.Creador.Id || GestorGlobal.UsuarioActivo.RolAdmin);
-        }
-
         private void lForo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lDebate.SelectedIndex >= 0)
@@ -103,6 +115,7 @@ namespace StreamEducation
                 fDebate ventana = new fDebate();
                 this.Visible = false;
                 ventana.ShowDialog();
+                GestorGlobal.DebateActivo = null;
                 Recarga();
                 this.Visible = true;
                 lDebate.Items.Clear();
@@ -116,17 +129,6 @@ namespace StreamEducation
                 }
             }
         }
-
-        private void bBorrar_Click(object sender, EventArgs e)
-        {
-            fConfirmacion ventana = new fConfirmacion();
-            ventana.ShowDialog();
-            if (ventana.Valor)
-            {
-                GestorGlobal.ForoActivo.Borrar();
-                GestorGlobal.ForoActivo = null;
-                this.Close();
-            }
-        }
+        
     }
 }

@@ -21,16 +21,18 @@ namespace StreamEducation
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void fInicial_Load(object sender, EventArgs e)
         {
-            this.linkLabel1.LinkVisited = true;
-            System.Diagnostics.Process.Start("https://drive.google.com/file/d/1WakPIcN9tgiAz7gyVG1FTTK-CngAbkLp/view?usp=sharing");
+            Recarga();
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Recarga()
         {
-            this.linkLabel1.LinkVisited = true;
-            System.Diagnostics.Process.Start("http://www.uma.es");
+            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            bRegistrarse.Visible = !usuarioIniciado;
+            bIniciarSesion.Visible = !usuarioIniciado;
+            bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
         }
 
         private void bRegistrarse_Click(object sender, EventArgs e)
@@ -54,6 +56,29 @@ namespace StreamEducation
             Recarga();
         }
 
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            fConfirmacion ventana = new fConfirmacion();
+            ventana.ShowDialog();
+            if (ventana.Valor)
+            {
+                GestorGlobal.UsuarioActivo = null;
+                Recarga();
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://drive.google.com/file/d/1WakPIcN9tgiAz7gyVG1FTTK-CngAbkLp/view?usp=sharing");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("http://www.uma.es");
+        }
+
         private void bCurso_Click(object sender, EventArgs e)
         {
             fSeleccionCurso ventana = new fSeleccionCurso();
@@ -63,7 +88,6 @@ namespace StreamEducation
             this.Visible = true;
         }
 
-        //TODO: Crear el foro inicial
         private void bForo_Click(object sender, EventArgs e)
         {
             GestorGlobal.CursoActivo = new Curso(0);
@@ -77,7 +101,6 @@ namespace StreamEducation
             this.Visible = true;
         }
 
-        //TODO: Crear actividades publicas
         private void bActividades_Click(object sender, EventArgs e)
         {
             fSeleccionActividades ventana = new fSeleccionActividades();
@@ -86,30 +109,6 @@ namespace StreamEducation
             Recarga();
             this.Visible = true;
         }
-
-        private void fInicial_Load(object sender, EventArgs e)
-        {
-            Recarga();
-        }
-
-        private void Recarga()
-        {
-            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
-            bRegistrarse.Visible = !usuarioIniciado;
-            bIniciarSesion.Visible = !usuarioIniciado;
-            bPerfil.Visible = usuarioIniciado;
-            bCerrarSesion.Visible = usuarioIniciado;
-        }
-
-        private void bCerrarSesion_Click(object sender, EventArgs e)
-        {
-            fConfirmacion ventana = new fConfirmacion();
-            ventana.ShowDialog();
-            if (ventana.Valor)
-            {
-                GestorGlobal.UsuarioActivo = null;
-                Recarga();
-            }
-        }
+        
     }
 }

@@ -31,7 +31,7 @@ namespace StreamEducation
         {
             this.label4 = new System.Windows.Forms.Label();
             this.bAceptar = new System.Windows.Forms.Button();
-            this.tNombre = new System.Windows.Forms.TextBox();
+            this.tRespuesta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboPregunta = new System.Windows.Forms.ComboBox();
@@ -59,14 +59,14 @@ namespace StreamEducation
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
             // 
-            // tNombre
+            // tRespuesta
             // 
-            this.tNombre.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tNombre.Location = new System.Drawing.Point(224, 276);
-            this.tNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(499, 32);
-            this.tNombre.TabIndex = 25;
+            this.tRespuesta.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tRespuesta.Location = new System.Drawing.Point(224, 276);
+            this.tRespuesta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tRespuesta.Name = "tRespuesta";
+            this.tRespuesta.Size = new System.Drawing.Size(499, 32);
+            this.tRespuesta.TabIndex = 25;
             // 
             // label2
             // 
@@ -112,7 +112,7 @@ namespace StreamEducation
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.bAceptar);
-            this.Controls.Add(this.tNombre);
+            this.Controls.Add(this.tRespuesta);
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -129,7 +129,7 @@ namespace StreamEducation
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button bAceptar;
-        private System.Windows.Forms.TextBox tNombre;
+        private System.Windows.Forms.TextBox tRespuesta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboPregunta;

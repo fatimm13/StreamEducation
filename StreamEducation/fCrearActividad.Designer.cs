@@ -41,10 +41,10 @@ namespace StreamEducation
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(673, 414);
+            this.bAceptar.Location = new System.Drawing.Point(666, 409);
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(103, 34);
+            this.bAceptar.Size = new System.Drawing.Size(110, 39);
             this.bAceptar.TabIndex = 21;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@ namespace StreamEducation
             // 
             this.dateTimePicker.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker.Location = new System.Drawing.Point(171, 121);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(465, 32);
             this.dateTimePicker.TabIndex = 24;
@@ -120,7 +120,7 @@ namespace StreamEducation
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tNombre);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "fCrearActividad";
             this.ShowIcon = false;

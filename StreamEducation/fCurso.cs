@@ -17,9 +17,44 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+
+        private void fCurso_Load(object sender, EventArgs e)
+        {
+            if (GestorGlobal.CursoActivo != null)
+            {
+                foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos()) lRecursos.Items.Add(r);
+                foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
+            }
+            labelProfesor.Text = GestorGlobal.CursoActivo.Profesor.Nombre;
+            labelFecha.Text = GestorGlobal.CursoActivo.Fecha;
+            labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
+            tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
+            Recarga();
+        }
+
+        private void Recarga()
+        {
+            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            bRegistrarse.Visible = !usuarioIniciado;
+            bIniciarSesion.Visible = !usuarioIniciado;
+            bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
+            bValorar.Visible = usuarioIniciado;
+            bool usuarioPoder = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
+            bCrearForo.Visible = usuarioPoder;
+            bCrearRecurso.Visible = usuarioPoder;
+            bBorrar.Visible = usuarioPoder;
+            lBorrar.Visible = usuarioPoder;
+            bCrearTest.Visible = usuarioPoder;
+            lBorrar.Items.Clear();
+            if (usuarioPoder)
+            {
+                foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos()) lBorrar.Items.Add("🗑️ Borrar");
+            }
+        }
+
         private void bInicio_Click(object sender, EventArgs e)
         {
-            GestorGlobal.CursoActivo = null;
             this.Close();
         }
 
@@ -55,68 +90,27 @@ namespace StreamEducation
             Recarga();
         }
 
-        private void fCurso_Load(object sender, EventArgs e)
+        private void bValorar_Click(object sender, EventArgs e)
         {
-            if (GestorGlobal.CursoActivo != null)
-            {
-                foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos()) lRecursos.Items.Add(r);
-                foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
-            }
-            labelProfesor.Text = GestorGlobal.CursoActivo.Profesor.Nombre;
-            labelFecha.Text = GestorGlobal.CursoActivo.Fecha;
-            labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
-            tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
-            Recarga();
-        }
-        private void Recarga()
-        {
-            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
-            bRegistrarse.Visible = !usuarioIniciado;
-            bIniciarSesion.Visible = !usuarioIniciado;
-            bPerfil.Visible = usuarioIniciado;
-            bCerrarSesion.Visible = usuarioIniciado;
-            bValorar.Visible = usuarioIniciado;
-            bool usuarioPoder = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.CursoActivo.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
-            bCrearForo.Visible = usuarioPoder;
-            bCrearRecurso.Visible = usuarioPoder;
-            bBorrar.Visible = usuarioPoder;
-            lBorrar.Visible = usuarioPoder;
-            bFormulario.Visible = usuarioPoder;
-            lBorrar.Items.Clear();
-            if (usuarioPoder) {
-                foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos()) lBorrar.Items.Add("🗑️ Borrar");
-            }
+            fValoracion ventana = new fValoracion();
+            ventana.ShowDialog();
         }
 
-        private void lRecursos_SelectedIndexChanged(object sender, EventArgs e)
+        private void bInscritos_Click(object sender, EventArgs e)
         {
-            if (lRecursos.SelectedIndex >= 0)
-            {
-                try
-                {
-                    System.Diagnostics.Process.Start(((Recurso)lRecursos.SelectedItem).Link);
-                }
-                catch
-                {
-                    fError ventana = new fError("Recurso no disponible.");
-                    ventana.ShowDialog();
-                }
-            }
+            fUsuariosInscritos ventana = new fUsuariosInscritos();
+            ventana.ShowDialog();
         }
 
-        private void lForos_SelectedIndexChanged(object sender, EventArgs e)
+        private void bPeticiones_Click(object sender, EventArgs e)
         {
-            if (lForos.SelectedIndex >= 0)
-            {
-                GestorGlobal.ForoActivo = (Foro) lForos.SelectedItem;
-                fForo ventana = new fForo();
-                this.Visible = false;
-                ventana.ShowDialog();
-                this.Visible = true;
-                Recarga();
-                lForos.Items.Clear();
-                foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
-            }
+            fInscripcionesPendientes ventana = new fInscripcionesPendientes();
+            ventana.ShowDialog();
+        }
+
+        private void bCrearTest_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/forms/u/0/");
         }
 
         private void bCrearForo_Click(object sender, EventArgs e)
@@ -152,6 +146,38 @@ namespace StreamEducation
             }
         }
 
+        private void lForos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lForos.SelectedIndex >= 0)
+            {
+                GestorGlobal.ForoActivo = (Foro)lForos.SelectedItem;
+                fForo ventana = new fForo();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Visible = true;
+                GestorGlobal.ForoActivo = null;
+                Recarga();
+                lForos.Items.Clear();
+                foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
+            }
+        }
+
+        private void lRecursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lRecursos.SelectedIndex >= 0)
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(((Recurso)lRecursos.SelectedItem).Link);
+                }
+                catch
+                {
+                    fError ventana = new fError("El recurso no se encuentra disponible actualmente.");
+                    ventana.ShowDialog();
+                }
+            }
+        }
+
         private void lBorrar_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = lBorrar.SelectedIndex;
@@ -174,27 +200,5 @@ namespace StreamEducation
             }
         }
 
-        private void bValorar_Click(object sender, EventArgs e)
-        {
-            fValoracion ventana = new fValoracion();
-            ventana.ShowDialog();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://docs.google.com/forms/u/0/");
-        }
-
-        private void bInscritos_Click(object sender, EventArgs e)
-        {
-            fUsuariosInscritos ventana = new fUsuariosInscritos();
-            ventana.ShowDialog();
-        }
-
-        private void bPeticiones_Click(object sender, EventArgs e)
-        {
-            fInscripcionesPendientes ventana = new fInscripcionesPendientes();
-            ventana.ShowDialog();
-        }
     }
 }

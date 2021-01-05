@@ -17,6 +17,30 @@ namespace StreamEducation
             InitializeComponent();
         }
 
+        private void fPerfil_Load(object sender, EventArgs e)
+        {
+            Actualiza();
+            bOpciones.Visible = GestorGlobal.UsuarioActivo.RolAdmin;
+            if (GestorGlobal.UsuarioActivo.RolAdmin) { labelRol.Text = "Administrador"; }
+            else if (GestorGlobal.UsuarioActivo.RolProfesor) { labelRol.Text = "Profesor"; }
+            else if (GestorGlobal.UsuarioActivo.RolAsociacion) { labelRol.Text = "Asociacion"; }
+            else { labelRol.Text = "Estudiante"; }
+            foreach (Curso c in GestorGlobal.UsuarioActivo.getCursos()) lCursos.Items.Add(c.Nombre);
+        }
+
+        private void Actualiza()
+        {
+            labelNombre.Text = GestorGlobal.UsuarioActivo.Nombre;
+            labelEscuela.Text = GestorGlobal.UsuarioActivo.Escuela;
+            labelPais.Text = GestorGlobal.UsuarioActivo.Pais;
+            tBio.Text = GestorGlobal.UsuarioActivo.Biografia;
+        }
+
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void bBorrarCuenta_Click(object sender, EventArgs e)
         {
             fConfirmacion ventana = new fConfirmacion();
@@ -36,33 +60,11 @@ namespace StreamEducation
             Actualiza();
         }
 
-        private void fPerfil_Load(object sender, EventArgs e)
-        {
-            Actualiza();
-            bOpciones.Visible = GestorGlobal.UsuarioActivo.RolAdmin;
-            if (GestorGlobal.UsuarioActivo.RolAdmin) { labelRol.Text = "Administrador"; }
-            else if (GestorGlobal.UsuarioActivo.RolProfesor) { labelRol.Text = "Profesor"; }
-            else if (GestorGlobal.UsuarioActivo.RolAsociacion) { labelRol.Text = "Asociacion"; }
-            else { labelRol.Text = "Estudiante"; }
-            foreach (Curso c in GestorGlobal.UsuarioActivo.getCursos()) lCursos.Items.Add(c.Nombre);
-        }
-        private void Actualiza()
-        {
-            labelNombre.Text = GestorGlobal.UsuarioActivo.Nombre;
-            labelEscuela.Text = GestorGlobal.UsuarioActivo.Escuela;
-            labelPais.Text = GestorGlobal.UsuarioActivo.Pais;
-            tBio.Text = GestorGlobal.UsuarioActivo.Biografia;
-        }
-
         private void bMensajeria_Click(object sender, EventArgs e)
         {
             fMensajeria ventana = new fMensajeria();
             ventana.ShowDialog();
         }
 
-        private void bVolver_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

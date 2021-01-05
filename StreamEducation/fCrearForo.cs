@@ -13,7 +13,6 @@ namespace StreamEducation
     public partial class fCrearForo : Form
     {
 
-
         public fCrearForo()
         {
             InitializeComponent();
@@ -28,9 +27,10 @@ namespace StreamEducation
             }
             else
             {
-                fError ventana = new fError("Faltan parametros.");
+                fError ventana = new fError("Faltan parametros por introducir.");
                 ventana.ShowDialog();
             }
         }
+
     }
 }

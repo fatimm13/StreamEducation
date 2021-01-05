@@ -12,11 +12,19 @@ namespace StreamEducation
 {
     public partial class fConfirmacion : Form
     {
+
         private bool confirmado;
+
         public bool Valor { get { return confirmado; } }
+
         public fConfirmacion()
         {
             InitializeComponent();
+        }
+
+        private void fConfirmacion_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void bAceptar_Click(object sender, EventArgs e)
@@ -31,9 +39,5 @@ namespace StreamEducation
             this.Close();
         }
 
-        private void fConfirmacion_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

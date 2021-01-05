@@ -21,6 +21,11 @@ namespace StreamEducation
             tBiografia.Text = GestorGlobal.UsuarioActivo.Biografia;
         }
 
+        private void fActualizarPerfil_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void bAceptar_Click(object sender, EventArgs e)
         {
             GestorGlobal.UsuarioActivo.Nombre = tNombre.Text;
@@ -29,9 +34,6 @@ namespace StreamEducation
             GestorGlobal.UsuarioActivo.Biografia = tBiografia.Text;
             this.Close();
         }
-        private void fActualizarPerfil_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

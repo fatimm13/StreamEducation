@@ -16,7 +16,11 @@ namespace StreamEducation
         public fInscripcionesPendientes()
         {
             InitializeComponent();
-            foreach(Usuario u in GestorGlobal.CursoActivo.getPeticiones())
+        }
+
+        private void fInscripcionesPendientes_Load(object sender, EventArgs e)
+        {
+            foreach (Usuario u in GestorGlobal.CursoActivo.getPeticiones())
             {
                 lUsuarios.Items.Add(u);
                 lAceptar.Items.Add("✔️");
@@ -33,8 +37,8 @@ namespace StreamEducation
         {
             if (lAceptar.SelectedIndex >= 0)
             {
-                Usuario us = (Usuario)lUsuarios.Items[lAceptar.SelectedIndex];
-                us.aceptarInscripcion(GestorGlobal.CursoActivo.Id);
+                Usuario usuario = (Usuario)lUsuarios.Items[lAceptar.SelectedIndex];
+                usuario.aceptarInscripcion(GestorGlobal.CursoActivo.Id);
                 lUsuarios.Items.Clear();
                 lAceptar.Items.Clear();
                 lRechazar.Items.Clear();
@@ -51,8 +55,8 @@ namespace StreamEducation
         {
             if (lRechazar.SelectedIndex >= 0)
             {
-                Usuario us = (Usuario)lUsuarios.Items[lRechazar.SelectedIndex];
-                us.rechazarInscripcion(GestorGlobal.CursoActivo.Id);
+                Usuario usuario = (Usuario)lUsuarios.Items[lRechazar.SelectedIndex];
+                usuario.rechazarInscripcion(GestorGlobal.CursoActivo.Id);
                 lUsuarios.Items.Clear();
                 lAceptar.Items.Clear();
                 lRechazar.Items.Clear();
@@ -64,5 +68,6 @@ namespace StreamEducation
                 }
             }
         }
+        
     }
 }

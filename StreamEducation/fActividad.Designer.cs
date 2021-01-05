@@ -115,7 +115,7 @@ namespace StreamEducation
             this.labelActividad.AutoSize = true;
             this.labelActividad.BackColor = System.Drawing.SystemColors.Control;
             this.labelActividad.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActividad.Location = new System.Drawing.Point(663, 135);
+            this.labelActividad.Location = new System.Drawing.Point(617, 135);
             this.labelActividad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelActividad.Name = "labelActividad";
             this.labelActividad.Size = new System.Drawing.Size(307, 41);
