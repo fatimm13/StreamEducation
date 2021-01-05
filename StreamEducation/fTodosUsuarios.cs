@@ -28,6 +28,7 @@ namespace StreamEducation
 
         private void Recarga()
         {
+
             lUsuarios.Items.Clear();
             foreach ((int, string, string) u in usuarios)
             {
@@ -42,6 +43,7 @@ namespace StreamEducation
                 int id = usuarios[lUsuarios.SelectedIndex].Item1;
                 fOpcionesAdmin ventana = new fOpcionesAdmin(new Usuario(id));
                 ventana.ShowDialog();
+                usuarios = Usuario.getUsuarios(tUsuario.Text);
                 Recarga();
             }
         }

@@ -112,7 +112,7 @@ namespace StreamEducation
             this.Name = "fTodosUsuarios";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TodosUsuarios";
+            this.Text = "Usuarios Registrados";
             this.Load += new System.EventHandler(this.fTodosUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
