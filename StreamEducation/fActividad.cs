@@ -148,5 +148,11 @@ namespace StreamEducation
                 }
             }
         }
+
+        private void bValorar_Click(object sender, EventArgs e)
+        {
+            fValoracion ventana = new fValoracion();
+            ventana.ShowDialog();
+        }
     }
 }

@@ -24,8 +24,6 @@ namespace StreamEducation
             }
         }
 
-       
-
         private void lUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
 

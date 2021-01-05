@@ -80,6 +80,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fConfirmacion";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Confirmar";
             this.Load += new System.EventHandler(this.fConfirmacion_Load);
             this.ResumeLayout(false);

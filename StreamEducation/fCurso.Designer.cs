@@ -229,7 +229,7 @@ namespace StreamEducation
             this.bValorar.Name = "bValorar";
             this.bValorar.Size = new System.Drawing.Size(323, 37);
             this.bValorar.TabIndex = 61;
-            this.bValorar.Text = "⭐ Valorar Actividad";
+            this.bValorar.Text = "⭐ Valorar Curso";
             this.bValorar.UseVisualStyleBackColor = true;
             this.bValorar.Click += new System.EventHandler(this.bValorar_Click);
             // 
@@ -478,6 +478,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fCurso";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Curso";
             this.Load += new System.EventHandler(this.fCurso_Load);
             this.groupBox1.ResumeLayout(false);

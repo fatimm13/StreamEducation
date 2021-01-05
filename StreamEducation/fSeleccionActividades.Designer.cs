@@ -259,6 +259,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fSeleccionActividades";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Actividad";
             this.Load += new System.EventHandler(this.fSeleccionActividades_Load);
             this.panel1.ResumeLayout(false);

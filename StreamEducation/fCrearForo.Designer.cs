@@ -101,6 +101,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fCrearForo";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Crear Foro";
             this.ResumeLayout(false);
             this.PerformLayout();

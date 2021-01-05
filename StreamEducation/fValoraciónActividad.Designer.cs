@@ -131,6 +131,7 @@
             this.MaximizeBox = false;
             this.Name = "fValoraciónActividad";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Valoracion";
             this.Load += new System.EventHandler(this.fValoraciónActividad_Load);
             this.ResumeLayout(false);

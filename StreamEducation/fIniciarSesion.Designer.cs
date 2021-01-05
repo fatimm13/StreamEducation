@@ -127,6 +127,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fIniciarSesion";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Iniciar Sesion";
             this.Load += new System.EventHandler(this.fIniciarSesion_Load);
             this.ResumeLayout(false);

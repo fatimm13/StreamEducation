@@ -42,10 +42,10 @@ namespace StreamEducation
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(495, 336);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.bAceptar.Location = new System.Drawing.Point(660, 414);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(88, 28);
+            this.bAceptar.Size = new System.Drawing.Size(117, 34);
             this.bAceptar.TabIndex = 16;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -54,60 +54,58 @@ namespace StreamEducation
             // tDescripcion
             // 
             this.tDescripcion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tDescripcion.Location = new System.Drawing.Point(36, 195);
-            this.tDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.tDescripcion.Location = new System.Drawing.Point(48, 240);
+            this.tDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
-            this.tDescripcion.Size = new System.Drawing.Size(444, 169);
+            this.tDescripcion.Size = new System.Drawing.Size(591, 207);
             this.tDescripcion.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 168);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(44, 207);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 18);
+            this.label3.Size = new System.Drawing.Size(152, 25);
             this.label3.TabIndex = 14;
             this.label3.Text = "Descripción:";
             // 
             // tNombre
             // 
             this.tNombre.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tNombre.Location = new System.Drawing.Point(122, 49);
-            this.tNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.tNombre.Location = new System.Drawing.Point(163, 60);
+            this.tNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(358, 27);
+            this.tNombre.Size = new System.Drawing.Size(476, 32);
             this.tNombre.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 51);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(44, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 18);
+            this.label1.Size = new System.Drawing.Size(109, 25);
             this.label1.TabIndex = 12;
             this.label1.Text = "Nombre:";
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(122, 102);
+            this.dateTimePicker.Location = new System.Drawing.Point(163, 126);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(357, 27);
+            this.dateTimePicker.Size = new System.Drawing.Size(475, 32);
             this.dateTimePicker.TabIndex = 26;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(44, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 18);
+            this.label2.Size = new System.Drawing.Size(85, 25);
             this.label2.TabIndex = 25;
             this.label2.Text = "Inicio:";
             // 
@@ -115,18 +113,19 @@ namespace StreamEducation
             // 
             this.cbPublico.AutoSize = true;
             this.cbPublico.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPublico.Location = new System.Drawing.Point(300, 164);
+            this.cbPublico.Location = new System.Drawing.Point(400, 202);
+            this.cbPublico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPublico.Name = "cbPublico";
-            this.cbPublico.Size = new System.Drawing.Size(180, 22);
+            this.cbPublico.Size = new System.Drawing.Size(221, 29);
             this.cbPublico.TabIndex = 27;
             this.cbPublico.Text = "El curso es público";
             this.cbPublico.UseVisualStyleBackColor = true;
             // 
             // fCrearCurso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 412);
+            this.ClientSize = new System.Drawing.Size(805, 507);
             this.Controls.Add(this.cbPublico);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label2);
@@ -135,10 +134,11 @@ namespace StreamEducation
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tNombre);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "fCrearCurso";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Crear Curso";
             this.Load += new System.EventHandler(this.fCrearCurso_Load);
             this.ResumeLayout(false);

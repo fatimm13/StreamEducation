@@ -42,30 +42,29 @@ namespace StreamEducation
             // tAsunto
             // 
             this.tAsunto.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tAsunto.Location = new System.Drawing.Point(130, 95);
-            this.tAsunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tAsunto.Location = new System.Drawing.Point(173, 117);
+            this.tAsunto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tAsunto.Name = "tAsunto";
-            this.tAsunto.Size = new System.Drawing.Size(345, 27);
+            this.tAsunto.Size = new System.Drawing.Size(459, 32);
             this.tAsunto.TabIndex = 34;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(39, 98);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(52, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 18);
+            this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 33;
             this.label2.Text = "Asunto:";
             // 
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(498, 338);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAceptar.Location = new System.Drawing.Point(664, 416);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(81, 32);
+            this.bAceptar.Size = new System.Drawing.Size(108, 39);
             this.bAceptar.TabIndex = 31;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -73,21 +72,20 @@ namespace StreamEducation
             // tDescripcion
             // 
             this.tDescripcion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tDescripcion.Location = new System.Drawing.Point(42, 183);
-            this.tDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tDescripcion.Location = new System.Drawing.Point(56, 225);
+            this.tDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
-            this.tDescripcion.Size = new System.Drawing.Size(434, 188);
+            this.tDescripcion.Size = new System.Drawing.Size(577, 230);
             this.tDescripcion.TabIndex = 30;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 150);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(52, 185);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 18);
+            this.label3.Size = new System.Drawing.Size(112, 25);
             this.label3.TabIndex = 29;
             this.label3.Text = "Mensaje:";
             // 
@@ -95,20 +93,19 @@ namespace StreamEducation
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 46);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(52, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 18);
+            this.label1.Size = new System.Drawing.Size(158, 25);
             this.label1.TabIndex = 35;
             this.label1.Text = "Destinatario:";
             // 
             // bSeleccionarUsuario
             // 
             this.bSeleccionarUsuario.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSeleccionarUsuario.Location = new System.Drawing.Point(439, 43);
-            this.bSeleccionarUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bSeleccionarUsuario.Location = new System.Drawing.Point(585, 53);
+            this.bSeleccionarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bSeleccionarUsuario.Name = "bSeleccionarUsuario";
-            this.bSeleccionarUsuario.Size = new System.Drawing.Size(36, 28);
+            this.bSeleccionarUsuario.Size = new System.Drawing.Size(48, 34);
             this.bSeleccionarUsuario.TabIndex = 36;
             this.bSeleccionarUsuario.Text = "...";
             this.bSeleccionarUsuario.UseVisualStyleBackColor = true;
@@ -116,19 +113,19 @@ namespace StreamEducation
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.textBox1.Location = new System.Drawing.Point(173, 43);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(231, 53);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(266, 27);
+            this.textBox1.Size = new System.Drawing.Size(353, 32);
             this.textBox1.TabIndex = 37;
             this.textBox1.Text = "Seleccione usuario...";
             // 
             // fCrearMensajePrivado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 410);
+            this.ClientSize = new System.Drawing.Size(805, 505);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.bSeleccionarUsuario);
             this.Controls.Add(this.label1);
@@ -137,9 +134,11 @@ namespace StreamEducation
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.tDescripcion);
             this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "fCrearMensajePrivado";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fCrearMensajePrivado";
             this.ResumeLayout(false);
             this.PerformLayout();

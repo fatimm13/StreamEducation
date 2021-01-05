@@ -152,6 +152,7 @@
             this.MaximizeBox = false;
             this.Name = "fCrearRecursoActividad";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Crear Recurso";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

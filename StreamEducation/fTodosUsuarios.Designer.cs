@@ -42,7 +42,7 @@ namespace StreamEducation
             this.lUsuarios.FormattingEnabled = true;
             this.lUsuarios.ItemHeight = 25;
             this.lUsuarios.Location = new System.Drawing.Point(16, 92);
-            this.lUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.lUsuarios.Name = "lUsuarios";
             this.lUsuarios.Size = new System.Drawing.Size(959, 400);
             this.lUsuarios.TabIndex = 45;
@@ -75,11 +75,13 @@ namespace StreamEducation
             this.Controls.Add(this.bBuscar);
             this.Controls.Add(this.tUsuario);
             this.Controls.Add(this.lUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "fTodosUsuarios";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TodosUsuarios";
+            this.Load += new System.EventHandler(this.fTodosUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

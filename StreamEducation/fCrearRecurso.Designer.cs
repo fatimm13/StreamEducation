@@ -155,6 +155,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fCrearRecurso";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Crear Recurso";
             this.Load += new System.EventHandler(this.fCrearRecurso_Load);
             this.ResumeLayout(false);

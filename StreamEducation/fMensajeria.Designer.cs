@@ -93,6 +93,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fMensajeria";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mensajeria";
             this.ResumeLayout(false);
             this.PerformLayout();

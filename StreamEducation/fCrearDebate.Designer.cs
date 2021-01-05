@@ -125,6 +125,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fCrearDebate";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Crear Debate";
             this.Load += new System.EventHandler(this.fCrearDebate_Load);
             this.ResumeLayout(false);

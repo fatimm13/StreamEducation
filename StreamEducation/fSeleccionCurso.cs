@@ -62,9 +62,12 @@ namespace StreamEducation
             lPublico.Items.Clear();
             foreach (Curso c in Curso.listaCursos())
             {
-                lCursos.Items.Add(c);
-                if (c.Publico) { lPublico.Items.Add("✔️"); }
-                else { lPublico.Items.Add("❌"); }
+                if (c.Id > 0)
+                {
+                    lCursos.Items.Add(c);
+                    if (c.Publico) { lPublico.Items.Add("✔️"); }
+                    else { lPublico.Items.Add("❌"); }
+                }
             }
         }
 
@@ -73,9 +76,12 @@ namespace StreamEducation
             Recarga();
             foreach (Curso c in Curso.listaCursos())
             {
-                lCursos.Items.Add(c);
-                if (c.Publico) { lPublico.Items.Add("✔️"); }
-                else { lPublico.Items.Add("❌"); }
+                if (c.Id > 0)
+                {
+                    lCursos.Items.Add(c);
+                    if (c.Publico) { lPublico.Items.Add("✔️"); }
+                    else { lPublico.Items.Add("❌"); }
+                }
             }
         }
         private void Recarga()
@@ -105,9 +111,12 @@ namespace StreamEducation
                     lPublico.Items.Clear();
                     foreach (Curso c in Curso.listaCursos())
                     {
-                        lCursos.Items.Add(c);
-                        if (c.Publico) { lPublico.Items.Add("✔️"); }
-                        else { lPublico.Items.Add("❌"); }
+                        if (c.Id > 0)
+                        {
+                            lCursos.Items.Add(c);
+                            if (c.Publico) { lPublico.Items.Add("✔️"); }
+                            else { lPublico.Items.Add("❌"); }
+                        }
                     }
                 }
                 else if(GestorGlobal.UsuarioActivo!=null)
@@ -132,9 +141,12 @@ namespace StreamEducation
                         lPublico.Items.Clear();
                         foreach (Curso c in Curso.listaCursos())
                         {
-                            lCursos.Items.Add(c);
-                            if (c.Publico) { lPublico.Items.Add("✔️"); }
-                            else { lPublico.Items.Add("❌"); }
+                            if (c.Id > 0)
+                            {
+                                lCursos.Items.Add(c);
+                                if (c.Publico) { lPublico.Items.Add("✔️"); }
+                                else { lPublico.Items.Add("❌"); }
+                            }
                         }
                     }
                     else
@@ -143,19 +155,14 @@ namespace StreamEducation
                         miBD.Close();
                         fInscripcion ventana = new fInscripcion(auxc.Id,GestorGlobal.UsuarioActivo.Id);
                         ventana.ShowDialog();
-
                     }
-                    
-
                 }
                 else
                 {
                     fError error = new fError("Debes estar registrado para acceder.");
                     error.ShowDialog();
-
                 }
             }
-            
             
         }
 

@@ -44,7 +44,7 @@ namespace StreamEducation
             this.lAceptar.FormattingEnabled = true;
             this.lAceptar.ItemHeight = 20;
             this.lAceptar.Location = new System.Drawing.Point(808, 98);
-            this.lAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.lAceptar.Name = "lAceptar";
             this.lAceptar.Size = new System.Drawing.Size(80, 400);
             this.lAceptar.TabIndex = 55;
@@ -78,7 +78,7 @@ namespace StreamEducation
             this.lUsuarios.FormattingEnabled = true;
             this.lUsuarios.ItemHeight = 20;
             this.lUsuarios.Location = new System.Drawing.Point(31, 98);
-            this.lUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.lUsuarios.Name = "lUsuarios";
             this.lUsuarios.Size = new System.Drawing.Size(769, 400);
             this.lUsuarios.TabIndex = 52;
@@ -92,7 +92,7 @@ namespace StreamEducation
             this.lRechazar.FormattingEnabled = true;
             this.lRechazar.ItemHeight = 20;
             this.lRechazar.Location = new System.Drawing.Point(896, 98);
-            this.lRechazar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lRechazar.Margin = new System.Windows.Forms.Padding(4);
             this.lRechazar.Name = "lRechazar";
             this.lRechazar.Size = new System.Drawing.Size(80, 400);
             this.lRechazar.TabIndex = 56;
@@ -108,10 +108,11 @@ namespace StreamEducation
             this.Controls.Add(this.bBuscar);
             this.Controls.Add(this.tForo);
             this.Controls.Add(this.lUsuarios);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "fInscripcionesPendientes";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inscripciones Pendientes";
             this.ResumeLayout(false);
             this.PerformLayout();

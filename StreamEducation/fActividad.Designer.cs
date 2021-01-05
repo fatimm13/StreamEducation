@@ -172,6 +172,7 @@ namespace StreamEducation
             this.bValorar.TabIndex = 60;
             this.bValorar.Text = "⭐ Valorar Actividad";
             this.bValorar.UseVisualStyleBackColor = true;
+            this.bValorar.Click += new System.EventHandler(this.bValorar_Click);
             // 
             // labelOrganizador
             // 
@@ -366,6 +367,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fActividad";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Actividad";
             this.Load += new System.EventHandler(this.fActividad_Load);
             this.groupBox1.ResumeLayout(false);

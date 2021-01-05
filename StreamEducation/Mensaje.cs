@@ -103,7 +103,7 @@ namespace StreamEducation
         }
         public override string ToString()
         {
-            return "Mensaje de: " + creador.ToString() + "    Enviado el "+fecha+" \n Titulo:"+nombre+"\n \n Mensaje:"+descripcion;
+            return "Mensaje de: " + creador.ToString() + " \t Titulo: " + nombre + " \t Enviado el "+ fecha;
         }
 
         public void Borrar()

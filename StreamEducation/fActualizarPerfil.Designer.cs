@@ -159,6 +159,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fActualizarPerfil";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Actualizar Perfil";
             this.Load += new System.EventHandler(this.fActualizarPerfil_Load);
             this.ResumeLayout(false);

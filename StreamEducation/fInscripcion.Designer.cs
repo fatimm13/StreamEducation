@@ -79,6 +79,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fInscripcion";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inscripcion";
             this.Load += new System.EventHandler(this.fInscripcion_Load);
             this.ResumeLayout(false);

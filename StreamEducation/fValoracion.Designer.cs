@@ -132,10 +132,11 @@ namespace StreamEducation
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelCurso);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "fValoracion";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Valoracion";
             this.Load += new System.EventHandler(this.fValoracion_Load);
             this.ResumeLayout(false);

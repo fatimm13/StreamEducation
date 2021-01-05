@@ -49,10 +49,9 @@ namespace StreamEducation
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(52, 119);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(69, 146);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 18);
+            this.label3.Size = new System.Drawing.Size(85, 25);
             this.label3.TabIndex = 32;
             this.label3.Text = "Título:";
             // 
@@ -60,20 +59,19 @@ namespace StreamEducation
             // 
             this.labelDebate.AutoSize = true;
             this.labelDebate.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDebate.Location = new System.Drawing.Point(135, 76);
-            this.labelDebate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDebate.Location = new System.Drawing.Point(180, 94);
             this.labelDebate.Name = "labelDebate";
-            this.labelDebate.Size = new System.Drawing.Size(142, 23);
+            this.labelDebate.Size = new System.Drawing.Size(178, 29);
             this.labelDebate.TabIndex = 31;
             this.labelDebate.Text = "___________";
             // 
             // bAceptar
             // 
             this.bAceptar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAceptar.Location = new System.Drawing.Point(476, 346);
-            this.bAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bAceptar.Location = new System.Drawing.Point(635, 426);
+            this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
-            this.bAceptar.Size = new System.Drawing.Size(96, 34);
+            this.bAceptar.Size = new System.Drawing.Size(128, 42);
             this.bAceptar.TabIndex = 30;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
@@ -83,10 +81,9 @@ namespace StreamEducation
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(54, 190);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(72, 234);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 18);
+            this.label5.Size = new System.Drawing.Size(112, 25);
             this.label5.TabIndex = 29;
             this.label5.Text = "Mensaje:";
             // 
@@ -94,10 +91,9 @@ namespace StreamEducation
             // 
             this.labelForo.AutoSize = true;
             this.labelForo.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelForo.Location = new System.Drawing.Point(109, 27);
-            this.labelForo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelForo.Location = new System.Drawing.Point(145, 33);
             this.labelForo.Name = "labelForo";
-            this.labelForo.Size = new System.Drawing.Size(166, 26);
+            this.labelForo.Size = new System.Drawing.Size(213, 34);
             this.labelForo.TabIndex = 28;
             this.labelForo.Text = "___________";
             // 
@@ -105,10 +101,9 @@ namespace StreamEducation
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 76);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(43, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 23);
+            this.label2.Size = new System.Drawing.Size(119, 29);
             this.label2.TabIndex = 27;
             this.label2.Text = "Debate:";
             // 
@@ -116,10 +111,9 @@ namespace StreamEducation
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 27);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(32, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 26);
+            this.label1.Size = new System.Drawing.Size(96, 34);
             this.label1.TabIndex = 26;
             this.label1.Text = "Foro:";
             // 
@@ -129,12 +123,13 @@ namespace StreamEducation
             this.tMensaje.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tMensaje.Enabled = false;
             this.tMensaje.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tMensaje.Location = new System.Drawing.Point(68, 222);
+            this.tMensaje.Location = new System.Drawing.Point(91, 273);
+            this.tMensaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tMensaje.Multiline = true;
             this.tMensaje.Name = "tMensaje";
             this.tMensaje.ReadOnly = true;
             this.tMensaje.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.tMensaje.Size = new System.Drawing.Size(504, 108);
+            this.tMensaje.Size = new System.Drawing.Size(672, 133);
             this.tMensaje.TabIndex = 34;
             this.tMensaje.Text = "Insertar mensaje";
             // 
@@ -142,20 +137,19 @@ namespace StreamEducation
             // 
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNombre.Location = new System.Drawing.Point(135, 119);
-            this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNombre.Location = new System.Drawing.Point(180, 146);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(118, 18);
+            this.labelNombre.Size = new System.Drawing.Size(155, 25);
             this.labelNombre.TabIndex = 35;
             this.labelNombre.Text = "___________";
             // 
             // bBorrar
             // 
             this.bBorrar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBorrar.Location = new System.Drawing.Point(352, 346);
-            this.bBorrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bBorrar.Location = new System.Drawing.Point(469, 426);
+            this.bBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(96, 34);
+            this.bBorrar.Size = new System.Drawing.Size(128, 42);
             this.bBorrar.TabIndex = 36;
             this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
@@ -165,10 +159,9 @@ namespace StreamEducation
             // 
             this.labelFecha.AutoSize = true;
             this.labelFecha.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFecha.Location = new System.Drawing.Point(382, 190);
-            this.labelFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFecha.Location = new System.Drawing.Point(509, 234);
             this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(118, 18);
+            this.labelFecha.Size = new System.Drawing.Size(155, 25);
             this.labelFecha.TabIndex = 38;
             this.labelFecha.Text = "___________";
             // 
@@ -176,10 +169,9 @@ namespace StreamEducation
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(314, 190);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(419, 234);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 18);
+            this.label6.Size = new System.Drawing.Size(85, 25);
             this.label6.TabIndex = 37;
             this.label6.Text = "Fecha:";
             // 
@@ -187,10 +179,9 @@ namespace StreamEducation
             // 
             this.labelCreador.AutoSize = true;
             this.labelCreador.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreador.Location = new System.Drawing.Point(135, 154);
-            this.labelCreador.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCreador.Location = new System.Drawing.Point(180, 190);
             this.labelCreador.Name = "labelCreador";
-            this.labelCreador.Size = new System.Drawing.Size(118, 18);
+            this.labelCreador.Size = new System.Drawing.Size(155, 25);
             this.labelCreador.TabIndex = 40;
             this.labelCreador.Text = "___________";
             // 
@@ -198,18 +189,17 @@ namespace StreamEducation
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(54, 154);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(72, 190);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 18);
+            this.label4.Size = new System.Drawing.Size(83, 25);
             this.label4.TabIndex = 39;
             this.label4.Text = "Autor:";
             // 
             // fMostrarMensaje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 410);
+            this.ClientSize = new System.Drawing.Size(807, 505);
             this.Controls.Add(this.labelCreador);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelFecha);
@@ -224,10 +214,11 @@ namespace StreamEducation
             this.Controls.Add(this.labelForo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "fMostrarMensaje";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mostrar mensaje";
             this.Load += new System.EventHandler(this.fMostrarMensaje_Load);
             this.ResumeLayout(false);

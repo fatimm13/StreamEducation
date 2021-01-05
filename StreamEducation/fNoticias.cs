@@ -83,7 +83,7 @@ namespace StreamEducation
             if (lNoticias.SelectedIndex >= 0)
             {
                 GestorGlobal.DebateActivo = (Debate)lNoticias.SelectedItem;
-                fDebate ventana = new fDebate();
+                fMostrarNoticia ventana = new fMostrarNoticia();
                 this.Visible = false;
                 ventana.ShowDialog();
                 Recarga();

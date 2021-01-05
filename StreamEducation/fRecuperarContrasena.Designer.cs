@@ -118,6 +118,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fRecuperarContrasena";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Recuperar Contrasena";
             this.ResumeLayout(false);
             this.PerformLayout();

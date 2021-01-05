@@ -85,6 +85,18 @@
     <Compile Include="fCrearRecursoActividad.Designer.cs">
       <DependentUpon>fCrearRecursoActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="fMostrarComentario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMostrarComentario.Designer.cs">
+      <DependentUpon>fMostrarComentario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fMostrarNoticia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMostrarNoticia.Designer.cs">
+      <DependentUpon>fMostrarNoticia.cs</DependentUpon>
+    </Compile>
     <Compile Include="fValoraciónActividad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +309,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fCrearRecursoActividad.resx">
       <DependentUpon>fCrearRecursoActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMostrarComentario.resx">
+      <DependentUpon>fMostrarComentario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fMostrarNoticia.resx">
+      <DependentUpon>fMostrarNoticia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSeleccionActividades.resx">
       <DependentUpon>fSeleccionActividades.cs</DependentUpon>

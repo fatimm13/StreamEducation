@@ -148,6 +148,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fCrearMensaje";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Crear Mensaje";
             this.Load += new System.EventHandler(this.fCrearMensaje_Load);
             this.ResumeLayout(false);

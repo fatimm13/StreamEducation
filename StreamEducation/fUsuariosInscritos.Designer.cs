@@ -95,6 +95,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fUsuariosInscritos";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fUsuariosInscritos";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -78,6 +78,7 @@ namespace StreamEducation
             this.MaximizeBox = false;
             this.Name = "fError";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Error";
             this.ResumeLayout(false);
             this.PerformLayout();
