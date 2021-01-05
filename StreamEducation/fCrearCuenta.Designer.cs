@@ -154,7 +154,6 @@ namespace StreamEducation
             this.comboRol.Items.AddRange(new object[] {
             "Estudiante",
             "Profesor",
-            "Administrador",
             "Asociacion Externa"});
             this.comboRol.Location = new System.Drawing.Point(343, 322);
             this.comboRol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

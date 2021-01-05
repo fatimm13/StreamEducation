@@ -15,15 +15,14 @@ namespace StreamEducation
         public fActualizarPerfil()
         {
             InitializeComponent();
-            tNombre.Text = GestorGlobal.UsuarioActivo.Nombre;
-            tEscuela.Text = GestorGlobal.UsuarioActivo.Escuela;
-            tPais.Text = GestorGlobal.UsuarioActivo.Pais;
-            tBiografia.Text = GestorGlobal.UsuarioActivo.Biografia;
         }
 
         private void fActualizarPerfil_Load(object sender, EventArgs e)
         {
-
+            tNombre.Text = GestorGlobal.UsuarioActivo.Nombre;
+            tEscuela.Text = GestorGlobal.UsuarioActivo.Escuela;
+            tPais.Text = GestorGlobal.UsuarioActivo.Pais;
+            tBiografia.Text = GestorGlobal.UsuarioActivo.Biografia;
         }
 
         private void bAceptar_Click(object sender, EventArgs e)

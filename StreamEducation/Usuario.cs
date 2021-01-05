@@ -244,6 +244,44 @@ namespace StreamEducation
             get { return rolAsociacion; }
         }
 
+        public void setRol(int index)
+        {
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                MySqlCommand cmd = new MySqlCommand(seleccionarQuery(index), miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+                rolProfesor = index == 1;
+                rolAsociacion = index == 2;
+                rolAdmin = index == 3;
+            }
+            catch
+            {
+                fError ventana = new fError("Error al actualizar pais del usuario.");
+                ventana.ShowDialog();
+            }
+        }
+
+        private string seleccionarQuery(int index)
+        {
+            string query = "UPDATE tUsuario SET rolProfesor = 0, rolAdmin = 0, rolAsociacion = 0 WHERE id = " + id + ";";
+            if (index == 1)
+            {
+                query = "UPDATE tUsuario SET rolProfesor = 1, rolAdmin = 0, rolAsociacion = 0 WHERE id = " + id + ";";
+            }
+            else if (index == 2)
+            {
+                query = "UPDATE tUsuario SET rolProfesor = 0, rolAdmin = 0, rolAsociacion = 1 WHERE id = " + id + ";";
+            }
+            else if (index == 3)
+            {
+                query = "UPDATE tUsuario SET rolProfesor = 0, rolAdmin = 1, rolAsociacion = 0 WHERE id = " + id + ";";
+            }
+            return query;
+        }
+
         public override string ToString()
         {
             return nombre;
@@ -431,6 +469,31 @@ namespace StreamEducation
                 fError ventana = new fError("Error al intentar expulsar al usuario del curso.");
                 ventana.ShowDialog();
             }
+        }
+
+        public static List<(int, string, string)> getUsuarios(string filtro)
+        {
+            List<(int, string, string)> lista = new List<(int, string, string)>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT id, nombre, correo FROM tUsuario WHERE rolAdmin = 0 and UPPER(nombre) LIKE '%" + filtro.ToUpper() + "%';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    lista.Add(((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a usuarios registrados.");
+                ventana.ShowDialog();
+            }
+            return lista;
         }
 
         public List<Curso> getCursos()

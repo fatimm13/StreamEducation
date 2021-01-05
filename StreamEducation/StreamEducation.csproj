@@ -97,6 +97,12 @@
     <Compile Include="fMostrarNoticia.Designer.cs">
       <DependentUpon>fMostrarNoticia.cs</DependentUpon>
     </Compile>
+    <Compile Include="fUsuariosMensajeria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fUsuariosMensajeria.Designer.cs">
+      <DependentUpon>fUsuariosMensajeria.cs</DependentUpon>
+    </Compile>
     <Compile Include="fValoracionActividad.cs">
       <SubType>Form</SubType>
     </Compile>

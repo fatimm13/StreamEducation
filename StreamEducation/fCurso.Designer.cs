@@ -32,8 +32,8 @@ namespace StreamEducation
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.bPeticiones = new System.Windows.Forms.Button();
             this.bInscritos = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelPeticion = new System.Windows.Forms.Label();
+            this.labelInscritos = new System.Windows.Forms.Label();
             this.lRecursos = new System.Windows.Forms.ListBox();
             this.labelCurso = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -97,27 +97,27 @@ namespace StreamEducation
             this.bInscritos.UseVisualStyleBackColor = true;
             this.bInscritos.Click += new System.EventHandler(this.bInscritos_Click);
             // 
-            // label6
+            // labelPeticion
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(433, 763);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(360, 29);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Peticiones de Inscripción:";
+            this.labelPeticion.AutoSize = true;
+            this.labelPeticion.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPeticion.Location = new System.Drawing.Point(433, 763);
+            this.labelPeticion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPeticion.Name = "labelPeticion";
+            this.labelPeticion.Size = new System.Drawing.Size(360, 29);
+            this.labelPeticion.TabIndex = 33;
+            this.labelPeticion.Text = "Peticiones de Inscripción:";
             // 
-            // label4
+            // labelInscritos
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(433, 705);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(266, 29);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Alumnos Inscritos:";
+            this.labelInscritos.AutoSize = true;
+            this.labelInscritos.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInscritos.Location = new System.Drawing.Point(433, 705);
+            this.labelInscritos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelInscritos.Name = "labelInscritos";
+            this.labelInscritos.Size = new System.Drawing.Size(266, 29);
+            this.labelInscritos.TabIndex = 32;
+            this.labelInscritos.Text = "Alumnos Inscritos:";
             // 
             // lRecursos
             // 
@@ -463,8 +463,8 @@ namespace StreamEducation
             this.Controls.Add(this.bCrearForo);
             this.Controls.Add(this.bPeticiones);
             this.Controls.Add(this.bInscritos);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelPeticion);
+            this.Controls.Add(this.labelInscritos);
             this.Controls.Add(this.lRecursos);
             this.Controls.Add(this.labelCurso);
             this.Controls.Add(this.label3);
@@ -495,8 +495,8 @@ namespace StreamEducation
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button bPeticiones;
         private System.Windows.Forms.Button bInscritos;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelPeticion;
+        private System.Windows.Forms.Label labelInscritos;
         private System.Windows.Forms.ListBox lRecursos;
         private System.Windows.Forms.Label labelCurso;
         private System.Windows.Forms.Label label3;

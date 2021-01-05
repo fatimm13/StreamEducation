@@ -66,5 +66,10 @@ namespace StreamEducation
             ventana.ShowDialog();
         }
 
+        private void bOpciones_Click(object sender, EventArgs e)
+        {
+            fTodosUsuarios ventana = new fTodosUsuarios();
+            ventana.ShowDialog();
+        }
     }
 }

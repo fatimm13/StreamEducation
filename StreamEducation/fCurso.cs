@@ -46,6 +46,10 @@ namespace StreamEducation
             bBorrar.Visible = usuarioPoder;
             lBorrar.Visible = usuarioPoder;
             bCrearTest.Visible = usuarioPoder;
+            labelInscritos.Visible = usuarioPoder;
+            labelPeticion.Visible = usuarioPoder;
+            bInscritos.Visible = usuarioPoder;
+            bPeticiones.Visible = usuarioPoder;
             lBorrar.Items.Clear();
             if (usuarioPoder)
             {

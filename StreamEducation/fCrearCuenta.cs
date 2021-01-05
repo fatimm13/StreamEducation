@@ -50,11 +50,10 @@ namespace StreamEducation
                     if (tContrasena1.Text.Equals(tContrasena2.Text))
                     {
                         bool profesor = false;
-                        bool admin = false;
                         bool asociacion = false;
+                        bool admin = false;
                         if (comboRol.SelectedIndex == 1) { profesor = true; }
-                        else if (comboRol.SelectedIndex == 2) { admin = true; }
-                        else if (comboRol.SelectedIndex == 3) { asociacion = true; }
+                        else if (comboRol.SelectedIndex == 2) { asociacion = true; }
                         new Usuario(tNombre.Text, tCorreo.Text, tContrasena1.Text, profesor, asociacion, admin, comboPregunta.SelectedIndex, tRespuesta.Text);
                         this.Close();
                     }

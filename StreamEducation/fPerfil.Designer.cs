@@ -143,7 +143,7 @@ namespace StreamEducation
             // 
             this.bActualizar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bActualizar.Location = new System.Drawing.Point(43, 310);
-            this.bActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.bActualizar.Name = "bActualizar";
             this.bActualizar.Size = new System.Drawing.Size(285, 50);
             this.bActualizar.TabIndex = 27;
@@ -157,7 +157,7 @@ namespace StreamEducation
             this.lCursos.FormattingEnabled = true;
             this.lCursos.ItemHeight = 25;
             this.lCursos.Location = new System.Drawing.Point(429, 431);
-            this.lCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lCursos.Margin = new System.Windows.Forms.Padding(4);
             this.lCursos.Name = "lCursos";
             this.lCursos.Size = new System.Drawing.Size(511, 154);
             this.lCursos.TabIndex = 25;
@@ -177,7 +177,7 @@ namespace StreamEducation
             // 
             this.tBio.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tBio.Location = new System.Drawing.Point(429, 186);
-            this.tBio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBio.Margin = new System.Windows.Forms.Padding(4);
             this.tBio.Multiline = true;
             this.tBio.Name = "tBio";
             this.tBio.ReadOnly = true;
@@ -199,7 +199,7 @@ namespace StreamEducation
             // 
             this.bBorrarCuenta.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bBorrarCuenta.Location = new System.Drawing.Point(633, 48);
-            this.bBorrarCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bBorrarCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.bBorrarCuenta.Name = "bBorrarCuenta";
             this.bBorrarCuenta.Size = new System.Drawing.Size(229, 38);
             this.bBorrarCuenta.TabIndex = 20;
@@ -221,7 +221,7 @@ namespace StreamEducation
             // picturePerfil
             // 
             this.picturePerfil.Location = new System.Drawing.Point(43, 145);
-            this.picturePerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picturePerfil.Margin = new System.Windows.Forms.Padding(4);
             this.picturePerfil.Name = "picturePerfil";
             this.picturePerfil.Size = new System.Drawing.Size(285, 143);
             this.picturePerfil.TabIndex = 26;
@@ -231,18 +231,19 @@ namespace StreamEducation
             // 
             this.bOpciones.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bOpciones.Location = new System.Drawing.Point(415, 94);
-            this.bOpciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bOpciones.Margin = new System.Windows.Forms.Padding(4);
             this.bOpciones.Name = "bOpciones";
             this.bOpciones.Size = new System.Drawing.Size(447, 36);
             this.bOpciones.TabIndex = 36;
             this.bOpciones.Text = "🔑 Opciones de administrador";
             this.bOpciones.UseVisualStyleBackColor = true;
+            this.bOpciones.Click += new System.EventHandler(this.bOpciones_Click);
             // 
             // bMensajeria
             // 
             this.bMensajeria.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bMensajeria.Location = new System.Drawing.Point(415, 48);
-            this.bMensajeria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bMensajeria.Margin = new System.Windows.Forms.Padding(4);
             this.bMensajeria.Name = "bMensajeria";
             this.bMensajeria.Size = new System.Drawing.Size(211, 38);
             this.bMensajeria.TabIndex = 37;
@@ -254,7 +255,7 @@ namespace StreamEducation
             // 
             this.bVolver.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bVolver.Location = new System.Drawing.Point(869, 48);
-            this.bVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bVolver.Margin = new System.Windows.Forms.Padding(4);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(69, 82);
             this.bVolver.TabIndex = 38;
