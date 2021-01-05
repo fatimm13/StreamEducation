@@ -18,7 +18,6 @@ namespace StreamEducation
 
         public RecursoActividad(int miId)
         {
-
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
@@ -39,11 +38,11 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Recurso Incorrecto");
+                fError ventana = new fError("Error recuperando recurso actividad de la BD.");
                 ventana.ShowDialog();
             }
-
         }
+
         public RecursoActividad(Actividad miActividad, string miNombre, string miLink)
         {
             try
@@ -64,16 +63,16 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al crear recurso");
+                fError ventana = new fError("Error al crear un recurso actividad nuevo.");
                 ventana.ShowDialog();
             }
-
         }
 
         public int Id
         {
             get { return id; }
         }
+
         public Actividad Actividad
         {
             get { return actividad; }
@@ -82,6 +81,7 @@ namespace StreamEducation
         public string Nombre
         {
             get { return nombre; }
+            /*
             set
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
@@ -94,11 +94,13 @@ namespace StreamEducation
                 miBD.Close();
                 nombre = value;
             }
+            */
         }
 
         public string Link
         {
             get { return link; }
+            /*
             set
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
@@ -111,6 +113,7 @@ namespace StreamEducation
                 miBD.Close();
                 link = value;
             }
+            */
         }
 
         public override string ToString()
@@ -120,16 +123,24 @@ namespace StreamEducation
 
         public void Borrar()
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tRecursoActividad WHERE id = " + id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
-            id = -1;
-            actividad = null;
-            nombre = null;
-            link = null;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tRecursoActividad WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+                id = -1;
+                actividad = null;
+                nombre = null;
+                link = null;
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar borrar el recurso actividad.");
+                ventana.ShowDialog();
+            }
         }
 
     }

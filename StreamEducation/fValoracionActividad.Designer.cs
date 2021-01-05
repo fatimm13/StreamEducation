@@ -1,6 +1,6 @@
 ﻿namespace StreamEducation
 {
-    partial class fValoraciónActividad
+    partial class fValoracionActividad
     {
         /// <summary>
         /// Required designer variable.
@@ -116,7 +116,7 @@
             this.label1.TabIndex = 35;
             this.label1.Text = "Actividad:";
             // 
-            // fValoraciónActividad
+            // fValoracionActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,11 +129,11 @@
             this.Controls.Add(this.labelCurso);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.Name = "fValoraciónActividad";
+            this.Name = "fValoracionActividad";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Valoracion";
-            this.Load += new System.EventHandler(this.fValoraciónActividad_Load);
+            this.Load += new System.EventHandler(this.fValoracionActividad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -31,7 +31,7 @@ namespace StreamEducation
             }
             else
             {
-                fError ventana = new fError("Introduzca antes el correo del que recuperarla.");
+                fError ventana = new fError("Introduzca su correo para recuperarla.");
                 ventana.ShowDialog();
             }
 
@@ -41,23 +41,11 @@ namespace StreamEducation
         {
             if (tCorreo.Text != "" && tContrasena.Text != "")
             {
-                Usuario usuario = new Usuario(tCorreo.Text, tContrasena.Text);
-                if (usuario.Id >= 0)
+                Usuario usuario = Usuario.iniciarSesion(tCorreo.Text, tContrasena.Text);
+                if (usuario != null)
                 {
                     GestorGlobal.UsuarioActivo = usuario;
                     this.Close();
-                }
-                else if (usuario.Id == -1)
-                {
-                    usuario = null;
-                    fError ventana = new fError("El usuario introducido no esta registrado.");
-                    ventana.ShowDialog();
-                }
-                else if (usuario.Id == -2)
-                {
-                    usuario = null;
-                    fError ventana = new fError("La contraseña introducida no es correcta.");
-                    ventana.ShowDialog();
                 }
             }
             else
@@ -65,7 +53,6 @@ namespace StreamEducation
                 fError ventana = new fError("Faltan parametros por introducir.");
                 ventana.ShowDialog();
             }
-            
         }
         
     }

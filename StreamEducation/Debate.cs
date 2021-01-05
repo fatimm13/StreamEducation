@@ -40,7 +40,7 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al cargar de BD.");
+                fError ventana = new fError("Error recuperando debate de la BD.");
                 ventana.ShowDialog();
             }
         }
@@ -60,27 +60,32 @@ namespace StreamEducation
                 foro = miForo;
                 creador = miCreador;
                 descripcion = miDescripcion;
-
                 miBD.Close();
             }
             catch
             {
-                fError ventana = new fError("Error al cargar de BD.");
+                fError ventana = new fError("Error al crear un debate nuevo.");
                 ventana.ShowDialog();
             }
         }
 
-        internal string  intervenciones()
+        internal string intervenciones()
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "SELECT count(*) FROM tMensaje WHERE debate=" +id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-
-            object res = cmd.ExecuteScalar();
-
-            miBD.Close();
-
+            object res = null;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT count(*) FROM tMensaje WHERE debate=" + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                res = cmd.ExecuteScalar();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al contar intervenciones del debate.");
+                ventana.ShowDialog();
+            }
             return res.ToString();
         }
 
@@ -88,6 +93,7 @@ namespace StreamEducation
         {
             get { return id; }
         }
+
         public string Nombre
         {
             get { return nombre; }
@@ -107,26 +113,7 @@ namespace StreamEducation
         {
             get { return descripcion; }
         }
-        public List<Mensaje> getMensajes()
-        {
-            List<Mensaje> lista = new List<Mensaje>();
 
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "SELECT ID FROM tMensaje WHERE debate=" + this.id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                int c = (int)rdr[0];
-                lista.Add(new Mensaje(c));
-            }
-            rdr.Close();
-            miBD.Close();
-
-            return lista;
-        }
         public override string ToString()
         {
             return nombre;
@@ -134,20 +121,52 @@ namespace StreamEducation
 
         public void Borrar()
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tDebate WHERE id = " + id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
-            id = -1;
-            nombre = null;
-            foro = null;
-            creador = null;
-            descripcion = null;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tDebate WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+                id = -1;
+                nombre = null;
+                foro = null;
+                creador = null;
+                descripcion = null;
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar borrar el debate.");
+                ventana.ShowDialog();
+            }
+        }
 
+        public List<Mensaje> getMensajes()
+        {
+            List<Mensaje> lista = new List<Mensaje>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT ID FROM tMensaje WHERE debate=" + this.id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    int c = (int)rdr[0];
+                    lista.Add(new Mensaje(c));
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a los mensajes del debate.");
+                ventana.ShowDialog();
+            }
+            return lista;
         }
 
     }
-    
 }

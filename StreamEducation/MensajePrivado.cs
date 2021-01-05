@@ -39,11 +39,10 @@ namespace StreamEducation
                 }
                 rdr.Close();
                 miBD.Close();
-
             }
             catch
             {
-                fError ventana = new fError("Error recuperando mensaje privado con su id: " + miId);
+                fError ventana = new fError("Error recuperando mensaje privado de la BD.");
                 ventana.ShowDialog();
             }
         }
@@ -73,10 +72,9 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al crear mensaje privado");
+                fError ventana = new fError("Error al crear un mensaje privado nuevo.");
                 ventana.ShowDialog();
             }
-
         }
 
         public int Id
@@ -111,23 +109,31 @@ namespace StreamEducation
 
         public override string ToString()
         {
-            return "Enviado por: " + emisor + "   Asunto: " + asunto;
+            return "Enviado por: " + emisor + " \t Asunto: " + asunto;
         }
 
         public void Borrar()
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tMensajePrivado WHERE id = " + id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
-            id = -1;
-            emisor = null;
-            receptor = null;
-            fecha = null;
-            asunto = null;
-            mensaje = null;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tMensajePrivado WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+                id = -1;
+                emisor = null;
+                receptor = null;
+                fecha = null;
+                asunto = null;
+                mensaje = null;
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar borrar el mensaje privado.");
+                ventana.ShowDialog();
+            }
         }
 
     }

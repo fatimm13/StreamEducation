@@ -19,7 +19,6 @@ namespace StreamEducation
 
         public Recurso(int miId)
         {
-
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
@@ -40,7 +39,7 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Recurso Incorrecto: ");
+                fError ventana = new fError("Error recuperando recurso de la BD.");
                 ventana.ShowDialog();
             }
 
@@ -51,8 +50,8 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "INSERT INTO tRecurso (curso,nombre,link) VALUES(" + miCurso.Id + ", '"
-                    + miNombre + "', '" + miLink + "');";
+                string query = "INSERT INTO tRecurso (curso,nombre,link) VALUES("
+                    + miCurso.Id + ", '" + miNombre + "', '" + miLink + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
 
@@ -65,16 +64,16 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al crear recurso");
+                fError ventana = new fError("Error al crear un recurso nuevo.");
                 ventana.ShowDialog();
             }
-
         }
 
         public int Id
         {
             get { return id; }
         }
+
         public Curso Curso
         {
             get { return curso; }
@@ -83,6 +82,7 @@ namespace StreamEducation
         public string Nombre
         {
             get { return nombre; }
+            /*
             set
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
@@ -95,11 +95,13 @@ namespace StreamEducation
                 miBD.Close();
                 nombre = value;
             }
+            */
         }
 
         public string Link
         {
             get { return link; }
+            /*
             set
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
@@ -112,6 +114,7 @@ namespace StreamEducation
                 miBD.Close();
                 link = value;
             }
+            */
         }
         
         public override string ToString()
@@ -121,16 +124,24 @@ namespace StreamEducation
 
         public void Borrar()
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tRecurso WHERE id = " + id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
-            id = -1;
-            curso = null;
-            nombre = null;
-            link = null;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tRecurso WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+                id = -1;
+                curso = null;
+                nombre = null;
+                link = null;
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar borrar el recurso.");
+                ventana.ShowDialog();
+            }
         }
 
     }

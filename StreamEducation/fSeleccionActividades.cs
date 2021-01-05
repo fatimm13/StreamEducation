@@ -16,6 +16,13 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+
+        private void fSeleccionActividades_Load(object sender, EventArgs e)
+        {
+            Recarga();
+            foreach (Actividad a in Actividad.listaActividades()) { lActividades.Items.Add(a); }
+        }
+
         private void Recarga()
         {
             bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
@@ -23,34 +30,11 @@ namespace StreamEducation
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
-            bool usuarioPoder = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolAsociacion || GestorGlobal.UsuarioActivo.RolAdmin);
-            bCrearActividad.Visible = usuarioPoder;
-            
-        }
-        private void bCrearActividad_Click(object sender, EventArgs e)
-        {
-            fCrearActividad ventana = new fCrearActividad();
-            ventana.ShowDialog();
-            lActividades.Items.Clear();
-            Recarga();
-            foreach (Actividad a in Actividad.listaActividades())
-            {
-                lActividades.Items.Add(a);
-            }
-
-        }
-        private void fSeleccionActividades_Load(object sender, EventArgs e)
-        {
-            Recarga();
-            foreach (Actividad a in Actividad.listaActividades())
-            {
-                lActividades.Items.Add(a);
-            }
+            bCrearActividad.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolAsociacion || GestorGlobal.UsuarioActivo.RolAdmin);
         }
 
         private void bInicio_Click(object sender, EventArgs e)
         {
-            GestorGlobal.CursoActivo = null;
             this.Close();
         }
 
@@ -86,6 +70,15 @@ namespace StreamEducation
             Recarga();
         }
 
+        private void bCrearActividad_Click(object sender, EventArgs e)
+        {
+            fCrearActividad ventana = new fCrearActividad();
+            ventana.ShowDialog();
+            lActividades.Items.Clear();
+            Recarga();
+            foreach (Actividad a in Actividad.listaActividades()) { lActividades.Items.Add(a); }
+        }     
+
         private void lActividades_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lActividades.SelectedIndex >= 0)
@@ -94,15 +87,13 @@ namespace StreamEducation
                 this.Visible = false;
                 fActividad ventana = new fActividad();
                 ventana.ShowDialog();
+                GestorGlobal.ActividadActiva = null;
                 Recarga();
                 this.Visible = true;
                 lActividades.Items.Clear();
-                foreach (Actividad a in Actividad.listaActividades())
-                {
-                    lActividades.Items.Add(a);
-                }
+                foreach (Actividad a in Actividad.listaActividades()) { lActividades.Items.Add(a); }
             }
-            
         }
+
     }
 }

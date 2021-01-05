@@ -13,10 +13,36 @@ namespace StreamEducation
 {
     public partial class fSeleccionCurso : Form
     {
+
         public fSeleccionCurso()
         {
             InitializeComponent();
         }
+
+        private void fSeleccionCurso_Load(object sender, EventArgs e)
+        {
+            Recarga();
+            foreach (Curso c in Curso.listaCursos())
+            {
+                if (c.Id > 0)
+                {
+                    lCursos.Items.Add(c);
+                    if (c.Publico) { lPublico.Items.Add("✔️"); }
+                    else { lPublico.Items.Add("❌"); }
+                }
+            }
+        }
+
+        private void Recarga()
+        {
+            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            bRegistrarse.Visible = !usuarioIniciado;
+            bIniciarSesion.Visible = !usuarioIniciado;
+            bPerfil.Visible = usuarioIniciado;
+            bCerrarSesion.Visible = usuarioIniciado;
+            bCrearCurso.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
+        }
+
         private void bInicio_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -71,89 +97,26 @@ namespace StreamEducation
             }
         }
 
-        private void fSeleccionCurso_Load(object sender, EventArgs e)
-        {
-            Recarga();
-            foreach (Curso c in Curso.listaCursos())
-            {
-                if (c.Id > 0)
-                {
-                    lCursos.Items.Add(c);
-                    if (c.Publico) { lPublico.Items.Add("✔️"); }
-                    else { lPublico.Items.Add("❌"); }
-                }
-            }
-        }
-        private void Recarga()
-        {
-            bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
-            bRegistrarse.Visible = !usuarioIniciado;
-            bIniciarSesion.Visible = !usuarioIniciado;
-            bPerfil.Visible = usuarioIniciado;
-            bCerrarSesion.Visible = usuarioIniciado;
-            bCrearCurso.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
-        }
-
         private void lCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lCursos.SelectedIndex >= 0)
             {
-                Curso auxc = (Curso)lCursos.SelectedItem; 
-                if (auxc.Publico || (GestorGlobal.UsuarioActivo!=null && (GestorGlobal.UsuarioActivo.Id == auxc.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin)) )
+                Curso curso = (Curso)lCursos.SelectedItem;
+                bool usuarioPoder = GestorGlobal.UsuarioActivo != null && (GestorGlobal.UsuarioActivo.Id == curso.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
+                
+                if (curso.Publico || usuarioPoder)
                 {
-                    GestorGlobal.CursoActivo = auxc;
-                    this.Visible = false;
-                    fCurso ventana = new fCurso();
-                    ventana.ShowDialog();
-                    Recarga();
-                    this.Visible = true;
-                    lCursos.Items.Clear();
-                    lPublico.Items.Clear();
-                    foreach (Curso c in Curso.listaCursos())
-                    {
-                        if (c.Id > 0)
-                        {
-                            lCursos.Items.Add(c);
-                            if (c.Publico) { lPublico.Items.Add("✔️"); }
-                            else { lPublico.Items.Add("❌"); }
-                        }
-                    }
+                    entrarEnCurso(curso);
                 }
-                else if(GestorGlobal.UsuarioActivo!=null)
+                else if (GestorGlobal.UsuarioActivo != null)
                 {
-                    string CONNECTION = Properties.Settings.Default.COMPLETE;
-                    MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                    miBD.Open();
-                    string query = "SELECT usuario FROM tCursoUsuario WHERE curso = '" + auxc.Id + "' and usuario ='" + GestorGlobal.UsuarioActivo.Id + "';";
-                    MySqlCommand cmd = new MySqlCommand(query, miBD);
-                    MySqlDataReader rdr = cmd.ExecuteReader();
-                    if (rdr.Read())
+                    if (GestorGlobal.UsuarioActivo.estaInscrito(curso.Id))
                     {
-                        rdr.Close();
-                        miBD.Close();
-                        GestorGlobal.CursoActivo = auxc;
-                        this.Visible = false;
-                        fCurso ventana = new fCurso();
-                        ventana.ShowDialog();
-                        Recarga();
-                        this.Visible = true;
-                        lCursos.Items.Clear();
-                        lPublico.Items.Clear();
-                        foreach (Curso c in Curso.listaCursos())
-                        {
-                            if (c.Id > 0)
-                            {
-                                lCursos.Items.Add(c);
-                                if (c.Publico) { lPublico.Items.Add("✔️"); }
-                                else { lPublico.Items.Add("❌"); }
-                            }
-                        }
+                        entrarEnCurso(curso);
                     }
                     else
                     {
-                        rdr.Close();
-                        miBD.Close();
-                        fInscripcion ventana = new fInscripcion(auxc.Id);
+                        fInscripcion ventana = new fInscripcion(curso.Id);
                         ventana.ShowDialog();
                     }
                 }
@@ -163,7 +126,28 @@ namespace StreamEducation
                     error.ShowDialog();
                 }
             }
-            
+        }
+
+        private void entrarEnCurso(Curso curso)
+        {
+            GestorGlobal.CursoActivo = curso;
+            this.Visible = false;
+            fCurso ventana = new fCurso();
+            ventana.ShowDialog();
+            GestorGlobal.CursoActivo = null;
+            Recarga();
+            this.Visible = true;
+            lCursos.Items.Clear();
+            lPublico.Items.Clear();
+            foreach (Curso c in Curso.listaCursos())
+            {
+                if (c.Id > 0)
+                {
+                    lCursos.Items.Add(c);
+                    if (c.Publico) { lPublico.Items.Add("✔️"); }
+                    else { lPublico.Items.Add("❌"); }
+                }
+            }
         }
 
     }

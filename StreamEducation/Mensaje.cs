@@ -9,6 +9,7 @@ namespace StreamEducation
 {
     public class Mensaje
     {
+
         private static string CONNECTION = Properties.Settings.Default.COMPLETE;
 
         private int id;
@@ -42,10 +43,11 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al cargar de BD.");
+                fError ventana = new fError("Error recuperando mensaje de la BD.");
                 ventana.ShowDialog();
             }
         }
+
         public Mensaje(string miNombre, string miDescripcion, Usuario miCreador, Debate miDebate)
         {
             try
@@ -59,6 +61,7 @@ namespace StreamEducation
                 cmd.ExecuteNonQuery();
                 query = "SELECT max(ID) FROM tMensaje WHERE creador=" + miCreador.Id + ";";
                 cmd = new MySqlCommand(query, miBD);
+
                 int id = (int)cmd.ExecuteScalar();
                 debate = miDebate;
                 creador = miCreador;
@@ -70,14 +73,16 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al cargar de BD.");
+                fError ventana = new fError("Error al crear un mensaje nuevo.");
                 ventana.ShowDialog();
             }
         }
+
         public int Id
         {
             get { return id; }
         }
+
         public string Nombre
         {
             get { return nombre; }
@@ -97,10 +102,12 @@ namespace StreamEducation
         {
             get { return fecha; }
         }
+
         public string Descripcion
         {
             get { return descripcion; }
         }
+
         public override string ToString()
         {
             return "Mensaje de: " + creador.ToString() + " \t Titulo: " + nombre + " \t Enviado el "+ fecha;
@@ -108,20 +115,27 @@ namespace StreamEducation
 
         public void Borrar()
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tMensaje WHERE id = " + id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
-            id = -1;
-            debate = null;
-            creador = null;
-            nombre = null;
-            descripcion = null;
-            fecha = null;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tMensaje WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+                id = -1;
+                debate = null;
+                creador = null;
+                nombre = null;
+                descripcion = null;
+                fecha = null;
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar borrar el mensaje.");
+                ventana.ShowDialog();
+            }
         }
 
     }
-
 }

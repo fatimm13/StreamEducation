@@ -15,6 +15,10 @@ namespace StreamEducation
         public fUsuariosInscritos()
         {
             InitializeComponent();
+        }
+
+        private void fUsuariosInscritos_Load(object sender, EventArgs e)
+        {
             foreach (Usuario u in GestorGlobal.CursoActivo.getUsuarios())
             {
                 lUsuarios.Items.Add(u);
@@ -26,17 +30,22 @@ namespace StreamEducation
         {
             if (lExpulsar.SelectedIndex >= 0)
             {
-                Usuario us = (Usuario)lUsuarios.Items[lExpulsar.SelectedIndex];
-                us.expulsar(GestorGlobal.CursoActivo.Id);
-                lUsuarios.Items.Clear();
-                lExpulsar.Items.Clear();
-                foreach (Usuario u in GestorGlobal.CursoActivo.getUsuarios())
+                Usuario usuario = (Usuario)lUsuarios.Items[lExpulsar.SelectedIndex];
+                fConfirmacion ventana = new fConfirmacion();
+                ventana.ShowDialog();
+                if (ventana.Valor)
                 {
-                    lUsuarios.Items.Add(u);
-                    lExpulsar.Items.Add("🚫");
+                    usuario.expulsar(GestorGlobal.CursoActivo.Id);
+                    lUsuarios.Items.Clear();
+                    lExpulsar.Items.Clear();
+                    foreach (Usuario u in GestorGlobal.CursoActivo.getUsuarios())
+                    {
+                        lUsuarios.Items.Add(u);
+                        lExpulsar.Items.Add("🚫");
+                    }
                 }
             }
-            
         }
+        
     }
 }

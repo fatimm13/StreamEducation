@@ -31,9 +31,10 @@ namespace StreamEducation
             }
             else
             {
-                fError ventana = new fError("Faltan parametros.");
+                fError ventana = new fError("Faltan parametros por introducir.");
                 ventana.ShowDialog();
             }
         }
+
     }
 }

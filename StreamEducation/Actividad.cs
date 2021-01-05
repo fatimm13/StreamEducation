@@ -37,15 +37,14 @@ namespace StreamEducation
                 }
                 rdr.Close();
                 miBD.Close();
-
             }
             catch
             {
-                fError ventana = new fError("Error recuperando actividad con su id: " + miId);
+                fError ventana = new fError("Error recuperando actividad de la BD.");
                 ventana.ShowDialog();
             }
-
         }
+
         public Actividad(Usuario miOrganizacion, string miNombre, string miDescripcion, string miFecha)
         {
             try
@@ -68,10 +67,9 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al crear actividad");
+                fError ventana = new fError("Error al crear una actividad nueva.");
                 ventana.ShowDialog();
             }
-
         }
 
         public int Id
@@ -98,73 +96,106 @@ namespace StreamEducation
         {
             get { return fecha; }
         }
-        public List<RecursoActividad> getRecursos()
-        {
-            List<RecursoActividad> lista = new List<RecursoActividad>();
 
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "SELECT ID FROM tRecursoActividad WHERE Actividad=" + this.id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                int c = (int)rdr[0];
-                lista.Add(new RecursoActividad(c));
-            }
-            rdr.Close();
-            miBD.Close();
-            return lista;
-        }
-        public void Borrar()
-        {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tActividad WHERE id = " + id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
-            id = -1;
-            organizacion = null;
-            nombre = null;
-            descripcion = null;
-            fecha = null;
-        }
-        public static List<Actividad> listaActividades()
-        {
-            List<Actividad> lista = new List<Actividad>();
-
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "SELECT ID FROM tActividad;";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                int a = (int)rdr[0];
-                lista.Add(new Actividad(a));
-            }
-
-            rdr.Close();
-            miBD.Close();
-            return lista;
-
-        }
-        public void valorar(int nota, string comentario)
-        {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "INSERT INTO tValoracionActividad (actividad, nota, comentario) VALUES('"
-                + id + "', '" + nota + "', '" + comentario + "');";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
-        }
         public override string ToString()
         {
             return nombre;
         }
+
+        public void Borrar()
+        {
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tActividad WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+                id = -1;
+                organizacion = null;
+                nombre = null;
+                descripcion = null;
+                fecha = null;
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar borrar la actividad.");
+                ventana.ShowDialog();
+            }
+        }
+
+        public static List<Actividad> listaActividades()
+        {
+            List<Actividad> lista = new List<Actividad>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT ID FROM tActividad;";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    int a = (int)rdr[0];
+                    lista.Add(new Actividad(a));
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a las actividades disponibles.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
+        public List<RecursoActividad> getRecursos()
+        {
+            List<RecursoActividad> lista = new List<RecursoActividad>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT ID FROM tRecursoActividad WHERE actividad=" + this.id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    int c = (int)rdr[0];
+                    lista.Add(new RecursoActividad(c));
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a los recursos de la actividad.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
+        public void valorar(int nota, string comentario)
+        {
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "INSERT INTO tValoracionActividad (actividad, nota, comentario) VALUES('"
+                    + id + "', '" + nota + "', '" + comentario + "');";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar valorar la actividad.");
+                ventana.ShowDialog();
+            }
+        }
+        
     }
 }

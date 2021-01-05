@@ -97,11 +97,11 @@
     <Compile Include="fMostrarNoticia.Designer.cs">
       <DependentUpon>fMostrarNoticia.cs</DependentUpon>
     </Compile>
-    <Compile Include="fValoraciónActividad.cs">
+    <Compile Include="fValoracionActividad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fValoraciónActividad.Designer.cs">
-      <DependentUpon>fValoraciónActividad.cs</DependentUpon>
+    <Compile Include="fValoracionActividad.Designer.cs">
+      <DependentUpon>fValoracionActividad.cs</DependentUpon>
     </Compile>
     <Compile Include="fSeleccionActividades.cs">
       <SubType>Form</SubType>
@@ -409,8 +409,8 @@
     <EmbeddedResource Include="fValoracion.resx">
       <DependentUpon>fValoracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fValoraciónActividad.resx">
-      <DependentUpon>fValoraciónActividad.cs</DependentUpon>
+    <EmbeddedResource Include="fValoracionActividad.resx">
+      <DependentUpon>fValoracionActividad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

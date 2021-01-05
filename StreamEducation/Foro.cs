@@ -6,6 +6,7 @@ namespace StreamEducation
 {
     public class Foro
     {
+
         private static string CONNECTION = Properties.Settings.Default.COMPLETE;
 
         private int id;
@@ -37,10 +38,11 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al cargar de BD.");
+                fError ventana = new fError("Error recuperando foro de la BD.");
                 ventana.ShowDialog();
             }
         }
+
         public Foro(string miNombre, string miDescripcion, Usuario miCreador, Curso miCurso)
         {
             try
@@ -61,34 +63,16 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al cargar de BD.");
+                fError ventana = new fError("Error al crear un foro nuevo.");
                 ventana.ShowDialog();
             }
         }
-        public List<Debate> getDebates()
-        {
-            List<Debate> lista = new List<Debate>();
 
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "SELECT ID FROM tDebate WHERE FORO=" + this.id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                int c = (int)rdr[0];
-                lista.Add(new Debate(c));
-            }
-            rdr.Close();
-            miBD.Close();
-
-            return lista;
-        }
         public int Id
         {
             get { return id; }
         }
+
         public string Nombre
         {
             get { return nombre; }
@@ -108,6 +92,7 @@ namespace StreamEducation
         {
             get { return curso; }
         }
+
         public override string ToString()
         {
             return nombre;
@@ -115,17 +100,51 @@ namespace StreamEducation
 
         public void Borrar()
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tForo WHERE id = " + id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
-            id = -1;
-            nombre = null;
-            descripcion = null;
-            creador = null;
-            curso = null;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tForo WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+                id = -1;
+                nombre = null;
+                descripcion = null;
+                creador = null;
+                curso = null;
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar borrar el foro.");
+                ventana.ShowDialog();
+            }
+        }
+
+        public List<Debate> getDebates()
+        {
+            List<Debate> lista = new List<Debate>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT ID FROM tDebate WHERE FORO=" + this.id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    int c = (int)rdr[0];
+                    lista.Add(new Debate(c));
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a los debates del foro.");
+                ventana.ShowDialog();
+            }
+            return lista;
         }
 
     }

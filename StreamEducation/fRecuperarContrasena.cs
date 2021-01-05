@@ -31,7 +31,7 @@ namespace StreamEducation
             }
             else
             {
-                fError ventana = new fError("Los datos introducidos no son los correctos.");
+                fError ventana = new fError("Los datos introducidos no son correctos.");
                 ventana.ShowDialog();
             }
         }

@@ -17,17 +17,14 @@ namespace StreamEducation
         private string biografia;
         private string escuela;
         private string pais;
-
         private bool rolProfesor;
         private bool rolAsociacion;
         private bool rolAdmin;
-
         private int pregunta;
         private string respuesta;
 
         public Usuario(int miId)
         {
-
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
@@ -55,57 +52,9 @@ namespace StreamEducation
             }
             catch
             {
-                throw new Error("Error al buscar usuario por id");
-            }
-
-        }
-
-        public Usuario(string miCorreo, string miContrasena)
-        {
-
-            try
-            {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-                string query = "SELECT * FROM tUsuario WHERE correo = '" + miCorreo + "';";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                if (rdr.Read())
-                {
-                    correo = (string)rdr[2];
-                    string password = (string)rdr[3];
-                    if (!password.Equals(miContrasena))
-                    {
-                        correo = password = null;
-                        id = -2;
-                    }
-                    else
-                    {
-                        id = (int)rdr[0];
-                        nombre = (string)rdr[1];
-                        biografia = (string)rdr[4];
-                        escuela = (string)rdr[5];
-                        pais = (string)rdr[6];
-                        rolProfesor = (int)rdr[7] == 1;
-                        rolAsociacion = (int)rdr[8] == 1;
-                        rolAdmin = (int)rdr[9] == 1;
-                        pregunta = (int)rdr[10];
-                        respuesta = (string)rdr[11];
-                    }
-                }
-                else
-                {
-                    id = -1;
-                }
-                miBD.Close();
-            }
-            catch
-            {
-                fError ventana = new fError("Error iniciando sesión.");
+                fError ventana = new fError("Error recuperando usuario de la BD.");
                 ventana.ShowDialog();
             }
-
         }
 
         public Usuario(string miNombre, string miCorreo, string miContrasena, bool esProfesor, bool esAsociacion, bool esAdmin, int miPregunta, string miRespuesta)
@@ -132,34 +81,43 @@ namespace StreamEducation
             }
             catch
             {
-                throw new Error("Error al crear cuenta");
+                fError ventana = new fError("Error al crear un usuario nuevo.");
+                ventana.ShowDialog();
             }
-
         }
 
         public int Id
         {
             get { return id; }
         }
+
         public string Nombre
         {
             get { return nombre; }
             set
             {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-
-                string query = "UPDATE tUsuario SET nombre = '" + value
-                        + "' WHERE id = " + id + ";";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-                nombre = value;
-                miBD.Close();
+                try
+                {
+                    MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                    miBD.Open();
+                    string query = "UPDATE tUsuario SET nombre = '" + value + "' WHERE id = " + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(query, miBD);
+                    cmd.ExecuteNonQuery();
+                    nombre = value;
+                    miBD.Close();
+                }
+                catch
+                {
+                    fError ventana = new fError("Error al actualizar nombre del usuario.");
+                    ventana.ShowDialog();
+                }
             }
         }
+
         public string Correo
         {
             get { return correo; }
+            /*
             set
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
@@ -171,20 +129,30 @@ namespace StreamEducation
                 correo = value;
                 miBD.Close();
             }
+            */
         }
+
         public string Biografia
         {
             get { return biografia; }
             set
             {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-                string query = "UPDATE tUsuario SET biografia = '" + value
-                        + "' WHERE id = " + id + ";";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-                biografia = value;
-                miBD.Close();
+                try
+                {
+                    MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                    miBD.Open();
+                    string query = "UPDATE tUsuario SET biografia = '" + value
+                            + "' WHERE id = " + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(query, miBD);
+                    cmd.ExecuteNonQuery();
+                    biografia = value;
+                    miBD.Close();
+                }
+                catch
+                {
+                    fError ventana = new fError("Error al actualizar biografia del usuario.");
+                    ventana.ShowDialog();
+                }
             }
         }
         public string Escuela
@@ -192,32 +160,48 @@ namespace StreamEducation
             get { return escuela; }
             set
             {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-                string query = "UPDATE tUsuario SET escuela = '" + value
-                        + "' WHERE id = " + id + ";";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-                escuela = value;
-                miBD.Close();
+                try
+                {
+                    MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                    miBD.Open();
+                    string query = "UPDATE tUsuario SET escuela = '" + value
+                            + "' WHERE id = " + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(query, miBD);
+                    cmd.ExecuteNonQuery();
+                    escuela = value;
+                    miBD.Close();
+                }
+                catch
+                {
+                    fError ventana = new fError("Error al actualizar escuela del usuario.");
+                    ventana.ShowDialog();
+                }
             }
         }
+
         public string Pais
         {
             get { return pais; }
             set
             {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-                string query = "UPDATE tUsuario SET pais = '" + value
-                        + "' WHERE id = " + id + ";";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-                pais = value;
-                miBD.Close();
+                try
+                {
+                    MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                    miBD.Open();
+                    string query = "UPDATE tUsuario SET pais = '" + value
+                            + "' WHERE id = " + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(query, miBD);
+                    cmd.ExecuteNonQuery();
+                    pais = value;
+                    miBD.Close();
+                }
+                catch
+                {
+                    fError ventana = new fError("Error al actualizar pais del usuario.");
+                    ventana.ShowDialog();
+                }
             }
         }
-
 
         public bool RolProfesor
         {
@@ -260,22 +244,74 @@ namespace StreamEducation
             get { return rolAsociacion; }
         }
 
+        public override string ToString()
+        {
+            return nombre;
+        }
+
         public void Borrar()
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tUsuario WHERE id = " + id + ";";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            id = -1;
-            nombre = null;
-            correo = null;
-            biografia = null;
-            escuela = null;
-            pais = null;
-            rolProfesor = false;
-            rolAdmin = false;
-            miBD.Close();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tUsuario WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                id = -1;
+                nombre = null;
+                correo = null;
+                biografia = null;
+                escuela = null;
+                pais = null;
+                rolProfesor = false;
+                rolAdmin = false;
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar borrar el usuario.");
+                ventana.ShowDialog();
+            }
+        }
+
+        public static Usuario iniciarSesion(string miCorreo, string miContrasena)
+        {
+            Usuario usuario = null;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT * FROM tUsuario WHERE correo = '" + miCorreo + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read())
+                {
+                    string password = (string)rdr[3];
+                    if (password.Equals(miContrasena))
+                    {
+                        usuario = new Usuario((int)rdr[0]);
+                    }
+                    else
+                    {
+                        fError ventana = new fError("La contraseña introducida es incorrecta.");
+                        ventana.ShowDialog();
+                    }
+                }
+                else
+                {
+                    fError ventana = new fError("El correo introducido no esta registrado.");
+                    ventana.ShowDialog();
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar iniciar sesion.");
+                ventana.ShowDialog();
+            }
+            return usuario;
         }
 
         public static string recuperarContrasena(string miCorreo, int miPregunta, string miRespuesta)
@@ -295,6 +331,7 @@ namespace StreamEducation
             catch
             {
                 fError ventana = new fError("Error al intentar recuperar la contraseña.");
+                ventana.ShowDialog();
             }
             return contrasena;
         }
@@ -312,7 +349,8 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al realizar la inscripcion.");
+                fError ventana = new fError("Error al pedir la inscripcion al curso.");
+                ventana.ShowDialog();
             }
         }
 
@@ -332,7 +370,8 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al aceptar la inscripcion.");
+                fError ventana = new fError("Error al aceptar la inscripcion al curso.");
+                ventana.ShowDialog();
             }
         }
 
@@ -349,42 +388,77 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al rechazar la inscripcion.");
+                fError ventana = new fError("Error al rechazar la inscripcion al curso.");
+                ventana.ShowDialog();
             }
+        }
+
+        public bool estaInscrito(int curso)
+        {
+            bool inscrito = false;
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT usuario FROM tCursoUsuario WHERE curso = '" + curso + "' and usuario ='" + id + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read()) { inscrito = true; }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar comprobar la inscripcion.");
+                ventana.ShowDialog();
+            }
+            return inscrito;
         }
 
         public void expulsar(int curso)
         {
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "DELETE FROM tCursoUsuario WHERE curso = " + curso + " and usuario ='" + id + "';";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            cmd.ExecuteNonQuery();
-            miBD.Close();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "DELETE FROM tCursoUsuario WHERE curso = " + curso + " and usuario ='" + id + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                cmd.ExecuteNonQuery();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al intentar expulsar al usuario del curso.");
+                ventana.ShowDialog();
+            }
         }
+
         public List<Curso> getCursos()
         {
             List<Curso> lista = new List<Curso>();
-
-            MySqlConnection miBD = new MySqlConnection(CONNECTION);
-            miBD.Open();
-            string query = "SELECT curso FROM tCursoUsuario WHERE usuario = '" + this.id + "';";
-            MySqlCommand cmd = new MySqlCommand(query, miBD);
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while(rdr.Read())
+            try
             {
-                int c = (int)rdr[0];
-                lista.Add(new Curso(c));
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT curso FROM tCursoUsuario WHERE usuario = '" + this.id + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    int c = (int)rdr[0];
+                    lista.Add(new Curso(c));
+                }
+                rdr.Close();
+                miBD.Close();
             }
-            rdr.Close();
-            miBD.Close();
+            catch
+            {
+                fError ventana = new fError("Error al acceder a los cursos del usuario.");
+                ventana.ShowDialog();
+            }
             return lista;
         }
-        public override string ToString()
-        {
-            return nombre;
-        }
+        
     }
-
 }
