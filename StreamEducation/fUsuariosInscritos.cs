@@ -63,5 +63,14 @@ namespace StreamEducation
         {
             this.Close();
         }
+
+        private void lUsuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lUsuarios.SelectedIndex >= 0)
+            {
+                fVerPerfil ventana = new fVerPerfil((Usuario)lUsuarios.SelectedItem);
+                ventana.ShowDialog();
+            }
+        }
     }
 }

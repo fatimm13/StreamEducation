@@ -36,6 +36,9 @@ namespace StreamEducation
             this.bVolver = new System.Windows.Forms.Button();
             this.labelX = new System.Windows.Forms.Label();
             this.tUsuario = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lAceptar
@@ -45,10 +48,10 @@ namespace StreamEducation
             this.lAceptar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lAceptar.FormattingEnabled = true;
             this.lAceptar.ItemHeight = 25;
-            this.lAceptar.Location = new System.Drawing.Point(808, 98);
+            this.lAceptar.Location = new System.Drawing.Point(785, 148);
             this.lAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.lAceptar.Name = "lAceptar";
-            this.lAceptar.Size = new System.Drawing.Size(80, 400);
+            this.lAceptar.Size = new System.Drawing.Size(37, 325);
             this.lAceptar.TabIndex = 55;
             this.lAceptar.SelectedIndexChanged += new System.EventHandler(this.lAceptar_SelectedIndexChanged);
             // 
@@ -59,10 +62,10 @@ namespace StreamEducation
             this.lUsuarios.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUsuarios.FormattingEnabled = true;
             this.lUsuarios.ItemHeight = 25;
-            this.lUsuarios.Location = new System.Drawing.Point(31, 98);
+            this.lUsuarios.Location = new System.Drawing.Point(45, 148);
             this.lUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.lUsuarios.Name = "lUsuarios";
-            this.lUsuarios.Size = new System.Drawing.Size(769, 400);
+            this.lUsuarios.Size = new System.Drawing.Size(693, 325);
             this.lUsuarios.TabIndex = 52;
             this.lUsuarios.SelectedIndexChanged += new System.EventHandler(this.lUsuarios_SelectedIndexChanged);
             // 
@@ -73,10 +76,10 @@ namespace StreamEducation
             this.lRechazar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lRechazar.FormattingEnabled = true;
             this.lRechazar.ItemHeight = 25;
-            this.lRechazar.Location = new System.Drawing.Point(896, 98);
+            this.lRechazar.Location = new System.Drawing.Point(903, 148);
             this.lRechazar.Margin = new System.Windows.Forms.Padding(4);
             this.lRechazar.Name = "lRechazar";
-            this.lRechazar.Size = new System.Drawing.Size(80, 400);
+            this.lRechazar.Size = new System.Drawing.Size(31, 325);
             this.lRechazar.TabIndex = 56;
             this.lRechazar.SelectedIndexChanged += new System.EventHandler(this.lRechazar_SelectedIndexChanged);
             // 
@@ -93,7 +96,7 @@ namespace StreamEducation
             // bVolver
             // 
             this.bVolver.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bVolver.Location = new System.Drawing.Point(903, 489);
+            this.bVolver.Location = new System.Drawing.Point(883, 490);
             this.bVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(73, 48);
@@ -126,11 +129,47 @@ namespace StreamEducation
             this.tUsuario.TabIndex = 57;
             this.tUsuario.TextChanged += new System.EventHandler(this.tUsuario_TextChanged);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(40, 98);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(396, 25);
+            this.label3.TabIndex = 61;
+            this.label3.Text = "Peticiones de inscripción al curso:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(745, 98);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 25);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Aceptar";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(861, 98);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 25);
+            this.label4.TabIndex = 63;
+            this.label4.Text = "Rechazar";
+            // 
             // fUsuariosPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 558);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.labelX);
@@ -159,5 +198,8 @@ namespace StreamEducation
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.TextBox tUsuario;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

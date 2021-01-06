@@ -38,7 +38,11 @@ namespace StreamEducation
 
         private void lUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (lUsuarios.SelectedIndex >= 0)
+            {
+                fVerPerfil ventana = new fVerPerfil((Usuario)lUsuarios.SelectedItem);
+                ventana.ShowDialog();
+            }
         }
 
         private void lAceptar_SelectedIndexChanged(object sender, EventArgs e)

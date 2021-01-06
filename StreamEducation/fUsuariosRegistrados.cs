@@ -31,7 +31,7 @@ namespace StreamEducation
             lUsuarios.Items.Clear();
             foreach ((int, string, string) u in usuarios)
             {
-                lUsuarios.Items.Add("Usuario:  " + u.Item2 + "  (" + u.Item3 + ")");
+                lUsuarios.Items.Add("👤  " + u.Item2 + "  (" + u.Item3 + ")");
             }
         }
 

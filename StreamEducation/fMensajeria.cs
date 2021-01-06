@@ -16,5 +16,16 @@ namespace StreamEducation
         {
             InitializeComponent();
         }
+
+        private void bEnviar_Click(object sender, EventArgs e)
+        {
+            fCrearMensajePrivado ventana = new fCrearMensajePrivado();
+            ventana.ShowDialog();
+        }
+
+        private void bCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

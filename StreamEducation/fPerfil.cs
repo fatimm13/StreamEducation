@@ -21,10 +21,7 @@ namespace StreamEducation
         {
             Actualiza();
             bOpciones.Visible = GestorGlobal.UsuarioActivo.RolAdmin;
-            if (GestorGlobal.UsuarioActivo.RolAdmin) { labelRol.Text = "Administrador"; }
-            else if (GestorGlobal.UsuarioActivo.RolProfesor) { labelRol.Text = "Profesor"; }
-            else if (GestorGlobal.UsuarioActivo.RolAsociacion) { labelRol.Text = "Asociacion"; }
-            else { labelRol.Text = "Estudiante"; }
+            labelRol.Text = GestorGlobal.UsuarioActivo.getRol();
             foreach (Curso c in GestorGlobal.UsuarioActivo.getCursos()) lCursos.Items.Add(c.Nombre);
         }
 

@@ -36,7 +36,7 @@ namespace StreamEducation
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bSeleccionarUsuario = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tDestinatario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tAsunto
@@ -68,6 +68,7 @@ namespace StreamEducation
             this.bAceptar.TabIndex = 31;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
+            this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
             // 
             // tDescripcion
             // 
@@ -109,24 +110,25 @@ namespace StreamEducation
             this.bSeleccionarUsuario.TabIndex = 36;
             this.bSeleccionarUsuario.Text = "...";
             this.bSeleccionarUsuario.UseVisualStyleBackColor = true;
+            this.bSeleccionarUsuario.Click += new System.EventHandler(this.bSeleccionarUsuario_Click);
             // 
-            // textBox1
+            // tDestinatario
             // 
-            this.textBox1.Font = new System.Drawing.Font("Verdana", 12F);
-            this.textBox1.Location = new System.Drawing.Point(231, 53);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(353, 32);
-            this.textBox1.TabIndex = 37;
-            this.textBox1.Text = "Seleccione usuario...";
+            this.tDestinatario.Font = new System.Drawing.Font("Verdana", 12F);
+            this.tDestinatario.Location = new System.Drawing.Point(231, 53);
+            this.tDestinatario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tDestinatario.Name = "tDestinatario";
+            this.tDestinatario.ReadOnly = true;
+            this.tDestinatario.Size = new System.Drawing.Size(353, 32);
+            this.tDestinatario.TabIndex = 37;
+            this.tDestinatario.Text = "Seleccione usuario...";
             // 
             // fCrearMensajePrivado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 505);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tDestinatario);
             this.Controls.Add(this.bSeleccionarUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tAsunto);
@@ -134,12 +136,12 @@ namespace StreamEducation
             this.Controls.Add(this.bAceptar);
             this.Controls.Add(this.tDescripcion);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "fCrearMensajePrivado";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "fCrearMensajePrivado";
+            this.Text = "Escribir Mensaje Privado";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +156,6 @@ namespace StreamEducation
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bSeleccionarUsuario;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tDestinatario;
     }
 }

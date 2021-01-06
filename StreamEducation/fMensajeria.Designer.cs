@@ -53,8 +53,9 @@ namespace StreamEducation
             this.bEnviar.Name = "bEnviar";
             this.bEnviar.Size = new System.Drawing.Size(280, 44);
             this.bEnviar.TabIndex = 29;
-            this.bEnviar.Text = "✉️ Enviar Mensaje";
+            this.bEnviar.Text = "✉️ Escribir Mensaje";
             this.bEnviar.UseVisualStyleBackColor = true;
+            this.bEnviar.Click += new System.EventHandler(this.bEnviar_Click);
             // 
             // lMensajes
             // 
@@ -79,6 +80,7 @@ namespace StreamEducation
             this.bCerrar.TabIndex = 45;
             this.bCerrar.Text = "Cerrar";
             this.bCerrar.UseVisualStyleBackColor = true;
+            this.bCerrar.Click += new System.EventHandler(this.bCerrar_Click);
             // 
             // fMensajeria
             // 

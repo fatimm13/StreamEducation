@@ -34,6 +34,7 @@ namespace StreamEducation
             this.labelX = new System.Windows.Forms.Label();
             this.bVolver = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lUsuarios
@@ -43,10 +44,10 @@ namespace StreamEducation
             this.lUsuarios.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUsuarios.FormattingEnabled = true;
             this.lUsuarios.ItemHeight = 25;
-            this.lUsuarios.Location = new System.Drawing.Point(43, 92);
+            this.lUsuarios.Location = new System.Drawing.Point(43, 140);
             this.lUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.lUsuarios.Name = "lUsuarios";
-            this.lUsuarios.Size = new System.Drawing.Size(931, 375);
+            this.lUsuarios.Size = new System.Drawing.Size(931, 325);
             this.lUsuarios.TabIndex = 45;
             this.lUsuarios.SelectedIndexChanged += new System.EventHandler(this.lUsuarios_SelectedIndexChanged);
             // 
@@ -96,11 +97,23 @@ namespace StreamEducation
             this.label2.TabIndex = 51;
             this.label2.Text = "🔍";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(38, 100);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(485, 25);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "Usuarios registrados en StreamEducation:";
+            // 
             // fUsuariosRegistrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 558);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.labelX);
@@ -124,5 +137,6 @@ namespace StreamEducation
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Button bVolver;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
