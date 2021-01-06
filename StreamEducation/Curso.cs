@@ -254,7 +254,7 @@ namespace StreamEducation
             return lista;
         }
 
-        public List<Usuario> getUsuarios()
+        public List<Usuario> getUsuarios(string filtro)
         {
             List<Usuario> lista = new List<Usuario>();
             try
@@ -266,8 +266,8 @@ namespace StreamEducation
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    int c = (int)rdr[0];
-                    lista.Add(new Usuario(c));
+                    Usuario u = new Usuario((int)rdr[0]);
+                    if (u.Nombre.ToUpper().Contains(filtro.ToUpper())) { lista.Add(u); }
                 }
                 rdr.Close();
                 miBD.Close();
@@ -280,7 +280,7 @@ namespace StreamEducation
             return lista;
         }
 
-        public List<Usuario> getPeticiones()
+        public List<Usuario> getPeticiones(string filtro)
         {
             List<Usuario> lista = new List<Usuario>();
             try
@@ -292,8 +292,8 @@ namespace StreamEducation
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    int c = (int)rdr[0];
-                    lista.Add(new Usuario(c));
+                    Usuario u = new Usuario((int)rdr[0]);
+                    if (u.Nombre.ToUpper().Contains(filtro.ToUpper())) { lista.Add(u); }
                 }
                 rdr.Close();
                 miBD.Close();

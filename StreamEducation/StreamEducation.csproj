@@ -139,11 +139,11 @@
     <Compile Include="fInscripcion.Designer.cs">
       <DependentUpon>fInscripcion.cs</DependentUpon>
     </Compile>
-    <Compile Include="fInscripcionesPendientes.cs">
+    <Compile Include="fUsuariosPendientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fInscripcionesPendientes.Designer.cs">
-      <DependentUpon>fInscripcionesPendientes.cs</DependentUpon>
+    <Compile Include="fUsuariosPendientes.Designer.cs">
+      <DependentUpon>fUsuariosPendientes.cs</DependentUpon>
     </Compile>
     <Compile Include="fMensajeria.cs">
       <SubType>Form</SubType>
@@ -181,11 +181,11 @@
     <Compile Include="fRecuperarContrasena.Designer.cs">
       <DependentUpon>fRecuperarContrasena.cs</DependentUpon>
     </Compile>
-    <Compile Include="fTodosUsuarios.cs">
+    <Compile Include="fUsuariosRegistrados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fTodosUsuarios.Designer.cs">
-      <DependentUpon>fTodosUsuarios.cs</DependentUpon>
+    <Compile Include="fUsuariosRegistrados.Designer.cs">
+      <DependentUpon>fUsuariosRegistrados.cs</DependentUpon>
     </Compile>
     <Compile Include="fUsuariosInscritos.cs">
       <SubType>Form</SubType>
@@ -370,8 +370,8 @@
     <EmbeddedResource Include="fInscripcion.resx">
       <DependentUpon>fInscripcion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fInscripcionesPendientes.resx">
-      <DependentUpon>fInscripcionesPendientes.cs</DependentUpon>
+    <EmbeddedResource Include="fUsuariosPendientes.resx">
+      <DependentUpon>fUsuariosPendientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMensajeria.resx">
       <DependentUpon>fMensajeria.cs</DependentUpon>
@@ -406,8 +406,8 @@
     <EmbeddedResource Include="fSeleccionCurso.resx">
       <DependentUpon>fSeleccionCurso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fTodosUsuarios.resx">
-      <DependentUpon>fTodosUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="fUsuariosRegistrados.resx">
+      <DependentUpon>fUsuariosRegistrados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fUsuariosInscritos.resx">
       <DependentUpon>fUsuariosInscritos.cs</DependentUpon>

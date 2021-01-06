@@ -244,6 +244,15 @@ namespace StreamEducation
             get { return rolAsociacion; }
         }
 
+        public string getRol()
+        {
+            string rol = "Estudiante";
+            if (rolProfesor) { rol = "Profesor"; }
+            else if (rolAsociacion) { rol = "Asociacion Externa"; }
+            else if (rolAdmin) { rol = "Administrador"; }
+            return rol;
+        }
+
         public void setRol(int index)
         {
             try
@@ -478,7 +487,7 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT id, nombre, correo FROM tUsuario WHERE rolAdmin = 0 and UPPER(nombre) LIKE '%" + filtro.ToUpper() + "%';";
+                string query = "SELECT id, nombre, correo FROM tUsuario WHERE rolAdmin = 0 and UPPER(nombre) LIKE '%" + filtro.ToUpper() + "%' ORDER BY nombre;";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())

@@ -19,11 +19,29 @@ namespace StreamEducation
 
         private void fUsuariosInscritos_Load(object sender, EventArgs e)
         {
-            foreach (Usuario u in GestorGlobal.CursoActivo.getUsuarios())
+            Recarga("");
+        }
+
+        private void Recarga(string filtro)
+        {
+            lUsuarios.Items.Clear();
+            lExpulsar.Items.Clear();
+            foreach (Usuario u in GestorGlobal.CursoActivo.getUsuarios(filtro))
             {
                 lUsuarios.Items.Add(u);
-                lExpulsar.Items.Add("🚫");
+                lExpulsar.Items.Add("🚫 Expulsar");
             }
+        }
+
+        private void labelX_Click(object sender, EventArgs e)
+        {
+            tUsuario.Text = "";
+            Recarga("");
+        }
+
+        private void tUsuario_TextChanged(object sender, EventArgs e)
+        {
+            Recarga(tUsuario.Text);
         }
 
         private void lExpulsar_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,16 +54,14 @@ namespace StreamEducation
                 if (ventana.Valor)
                 {
                     usuario.expulsar(GestorGlobal.CursoActivo.Id);
-                    lUsuarios.Items.Clear();
-                    lExpulsar.Items.Clear();
-                    foreach (Usuario u in GestorGlobal.CursoActivo.getUsuarios())
-                    {
-                        lUsuarios.Items.Add(u);
-                        lExpulsar.Items.Add("🚫");
-                    }
+                    Recarga(tUsuario.Text);
                 }
             }
         }
-        
+
+        private void bVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

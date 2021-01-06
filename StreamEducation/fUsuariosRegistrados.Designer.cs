@@ -1,7 +1,7 @@
 ﻿
 namespace StreamEducation
 {
-    partial class fUsuariosInscritos
+    partial class fUsuariosRegistrados
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,10 @@ namespace StreamEducation
         private void InitializeComponent()
         {
             this.lUsuarios = new System.Windows.Forms.ListBox();
-            this.lExpulsar = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelX = new System.Windows.Forms.Label();
             this.tUsuario = new System.Windows.Forms.TextBox();
+            this.labelX = new System.Windows.Forms.Label();
             this.bVolver = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lUsuarios
@@ -44,35 +43,22 @@ namespace StreamEducation
             this.lUsuarios.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lUsuarios.FormattingEnabled = true;
             this.lUsuarios.ItemHeight = 25;
-            this.lUsuarios.Location = new System.Drawing.Point(42, 98);
+            this.lUsuarios.Location = new System.Drawing.Point(43, 92);
             this.lUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.lUsuarios.Name = "lUsuarios";
-            this.lUsuarios.Size = new System.Drawing.Size(772, 375);
-            this.lUsuarios.TabIndex = 48;
+            this.lUsuarios.Size = new System.Drawing.Size(931, 375);
+            this.lUsuarios.TabIndex = 45;
+            this.lUsuarios.SelectedIndexChanged += new System.EventHandler(this.lUsuarios_SelectedIndexChanged);
             // 
-            // lExpulsar
+            // tUsuario
             // 
-            this.lExpulsar.BackColor = System.Drawing.SystemColors.Control;
-            this.lExpulsar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lExpulsar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lExpulsar.FormattingEnabled = true;
-            this.lExpulsar.ItemHeight = 25;
-            this.lExpulsar.Location = new System.Drawing.Point(830, 98);
-            this.lExpulsar.Margin = new System.Windows.Forms.Padding(4);
-            this.lExpulsar.Name = "lExpulsar";
-            this.lExpulsar.Size = new System.Drawing.Size(143, 375);
-            this.lExpulsar.TabIndex = 51;
-            this.lExpulsar.SelectedIndexChanged += new System.EventHandler(this.lExpulsar_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 25);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "🔍";
+            this.tUsuario.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tUsuario.Location = new System.Drawing.Point(81, 33);
+            this.tUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tUsuario.Name = "tUsuario";
+            this.tUsuario.Size = new System.Drawing.Size(893, 32);
+            this.tUsuario.TabIndex = 46;
+            this.tUsuario.TextChanged += new System.EventHandler(this.tUsuario_TextChanged);
             // 
             // labelX
             // 
@@ -80,54 +66,53 @@ namespace StreamEducation
             this.labelX.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelX.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX.ForeColor = System.Drawing.Color.Silver;
-            this.labelX.Location = new System.Drawing.Point(937, 43);
+            this.labelX.Location = new System.Drawing.Point(938, 36);
             this.labelX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(26, 25);
-            this.labelX.TabIndex = 53;
+            this.labelX.TabIndex = 48;
             this.labelX.Text = "X";
             this.labelX.Click += new System.EventHandler(this.labelX_Click);
-            // 
-            // tUsuario
-            // 
-            this.tUsuario.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tUsuario.Location = new System.Drawing.Point(80, 40);
-            this.tUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tUsuario.Name = "tUsuario";
-            this.tUsuario.Size = new System.Drawing.Size(893, 32);
-            this.tUsuario.TabIndex = 52;
-            this.tUsuario.TextChanged += new System.EventHandler(this.tUsuario_TextChanged);
             // 
             // bVolver
             // 
             this.bVolver.Font = new System.Drawing.Font("Verdana", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bVolver.Location = new System.Drawing.Point(900, 490);
+            this.bVolver.Location = new System.Drawing.Point(901, 490);
             this.bVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(73, 48);
-            this.bVolver.TabIndex = 55;
+            this.bVolver.TabIndex = 50;
             this.bVolver.Text = "↩️";
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
             // 
-            // fUsuariosInscritos
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(38, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 25);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "🔍";
+            // 
+            // fUsuariosRegistrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 558);
-            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.bVolver);
             this.Controls.Add(this.labelX);
             this.Controls.Add(this.tUsuario);
-            this.Controls.Add(this.lExpulsar);
             this.Controls.Add(this.lUsuarios);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "fUsuariosInscritos";
+            this.Name = "fUsuariosRegistrados";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "fUsuariosInscritos";
-            this.Load += new System.EventHandler(this.fUsuariosInscritos_Load);
+            this.Text = "Usuarios registrados";
+            this.Load += new System.EventHandler(this.fTodosUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,10 +120,9 @@ namespace StreamEducation
 
         #endregion
         private System.Windows.Forms.ListBox lUsuarios;
-        private System.Windows.Forms.ListBox lExpulsar;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.TextBox tUsuario;
+        private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Button bVolver;
+        private System.Windows.Forms.Label label2;
     }
 }

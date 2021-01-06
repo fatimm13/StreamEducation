@@ -46,10 +46,10 @@ namespace StreamEducation
             bBorrar.Visible = usuarioPoder;
             lBorrar.Visible = usuarioPoder;
             bCrearTest.Visible = usuarioPoder;
-            labelInscritos.Visible = usuarioPoder;
-            labelPeticion.Visible = usuarioPoder;
-            bInscritos.Visible = usuarioPoder;
-            bPeticiones.Visible = usuarioPoder;
+            labelInscritos.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
+            labelPeticion.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
+            bInscritos.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
+            bPeticiones.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
             lBorrar.Items.Clear();
             if (usuarioPoder)
             {
@@ -108,7 +108,7 @@ namespace StreamEducation
 
         private void bPeticiones_Click(object sender, EventArgs e)
         {
-            fInscripcionesPendientes ventana = new fInscripcionesPendientes();
+            fUsuariosPendientes ventana = new fUsuariosPendientes();
             ventana.ShowDialog();
         }
 
