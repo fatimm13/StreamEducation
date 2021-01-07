@@ -120,7 +120,8 @@ namespace StreamEducation
             "🎞️",
             "📄",
             "🔗",
-            "🧠"});
+            "🧠",
+            "🎓"});
             this.comboRecurso.Location = new System.Drawing.Point(583, 139);
             this.comboRecurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboRecurso.Name = "comboRecurso";

@@ -44,7 +44,7 @@ namespace StreamEducation
             // 
             this.labelCreador.AutoSize = true;
             this.labelCreador.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreador.Location = new System.Drawing.Point(174, 101);
+            this.labelCreador.Location = new System.Drawing.Point(96, 101);
             this.labelCreador.Name = "labelCreador";
             this.labelCreador.Size = new System.Drawing.Size(155, 25);
             this.labelCreador.TabIndex = 54;
@@ -54,11 +54,11 @@ namespace StreamEducation
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(64, 101);
+            this.label7.Location = new System.Drawing.Point(30, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 25);
+            this.label7.Size = new System.Drawing.Size(50, 25);
             this.label7.TabIndex = 53;
-            this.label7.Text = "Autor:";
+            this.label7.Text = "De:";
             // 
             // labelFecha
             // 
@@ -94,15 +94,14 @@ namespace StreamEducation
             // 
             this.tMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tMensaje.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tMensaje.Enabled = false;
             this.tMensaje.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tMensaje.Location = new System.Drawing.Point(84, 193);
+            this.tMensaje.Location = new System.Drawing.Point(35, 193);
             this.tMensaje.Margin = new System.Windows.Forms.Padding(4);
             this.tMensaje.Multiline = true;
             this.tMensaje.Name = "tMensaje";
             this.tMensaje.ReadOnly = true;
             this.tMensaje.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.tMensaje.Size = new System.Drawing.Size(668, 208);
+            this.tMensaje.Size = new System.Drawing.Size(717, 208);
             this.tMensaje.TabIndex = 48;
             this.tMensaje.Text = "Insertar mensaje";
             // 
@@ -132,7 +131,7 @@ namespace StreamEducation
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(64, 154);
+            this.label4.Location = new System.Drawing.Point(30, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 25);
             this.label4.TabIndex = 44;

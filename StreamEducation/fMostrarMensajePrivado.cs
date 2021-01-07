@@ -13,9 +13,9 @@ namespace StreamEducation
     public partial class fMostrarMensajePrivado : Form
     {
 
-        Mensaje mensaje;
+        MensajePrivado mensaje;
 
-        public fMostrarMensajePrivado(Mensaje m)
+        public fMostrarMensajePrivado(MensajePrivado m)
         {
             InitializeComponent();
             mensaje = m;
@@ -23,10 +23,10 @@ namespace StreamEducation
 
         private void fMostrarMensajePrivado_Load(object sender, EventArgs e)
         {
-            labelNombre.Text = mensaje.Nombre;
-            labelCreador.Text = mensaje.Creador.Nombre;
+            labelNombre.Text = mensaje.Asunto;
+            labelCreador.Text = mensaje.Emisor.Nombre;
             labelFecha.Text = mensaje.Fecha;
-            tMensaje.Text = mensaje.Descripcion;
+            tMensaje.Text = mensaje.Mensaje;
         }
 
         private void bAceptar_Click(object sender, EventArgs e)

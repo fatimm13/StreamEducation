@@ -61,6 +61,7 @@ namespace StreamEducation
             this.bBorrar = new System.Windows.Forms.Button();
             this.lBorrar = new System.Windows.Forms.ListBox();
             this.bCrearTest = new System.Windows.Forms.Button();
+            this.bCrearClase = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -451,11 +452,24 @@ namespace StreamEducation
             this.bCrearTest.UseVisualStyleBackColor = true;
             this.bCrearTest.Click += new System.EventHandler(this.bCrearTest_Click);
             // 
+            // bCrearClase
+            // 
+            this.bCrearClase.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCrearClase.Location = new System.Drawing.Point(752, 373);
+            this.bCrearClase.Margin = new System.Windows.Forms.Padding(4);
+            this.bCrearClase.Name = "bCrearClase";
+            this.bCrearClase.Size = new System.Drawing.Size(179, 39);
+            this.bCrearClase.TabIndex = 45;
+            this.bCrearClase.Text = "Crear Clase";
+            this.bCrearClase.UseVisualStyleBackColor = true;
+            this.bCrearClase.Click += new System.EventHandler(this.bCrearClase_Click);
+            // 
             // fCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1685, 838);
+            this.Controls.Add(this.bCrearClase);
             this.Controls.Add(this.bCrearTest);
             this.Controls.Add(this.lBorrar);
             this.Controls.Add(this.bBorrar);
@@ -524,5 +538,6 @@ namespace StreamEducation
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button bCrearTest;
+        private System.Windows.Forms.Button bCrearClase;
     }
 }

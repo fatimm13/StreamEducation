@@ -69,6 +69,7 @@ namespace StreamEducation
             this.lMensajes.Name = "lMensajes";
             this.lMensajes.Size = new System.Drawing.Size(896, 352);
             this.lMensajes.TabIndex = 44;
+            this.lMensajes.SelectedIndexChanged += new System.EventHandler(this.lMensajes_SelectedIndexChanged);
             // 
             // bCerrar
             // 
@@ -97,6 +98,7 @@ namespace StreamEducation
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mensajeria";
+            this.Load += new System.EventHandler(this.fMensajeria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

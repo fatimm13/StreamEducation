@@ -46,6 +46,7 @@ namespace StreamEducation
             bBorrar.Visible = usuarioPoder;
             lBorrar.Visible = usuarioPoder;
             bCrearTest.Visible = usuarioPoder;
+            bCrearClase.Visible = usuarioPoder;
             labelInscritos.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
             labelPeticion.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
             bInscritos.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
@@ -115,6 +116,11 @@ namespace StreamEducation
         private void bCrearTest_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://docs.google.com/forms/u/0/");
+        }
+
+        private void bCrearClase_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://meet.google.com/?hs=197&pli=1&authuser=0");
         }
 
         private void bCrearForo_Click(object sender, EventArgs e)

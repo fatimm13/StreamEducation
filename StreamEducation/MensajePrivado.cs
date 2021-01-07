@@ -56,7 +56,7 @@ namespace StreamEducation
                 DateTime now = DateTime.Now;
                 string sqldate = now.ToString("dd-MM-yyyy, HH:mm");
                 string query = "INSERT INTO tMensajePrivado (emisor, receptor, fecha, asunto, mensaje) VALUES("
-                    + miEmisor.Id + ", '" + miReceptor.Id + "', '" + sqldate + "', '" + asunto + "', '" + mensaje + "');";
+                    + miEmisor.Id + ", '" + miReceptor.Id + "', '" + sqldate + "', '" + miAsunto + "', '" + miMensaje + "');";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
 
@@ -109,7 +109,7 @@ namespace StreamEducation
 
         public override string ToString()
         {
-            return "Enviado por: " + emisor + " \t Asunto: " + asunto;
+            return "Enviado por: " + emisor + " \t Asunto: " + asunto + " \t Fecha: " + fecha;
         }
 
         public void Borrar()

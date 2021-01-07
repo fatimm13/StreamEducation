@@ -505,6 +505,31 @@ namespace StreamEducation
             return lista;
         }
 
+        public static List<(int, string, string)> getTodosUsuarios(string filtro)
+        {
+            List<(int, string, string)> lista = new List<(int, string, string)>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT id, nombre, correo FROM tUsuario WHERE UPPER(nombre) LIKE '%" + filtro.ToUpper() + "%' ORDER BY nombre;";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    lista.Add(((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a usuarios registrados.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
         public List<Curso> getCursos()
         {
             List<Curso> lista = new List<Curso>();
@@ -531,6 +556,33 @@ namespace StreamEducation
             }
             return lista;
         }
-        
+
+        public List<MensajePrivado> getMensajePrivado()
+        {
+            List<MensajePrivado> lista = new List<MensajePrivado>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT id FROM tMensajePrivado WHERE receptor = '" + this.id + "' ORDER BY id DESC;";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    int c = (int)rdr[0];
+                    lista.Add(new MensajePrivado(c));
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a los cursos del usuario.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
     }
 }

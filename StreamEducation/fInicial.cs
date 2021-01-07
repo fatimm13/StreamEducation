@@ -76,7 +76,7 @@ namespace StreamEducation
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.linkLabel1.LinkVisited = true;
-            System.Diagnostics.Process.Start("http://www.uma.es");
+            System.Diagnostics.Process.Start("https://www.feyalegria.org/venezuela/donar/");
         }
 
         private void bCurso_Click(object sender, EventArgs e)
