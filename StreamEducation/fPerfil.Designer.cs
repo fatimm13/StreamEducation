@@ -44,11 +44,10 @@ namespace StreamEducation
             this.label3 = new System.Windows.Forms.Label();
             this.bBorrarCuenta = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.picturePerfil = new System.Windows.Forms.PictureBox();
             this.bOpciones = new System.Windows.Forms.Button();
             this.bMensajeria = new System.Windows.Forms.Button();
             this.bVolver = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePerfil)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelPais
@@ -218,15 +217,6 @@ namespace StreamEducation
             this.label2.TabIndex = 19;
             this.label2.Text = "Perfil de usuario";
             // 
-            // picturePerfil
-            // 
-            this.picturePerfil.Location = new System.Drawing.Point(43, 145);
-            this.picturePerfil.Margin = new System.Windows.Forms.Padding(4);
-            this.picturePerfil.Name = "picturePerfil";
-            this.picturePerfil.Size = new System.Drawing.Size(285, 143);
-            this.picturePerfil.TabIndex = 26;
-            this.picturePerfil.TabStop = false;
-            // 
             // bOpciones
             // 
             this.bOpciones.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,11 +253,23 @@ namespace StreamEducation
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 90F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(86, 94);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 181);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "👤";
+            // 
             // fPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 634);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.bMensajeria);
             this.Controls.Add(this.bOpciones);
@@ -280,7 +282,6 @@ namespace StreamEducation
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.bActualizar);
-            this.Controls.Add(this.picturePerfil);
             this.Controls.Add(this.lCursos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tBio);
@@ -294,7 +295,6 @@ namespace StreamEducation
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Perfil";
             this.Load += new System.EventHandler(this.fPerfil_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picturePerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,7 +311,6 @@ namespace StreamEducation
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button bActualizar;
-        private System.Windows.Forms.PictureBox picturePerfil;
         private System.Windows.Forms.ListBox lCursos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tBio;
@@ -321,5 +320,6 @@ namespace StreamEducation
         private System.Windows.Forms.Button bOpciones;
         private System.Windows.Forms.Button bMensajeria;
         private System.Windows.Forms.Button bVolver;
+        private System.Windows.Forms.Label label1;
     }
 }

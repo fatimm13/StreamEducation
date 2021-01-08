@@ -151,6 +151,31 @@ namespace StreamEducation
             return lista;
         }
 
+        public static List<string> listaActividadesFecha(string fecha)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT nombre FROM tActividad where fecha LIKE '" + fecha + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    lista.Add((string)rdr[0]);
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a las actividades disponibles.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
         public List<RecursoActividad> getRecursos()
         {
             List<RecursoActividad> lista = new List<RecursoActividad>();

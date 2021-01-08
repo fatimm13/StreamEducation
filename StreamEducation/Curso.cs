@@ -202,6 +202,32 @@ namespace StreamEducation
             return lista;
         }
 
+        public static List<string> getCursosPublicosFecha(string fecha)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT nombre FROM tCurso where publico = 1 and fecha like '" + fecha + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    lista.Add((string)rdr[0]);
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a los cursos disponibles.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
         public List<Recurso> getRecursos()
         {
             List<Recurso> lista = new List<Recurso>();

@@ -38,7 +38,7 @@ namespace StreamEducation
             // 
             this.labelError.AutoSize = true;
             this.labelError.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelError.Location = new System.Drawing.Point(84, 68);
+            this.labelError.Location = new System.Drawing.Point(34, 70);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(221, 20);
             this.labelError.TabIndex = 4;

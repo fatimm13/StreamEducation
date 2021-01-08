@@ -38,13 +38,12 @@ namespace StreamEducation
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.picturePerfil = new System.Windows.Forms.PictureBox();
             this.lCursos = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tBio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picturePerfil)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bVolver
@@ -147,15 +146,6 @@ namespace StreamEducation
             this.label5.TabIndex = 47;
             this.label5.Text = "Nombre:";
             // 
-            // picturePerfil
-            // 
-            this.picturePerfil.Location = new System.Drawing.Point(57, 142);
-            this.picturePerfil.Margin = new System.Windows.Forms.Padding(4);
-            this.picturePerfil.Name = "picturePerfil";
-            this.picturePerfil.Size = new System.Drawing.Size(285, 156);
-            this.picturePerfil.TabIndex = 45;
-            this.picturePerfil.TabStop = false;
-            // 
             // lCursos
             // 
             this.lCursos.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,11 +201,23 @@ namespace StreamEducation
             this.label2.TabIndex = 39;
             this.label2.Text = "Perfil de usuario";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 90F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(69, 102);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(273, 181);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "👤 ";
+            // 
             // fVerPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 634);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bVolver);
             this.Controls.Add(this.labelPais);
             this.Controls.Add(this.labelEscuela);
@@ -225,7 +227,6 @@ namespace StreamEducation
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.picturePerfil);
             this.Controls.Add(this.lCursos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tBio);
@@ -237,7 +238,6 @@ namespace StreamEducation
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Ver perfil";
             this.Load += new System.EventHandler(this.fVerPerfil_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picturePerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,11 +254,11 @@ namespace StreamEducation
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox picturePerfil;
         private System.Windows.Forms.ListBox lCursos;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tBio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

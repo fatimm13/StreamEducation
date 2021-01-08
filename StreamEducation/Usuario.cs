@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -557,6 +558,32 @@ namespace StreamEducation
             return lista;
         }
 
+        public List<string> getCursosFecha(string fecha)
+        {
+            List<string> lista = new List<string>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT c.nombre FROM tCursoUsuario cu join tCurso c on c.id=cu.curso WHERE fecha like '" + fecha + "' and usuario ='" + this.id + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    lista.Add((string)rdr[0]);
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a los cursos del usuario.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
         public List<MensajePrivado> getMensajePrivado()
         {
             List<MensajePrivado> lista = new List<MensajePrivado>();
@@ -582,6 +609,26 @@ namespace StreamEducation
                 ventana.ShowDialog();
             }
             return lista;
+        }
+
+        public List<string> getNotificaciones()
+        {
+            List<string> notificaciones = new List<string>();
+            DateTime now = DateTime.Now;
+            string fecha = now.ToString("dd-MM-yyyy");
+            foreach (string p in Curso.getCursosPublicosFecha(fecha))
+            {
+                notificaciones.Add("AVISO: El curso '" + p + "' comienza hoy.");
+            }
+            foreach (string c in getCursosFecha(fecha))
+            {
+                notificaciones.Add("AVISO: El curso '" + c + "' comienza hoy.");
+            }
+            foreach (string a in Actividad.listaActividadesFecha(fecha))
+            {
+                notificaciones.Add("AVISO: La actividad '" + a + "' comienza hoy.");
+            }
+            return notificaciones;
         }
 
     }

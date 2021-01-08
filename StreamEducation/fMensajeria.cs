@@ -45,6 +45,8 @@ namespace StreamEducation
         {
             lMensajes.Items.Clear();
             foreach (MensajePrivado m in GestorGlobal.UsuarioActivo.getMensajePrivado()) lMensajes.Items.Add(m);
+            foreach (string n in GestorGlobal.UsuarioActivo.getNotificaciones()) lNotificaciones.Items.Add(n);
         }
+
     }
 }

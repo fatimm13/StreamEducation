@@ -29,26 +29,18 @@ namespace StreamEducation
         /// </summary>
         private void InitializeComponent()
         {
-            this.label4 = new System.Windows.Forms.Label();
             this.bEnviar = new System.Windows.Forms.Button();
             this.lMensajes = new System.Windows.Forms.ListBox();
             this.bCerrar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lNotificaciones = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(49, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(327, 34);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Bandeja de Entrada";
             // 
             // bEnviar
             // 
             this.bEnviar.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEnviar.Location = new System.Drawing.Point(671, 45);
+            this.bEnviar.Location = new System.Drawing.Point(671, 243);
             this.bEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bEnviar.Name = "bEnviar";
             this.bEnviar.Size = new System.Drawing.Size(280, 44);
@@ -64,17 +56,17 @@ namespace StreamEducation
             this.lMensajes.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMensajes.FormattingEnabled = true;
             this.lMensajes.ItemHeight = 25;
-            this.lMensajes.Location = new System.Drawing.Point(55, 107);
+            this.lMensajes.Location = new System.Drawing.Point(55, 308);
             this.lMensajes.Margin = new System.Windows.Forms.Padding(4);
             this.lMensajes.Name = "lMensajes";
-            this.lMensajes.Size = new System.Drawing.Size(896, 352);
+            this.lMensajes.Size = new System.Drawing.Size(896, 202);
             this.lMensajes.TabIndex = 44;
             this.lMensajes.SelectedIndexChanged += new System.EventHandler(this.lMensajes_SelectedIndexChanged);
             // 
             // bCerrar
             // 
             this.bCerrar.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCerrar.Location = new System.Drawing.Point(834, 486);
+            this.bCerrar.Location = new System.Drawing.Point(834, 536);
             this.bCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bCerrar.Name = "bCerrar";
             this.bCerrar.Size = new System.Drawing.Size(117, 41);
@@ -83,14 +75,49 @@ namespace StreamEducation
             this.bCerrar.UseVisualStyleBackColor = true;
             this.bCerrar.Click += new System.EventHandler(this.bCerrar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(236, 29);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "🔔 Notificaciones";
+            // 
+            // lNotificaciones
+            // 
+            this.lNotificaciones.BackColor = System.Drawing.SystemColors.Window;
+            this.lNotificaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lNotificaciones.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNotificaciones.FormattingEnabled = true;
+            this.lNotificaciones.ItemHeight = 25;
+            this.lNotificaciones.Location = new System.Drawing.Point(55, 93);
+            this.lNotificaciones.Margin = new System.Windows.Forms.Padding(4);
+            this.lNotificaciones.Name = "lNotificaciones";
+            this.lNotificaciones.Size = new System.Drawing.Size(896, 102);
+            this.lNotificaciones.TabIndex = 47;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(50, 258);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 29);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "✉️ Mensajes";
+            // 
             // fMensajeria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 558);
+            this.ClientSize = new System.Drawing.Size(1020, 610);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lNotificaciones);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.bCerrar);
             this.Controls.Add(this.lMensajes);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.bEnviar);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -105,10 +132,11 @@ namespace StreamEducation
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button bEnviar;
         private System.Windows.Forms.ListBox lMensajes;
         private System.Windows.Forms.Button bCerrar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lNotificaciones;
+        private System.Windows.Forms.Label label2;
     }
 }
