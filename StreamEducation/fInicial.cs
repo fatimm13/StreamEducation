@@ -24,16 +24,15 @@ namespace StreamEducation
         private void fInicial_Load(object sender, EventArgs e)
         {
             Recarga();
-            marcarCalendario();
         }
 
         private void marcarCalendario()
         {
-            monthCalendar1.RemoveAllAnnuallyBoldedDates();
+            monthCalendar1.RemoveAllBoldedDates();
             GestorGlobal.rellenarCalendario();
             foreach (DateTime d in GestorGlobal.getCalendario().Keys)
             {
-                monthCalendar1.AddAnnuallyBoldedDate(d);
+                monthCalendar1.AddBoldedDate(d);
             }
             monthCalendar1.UpdateBoldedDates();
         }

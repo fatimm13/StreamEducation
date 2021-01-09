@@ -56,8 +56,18 @@ namespace StreamEducation
                 lBorrar.Items.Clear();
                 foreach ((int, string, string) r in recursos) lBorrar.Items.Add("🗑️ Borrar");
             }
+            marcarCalendario();
         }
-
+        private void marcarCalendario()
+        {
+            monthCalendar1.RemoveAllBoldedDates();
+            GestorGlobal.rellenarCalendario();
+            foreach (DateTime d in GestorGlobal.getCalendario().Keys)
+            {
+                monthCalendar1.AddBoldedDate(d);
+            }
+            monthCalendar1.UpdateBoldedDates();
+        }
         private void RecargaRecursos()
         {
             recursos = GestorGlobal.CursoActivo.getRecursos();
@@ -226,5 +236,15 @@ namespace StreamEducation
             }
         }
 
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            List<String> value;
+            DateTime date = monthCalendar1.SelectionRange.Start;
+            if (GestorGlobal.getCalendario().TryGetValue(date, out value))
+            {
+                fEventos ev = new fEventos(date, value);
+                ev.ShowDialog();
+            }
+        }
     }
 }

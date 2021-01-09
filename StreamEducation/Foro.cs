@@ -154,13 +154,12 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT id, nombre FROM tDebate WHERE FORO = '" + this.id + "';";
+                string query = "SELECT id, nombre FROM tDebate WHERE FORO = 0 ;";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    int miId = (int)rdr[0];
-                    lista.Add((miId, (string)rdr[1]));
+                    lista.Add(((int)rdr[0], (string)rdr[1]));
                 }
                 rdr.Close();
                 miBD.Close();

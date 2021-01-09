@@ -73,7 +73,7 @@ namespace StreamEducation
             this.panel1.Controls.Add(this.bIniciarSesion);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(17, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1650, 68);
             this.panel1.TabIndex = 35;
@@ -82,7 +82,7 @@ namespace StreamEducation
             // 
             this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCerrarSesion.Location = new System.Drawing.Point(1299, 9);
-            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.bCerrarSesion.Name = "bCerrarSesion";
             this.bCerrarSesion.Size = new System.Drawing.Size(181, 47);
             this.bCerrarSesion.TabIndex = 42;
@@ -94,7 +94,7 @@ namespace StreamEducation
             // 
             this.bPerfil.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPerfil.Location = new System.Drawing.Point(1507, 10);
-            this.bPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.bPerfil.Name = "bPerfil";
             this.bPerfil.Size = new System.Drawing.Size(125, 46);
             this.bPerfil.TabIndex = 41;
@@ -106,7 +106,7 @@ namespace StreamEducation
             // 
             this.bRegistrarse.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bRegistrarse.Location = new System.Drawing.Point(1468, 9);
-            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(4);
             this.bRegistrarse.Name = "bRegistrarse";
             this.bRegistrarse.Size = new System.Drawing.Size(165, 47);
             this.bRegistrarse.TabIndex = 40;
@@ -118,7 +118,7 @@ namespace StreamEducation
             // 
             this.bIniciarSesion.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bIniciarSesion.Location = new System.Drawing.Point(1264, 9);
-            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.bIniciarSesion.Name = "bIniciarSesion";
             this.bIniciarSesion.Size = new System.Drawing.Size(187, 46);
             this.bIniciarSesion.TabIndex = 39;
@@ -132,7 +132,7 @@ namespace StreamEducation
             this.tDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tDescripcion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tDescripcion.Location = new System.Drawing.Point(13, 272);
-            this.tDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.ReadOnly = true;
@@ -155,7 +155,7 @@ namespace StreamEducation
             // 
             this.bInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bInicio.Location = new System.Drawing.Point(69, 65);
-            this.bInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bInicio.Margin = new System.Windows.Forms.Padding(4);
             this.bInicio.Name = "bInicio";
             this.bInicio.Size = new System.Drawing.Size(191, 69);
             this.bInicio.TabIndex = 0;
@@ -178,7 +178,7 @@ namespace StreamEducation
             // 
             this.bCrearCurso.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCrearCurso.Location = new System.Drawing.Point(1172, 137);
-            this.bCrearCurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCrearCurso.Margin = new System.Windows.Forms.Padding(4);
             this.bCrearCurso.Name = "bCrearCurso";
             this.bCrearCurso.Size = new System.Drawing.Size(173, 39);
             this.bCrearCurso.TabIndex = 38;
@@ -194,7 +194,7 @@ namespace StreamEducation
             this.lCursos.FormattingEnabled = true;
             this.lCursos.ItemHeight = 25;
             this.lCursos.Location = new System.Drawing.Point(439, 288);
-            this.lCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lCursos.Margin = new System.Windows.Forms.Padding(4);
             this.lCursos.Name = "lCursos";
             this.lCursos.Size = new System.Drawing.Size(761, 475);
             this.lCursos.TabIndex = 37;
@@ -216,9 +216,9 @@ namespace StreamEducation
             // 
             this.groupBox2.Controls.Add(this.monthCalendar1);
             this.groupBox2.Location = new System.Drawing.Point(1379, 86);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(289, 737);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
@@ -230,6 +230,7 @@ namespace StreamEducation
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // groupBox1
             // 
@@ -237,9 +238,9 @@ namespace StreamEducation
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.bInicio);
             this.groupBox1.Location = new System.Drawing.Point(17, 87);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(365, 737);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
@@ -252,7 +253,7 @@ namespace StreamEducation
             this.lPublico.FormattingEnabled = true;
             this.lPublico.ItemHeight = 25;
             this.lPublico.Location = new System.Drawing.Point(1244, 288);
-            this.lPublico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lPublico.Margin = new System.Windows.Forms.Padding(4);
             this.lPublico.Name = "lPublico";
             this.lPublico.Size = new System.Drawing.Size(53, 475);
             this.lPublico.TabIndex = 40;
