@@ -21,7 +21,7 @@ namespace StreamEducation
         {
             if (GestorGlobal.UsuarioActivo != null && tDebate.Text != "")
             {
-                new Debate(tDebate.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, GestorGlobal.ForoActivo);
+                new Debate(tDebate.Text, tDescripcion.Text, GestorGlobal.UsuarioActivo, new Foro(0));
                 this.Close();
             }
             else

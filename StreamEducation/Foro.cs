@@ -147,7 +147,7 @@ namespace StreamEducation
             return lista;
         }
 
-        public List<(int, string)> getNoticias()
+        public static List<(int, string)> getNoticias()
         {
             List<(int, string)> lista = new List<(int, string)>();
             try

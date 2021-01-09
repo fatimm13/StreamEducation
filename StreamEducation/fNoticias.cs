@@ -48,7 +48,7 @@ namespace StreamEducation
 
         private void RecargaNoticias()
         {
-            noticias = GestorGlobal.ForoActivo.getNoticias();
+            noticias = Foro.getNoticias();
             lNoticias.Items.Clear();
             foreach ((int, string) n in noticias) lNoticias.Items.Add(n.Item2);
         }
