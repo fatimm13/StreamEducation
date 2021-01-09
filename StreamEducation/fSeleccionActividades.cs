@@ -12,6 +12,9 @@ namespace StreamEducation
 {
     public partial class fSeleccionActividades : Form
     {
+
+        private List<(int, string)> actividades;
+
         public fSeleccionActividades()
         {
             InitializeComponent();
@@ -20,7 +23,7 @@ namespace StreamEducation
         private void fSeleccionActividades_Load(object sender, EventArgs e)
         {
             Recarga();
-            foreach (Actividad a in Actividad.listaActividades()) { lActividades.Items.Add(a); }
+            RecargaActividades();
         }
 
         private void Recarga()
@@ -31,6 +34,13 @@ namespace StreamEducation
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
             bCrearActividad.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolAsociacion || GestorGlobal.UsuarioActivo.RolAdmin);
+        }
+
+        private void RecargaActividades()
+        {
+            actividades = Actividad.listaActividades();
+            lActividades.Items.Clear();
+            foreach ((int, string) a in actividades) lActividades.Items.Add(a.Item2);
         }
 
         private void bInicio_Click(object sender, EventArgs e)
@@ -74,24 +84,23 @@ namespace StreamEducation
         {
             fCrearActividad ventana = new fCrearActividad();
             ventana.ShowDialog();
-            lActividades.Items.Clear();
             Recarga();
-            foreach (Actividad a in Actividad.listaActividades()) { lActividades.Items.Add(a); }
+            RecargaActividades();
         }     
 
         private void lActividades_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lActividades.SelectedIndex >= 0)
             {
-                GestorGlobal.ActividadActiva = (Actividad)lActividades.SelectedItem;
+                int id = actividades[lActividades.SelectedIndex].Item1;
+                GestorGlobal.ActividadActiva = new Actividad(id);
                 this.Visible = false;
                 fActividad ventana = new fActividad();
                 ventana.ShowDialog();
                 GestorGlobal.ActividadActiva = null;
                 Recarga();
                 this.Visible = true;
-                lActividades.Items.Clear();
-                foreach (Actividad a in Actividad.listaActividades()) { lActividades.Items.Add(a); }
+                RecargaActividades();
             }
         }
 

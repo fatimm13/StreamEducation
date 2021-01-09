@@ -30,7 +30,7 @@ namespace StreamEducation
                 labelEscuela.Text = usuario.Escuela;
                 labelPais.Text = usuario.Pais;
                 tBio.Text = usuario.Biografia;
-                foreach (Curso c in usuario.getCursos()) lCursos.Items.Add(c.Nombre);
+                foreach (string c in usuario.getCursos()) lCursos.Items.Add(c);
             }
             
         }

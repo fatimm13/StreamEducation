@@ -271,3 +271,4 @@ C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fUsuariosPendientes.resources
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fVerPerfil.resources
 C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fUsuariosMensajeria.resources
+C:\Users\FATIMA\Desktop\Proyecto Requisitos\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearNoticia.resources

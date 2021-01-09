@@ -81,39 +81,11 @@ namespace StreamEducation
         public string Nombre
         {
             get { return nombre; }
-            /*
-            set
-            {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-
-                string query = "UPDATE tRecursoActividad SET nombre = '" + value
-                        + "' WHERE id = " + id + ";";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-                miBD.Close();
-                nombre = value;
-            }
-            */
         }
 
         public string Link
         {
             get { return link; }
-            /*
-            set
-            {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-
-                string query = "UPDATE tRecursoActividad SET link = '" + value
-                        + "' WHERE id = " + id + ";";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-                miBD.Close();
-                link = value;
-            }
-            */
         }
 
         public override string ToString()

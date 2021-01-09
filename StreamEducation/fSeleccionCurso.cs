@@ -14,6 +14,8 @@ namespace StreamEducation
     public partial class fSeleccionCurso : Form
     {
 
+        private List<(int, string, int)> cursos;
+
         public fSeleccionCurso()
         {
             InitializeComponent();
@@ -22,15 +24,7 @@ namespace StreamEducation
         private void fSeleccionCurso_Load(object sender, EventArgs e)
         {
             Recarga();
-            foreach (Curso c in Curso.listaCursos())
-            {
-                if (c.Id > 0)
-                {
-                    lCursos.Items.Add(c);
-                    if (c.Publico) { lPublico.Items.Add("✔️"); }
-                    else { lPublico.Items.Add("❌"); }
-                }
-            }
+            RecargaCursos();
         }
 
         private void Recarga()
@@ -41,6 +35,19 @@ namespace StreamEducation
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
             bCrearCurso.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.RolProfesor || GestorGlobal.UsuarioActivo.RolAdmin);
+        }
+
+        private void RecargaCursos()
+        {
+            cursos = Curso.listaCursos();
+            lCursos.Items.Clear();
+            lPublico.Items.Clear();
+            foreach ((int, string, int) c in cursos)
+            {
+                lCursos.Items.Add(c.Item2);
+                if (c.Item3 == 1) { lPublico.Items.Add("✔️"); }
+                else { lPublico.Items.Add("❌"); }
+            }
         }
 
         private void bInicio_Click(object sender, EventArgs e)
@@ -84,24 +91,15 @@ namespace StreamEducation
         {
             fCrearCurso ventana = new fCrearCurso();
             ventana.ShowDialog();
-            lCursos.Items.Clear();
-            lPublico.Items.Clear();
-            foreach (Curso c in Curso.listaCursos())
-            {
-                if (c.Id > 0)
-                {
-                    lCursos.Items.Add(c);
-                    if (c.Publico) { lPublico.Items.Add("✔️"); }
-                    else { lPublico.Items.Add("❌"); }
-                }
-            }
+            RecargaCursos();
         }
 
         private void lCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lCursos.SelectedIndex >= 0)
             {
-                Curso curso = (Curso)lCursos.SelectedItem;
+                int id = cursos[lCursos.SelectedIndex].Item1;
+                Curso curso = new Curso(id);
                 bool usuarioPoder = GestorGlobal.UsuarioActivo != null && (GestorGlobal.UsuarioActivo.Id == curso.Profesor.Id || GestorGlobal.UsuarioActivo.RolAdmin);
                 
                 if (curso.Publico || usuarioPoder)
@@ -136,18 +134,8 @@ namespace StreamEducation
             ventana.ShowDialog();
             GestorGlobal.CursoActivo = null;
             Recarga();
+            RecargaCursos();
             this.Visible = true;
-            lCursos.Items.Clear();
-            lPublico.Items.Clear();
-            foreach (Curso c in Curso.listaCursos())
-            {
-                if (c.Id > 0)
-                {
-                    lCursos.Items.Add(c);
-                    if (c.Publico) { lPublico.Items.Add("✔️"); }
-                    else { lPublico.Items.Add("❌"); }
-                }
-            }
         }
 
     }

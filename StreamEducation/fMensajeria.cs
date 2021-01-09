@@ -12,17 +12,30 @@ namespace StreamEducation
 {
     public partial class fMensajeria : Form
     {
+        private List<(int, string)> mensajes;
         public fMensajeria()
         {
             InitializeComponent();
+        }
+
+        private void fMensajeria_Load(object sender, EventArgs e)
+        {
+            Recarga();
+            foreach (string n in GestorGlobal.UsuarioActivo.getNotificaciones()) lNotificaciones.Items.Add(n);
+        }
+
+        private void Recarga()
+        {
+            mensajes = GestorGlobal.UsuarioActivo.getMensajePrivado();
+            lMensajes.Items.Clear();
+            foreach ((int, string) m in mensajes) lMensajes.Items.Add(m.Item2);
         }
 
         private void bEnviar_Click(object sender, EventArgs e)
         {
             fCrearMensajePrivado ventana = new fCrearMensajePrivado();
             ventana.ShowDialog();
-            lMensajes.Items.Clear();
-            foreach (MensajePrivado m in GestorGlobal.UsuarioActivo.getMensajePrivado()) lMensajes.Items.Add(m);
+            Recarga();
         }
 
         private void bCerrar_Click(object sender, EventArgs e)
@@ -34,18 +47,10 @@ namespace StreamEducation
         {
             if (lMensajes.SelectedIndex >= 0)
             {
-                fMostrarMensajePrivado ventana = new fMostrarMensajePrivado((MensajePrivado)lMensajes.SelectedItem);
+                int id = mensajes[lMensajes.SelectedIndex].Item1;
+                fMostrarMensajePrivado ventana = new fMostrarMensajePrivado(new MensajePrivado(id));
                 ventana.ShowDialog();
-                lMensajes.Items.Clear();
-                foreach (MensajePrivado m in GestorGlobal.UsuarioActivo.getMensajePrivado()) lMensajes.Items.Add(m);
             }
-        }
-
-        private void fMensajeria_Load(object sender, EventArgs e)
-        {
-            lMensajes.Items.Clear();
-            foreach (MensajePrivado m in GestorGlobal.UsuarioActivo.getMensajePrivado()) lMensajes.Items.Add(m);
-            foreach (string n in GestorGlobal.UsuarioActivo.getNotificaciones()) lNotificaciones.Items.Add(n);
         }
 
     }

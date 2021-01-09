@@ -22,7 +22,7 @@ namespace StreamEducation
 
         private void fTodosUsuarios_Load(object sender, EventArgs e)
         {
-            usuarios = Usuario.getUsuarios("");
+            usuarios = Usuario.getUsuarios("", false);
             Recarga();
         }
 
@@ -43,13 +43,13 @@ namespace StreamEducation
         private void labelX_Click(object sender, EventArgs e)
         {
             tUsuario.Text = "";
-            usuarios = Usuario.getUsuarios("");
+            usuarios = Usuario.getUsuarios("", false);
             Recarga();
         }
 
         private void tUsuario_TextChanged(object sender, EventArgs e)
         {
-            usuarios = Usuario.getUsuarios(tUsuario.Text);
+            usuarios = Usuario.getUsuarios(tUsuario.Text, false);
             Recarga();
         }
 
@@ -60,7 +60,7 @@ namespace StreamEducation
                 int id = usuarios[lUsuarios.SelectedIndex].Item1;
                 fOpcionesAdmin ventana = new fOpcionesAdmin(new Usuario(id));
                 ventana.ShowDialog();
-                usuarios = Usuario.getUsuarios(tUsuario.Text);
+                usuarios = Usuario.getUsuarios(tUsuario.Text, false);
                 Recarga();
             }
         }

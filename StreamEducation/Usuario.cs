@@ -87,10 +87,9 @@ namespace StreamEducation
             }
         }
 
-        public int Id
-        {
-            get { return id; }
-        }
+        public int Id { get { return id; } }
+
+        public string Correo { get { return correo; } }
 
         public string Nombre
         {
@@ -115,24 +114,6 @@ namespace StreamEducation
             }
         }
 
-        public string Correo
-        {
-            get { return correo; }
-            /*
-            set
-            {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-                string query = "UPDATE tUsuario SET correo = '" + value
-                        + "' WHERE id = " + id + ";";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-                correo = value;
-                miBD.Close();
-            }
-            */
-        }
-
         public string Biografia
         {
             get { return biografia; }
@@ -142,8 +123,7 @@ namespace StreamEducation
                 {
                     MySqlConnection miBD = new MySqlConnection(CONNECTION);
                     miBD.Open();
-                    string query = "UPDATE tUsuario SET biografia = '" + value
-                            + "' WHERE id = " + id + ";";
+                    string query = "UPDATE tUsuario SET biografia = '" + value + "' WHERE id = " + id + ";";
                     MySqlCommand cmd = new MySqlCommand(query, miBD);
                     cmd.ExecuteNonQuery();
                     biografia = value;
@@ -165,8 +145,7 @@ namespace StreamEducation
                 {
                     MySqlConnection miBD = new MySqlConnection(CONNECTION);
                     miBD.Open();
-                    string query = "UPDATE tUsuario SET escuela = '" + value
-                            + "' WHERE id = " + id + ";";
+                    string query = "UPDATE tUsuario SET escuela = '" + value + "' WHERE id = " + id + ";";
                     MySqlCommand cmd = new MySqlCommand(query, miBD);
                     cmd.ExecuteNonQuery();
                     escuela = value;
@@ -189,8 +168,7 @@ namespace StreamEducation
                 {
                     MySqlConnection miBD = new MySqlConnection(CONNECTION);
                     miBD.Open();
-                    string query = "UPDATE tUsuario SET pais = '" + value
-                            + "' WHERE id = " + id + ";";
+                    string query = "UPDATE tUsuario SET pais = '" + value + "' WHERE id = " + id + ";";
                     MySqlCommand cmd = new MySqlCommand(query, miBD);
                     cmd.ExecuteNonQuery();
                     pais = value;
@@ -204,46 +182,11 @@ namespace StreamEducation
             }
         }
 
-        public bool RolProfesor
-        {
-            get { return rolProfesor; }
-            /*
-            set
-            {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-                string query = "UPDATE tUsuario SET rolProfesor = " + value
-                        + " WHERE id = " + id + ";";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-                rolProfesor = value;
-                miBD.Close();
-            }
-            */
-        }
+        public bool RolProfesor { get { return rolProfesor; } }
 
-        public bool RolAdmin
-        {
-            get { return rolAdmin; }
-            /*
-            set
-            {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-                string query = "UPDATE tUsuario SET rolAdmin = " + value
-                        + " WHERE id = " + id + ";";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                cmd.ExecuteNonQuery();
-                rolProfesor = value;
-                miBD.Close();
-            }
-            */
-        }
+        public bool RolAdmin { get { return rolAdmin; } }
 
-        public bool RolAsociacion
-        {
-            get { return rolAsociacion; }
-        }
+        public bool RolAsociacion { get { return rolAsociacion; } }
 
         public string getRol()
         {
@@ -260,7 +203,9 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                MySqlCommand cmd = new MySqlCommand(seleccionarQuery(index), miBD);
+                string query = "UPDATE tUsuario SET rolProfesor = '" + (index == 1 ? 1 : 0) + "', rolAdmin = '" + (index == 3 ? 1 : 0)
+                    + "', rolAsociacion = '" + (index == 2 ? 1 : 0) + "' WHERE id = " + id + ";";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
                 cmd.ExecuteNonQuery();
                 miBD.Close();
                 rolProfesor = index == 1;
@@ -269,27 +214,9 @@ namespace StreamEducation
             }
             catch
             {
-                fError ventana = new fError("Error al actualizar pais del usuario.");
+                fError ventana = new fError("Error al actualizar rol del usuario.");
                 ventana.ShowDialog();
             }
-        }
-
-        private string seleccionarQuery(int index)
-        {
-            string query = "UPDATE tUsuario SET rolProfesor = 0, rolAdmin = 0, rolAsociacion = 0 WHERE id = " + id + ";";
-            if (index == 1)
-            {
-                query = "UPDATE tUsuario SET rolProfesor = 1, rolAdmin = 0, rolAsociacion = 0 WHERE id = " + id + ";";
-            }
-            else if (index == 2)
-            {
-                query = "UPDATE tUsuario SET rolProfesor = 0, rolAdmin = 0, rolAsociacion = 1 WHERE id = " + id + ";";
-            }
-            else if (index == 3)
-            {
-                query = "UPDATE tUsuario SET rolProfesor = 0, rolAdmin = 1, rolAsociacion = 0 WHERE id = " + id + ";";
-            }
-            return query;
         }
 
         public override string ToString()
@@ -369,7 +296,8 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT contrasena FROM tUsuario WHERE correo = '" + miCorreo + "' and pregunta ='" + miPregunta + "'and upper(respuesta) = '" + miRespuesta.ToUpper() + "';";
+                string query = "SELECT contrasena FROM tUsuario WHERE correo = '" + miCorreo + "' and pregunta ='" + miPregunta
+                    + "'and upper(respuesta) = '" + miRespuesta.ToUpper() + "';";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 if (rdr.Read()) { contrasena = (string)rdr[0]; }
@@ -481,14 +409,37 @@ namespace StreamEducation
             }
         }
 
-        public static List<(int, string, string)> getUsuarios(string filtro)
+        public static string getNombre(int miId)
+        {
+            string res = "Error";
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT nombre FROM tUsuario WHERE id = '" + miId + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                if (rdr.Read()) { res = (string)rdr[0]; }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a usuarios registrados.");
+                ventana.ShowDialog();
+            }
+            return res;
+        }
+
+        public static List<(int, string, string)> getUsuarios(string filtro, bool conAdmin)
         {
             List<(int, string, string)> lista = new List<(int, string, string)>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT id, nombre, correo FROM tUsuario WHERE rolAdmin = 0 and UPPER(nombre) LIKE '%" + filtro.ToUpper() + "%' ORDER BY nombre;";
+                string query = "SELECT id, nombre, correo FROM tUsuario WHERE" + (conAdmin ? " rolAdmin = 0 and " : " ")
+                    + "UPPER(nombre) LIKE '%" + filtro.ToUpper() + "%' ORDER BY nombre;";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -506,46 +457,20 @@ namespace StreamEducation
             return lista;
         }
 
-        public static List<(int, string, string)> getTodosUsuarios(string filtro)
+        public List<string> getCursos()
         {
-            List<(int, string, string)> lista = new List<(int, string, string)>();
+            List<string> lista = new List<string>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT id, nombre, correo FROM tUsuario WHERE UPPER(nombre) LIKE '%" + filtro.ToUpper() + "%' ORDER BY nombre;";
-                MySqlCommand cmd = new MySqlCommand(query, miBD);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    lista.Add(((int)rdr[0], (string)rdr[1], (string)rdr[2]));
-                }
-                rdr.Close();
-                miBD.Close();
-            }
-            catch
-            {
-                fError ventana = new fError("Error al acceder a usuarios registrados.");
-                ventana.ShowDialog();
-            }
-            return lista;
-        }
-
-        public List<Curso> getCursos()
-        {
-            List<Curso> lista = new List<Curso>();
-            try
-            {
-                MySqlConnection miBD = new MySqlConnection(CONNECTION);
-                miBD.Open();
-                string query = "SELECT curso FROM tCursoUsuario WHERE usuario = '" + this.id + "';";
+                string query = "SELECT c.nombre FROM tCursoUsuario cu join tCurso c on c.id=cu.curso WHERE usuario = '" + this.id + "';";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
-                    int c = (int)rdr[0];
-                    lista.Add(new Curso(c));
+                    lista.Add((string)rdr[0]);
                 }
                 rdr.Close();
                 miBD.Close();
@@ -584,21 +509,22 @@ namespace StreamEducation
             return lista;
         }
 
-        public List<MensajePrivado> getMensajePrivado()
+        public List<(int, string)> getMensajePrivado()
         {
-            List<MensajePrivado> lista = new List<MensajePrivado>();
+            List<(int, string)> lista = new List<(int, string)>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT id FROM tMensajePrivado WHERE receptor = '" + this.id + "' ORDER BY id DESC;";
+                string query = "SELECT id, emisor, asunto, fecha FROM tMensajePrivado WHERE receptor = '" + this.id + "' ORDER BY id DESC;";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
-                    int c = (int)rdr[0];
-                    lista.Add(new MensajePrivado(c));
+                    string escribir = "Enviado por: " + getNombre((int)rdr[1]) + " \t Asunto: " + ((string)rdr[2])
+                        + " \t Fecha: " + ((string)rdr[3]);
+                    lista.Add(((int)rdr[0], escribir));
                 }
                 rdr.Close();
                 miBD.Close();

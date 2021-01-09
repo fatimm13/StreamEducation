@@ -12,6 +12,9 @@ namespace StreamEducation
 {
     public partial class fMostrarNoticia : Form
     {
+
+        private List<(int, string)> mensajes;
+
         public fMostrarNoticia()
         {
             InitializeComponent();
@@ -22,8 +25,7 @@ namespace StreamEducation
             labelNoticia.Text = GestorGlobal.DebateActivo.Nombre;
             tDescripcion.Text = GestorGlobal.DebateActivo.Descripcion;
             Recarga();
-            lMensajes.Items.Clear();
-            foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
+            RecargaMensajes();
         }
 
         private void Recarga()
@@ -35,6 +37,13 @@ namespace StreamEducation
             bCerrarSesion.Visible = usuarioIniciado;
             bAddMensaje.Visible = usuarioIniciado;
             bBorrar.Visible = usuarioIniciado && GestorGlobal.UsuarioActivo.RolAdmin;
+        }
+
+        private void RecargaMensajes()
+        {
+            mensajes = GestorGlobal.DebateActivo.getMensajes();
+            lMensajes.Items.Clear();
+            foreach ((int, string) m in mensajes) lMensajes.Items.Add(m.Item2);
         }
 
         private void bInicio_Click(object sender, EventArgs e)
@@ -78,8 +87,7 @@ namespace StreamEducation
         {
             fCrearMensaje ventana = new fCrearMensaje();
             ventana.ShowDialog();
-            lMensajes.Items.Clear();
-            foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
+            RecargaMensajes();
         }
 
         private void bBorrar_Click(object sender, EventArgs e)
@@ -98,10 +106,10 @@ namespace StreamEducation
         {
             if (lMensajes.SelectedIndex >= 0)
             {
-                fMostrarComentario ventana = new fMostrarComentario((Mensaje)lMensajes.SelectedItem);
+                int id = mensajes[lMensajes.SelectedIndex].Item1;
+                fMostrarComentario ventana = new fMostrarComentario(new Mensaje(id));
                 ventana.ShowDialog();
-                lMensajes.Items.Clear();
-                foreach (Mensaje m in GestorGlobal.DebateActivo.getMensajes()) lMensajes.Items.Add(m);
+                RecargaMensajes();
             }
         }
 

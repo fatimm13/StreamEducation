@@ -69,16 +69,16 @@ namespace StreamEducation
             }
         }
 
-        internal string intervenciones()
+        public static string NumIntervenciones(int miId)
         {
-            object res = null;
+            string res = "Error";
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT count(*) FROM tMensaje WHERE debate=" + id + ";";
+                string query = "SELECT count(*) FROM tMensaje WHERE debate = '" + miId + "';";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
-                res = cmd.ExecuteScalar();
+                res = cmd.ExecuteScalar().ToString();
                 miBD.Close();
             }
             catch
@@ -86,7 +86,7 @@ namespace StreamEducation
                 fError ventana = new fError("Error al contar intervenciones del debate.");
                 ventana.ShowDialog();
             }
-            return res.ToString();
+            return res;
         }
 
         public int Id
@@ -142,20 +142,21 @@ namespace StreamEducation
             }
         }
 
-        public List<Mensaje> getMensajes()
+        public List<(int, string)> getMensajes()
         {
-            List<Mensaje> lista = new List<Mensaje>();
+            List<(int, string)> lista = new List<(int, string)>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT ID FROM tMensaje WHERE debate=" + this.id + ";";
+                string query = "SELECT id, creador, nombre, fecha FROM tMensaje WHERE debate=" + this.id + ";";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    int c = (int)rdr[0];
-                    lista.Add(new Mensaje(c));
+                    string escribir = "Mensaje de: " + Usuario.getNombre((int)rdr[1]) + " \t Titulo: " + ((string)rdr[2])
+                        + " \t Enviado el " + ((string)rdr[3]);
+                    lista.Add(((int)rdr[0], escribir));
                 }
                 rdr.Close();
                 miBD.Close();

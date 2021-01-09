@@ -12,6 +12,9 @@ namespace StreamEducation
 {
     public partial class fNoticias : Form
     {
+
+        private List<(int, string)> noticias;
+
         public fNoticias()
         {
             InitializeComponent();
@@ -20,7 +23,7 @@ namespace StreamEducation
         private void fNoticias_Load(object sender, EventArgs e)
         {
             Recarga();
-            foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
+            RecargaNoticias();
         }
 
         private void Recarga()
@@ -31,6 +34,13 @@ namespace StreamEducation
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
             bAddNoticia.Visible = usuarioIniciado && GestorGlobal.UsuarioActivo.RolAdmin;
+        }
+
+        private void RecargaNoticias()
+        {
+            noticias = GestorGlobal.ForoActivo.getNoticias();
+            lNoticias.Items.Clear();
+            foreach ((int, string) n in noticias) lNoticias.Items.Add(n.Item2);
         }
 
         private void bInicio_Click(object sender, EventArgs e)
@@ -72,25 +82,24 @@ namespace StreamEducation
 
         private void bAddDebate_Click(object sender, EventArgs e)
         {
-            fCrearDebate ventana = new fCrearDebate();
+            fCrearNoticia ventana = new fCrearNoticia();
             ventana.ShowDialog();
-            lNoticias.Items.Clear();
-            foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
+            RecargaNoticias();
         }
 
         private void lForo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lNoticias.SelectedIndex >= 0)
             {
-                GestorGlobal.DebateActivo = (Debate)lNoticias.SelectedItem;
+                int id = noticias[lNoticias.SelectedIndex].Item1;
+                GestorGlobal.DebateActivo = new Debate(id);
                 fMostrarNoticia ventana = new fMostrarNoticia();
                 this.Visible = false;
                 ventana.ShowDialog();
                 GestorGlobal.DebateActivo = null;
                 Recarga();
                 this.Visible = true;
-                lNoticias.Items.Clear();
-                foreach (Debate d in GestorGlobal.ForoActivo.getDebates()) { lNoticias.Items.Add(d); }
+                RecargaNoticias();
             }
         }
 

@@ -137,7 +137,7 @@ namespace StreamEducation
             this.lDebate.Name = "lDebate";
             this.lDebate.Size = new System.Drawing.Size(399, 425);
             this.lDebate.TabIndex = 33;
-            this.lDebate.SelectedIndexChanged += new System.EventHandler(this.lForo_SelectedIndexChanged);
+            this.lDebate.SelectedIndexChanged += new System.EventHandler(this.lDebate_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -346,6 +346,7 @@ namespace StreamEducation
             this.lCreador.Name = "lCreador";
             this.lCreador.Size = new System.Drawing.Size(278, 425);
             this.lCreador.TabIndex = 39;
+            this.lCreador.SelectedIndexChanged += new System.EventHandler(this.lCreador_SelectedIndexChanged);
             // 
             // lIntervenciones
             // 
@@ -359,6 +360,7 @@ namespace StreamEducation
             this.lIntervenciones.Name = "lIntervenciones";
             this.lIntervenciones.Size = new System.Drawing.Size(89, 425);
             this.lIntervenciones.TabIndex = 40;
+            this.lIntervenciones.SelectedIndexChanged += new System.EventHandler(this.lIntervenciones_SelectedIndexChanged);
             // 
             // bBorrar
             // 

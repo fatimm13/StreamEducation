@@ -12,6 +12,9 @@ namespace StreamEducation
 {
     public partial class fForo : Form
     {
+
+        private List<(int, string, string, string)> debates;
+
         public fForo()
         {
             InitializeComponent();
@@ -24,12 +27,7 @@ namespace StreamEducation
             labelCreador.Text = GestorGlobal.ForoActivo.Creador.Nombre;
             labelCurso.Text = GestorGlobal.ForoActivo.Curso.Nombre;
             Recarga();
-            foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
-            {
-                lDebate.Items.Add(d);
-                lCreador.Items.Add(d.Creador);
-                lIntervenciones.Items.Add(d.intervenciones());
-            }
+            RecargaDebates();
         }
 
         private void Recarga()
@@ -41,6 +39,20 @@ namespace StreamEducation
             bCerrarSesion.Visible = usuarioIniciado;
             bAddDebate.Visible = usuarioIniciado;
             bBorrar.Visible = usuarioIniciado && (GestorGlobal.UsuarioActivo.Id == GestorGlobal.ForoActivo.Creador.Id || GestorGlobal.UsuarioActivo.RolAdmin);
+        }
+
+        private void RecargaDebates()
+        {
+            debates = GestorGlobal.ForoActivo.getDebates();
+            lDebate.Items.Clear();
+            lCreador.Items.Clear();
+            lIntervenciones.Items.Clear();
+            foreach ((int, string, string, string)d in debates)
+            {
+                lDebate.Items.Add(d.Item2);
+                lCreador.Items.Add(d.Item3);
+                lIntervenciones.Items.Add(d.Item4);
+            }
         }
 
         private void bInicio_Click(object sender, EventArgs e)
@@ -96,39 +108,47 @@ namespace StreamEducation
         {
             fCrearDebate ventana = new fCrearDebate();
             ventana.ShowDialog();
-            lDebate.Items.Clear();
-            lCreador.Items.Clear();
-            lIntervenciones.Items.Clear();
-            foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
-            {
-                lDebate.Items.Add(d);
-                lCreador.Items.Add(d.Creador);
-                lIntervenciones.Items.Add(d.intervenciones());
-            }
+            RecargaDebates();
         }
 
-        private void lForo_SelectedIndexChanged(object sender, EventArgs e)
+        private void lDebate_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lDebate.SelectedIndex >= 0)
             {
-                GestorGlobal.DebateActivo = (Debate) lDebate.SelectedItem;
-                fDebate ventana = new fDebate();
-                this.Visible = false;
-                ventana.ShowDialog();
-                GestorGlobal.DebateActivo = null;
-                Recarga();
-                this.Visible = true;
-                lDebate.Items.Clear();
-                lCreador.Items.Clear();
-                lIntervenciones.Items.Clear();
-                foreach (Debate d in GestorGlobal.ForoActivo.getDebates())
-                {
-                    lDebate.Items.Add(d);
-                    lCreador.Items.Add(d.Creador);
-                    lIntervenciones.Items.Add(d.intervenciones());
-                }
+                int id = debates[lDebate.SelectedIndex].Item1;
+                EntrarDebate(id);
             }
         }
-        
+
+        private void lCreador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lCreador.SelectedIndex >= 0)
+            {
+                int id = debates[lCreador.SelectedIndex].Item1;
+                EntrarDebate(id);
+            }
+        }
+
+        private void lIntervenciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lIntervenciones.SelectedIndex >= 0)
+            {
+                int id = debates[lIntervenciones.SelectedIndex].Item1;
+                EntrarDebate(id);
+            }
+        }
+
+        private void EntrarDebate(int id)
+        {
+            GestorGlobal.DebateActivo = new Debate(id);
+            fDebate ventana = new fDebate();
+            this.Visible = false;
+            ventana.ShowDialog();
+            GestorGlobal.DebateActivo = null;
+            Recarga();
+            this.Visible = true;
+            RecargaDebates();
+        }
+
     }
 }

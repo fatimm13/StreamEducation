@@ -12,7 +12,10 @@ namespace StreamEducation
 {
     public partial class fCurso : Form
     {
-        
+
+        private List<(int, string, string)> recursos;
+        private List<(int, string)> foros;
+
         public fCurso()
         {
             InitializeComponent();
@@ -20,15 +23,12 @@ namespace StreamEducation
 
         private void fCurso_Load(object sender, EventArgs e)
         {
-            if (GestorGlobal.CursoActivo != null)
-            {
-                foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos()) lRecursos.Items.Add(r);
-                foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
-            }
             labelProfesor.Text = GestorGlobal.CursoActivo.Profesor.Nombre;
             labelFecha.Text = GestorGlobal.CursoActivo.Fecha;
             labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
             tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
+            RecargaRecursos();
+            RecargaForos();
             Recarga();
         }
 
@@ -51,11 +51,37 @@ namespace StreamEducation
             labelPeticion.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
             bInscritos.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
             bPeticiones.Visible = !GestorGlobal.CursoActivo.Publico && usuarioPoder;
-            lBorrar.Items.Clear();
             if (usuarioPoder)
             {
-                foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos()) lBorrar.Items.Add("🗑️ Borrar");
+                lBorrar.Items.Clear();
+                foreach ((int, string, string) r in recursos) lBorrar.Items.Add("🗑️ Borrar");
             }
+        }
+
+        private void RecargaRecursos()
+        {
+            recursos = GestorGlobal.CursoActivo.getRecursos();
+            lRecursos.Items.Clear();
+            foreach ((int, string, string) r in recursos) lRecursos.Items.Add(r.Item2);
+        }
+
+        private void RecargaRecursosYBorrar()
+        {
+            recursos = GestorGlobal.CursoActivo.getRecursos();
+            lRecursos.Items.Clear();
+            lBorrar.Items.Clear();
+            foreach ((int, string, string) r in recursos)
+            {
+                lRecursos.Items.Add(r.Item2);
+                lBorrar.Items.Add("🗑️ Borrar");
+            }
+        }
+
+        private void RecargaForos()
+        {
+            foros = GestorGlobal.CursoActivo.getForos();
+            lForos.Items.Clear();
+            foreach ((int, string) f in foros) lForos.Items.Add(f.Item2);
         }
 
         private void bInicio_Click(object sender, EventArgs e)
@@ -127,21 +153,14 @@ namespace StreamEducation
         {
             fCrearForo ventana = new fCrearForo();
             ventana.ShowDialog();
-            lForos.Items.Clear();
-            foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
+            RecargaForos();
         }
 
         private void bCrearRecurso_Click(object sender, EventArgs e)
         {
             fCrearRecurso ventana = new fCrearRecurso();
             ventana.ShowDialog();
-            lRecursos.Items.Clear();
-            lBorrar.Items.Clear();
-            foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos())
-            {
-                lRecursos.Items.Add(r);
-                lBorrar.Items.Add("🗑️ Borrar");
-            }
+            RecargaRecursosYBorrar();
         }
 
         private void bBorrar_Click(object sender, EventArgs e)
@@ -160,15 +179,15 @@ namespace StreamEducation
         {
             if (lForos.SelectedIndex >= 0)
             {
-                GestorGlobal.ForoActivo = (Foro)lForos.SelectedItem;
+                int id = foros[lForos.SelectedIndex].Item1;
+                GestorGlobal.ForoActivo = new Foro(id);
                 fForo ventana = new fForo();
                 this.Visible = false;
                 ventana.ShowDialog();
                 this.Visible = true;
                 GestorGlobal.ForoActivo = null;
+                RecargaForos();
                 Recarga();
-                lForos.Items.Clear();
-                foreach (Foro f in GestorGlobal.CursoActivo.getForos()) lForos.Items.Add(f);
             }
         }
 
@@ -178,11 +197,12 @@ namespace StreamEducation
             {
                 try
                 {
-                    System.Diagnostics.Process.Start(((Recurso)lRecursos.SelectedItem).Link);
+                    string link = recursos[lRecursos.SelectedIndex].Item3;
+                    System.Diagnostics.Process.Start(link);
                 }
                 catch
                 {
-                    fError ventana = new fError("El recurso no se encuentra disponible actualmente.");
+                    fError ventana = new fError("El recurso no se encuentra disponible.");
                     ventana.ShowDialog();
                 }
             }
@@ -197,15 +217,11 @@ namespace StreamEducation
                 ventana.ShowDialog();
                 if (ventana.Valor)
                 {
-                    Recurso recurso = (Recurso)lRecursos.Items[index];
+                    int id = recursos[lBorrar.SelectedIndex].Item1;
+                    Recurso recurso = new Recurso(id);
                     recurso.Borrar();
-                    lRecursos.Items.Clear();
-                    lBorrar.Items.Clear();
-                    foreach (Recurso r in GestorGlobal.CursoActivo.getRecursos())
-                    {
-                        lRecursos.Items.Add(r);
-                        lBorrar.Items.Add("🗑️ Borrar");
-                    }
+                    recurso = null;
+                    RecargaRecursosYBorrar();
                 }
             }
         }

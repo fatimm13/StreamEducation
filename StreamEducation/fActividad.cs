@@ -12,6 +12,9 @@ namespace StreamEducation
 {
     public partial class fActividad : Form
     {
+
+        private List<(int, string, string)> recursos;
+
         public fActividad()
         {
             InitializeComponent();
@@ -19,14 +22,11 @@ namespace StreamEducation
 
         private void fActividad_Load(object sender, EventArgs e)
         {
-            if (GestorGlobal.ActividadActiva != null)
-            {
-                foreach (RecursoActividad r in GestorGlobal.ActividadActiva.getRecursos()) lRecursos.Items.Add(r);
-            }
             labelOrganizador.Text = GestorGlobal.ActividadActiva.Organizacion.Nombre;
             labelFecha.Text = GestorGlobal.ActividadActiva.Fecha;
             labelActividad.Text = GestorGlobal.ActividadActiva.Nombre;
             tDescripcion.Text = GestorGlobal.ActividadActiva.Descripcion;
+            RecargaRecursos();
             Recarga();
         }
 
@@ -42,10 +42,29 @@ namespace StreamEducation
             bCrearRecurso.Visible = usuarioPoder;
             bBorrar.Visible = usuarioPoder;
             lBorrar.Visible = usuarioPoder;
-            lBorrar.Items.Clear();
             if (usuarioPoder)
             {
-                foreach (RecursoActividad r in GestorGlobal.ActividadActiva.getRecursos()) lBorrar.Items.Add("🗑️ Borrar");
+                lBorrar.Items.Clear();
+                foreach ((int, string, string) r in recursos) lBorrar.Items.Add("🗑️ Borrar");
+            }
+        }
+
+        private void RecargaRecursos()
+        {
+            recursos = GestorGlobal.ActividadActiva.getRecursos();
+            lRecursos.Items.Clear();
+            foreach ((int, string, string) r in recursos) lRecursos.Items.Add(r.Item2);
+        }
+
+        private void RecargaRecursosYBorrar()
+        {
+            recursos = GestorGlobal.ActividadActiva.getRecursos();
+            lRecursos.Items.Clear();
+            lBorrar.Items.Clear();
+            foreach ((int, string, string) r in recursos)
+            {
+                lRecursos.Items.Add(r.Item2);
+                lBorrar.Items.Add("🗑️ Borrar");
             }
         }
 
@@ -108,13 +127,7 @@ namespace StreamEducation
         {
             fCrearRecursoActividad ventana = new fCrearRecursoActividad();
             ventana.ShowDialog();
-            lRecursos.Items.Clear();
-            lBorrar.Items.Clear();
-            foreach (RecursoActividad r in GestorGlobal.ActividadActiva.getRecursos())
-            {
-                lRecursos.Items.Add(r);
-                lBorrar.Items.Add("🗑️ Borrar");
-            }
+            RecargaRecursosYBorrar();
         }
 
         private void lRecursos_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,11 +136,12 @@ namespace StreamEducation
             {
                 try
                 {
-                    System.Diagnostics.Process.Start(((RecursoActividad)lRecursos.SelectedItem).Link);
+                    string link = recursos[lRecursos.SelectedIndex].Item3;
+                    System.Diagnostics.Process.Start(link);
                 }
                 catch
                 {
-                    fError ventana = new fError("Recurso no disponible.");
+                    fError ventana = new fError("El recurso no se encuentra disponible.");
                     ventana.ShowDialog();
                 }
             }
@@ -142,15 +156,11 @@ namespace StreamEducation
                 ventana.ShowDialog();
                 if (ventana.Valor)
                 {
-                    RecursoActividad recurso = (RecursoActividad)lRecursos.Items[index];
+                    int id = recursos[lBorrar.SelectedIndex].Item1;
+                    RecursoActividad recurso = new RecursoActividad(id);
                     recurso.Borrar();
-                    lRecursos.Items.Clear();
-                    lBorrar.Items.Clear();
-                    foreach (RecursoActividad r in GestorGlobal.ActividadActiva.getRecursos())
-                    {
-                        lRecursos.Items.Add(r);
-                        lBorrar.Items.Add("🗑️ Borrar");
-                    }
+                    recurso = null;
+                    RecargaRecursosYBorrar();
                 }
             }
         }

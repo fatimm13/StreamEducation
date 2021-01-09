@@ -125,20 +125,19 @@ namespace StreamEducation
             }
         }
 
-        public static List<Actividad> listaActividades()
+        public static List<(int, string)> listaActividades()
         {
-            List<Actividad> lista = new List<Actividad>();
+            List<(int, string)> lista = new List<(int, string)>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT ID FROM tActividad;";
+                string query = "SELECT id, nombre FROM tActividad;";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    int a = (int)rdr[0];
-                    lista.Add(new Actividad(a));
+                    lista.Add(((int)rdr[0], (string)rdr[1]));
                 }
                 rdr.Close();
                 miBD.Close();
@@ -176,21 +175,20 @@ namespace StreamEducation
             return lista;
         }
 
-        public List<RecursoActividad> getRecursos()
+        public List<(int, string, string)> getRecursos()
         {
-            List<RecursoActividad> lista = new List<RecursoActividad>();
+            List<(int, string, string)> lista = new List<(int, string, string)>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT ID FROM tRecursoActividad WHERE actividad=" + this.id + ";";
+                string query = "SELECT id, nombre, link FROM tRecursoActividad WHERE actividad=" + this.id + ";";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
-                    int c = (int)rdr[0];
-                    lista.Add(new RecursoActividad(c));
+                    lista.Add(((int)rdr[0], (string)rdr[1], (string)rdr[2]));
                 }
                 rdr.Close();
                 miBD.Close();

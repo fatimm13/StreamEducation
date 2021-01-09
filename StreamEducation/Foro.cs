@@ -121,20 +121,20 @@ namespace StreamEducation
             }
         }
 
-        public List<Debate> getDebates()
+        public List<(int, string, string, string)> getDebates()
         {
-            List<Debate> lista = new List<Debate>();
+            List<(int, string, string, string)> lista = new List<(int, string, string, string)>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT ID FROM tDebate WHERE FORO=" + this.id + ";";
+                string query = "SELECT id, nombre, creador FROM tDebate WHERE FORO = '" + this.id + "';";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    int c = (int)rdr[0];
-                    lista.Add(new Debate(c));
+                    int miId = (int)rdr[0];
+                    lista.Add((miId, (string)rdr[1], Usuario.getNombre((int)rdr[2]), Debate.NumIntervenciones(miId)));
                 }
                 rdr.Close();
                 miBD.Close();
@@ -142,6 +142,32 @@ namespace StreamEducation
             catch
             {
                 fError ventana = new fError("Error al acceder a los debates del foro.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
+        public List<(int, string)> getNoticias()
+        {
+            List<(int, string)> lista = new List<(int, string)>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT id, nombre FROM tDebate WHERE FORO = '" + this.id + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    int miId = (int)rdr[0];
+                    lista.Add((miId, (string)rdr[1]));
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a las noticias.");
                 ventana.ShowDialog();
             }
             return lista;

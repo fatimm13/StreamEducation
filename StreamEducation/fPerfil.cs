@@ -22,7 +22,7 @@ namespace StreamEducation
             Actualiza();
             bOpciones.Visible = GestorGlobal.UsuarioActivo.RolAdmin;
             labelRol.Text = GestorGlobal.UsuarioActivo.getRol();
-            foreach (Curso c in GestorGlobal.UsuarioActivo.getCursos()) lCursos.Items.Add(c.Nombre);
+            foreach (string c in GestorGlobal.UsuarioActivo.getCursos()) lCursos.Items.Add(c);
         }
 
         private void Actualiza()
