@@ -79,9 +79,11 @@ namespace StreamEducation
             this.monthCalendar1.Location = new System.Drawing.Point(991, 150);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.monthCalendar1.MaximumSize = new System.Drawing.Size(501, 202);
+            this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.MinimumSize = new System.Drawing.Size(501, 202);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 17;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
             // 
             // label1
             // 
@@ -121,7 +123,7 @@ namespace StreamEducation
             // 
             this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCerrarSesion.Location = new System.Drawing.Point(45, 114);
-            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.bCerrarSesion.Name = "bCerrarSesion";
             this.bCerrarSesion.Size = new System.Drawing.Size(296, 60);
             this.bCerrarSesion.TabIndex = 24;
@@ -133,7 +135,7 @@ namespace StreamEducation
             // 
             this.bPerfil.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPerfil.Location = new System.Drawing.Point(45, 22);
-            this.bPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.bPerfil.Name = "bPerfil";
             this.bPerfil.Size = new System.Drawing.Size(296, 60);
             this.bPerfil.TabIndex = 23;
@@ -172,7 +174,7 @@ namespace StreamEducation
             this.bForo.BackgroundImage = global::StreamEducation.Properties.Resources.noticiasImagen;
             this.bForo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bForo.Location = new System.Drawing.Point(668, 457);
-            this.bForo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bForo.Margin = new System.Windows.Forms.Padding(4);
             this.bForo.MaximumSize = new System.Drawing.Size(377, 357);
             this.bForo.MinimumSize = new System.Drawing.Size(377, 357);
             this.bForo.Name = "bForo";
@@ -187,7 +189,7 @@ namespace StreamEducation
             this.bActividades.BackgroundImage = global::StreamEducation.Properties.Resources.actividadesImagen;
             this.bActividades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bActividades.Location = new System.Drawing.Point(1167, 457);
-            this.bActividades.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bActividades.Margin = new System.Windows.Forms.Padding(4);
             this.bActividades.MaximumSize = new System.Drawing.Size(377, 357);
             this.bActividades.MinimumSize = new System.Drawing.Size(377, 357);
             this.bActividades.Name = "bActividades";
@@ -201,7 +203,7 @@ namespace StreamEducation
             this.bCurso.BackgroundImage = global::StreamEducation.Properties.Resources.cursosImagen1;
             this.bCurso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bCurso.Location = new System.Drawing.Point(168, 457);
-            this.bCurso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bCurso.Margin = new System.Windows.Forms.Padding(4);
             this.bCurso.MaximumSize = new System.Drawing.Size(377, 357);
             this.bCurso.MinimumSize = new System.Drawing.Size(377, 357);
             this.bCurso.Name = "bCurso";

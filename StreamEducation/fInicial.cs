@@ -24,6 +24,18 @@ namespace StreamEducation
         private void fInicial_Load(object sender, EventArgs e)
         {
             Recarga();
+            marcarCalendario();
+        }
+
+        private void marcarCalendario()
+        {
+            monthCalendar1.RemoveAllAnnuallyBoldedDates();
+            GestorGlobal.rellenarCalendario();
+            foreach (DateTime d in GestorGlobal.getCalendario().Keys)
+            {
+                monthCalendar1.AddAnnuallyBoldedDate(d);
+            }
+            monthCalendar1.UpdateBoldedDates();
         }
 
         private void Recarga()
@@ -33,6 +45,7 @@ namespace StreamEducation
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
             bCerrarSesion.Visible = usuarioIniciado;
+            marcarCalendario();
         }
 
         private void bRegistrarse_Click(object sender, EventArgs e)
@@ -109,6 +122,16 @@ namespace StreamEducation
             Recarga();
             this.Visible = true;
         }
-        
+
+        private void monthCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            List<String> value;
+            DateTime date = monthCalendar1.SelectionRange.Start;
+            if (GestorGlobal.getCalendario().TryGetValue(date, out value))
+            {
+                fEventos ev = new fEventos(date, value);
+                ev.ShowDialog();
+            }
+        }
     }
 }

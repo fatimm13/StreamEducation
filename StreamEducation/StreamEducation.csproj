@@ -91,6 +91,12 @@
     <Compile Include="fCrearRecursoActividad.Designer.cs">
       <DependentUpon>fCrearRecursoActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="fEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEventos.Designer.cs">
+      <DependentUpon>fEventos.cs</DependentUpon>
+    </Compile>
     <Compile Include="fMostrarComentario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fCrearRecursoActividad.resx">
       <DependentUpon>fCrearRecursoActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fEventos.resx">
+      <DependentUpon>fEventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fMostrarComentario.resx">
       <DependentUpon>fMostrarComentario.cs</DependentUpon>

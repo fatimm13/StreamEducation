@@ -13,7 +13,8 @@ namespace StreamEducation
         private static Foro foroActivo;
         private static Debate debateActivo;
         private static Actividad actividadActiva;
-
+        private static Dictionary<DateTime, List<string>> calendario = new Dictionary<DateTime, List<string>>();
+        
         public static Usuario UsuarioActivo
         {
             get { return usuarioActivo; }
@@ -40,5 +41,48 @@ namespace StreamEducation
             get { return actividadActiva; }
             set { actividadActiva = value; }
         }
+
+        private static void addFecha(DateTime d, string s)
+        {
+            List<string> value;
+
+            if (calendario.TryGetValue(d, out value))
+            {
+                if (!value.Contains(s)) value.Add(s);
+            }
+            else
+            {
+                value = new List<string>();
+                value.Add(s);
+                calendario.Add(d, value);
+            }
+        }
+
+        public static Dictionary<DateTime, List<string>> getCalendario()
+        {
+            return calendario;
+        }
+        public static void rellenarCalendario()
+        {
+            calendario = new Dictionary<DateTime, List<string>>();
+            foreach ((DateTime, string) t in Curso.cursosPublicoCalendario())
+            {
+                GestorGlobal.addFecha(t.Item1, "Inicia el curso '" + t.Item2 + "'.");
+            }
+            foreach ((DateTime, string) t in Actividad.actividadesCalendario())
+            {
+                GestorGlobal.addFecha(t.Item1, "Inicia la actividad '" + t.Item2 + "'.");
+            }
+            if (GestorGlobal.UsuarioActivo != null)
+            {
+
+                foreach ((DateTime, string) t in usuarioActivo.getCursosPrivadosCalendario())
+                {
+                    GestorGlobal.addFecha(t.Item1, "Inicia el curso '" + t.Item2 + "'.");
+                }
+            }
+        }
+        
+        
     }
 }

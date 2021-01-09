@@ -509,6 +509,34 @@ namespace StreamEducation
             return lista;
         }
 
+        public List<(DateTime, string)> getCursosPrivadosCalendario()
+        {
+            List<(DateTime, string)> lista = new List<(DateTime, string)>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT c.nombre, c.fecha FROM tCursoUsuario cu join tCurso c on c.id=cu.curso WHERE usuario ='" + this.id + "';";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                CultureInfo ci = CultureInfo.CreateSpecificCulture("es-ES");
+
+                while (rdr.Read())
+                {
+                    (DateTime, string) p = (DateTime.Parse((string)rdr[1], ci), (string)rdr[0]);
+                    lista.Add(p);
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a los cursos del usuario.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
         public List<(int, string)> getMensajePrivado()
         {
             List<(int, string)> lista = new List<(int, string)>();

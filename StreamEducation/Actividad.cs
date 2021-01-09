@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -163,6 +164,34 @@ namespace StreamEducation
                 while (rdr.Read())
                 {
                     lista.Add((string)rdr[0]);
+                }
+                rdr.Close();
+                miBD.Close();
+            }
+            catch
+            {
+                fError ventana = new fError("Error al acceder a las actividades disponibles.");
+                ventana.ShowDialog();
+            }
+            return lista;
+        }
+
+        public static List<(DateTime, string)> actividadesCalendario()
+        {
+            List<(DateTime, string)> lista = new List<(DateTime, string)>();
+            try
+            {
+                MySqlConnection miBD = new MySqlConnection(CONNECTION);
+                miBD.Open();
+                string query = "SELECT nombre,fecha FROM tActividad ;";
+                MySqlCommand cmd = new MySqlCommand(query, miBD);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                CultureInfo ci = CultureInfo.CreateSpecificCulture("es-ES");
+                while (rdr.Read())
+                {
+
+                    (DateTime, string) p = (DateTime.Parse((string)rdr[1], ci), (string)rdr[0]);
+                    lista.Add(p);
                 }
                 rdr.Close();
                 miBD.Close();
