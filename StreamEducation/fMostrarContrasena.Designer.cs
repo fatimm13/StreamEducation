@@ -41,7 +41,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(27, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(211, 25);
-            this.label1.TabIndex = 33;
+            //this.label1.TabIndex = 33;
             this.label1.Text = "Su contraseña es:";
             // 
             // labelConstrasena
@@ -51,7 +51,7 @@ namespace StreamEducation
             this.labelConstrasena.Location = new System.Drawing.Point(253, 40);
             this.labelConstrasena.Name = "labelConstrasena";
             this.labelConstrasena.Size = new System.Drawing.Size(155, 25);
-            this.labelConstrasena.TabIndex = 34;
+            //this.labelConstrasena.TabIndex = 34;
             this.labelConstrasena.Text = "___________";
             // 
             // bAceptar
@@ -61,7 +61,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(117, 41);
-            this.bAceptar.TabIndex = 35;
+            this.bAceptar.TabIndex = 1;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -80,6 +80,7 @@ namespace StreamEducation
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Recuperacion";
+            this.Load += new System.EventHandler(this.fMostrarContrasena_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

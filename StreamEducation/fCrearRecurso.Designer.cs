@@ -47,7 +47,7 @@ namespace StreamEducation
             this.labelCurso.Location = new System.Drawing.Point(208, 69);
             this.labelCurso.Name = "labelCurso";
             this.labelCurso.Size = new System.Drawing.Size(213, 34);
-            this.labelCurso.TabIndex = 17;
+            //this.labelCurso.TabIndex = 17;
             this.labelCurso.Text = "___________";
             // 
             // tNombre
@@ -57,7 +57,7 @@ namespace StreamEducation
             this.tNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(499, 32);
-            this.tNombre.TabIndex = 16;
+            this.tNombre.TabIndex = 2;
             // 
             // label2
             // 
@@ -66,7 +66,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(85, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 25);
-            this.label2.TabIndex = 15;
+            //this.label2.TabIndex = 15;
             this.label2.Text = "Nombre:";
             // 
             // label1
@@ -76,7 +76,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(49, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 34);
-            this.label1.TabIndex = 14;
+            //this.label1.TabIndex = 14;
             this.label1.Text = "Curso:";
             // 
             // tEnlace
@@ -86,7 +86,7 @@ namespace StreamEducation
             this.tEnlace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tEnlace.Name = "tEnlace";
             this.tEnlace.Size = new System.Drawing.Size(499, 32);
-            this.tEnlace.TabIndex = 19;
+            this.tEnlace.TabIndex = 3;
             // 
             // label3
             // 
@@ -95,7 +95,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(85, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 25);
-            this.label3.TabIndex = 18;
+            //this.label3.TabIndex = 18;
             this.label3.Text = "Enlace:";
             // 
             // bAceptar
@@ -105,7 +105,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(131, 38);
-            this.bAceptar.TabIndex = 20;
+            this.bAceptar.TabIndex = 4;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -126,7 +126,7 @@ namespace StreamEducation
             this.comboRecurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboRecurso.Name = "comboRecurso";
             this.comboRecurso.Size = new System.Drawing.Size(129, 56);
-            this.comboRecurso.TabIndex = 21;
+            this.comboRecurso.TabIndex = 1;
             // 
             // label4
             // 
@@ -135,7 +135,7 @@ namespace StreamEducation
             this.label4.Location = new System.Drawing.Point(85, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(399, 25);
-            this.label4.TabIndex = 22;
+            //this.label4.TabIndex = 22;
             this.label4.Text = "Tipo del recurso que se va a subir:";
             // 
             // fCrearRecurso

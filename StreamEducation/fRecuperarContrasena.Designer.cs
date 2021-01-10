@@ -44,7 +44,7 @@ namespace StreamEducation
             this.label4.Location = new System.Drawing.Point(64, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 25);
-            this.label4.TabIndex = 31;
+            //this.label4.TabIndex = 31;
             this.label4.Text = "Pregunta:";
             // 
             // bAceptar
@@ -54,7 +54,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(112, 42);
-            this.bAceptar.TabIndex = 29;
+            this.bAceptar.TabIndex = 3;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -66,7 +66,7 @@ namespace StreamEducation
             this.tRespuesta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tRespuesta.Name = "tRespuesta";
             this.tRespuesta.Size = new System.Drawing.Size(499, 32);
-            this.tRespuesta.TabIndex = 25;
+            this.tRespuesta.TabIndex = 2;
             // 
             // label2
             // 
@@ -75,7 +75,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(64, 279);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 25);
-            this.label2.TabIndex = 24;
+            //this.label2.TabIndex = 24;
             this.label2.Text = "Respuesta:";
             // 
             // label1
@@ -85,7 +85,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(46, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(677, 29);
-            this.label1.TabIndex = 32;
+            //this.label1.TabIndex = 32;
             this.label1.Text = "Elija su pregunta de confirmación y su respuesta:";
             // 
             // comboPregunta
@@ -101,7 +101,7 @@ namespace StreamEducation
             this.comboPregunta.Location = new System.Drawing.Point(224, 168);
             this.comboPregunta.Name = "comboPregunta";
             this.comboPregunta.Size = new System.Drawing.Size(499, 33);
-            this.comboPregunta.TabIndex = 33;
+            this.comboPregunta.TabIndex = 1;
             // 
             // fRecuperarContrasena
             // 
@@ -120,6 +120,7 @@ namespace StreamEducation
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Recuperar Contrasena";
+            this.Load += new System.EventHandler(this.fRecuperarContrasena_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

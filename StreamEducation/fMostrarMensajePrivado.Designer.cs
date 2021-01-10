@@ -47,7 +47,7 @@ namespace StreamEducation
             this.labelCreador.Location = new System.Drawing.Point(96, 101);
             this.labelCreador.Name = "labelCreador";
             this.labelCreador.Size = new System.Drawing.Size(155, 25);
-            this.labelCreador.TabIndex = 54;
+            //this.labelCreador.TabIndex = 54;
             this.labelCreador.Text = "___________";
             // 
             // label7
@@ -57,7 +57,7 @@ namespace StreamEducation
             this.label7.Location = new System.Drawing.Point(30, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 25);
-            this.label7.TabIndex = 53;
+            //this.label7.TabIndex = 53;
             this.label7.Text = "De:";
             // 
             // labelFecha
@@ -67,7 +67,7 @@ namespace StreamEducation
             this.labelFecha.Location = new System.Drawing.Point(517, 154);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(155, 25);
-            this.labelFecha.TabIndex = 52;
+            //this.labelFecha.TabIndex = 52;
             this.labelFecha.Text = "___________";
             // 
             // label6
@@ -77,7 +77,7 @@ namespace StreamEducation
             this.label6.Location = new System.Drawing.Point(426, 154);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 25);
-            this.label6.TabIndex = 51;
+            //this.label6.TabIndex = 51;
             this.label6.Text = "Fecha:";
             // 
             // labelNombre
@@ -87,7 +87,7 @@ namespace StreamEducation
             this.labelNombre.Location = new System.Drawing.Point(174, 49);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(178, 29);
-            this.labelNombre.TabIndex = 49;
+            //this.labelNombre.TabIndex = 49;
             this.labelNombre.Text = "___________";
             // 
             // tMensaje
@@ -102,7 +102,7 @@ namespace StreamEducation
             this.tMensaje.ReadOnly = true;
             this.tMensaje.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tMensaje.Size = new System.Drawing.Size(717, 208);
-            this.tMensaje.TabIndex = 48;
+            //this.tMensaje.TabIndex = 48;
             this.tMensaje.Text = "Insertar mensaje";
             // 
             // label3
@@ -112,7 +112,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(30, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 29);
-            this.label3.TabIndex = 47;
+            //this.label3.TabIndex = 47;
             this.label3.Text = "Asunto:";
             // 
             // bAceptar
@@ -122,7 +122,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(126, 38);
-            this.bAceptar.TabIndex = 45;
+            this.bAceptar.TabIndex = 1;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -134,7 +134,7 @@ namespace StreamEducation
             this.label4.Location = new System.Drawing.Point(30, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 25);
-            this.label4.TabIndex = 44;
+            //this.label4.TabIndex = 44;
             this.label4.Text = "Mensaje:";
             // 
             // fMostrarMensajePrivado

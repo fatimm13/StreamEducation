@@ -53,7 +53,7 @@ namespace StreamEducation
             this.tForo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tForo.Name = "tForo";
             this.tForo.Size = new System.Drawing.Size(495, 32);
-            this.tForo.TabIndex = 8;
+            this.tForo.TabIndex = 1;
             // 
             // label2
             // 
@@ -62,7 +62,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(45, 145);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 25);
-            this.label2.TabIndex = 9;
+            //this.label2.TabIndex = 9;
             this.label2.Text = "Descripción:";
             // 
             // tDescripcion
@@ -73,7 +73,7 @@ namespace StreamEducation
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.Size = new System.Drawing.Size(584, 256);
-            this.tDescripcion.TabIndex = 10;
+            this.tDescripcion.TabIndex = 2;
             // 
             // bAceptar
             // 
@@ -82,7 +82,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(118, 38);
-            this.bAceptar.TabIndex = 11;
+            this.bAceptar.TabIndex = 3;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -103,6 +103,7 @@ namespace StreamEducation
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Crear Foro";
+            this.Load += new System.EventHandler(this.fCrearForo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -43,7 +43,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(108, 40);
-            this.bAceptar.TabIndex = 21;
+            this.bAceptar.TabIndex = 3;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -56,7 +56,7 @@ namespace StreamEducation
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.Size = new System.Drawing.Size(588, 282);
-            this.tDescripcion.TabIndex = 20;
+            this.tDescripcion.TabIndex = 2;
             // 
             // label3
             // 
@@ -65,7 +65,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(42, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 25);
-            this.label3.TabIndex = 19;
+            //this.label3.TabIndex = 19;
             this.label3.Text = "Descripción:";
             // 
             // tDebate
@@ -75,7 +75,7 @@ namespace StreamEducation
             this.tDebate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tDebate.Name = "tDebate";
             this.tDebate.Size = new System.Drawing.Size(474, 32);
-            this.tDebate.TabIndex = 18;
+            this.tDebate.TabIndex = 1;
             // 
             // label2
             // 
@@ -84,7 +84,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(42, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 25);
-            this.label2.TabIndex = 17;
+            //this.label2.TabIndex = 17;
             this.label2.Text = "Noticia:";
             // 
             // fCrearNoticia

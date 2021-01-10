@@ -50,7 +50,7 @@ namespace StreamEducation
             this.labelCreador.Location = new System.Drawing.Point(179, 170);
             this.labelCreador.Name = "labelCreador";
             this.labelCreador.Size = new System.Drawing.Size(155, 25);
-            this.labelCreador.TabIndex = 54;
+            //this.labelCreador.TabIndex = 54;
             this.labelCreador.Text = "___________";
             // 
             // label4
@@ -60,7 +60,7 @@ namespace StreamEducation
             this.label4.Location = new System.Drawing.Point(71, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 25);
-            this.label4.TabIndex = 53;
+            //this.label4.TabIndex = 53;
             this.label4.Text = "Autor:";
             // 
             // labelFecha
@@ -70,7 +70,7 @@ namespace StreamEducation
             this.labelFecha.Location = new System.Drawing.Point(508, 236);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(155, 25);
-            this.labelFecha.TabIndex = 52;
+            //this.labelFecha.TabIndex = 52;
             this.labelFecha.Text = "___________";
             // 
             // label6
@@ -80,7 +80,7 @@ namespace StreamEducation
             this.label6.Location = new System.Drawing.Point(418, 236);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 25);
-            this.label6.TabIndex = 51;
+            //this.label6.TabIndex = 51;
             this.label6.Text = "Fecha:";
             // 
             // bBorrar
@@ -90,7 +90,7 @@ namespace StreamEducation
             this.bBorrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bBorrar.Name = "bBorrar";
             this.bBorrar.Size = new System.Drawing.Size(128, 42);
-            this.bBorrar.TabIndex = 50;
+            this.bBorrar.TabIndex = 2;
             this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
             this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
@@ -102,7 +102,7 @@ namespace StreamEducation
             this.labelNombre.Location = new System.Drawing.Point(180, 107);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(155, 25);
-            this.labelNombre.TabIndex = 49;
+            //this.labelNombre.TabIndex = 49;
             this.labelNombre.Text = "___________";
             // 
             // tMensaje
@@ -117,7 +117,7 @@ namespace StreamEducation
             this.tMensaje.ReadOnly = true;
             this.tMensaje.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.tMensaje.Size = new System.Drawing.Size(672, 133);
-            this.tMensaje.TabIndex = 48;
+            //this.tMensaje.TabIndex = 48;
             this.tMensaje.Text = "Insertar mensaje";
             // 
             // label3
@@ -127,7 +127,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(71, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 25);
-            this.label3.TabIndex = 47;
+            //this.label3.TabIndex = 47;
             this.label3.Text = "Título:";
             // 
             // bAceptar
@@ -137,7 +137,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(128, 42);
-            this.bAceptar.TabIndex = 45;
+            this.bAceptar.TabIndex = 1;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -149,7 +149,7 @@ namespace StreamEducation
             this.label5.Location = new System.Drawing.Point(71, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 25);
-            this.label5.TabIndex = 44;
+            //this.label5.TabIndex = 44;
             this.label5.Text = "Mensaje:";
             // 
             // labelNoticia
@@ -159,7 +159,7 @@ namespace StreamEducation
             this.labelNoticia.Location = new System.Drawing.Point(178, 35);
             this.labelNoticia.Name = "labelNoticia";
             this.labelNoticia.Size = new System.Drawing.Size(213, 34);
-            this.labelNoticia.TabIndex = 43;
+            //this.labelNoticia.TabIndex = 43;
             this.labelNoticia.Text = "___________";
             // 
             // label1
@@ -169,7 +169,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(31, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 34);
-            this.label1.TabIndex = 41;
+            //this.label1.TabIndex = 41;
             this.label1.Text = "Noticia:";
             // 
             // fMostrarComentario

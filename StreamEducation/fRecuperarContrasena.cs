@@ -36,5 +36,9 @@ namespace StreamEducation
             }
         }
 
+        private void fRecuperarContrasena_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

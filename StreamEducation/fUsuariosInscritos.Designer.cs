@@ -50,7 +50,7 @@ namespace StreamEducation
             this.lUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.lUsuarios.Name = "lUsuarios";
             this.lUsuarios.Size = new System.Drawing.Size(823, 325);
-            this.lUsuarios.TabIndex = 48;
+            this.lUsuarios.TabIndex = 3;
             this.lUsuarios.SelectedIndexChanged += new System.EventHandler(this.lUsuarios_SelectedIndexChanged);
             // 
             // lExpulsar
@@ -64,7 +64,7 @@ namespace StreamEducation
             this.lExpulsar.Margin = new System.Windows.Forms.Padding(4);
             this.lExpulsar.Name = "lExpulsar";
             this.lExpulsar.Size = new System.Drawing.Size(46, 325);
-            this.lExpulsar.TabIndex = 51;
+            this.lExpulsar.TabIndex = 4;
             this.lExpulsar.SelectedIndexChanged += new System.EventHandler(this.lExpulsar_SelectedIndexChanged);
             // 
             // label2
@@ -74,7 +74,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(37, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 25);
-            this.label2.TabIndex = 54;
+            //this.label2.TabIndex = 54;
             this.label2.Text = "🔍";
             // 
             // labelX
@@ -87,7 +87,7 @@ namespace StreamEducation
             this.labelX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(26, 25);
-            this.labelX.TabIndex = 53;
+            this.labelX.TabIndex = 2;
             this.labelX.Text = "X";
             this.labelX.Click += new System.EventHandler(this.labelX_Click);
             // 
@@ -98,7 +98,7 @@ namespace StreamEducation
             this.tUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tUsuario.Name = "tUsuario";
             this.tUsuario.Size = new System.Drawing.Size(893, 32);
-            this.tUsuario.TabIndex = 52;
+            this.tUsuario.TabIndex = 1;
             this.tUsuario.TextChanged += new System.EventHandler(this.tUsuario_TextChanged);
             // 
             // bVolver
@@ -108,7 +108,7 @@ namespace StreamEducation
             this.bVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(73, 48);
-            this.bVolver.TabIndex = 55;
+            this.bVolver.TabIndex = 5;
             this.bVolver.Text = "↩️";
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
@@ -121,7 +121,7 @@ namespace StreamEducation
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 25);
-            this.label1.TabIndex = 64;
+            //this.label1.TabIndex = 64;
             this.label1.Text = "Expulsar";
             // 
             // label3
@@ -132,7 +132,7 @@ namespace StreamEducation
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(352, 25);
-            this.label3.TabIndex = 63;
+            //this.label3.TabIndex = 63;
             this.label3.Text = "Usuarios inscritos en el curso:";
             // 
             // fUsuariosInscritos

@@ -46,7 +46,7 @@
             this.label4.Location = new System.Drawing.Point(81, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(399, 25);
-            this.label4.TabIndex = 31;
+            //this.label4.TabIndex = 31;
             this.label4.Text = "Tipo del recurso que se va a subir:";
             // 
             // comboRecurso
@@ -63,7 +63,7 @@
             this.comboRecurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboRecurso.Name = "comboRecurso";
             this.comboRecurso.Size = new System.Drawing.Size(129, 56);
-            this.comboRecurso.TabIndex = 30;
+            this.comboRecurso.TabIndex = 1;
             // 
             // bAceptar
             // 
@@ -72,7 +72,7 @@
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(131, 38);
-            this.bAceptar.TabIndex = 29;
+            this.bAceptar.TabIndex = 4;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -84,7 +84,7 @@
             this.tEnlace.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tEnlace.Name = "tEnlace";
             this.tEnlace.Size = new System.Drawing.Size(499, 32);
-            this.tEnlace.TabIndex = 28;
+            this.tEnlace.TabIndex = 3;
             // 
             // label3
             // 
@@ -93,7 +93,7 @@
             this.label3.Location = new System.Drawing.Point(81, 330);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 25);
-            this.label3.TabIndex = 27;
+            //this.label3.TabIndex = 27;
             this.label3.Text = "Enlace:";
             // 
             // labelActividad
@@ -103,7 +103,7 @@
             this.labelActividad.Location = new System.Drawing.Point(225, 62);
             this.labelActividad.Name = "labelActividad";
             this.labelActividad.Size = new System.Drawing.Size(213, 34);
-            this.labelActividad.TabIndex = 26;
+            //this.labelActividad.TabIndex = 26;
             this.labelActividad.Text = "___________";
             // 
             // tNombre
@@ -113,7 +113,7 @@
             this.tNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(499, 32);
-            this.tNombre.TabIndex = 25;
+            this.tNombre.TabIndex = 2;
             // 
             // label2
             // 
@@ -122,7 +122,7 @@
             this.label2.Location = new System.Drawing.Point(81, 235);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 25);
-            this.label2.TabIndex = 24;
+            //this.label2.TabIndex = 24;
             this.label2.Text = "Nombre:";
             // 
             // label1
@@ -132,7 +132,7 @@
             this.label1.Location = new System.Drawing.Point(45, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 34);
-            this.label1.TabIndex = 23;
+            //this.label1.TabIndex = 23;
             this.label1.Text = "Actividad:";
             // 
             // fCrearRecursoActividad

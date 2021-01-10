@@ -46,7 +46,7 @@ namespace StreamEducation
             this.tContrasena.Name = "tContrasena";
             this.tContrasena.PasswordChar = '*';
             this.tContrasena.Size = new System.Drawing.Size(441, 32);
-            this.tContrasena.TabIndex = 14;
+            this.tContrasena.TabIndex = 2;
             // 
             // tCorreo
             // 
@@ -55,7 +55,7 @@ namespace StreamEducation
             this.tCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tCorreo.Name = "tCorreo";
             this.tCorreo.Size = new System.Drawing.Size(441, 32);
-            this.tCorreo.TabIndex = 13;
+            this.tCorreo.TabIndex = 1;
             // 
             // label3
             // 
@@ -64,7 +64,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(69, 288);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 25);
-            this.label3.TabIndex = 12;
+            //this.label3.TabIndex = 12;
             this.label3.Text = "Contraseña:";
             // 
             // label2
@@ -74,7 +74,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(69, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 25);
-            this.label2.TabIndex = 11;
+            //this.label2.TabIndex = 11;
             this.label2.Text = "Correo:";
             // 
             // bAceptar
@@ -84,7 +84,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(135, 37);
-            this.bAceptar.TabIndex = 10;
+            this.bAceptar.TabIndex = 4;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -96,7 +96,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(37, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(507, 34);
-            this.label1.TabIndex = 9;
+            //this.label1.TabIndex = 9;
             this.label1.Text = "Rellene los siguientes campos:";
             // 
             // bRecuperar
@@ -106,7 +106,7 @@ namespace StreamEducation
             this.bRecuperar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bRecuperar.Name = "bRecuperar";
             this.bRecuperar.Size = new System.Drawing.Size(260, 37);
-            this.bRecuperar.TabIndex = 15;
+            this.bRecuperar.TabIndex = 3;
             this.bRecuperar.Text = "Recuperar contraseña";
             this.bRecuperar.UseVisualStyleBackColor = true;
             this.bRecuperar.Click += new System.EventHandler(this.bRecuperar_Click);

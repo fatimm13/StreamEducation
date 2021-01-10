@@ -32,7 +32,7 @@ namespace StreamEducation
             lExpulsar.Items.Clear();
             foreach ((int, string) u in usuarios)
             {
-                lUsuarios.Items.Add(u.Item2);
+                lUsuarios.Items.Add("📝  " + u.Item2);
                 lExpulsar.Items.Add("🚫");
             }
         }

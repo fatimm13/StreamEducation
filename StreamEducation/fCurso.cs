@@ -28,8 +28,8 @@ namespace StreamEducation
             labelCurso.Text = GestorGlobal.CursoActivo.Nombre;
             tDescripcion.Text = GestorGlobal.CursoActivo.Descripcion;
             RecargaRecursos();
-            RecargaForos();
             Recarga();
+            RecargaForos();
         }
 
         private void Recarga()

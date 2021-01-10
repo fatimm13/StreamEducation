@@ -58,7 +58,7 @@ namespace StreamEducation
             this.labelPais.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPais.Name = "labelPais";
             this.labelPais.Size = new System.Drawing.Size(52, 25);
-            this.labelPais.TabIndex = 35;
+            //this.labelPais.TabIndex = 35;
             this.labelPais.Text = "pais";
             // 
             // labelEscuela
@@ -69,7 +69,7 @@ namespace StreamEducation
             this.labelEscuela.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEscuela.Name = "labelEscuela";
             this.labelEscuela.Size = new System.Drawing.Size(87, 25);
-            this.labelEscuela.TabIndex = 34;
+            //this.labelEscuela.TabIndex = 34;
             this.labelEscuela.Text = "escuela";
             // 
             // labelRol
@@ -80,7 +80,7 @@ namespace StreamEducation
             this.labelRol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelRol.Name = "labelRol";
             this.labelRol.Size = new System.Drawing.Size(39, 25);
-            this.labelRol.TabIndex = 33;
+            //this.labelRol.TabIndex = 33;
             this.labelRol.Text = "rol";
             // 
             // labelNombre
@@ -91,7 +91,7 @@ namespace StreamEducation
             this.labelNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(89, 25);
-            this.labelNombre.TabIndex = 32;
+            //this.labelNombre.TabIndex = 32;
             this.labelNombre.Text = "nombre";
             // 
             // label8
@@ -102,7 +102,7 @@ namespace StreamEducation
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 25);
-            this.label8.TabIndex = 31;
+            //this.label8.TabIndex = 31;
             this.label8.Text = "País:";
             // 
             // label7
@@ -113,7 +113,7 @@ namespace StreamEducation
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 25);
-            this.label7.TabIndex = 30;
+            //this.label7.TabIndex = 30;
             this.label7.Text = "Escuela:";
             // 
             // label6
@@ -124,7 +124,7 @@ namespace StreamEducation
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 25);
-            this.label6.TabIndex = 29;
+            //this.label6.TabIndex = 29;
             this.label6.Text = "Rol:";
             // 
             // label5
@@ -135,7 +135,7 @@ namespace StreamEducation
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 25);
-            this.label5.TabIndex = 28;
+            //this.label5.TabIndex = 28;
             this.label5.Text = "Nombre:";
             // 
             // bActualizar
@@ -145,7 +145,7 @@ namespace StreamEducation
             this.bActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.bActualizar.Name = "bActualizar";
             this.bActualizar.Size = new System.Drawing.Size(285, 50);
-            this.bActualizar.TabIndex = 27;
+            this.bActualizar.TabIndex = 1;
             this.bActualizar.Text = "🔄 Actualizar";
             this.bActualizar.UseVisualStyleBackColor = true;
             this.bActualizar.Click += new System.EventHandler(this.bActualizar_Click);
@@ -159,7 +159,7 @@ namespace StreamEducation
             this.lCursos.Margin = new System.Windows.Forms.Padding(4);
             this.lCursos.Name = "lCursos";
             this.lCursos.Size = new System.Drawing.Size(511, 154);
-            this.lCursos.TabIndex = 25;
+            //this.lCursos.TabIndex = 25;
             // 
             // label4
             // 
@@ -169,7 +169,7 @@ namespace StreamEducation
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(200, 25);
-            this.label4.TabIndex = 24;
+            //this.label4.TabIndex = 24;
             this.label4.Text = "Cursos inscritos:";
             // 
             // tBio
@@ -181,7 +181,7 @@ namespace StreamEducation
             this.tBio.Name = "tBio";
             this.tBio.ReadOnly = true;
             this.tBio.Size = new System.Drawing.Size(511, 163);
-            this.tBio.TabIndex = 23;
+            //this.tBio.TabIndex = 23;
             // 
             // label3
             // 
@@ -191,7 +191,7 @@ namespace StreamEducation
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(121, 25);
-            this.label3.TabIndex = 22;
+            //this.label3.TabIndex = 22;
             this.label3.Text = "Biografía:";
             // 
             // bBorrarCuenta
@@ -201,7 +201,7 @@ namespace StreamEducation
             this.bBorrarCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.bBorrarCuenta.Name = "bBorrarCuenta";
             this.bBorrarCuenta.Size = new System.Drawing.Size(229, 38);
-            this.bBorrarCuenta.TabIndex = 20;
+            this.bBorrarCuenta.TabIndex = 3;
             this.bBorrarCuenta.Text = "🚮 Borrar cuenta";
             this.bBorrarCuenta.UseVisualStyleBackColor = true;
             this.bBorrarCuenta.Click += new System.EventHandler(this.bBorrarCuenta_Click);
@@ -214,7 +214,7 @@ namespace StreamEducation
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(292, 36);
-            this.label2.TabIndex = 19;
+            //this.label2.TabIndex = 19;
             this.label2.Text = "Perfil de usuario";
             // 
             // bOpciones
@@ -224,7 +224,7 @@ namespace StreamEducation
             this.bOpciones.Margin = new System.Windows.Forms.Padding(4);
             this.bOpciones.Name = "bOpciones";
             this.bOpciones.Size = new System.Drawing.Size(447, 36);
-            this.bOpciones.TabIndex = 36;
+            this.bOpciones.TabIndex = 4;
             this.bOpciones.Text = "🔑 Opciones de administrador";
             this.bOpciones.UseVisualStyleBackColor = true;
             this.bOpciones.Click += new System.EventHandler(this.bOpciones_Click);
@@ -236,7 +236,7 @@ namespace StreamEducation
             this.bMensajeria.Margin = new System.Windows.Forms.Padding(4);
             this.bMensajeria.Name = "bMensajeria";
             this.bMensajeria.Size = new System.Drawing.Size(211, 38);
-            this.bMensajeria.TabIndex = 37;
+            this.bMensajeria.TabIndex = 2;
             this.bMensajeria.Text = "📪 Mensajeria";
             this.bMensajeria.UseVisualStyleBackColor = true;
             this.bMensajeria.Click += new System.EventHandler(this.bMensajeria_Click);
@@ -248,7 +248,7 @@ namespace StreamEducation
             this.bVolver.Margin = new System.Windows.Forms.Padding(4);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(69, 82);
-            this.bVolver.TabIndex = 38;
+            this.bVolver.TabIndex = 5;
             this.bVolver.Text = "↩️";
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
@@ -261,7 +261,7 @@ namespace StreamEducation
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 181);
-            this.label1.TabIndex = 59;
+            //this.label1.TabIndex = 59;
             this.label1.Text = "👤";
             // 
             // fPerfil

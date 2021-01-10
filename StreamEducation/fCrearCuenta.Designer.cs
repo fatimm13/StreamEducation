@@ -36,8 +36,8 @@ namespace StreamEducation
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tNombre = new System.Windows.Forms.TextBox();
-            this.tContrasena1 = new System.Windows.Forms.TextBox();
             this.tCorreo = new System.Windows.Forms.TextBox();
+            this.tContrasena1 = new System.Windows.Forms.TextBox();
             this.tContrasena2 = new System.Windows.Forms.TextBox();
             this.comboRol = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(39, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(507, 34);
-            this.label1.TabIndex = 1;
+            //this.label1.TabIndex = 10;
             this.label1.Text = "Rellene los siguientes campos:";
             // 
             // bAceptar
@@ -63,7 +63,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(131, 34);
-            this.bAceptar.TabIndex = 2;
+            this.bAceptar.TabIndex = 8;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -75,7 +75,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(72, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 25);
-            this.label2.TabIndex = 3;
+            //this.label2.TabIndex = 3;
             this.label2.Text = "Nombre:";
             // 
             // label3
@@ -85,7 +85,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(72, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 25);
-            this.label3.TabIndex = 4;
+            //this.label3.TabIndex = 4;
             this.label3.Text = "Correo:";
             // 
             // label4
@@ -95,7 +95,7 @@ namespace StreamEducation
             this.label4.Location = new System.Drawing.Point(72, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 25);
-            this.label4.TabIndex = 5;
+            //this.label4.TabIndex = 5;
             this.label4.Text = "Contraseña:";
             // 
             // label5
@@ -105,7 +105,7 @@ namespace StreamEducation
             this.label5.Location = new System.Drawing.Point(72, 270);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(212, 25);
-            this.label5.TabIndex = 6;
+            //this.label5.TabIndex = 6;
             this.label5.Text = "Repetir contraseña:";
             // 
             // tNombre
@@ -115,7 +115,7 @@ namespace StreamEducation
             this.tNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(377, 32);
-            this.tNombre.TabIndex = 7;
+            this.tNombre.TabIndex = 1;
             // 
             // tContrasena1
             // 
@@ -125,7 +125,7 @@ namespace StreamEducation
             this.tContrasena1.Name = "tContrasena1";
             this.tContrasena1.PasswordChar = '*';
             this.tContrasena1.Size = new System.Drawing.Size(377, 32);
-            this.tContrasena1.TabIndex = 9;
+            this.tContrasena1.TabIndex = 3;
             // 
             // tCorreo
             // 
@@ -134,7 +134,7 @@ namespace StreamEducation
             this.tCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tCorreo.Name = "tCorreo";
             this.tCorreo.Size = new System.Drawing.Size(377, 32);
-            this.tCorreo.TabIndex = 8;
+            this.tCorreo.TabIndex = 2;
             // 
             // tContrasena2
             // 
@@ -144,7 +144,7 @@ namespace StreamEducation
             this.tContrasena2.Name = "tContrasena2";
             this.tContrasena2.PasswordChar = '*';
             this.tContrasena2.Size = new System.Drawing.Size(377, 32);
-            this.tContrasena2.TabIndex = 10;
+            this.tContrasena2.TabIndex = 4;
             // 
             // comboRol
             // 
@@ -159,7 +159,7 @@ namespace StreamEducation
             this.comboRol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboRol.Name = "comboRol";
             this.comboRol.Size = new System.Drawing.Size(377, 33);
-            this.comboRol.TabIndex = 22;
+            this.comboRol.TabIndex = 5;
             // 
             // label6
             // 
@@ -168,7 +168,7 @@ namespace StreamEducation
             this.label6.Location = new System.Drawing.Point(72, 326);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(135, 25);
-            this.label6.TabIndex = 23;
+            //this.label6.TabIndex = 23;
             this.label6.Text = "Rol usuario:";
             // 
             // label7
@@ -178,7 +178,7 @@ namespace StreamEducation
             this.label7.Location = new System.Drawing.Point(39, 390);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(594, 34);
-            this.label7.TabIndex = 25;
+            //this.label7.TabIndex = 25;
             this.label7.Text = "Pregunta y Respuesta de seguridad:";
             // 
             // comboPregunta
@@ -195,7 +195,7 @@ namespace StreamEducation
             this.comboPregunta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboPregunta.Name = "comboPregunta";
             this.comboPregunta.Size = new System.Drawing.Size(644, 33);
-            this.comboPregunta.TabIndex = 24;
+            this.comboPregunta.TabIndex = 6;
             // 
             // tRespuesta
             // 
@@ -204,7 +204,7 @@ namespace StreamEducation
             this.tRespuesta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tRespuesta.Name = "tRespuesta";
             this.tRespuesta.Size = new System.Drawing.Size(643, 32);
-            this.tRespuesta.TabIndex = 27;
+            this.tRespuesta.TabIndex = 7;
             // 
             // fCrearCuenta
             // 

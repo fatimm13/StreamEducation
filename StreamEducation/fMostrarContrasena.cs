@@ -22,5 +22,10 @@ namespace StreamEducation
         {
             this.Close();
         }
+
+        private void fMostrarContrasena_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

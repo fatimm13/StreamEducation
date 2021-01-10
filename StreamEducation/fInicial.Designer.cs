@@ -54,7 +54,7 @@ namespace StreamEducation
             this.linkLabel2.Location = new System.Drawing.Point(1493, 54);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(115, 25);
-            this.linkLabel2.TabIndex = 19;
+            this.linkLabel2.TabIndex = 9;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "· Colabora";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
@@ -68,7 +68,7 @@ namespace StreamEducation
             this.linkLabel1.Location = new System.Drawing.Point(1261, 54);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(176, 25);
-            this.linkLabel1.TabIndex = 18;
+            this.linkLabel1.TabIndex = 8;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "· Nuestra Misión";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -82,7 +82,7 @@ namespace StreamEducation
             this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.MinimumSize = new System.Drawing.Size(501, 202);
             this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 17;
+            //this.monthCalendar1.TabIndex = 17;
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
             // 
             // label1
@@ -92,7 +92,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(29, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(364, 42);
-            this.label1.TabIndex = 13;
+            //this.label1.TabIndex = 13;
             this.label1.Text = "🌍 Stream Education";
             // 
             // panel2
@@ -103,7 +103,7 @@ namespace StreamEducation
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1578, 9);
-            this.panel2.TabIndex = 11;
+            //this.panel2.TabIndex = 11;
             // 
             // panel1
             // 
@@ -117,7 +117,7 @@ namespace StreamEducation
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(398, 201);
-            this.panel1.TabIndex = 12;
+            //this.panel1.TabIndex = 12;
             // 
             // bCerrarSesion
             // 
@@ -126,7 +126,7 @@ namespace StreamEducation
             this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.bCerrarSesion.Name = "bCerrarSesion";
             this.bCerrarSesion.Size = new System.Drawing.Size(296, 60);
-            this.bCerrarSesion.TabIndex = 24;
+            this.bCerrarSesion.TabIndex = 2;
             this.bCerrarSesion.Text = "Cerrar Sesión";
             this.bCerrarSesion.UseVisualStyleBackColor = true;
             this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
@@ -138,7 +138,7 @@ namespace StreamEducation
             this.bPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.bPerfil.Name = "bPerfil";
             this.bPerfil.Size = new System.Drawing.Size(296, 60);
-            this.bPerfil.TabIndex = 23;
+            this.bPerfil.TabIndex = 1;
             this.bPerfil.Text = "Perfil";
             this.bPerfil.UseVisualStyleBackColor = true;
             this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click);
@@ -150,7 +150,7 @@ namespace StreamEducation
             this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bIniciarSesion.Name = "bIniciarSesion";
             this.bIniciarSesion.Size = new System.Drawing.Size(347, 60);
-            this.bIniciarSesion.TabIndex = 7;
+            this.bIniciarSesion.TabIndex = 4;
             this.bIniciarSesion.Text = "Iniciar Sesión";
             this.bIniciarSesion.UseVisualStyleBackColor = true;
             this.bIniciarSesion.Click += new System.EventHandler(this.bIniciarSesion_Click);
@@ -162,7 +162,7 @@ namespace StreamEducation
             this.bRegistrarse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bRegistrarse.Name = "bRegistrarse";
             this.bRegistrarse.Size = new System.Drawing.Size(347, 60);
-            this.bRegistrarse.TabIndex = 6;
+            this.bRegistrarse.TabIndex = 3;
             this.bRegistrarse.Text = "Registrarse";
             this.bRegistrarse.UseVisualStyleBackColor = true;
             this.bRegistrarse.Click += new System.EventHandler(this.bRegistrarse_Click);
@@ -179,7 +179,7 @@ namespace StreamEducation
             this.bForo.MinimumSize = new System.Drawing.Size(377, 357);
             this.bForo.Name = "bForo";
             this.bForo.Size = new System.Drawing.Size(377, 357);
-            this.bForo.TabIndex = 21;
+            this.bForo.TabIndex = 6;
             this.bForo.UseVisualStyleBackColor = true;
             this.bForo.Click += new System.EventHandler(this.bForo_Click);
             // 
@@ -194,7 +194,7 @@ namespace StreamEducation
             this.bActividades.MinimumSize = new System.Drawing.Size(377, 357);
             this.bActividades.Name = "bActividades";
             this.bActividades.Size = new System.Drawing.Size(377, 357);
-            this.bActividades.TabIndex = 22;
+            this.bActividades.TabIndex = 7;
             this.bActividades.UseVisualStyleBackColor = true;
             this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
             // 
@@ -208,7 +208,7 @@ namespace StreamEducation
             this.bCurso.MinimumSize = new System.Drawing.Size(377, 357);
             this.bCurso.Name = "bCurso";
             this.bCurso.Size = new System.Drawing.Size(377, 357);
-            this.bCurso.TabIndex = 20;
+            this.bCurso.TabIndex = 5;
             this.bCurso.UseVisualStyleBackColor = true;
             this.bCurso.Click += new System.EventHandler(this.bCurso_Click);
             // 

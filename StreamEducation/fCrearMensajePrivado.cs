@@ -46,5 +46,10 @@ namespace StreamEducation
                 ventana.ShowDialog();
             }
         }
+
+        private void fCrearMensajePrivado_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

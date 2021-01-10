@@ -34,7 +34,7 @@ namespace StreamEducation
             lRechazar.Items.Clear();
             foreach ((int, string) u in usuarios)
             {
-                lUsuarios.Items.Add(u.Item2);
+                lUsuarios.Items.Add("⌛  " + u.Item2);
                 lAceptar.Items.Add("✔️");
                 lRechazar.Items.Add("❌");
             }

@@ -52,7 +52,7 @@ namespace StreamEducation
             this.lAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.lAceptar.Name = "lAceptar";
             this.lAceptar.Size = new System.Drawing.Size(37, 325);
-            this.lAceptar.TabIndex = 55;
+            this.lAceptar.TabIndex = 4;
             this.lAceptar.SelectedIndexChanged += new System.EventHandler(this.lAceptar_SelectedIndexChanged);
             // 
             // lUsuarios
@@ -66,7 +66,7 @@ namespace StreamEducation
             this.lUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.lUsuarios.Name = "lUsuarios";
             this.lUsuarios.Size = new System.Drawing.Size(693, 325);
-            this.lUsuarios.TabIndex = 52;
+            this.lUsuarios.TabIndex = 3;
             this.lUsuarios.SelectedIndexChanged += new System.EventHandler(this.lUsuarios_SelectedIndexChanged);
             // 
             // lRechazar
@@ -80,7 +80,7 @@ namespace StreamEducation
             this.lRechazar.Margin = new System.Windows.Forms.Padding(4);
             this.lRechazar.Name = "lRechazar";
             this.lRechazar.Size = new System.Drawing.Size(31, 325);
-            this.lRechazar.TabIndex = 56;
+            this.lRechazar.TabIndex = 5;
             this.lRechazar.SelectedIndexChanged += new System.EventHandler(this.lRechazar_SelectedIndexChanged);
             // 
             // label2
@@ -90,7 +90,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(40, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 25);
-            this.label2.TabIndex = 60;
+            //this.label2.TabIndex = 60;
             this.label2.Text = "🔍";
             // 
             // bVolver
@@ -100,7 +100,7 @@ namespace StreamEducation
             this.bVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(73, 48);
-            this.bVolver.TabIndex = 59;
+            this.bVolver.TabIndex = 6;
             this.bVolver.Text = "↩️";
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
@@ -115,7 +115,7 @@ namespace StreamEducation
             this.labelX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(26, 25);
-            this.labelX.TabIndex = 58;
+            this.labelX.TabIndex = 2;
             this.labelX.Text = "X";
             this.labelX.Click += new System.EventHandler(this.labelX_Click);
             // 
@@ -126,7 +126,7 @@ namespace StreamEducation
             this.tUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tUsuario.Name = "tUsuario";
             this.tUsuario.Size = new System.Drawing.Size(893, 32);
-            this.tUsuario.TabIndex = 57;
+            this.tUsuario.TabIndex = 1;
             this.tUsuario.TextChanged += new System.EventHandler(this.tUsuario_TextChanged);
             // 
             // label3
@@ -137,7 +137,7 @@ namespace StreamEducation
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(396, 25);
-            this.label3.TabIndex = 61;
+            //this.label3.TabIndex = 61;
             this.label3.Text = "Peticiones de inscripción al curso:";
             // 
             // label1
@@ -148,7 +148,7 @@ namespace StreamEducation
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 25);
-            this.label1.TabIndex = 62;
+            //this.label1.TabIndex = 62;
             this.label1.Text = "Aceptar";
             // 
             // label4
@@ -159,7 +159,7 @@ namespace StreamEducation
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 25);
-            this.label4.TabIndex = 63;
+            //this.label4.TabIndex = 63;
             this.label4.Text = "Rechazar";
             // 
             // fUsuariosPendientes

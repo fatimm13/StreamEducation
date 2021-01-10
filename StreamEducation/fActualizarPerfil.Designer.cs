@@ -48,7 +48,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(121, 40);
-            this.bAceptar.TabIndex = 14;
+            this.bAceptar.TabIndex = 5;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -61,7 +61,7 @@ namespace StreamEducation
             this.tBiografia.Multiline = true;
             this.tBiografia.Name = "tBiografia";
             this.tBiografia.Size = new System.Drawing.Size(601, 182);
-            this.tBiografia.TabIndex = 13;
+            this.tBiografia.TabIndex = 4;
             // 
             // label5
             // 
@@ -70,7 +70,7 @@ namespace StreamEducation
             this.label5.Location = new System.Drawing.Point(47, 242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 25);
-            this.label5.TabIndex = 12;
+            //this.label5.TabIndex = 12;
             this.label5.Text = "Biografía:";
             // 
             // tNombre
@@ -80,7 +80,7 @@ namespace StreamEducation
             this.tNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(463, 32);
-            this.tNombre.TabIndex = 19;
+            this.tNombre.TabIndex = 1;
             // 
             // label4
             // 
@@ -89,7 +89,7 @@ namespace StreamEducation
             this.label4.Location = new System.Drawing.Point(47, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 25);
-            this.label4.TabIndex = 18;
+            //this.label4.TabIndex = 18;
             this.label4.Text = "País:";
             // 
             // label3
@@ -99,7 +99,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(47, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 25);
-            this.label3.TabIndex = 17;
+            //this.label3.TabIndex = 17;
             this.label3.Text = "Escuela:";
             // 
             // label2
@@ -109,7 +109,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(47, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 25);
-            this.label2.TabIndex = 16;
+            //this.label2.TabIndex = 16;
             this.label2.Text = "Nombre:";
             // 
             // label1
@@ -119,7 +119,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(28, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(290, 34);
-            this.label1.TabIndex = 15;
+            //this.label1.TabIndex = 15;
             this.label1.Text = "Datos personales";
             // 
             // tPais
@@ -129,7 +129,7 @@ namespace StreamEducation
             this.tPais.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tPais.Name = "tPais";
             this.tPais.Size = new System.Drawing.Size(463, 32);
-            this.tPais.TabIndex = 20;
+            this.tPais.TabIndex = 3;
             // 
             // tEscuela
             // 
@@ -138,7 +138,7 @@ namespace StreamEducation
             this.tEscuela.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tEscuela.Name = "tEscuela";
             this.tEscuela.Size = new System.Drawing.Size(463, 32);
-            this.tEscuela.TabIndex = 21;
+            this.tEscuela.TabIndex = 2;
             // 
             // fActualizarPerfil
             // 

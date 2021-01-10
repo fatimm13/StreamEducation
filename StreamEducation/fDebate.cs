@@ -27,6 +27,7 @@ namespace StreamEducation
             tDescripcion.Text = GestorGlobal.DebateActivo.Descripcion;
             labelCreador.Text = GestorGlobal.DebateActivo.Creador.Nombre;
             labelCurso.Text = GestorGlobal.ForoActivo.Curso.Nombre;
+            Recarga();
             RecargaMensajes();
         }
         private void marcarCalendario()

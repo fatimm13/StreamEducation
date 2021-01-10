@@ -41,7 +41,7 @@ namespace StreamEducation
             this.labelError.Location = new System.Drawing.Point(34, 70);
             this.labelError.Name = "labelError";
             this.labelError.Size = new System.Drawing.Size(221, 20);
-            this.labelError.TabIndex = 4;
+            //this.labelError.TabIndex = 4;
             this.labelError.Text = "<< Mensaje de error >>";
             // 
             // bAceptar
@@ -51,7 +51,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(86, 34);
-            this.bAceptar.TabIndex = 5;
+            this.bAceptar.TabIndex = 1;
             this.bAceptar.Text = "OK";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -63,7 +63,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(166, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 34);
-            this.label1.TabIndex = 6;
+            //this.label1.TabIndex = 6;
             this.label1.Text = "❌ ERROR";
             // 
             // fError
@@ -80,6 +80,7 @@ namespace StreamEducation
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Error";
+            this.Load += new System.EventHandler(this.fError_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

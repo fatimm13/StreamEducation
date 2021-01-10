@@ -46,7 +46,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(117, 34);
-            this.bAceptar.TabIndex = 16;
+            this.bAceptar.TabIndex = 5;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -59,7 +59,7 @@ namespace StreamEducation
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.Size = new System.Drawing.Size(591, 207);
-            this.tDescripcion.TabIndex = 15;
+            this.tDescripcion.TabIndex = 4;
             // 
             // label3
             // 
@@ -68,7 +68,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(44, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 25);
-            this.label3.TabIndex = 14;
+            //this.label3.TabIndex = 14;
             this.label3.Text = "Descripción:";
             // 
             // tNombre
@@ -78,7 +78,7 @@ namespace StreamEducation
             this.tNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(476, 32);
-            this.tNombre.TabIndex = 13;
+            this.tNombre.TabIndex = 1;
             // 
             // label1
             // 
@@ -87,7 +87,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(44, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 25);
-            this.label1.TabIndex = 12;
+            //this.label1.TabIndex = 12;
             this.label1.Text = "Nombre:";
             // 
             // dateTimePicker
@@ -97,7 +97,7 @@ namespace StreamEducation
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(475, 32);
-            this.dateTimePicker.TabIndex = 26;
+            this.dateTimePicker.TabIndex = 2;
             // 
             // label2
             // 
@@ -106,7 +106,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(44, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 25);
-            this.label2.TabIndex = 25;
+            //this.label2.TabIndex = 25;
             this.label2.Text = "Inicio:";
             // 
             // cbPublico
@@ -117,7 +117,7 @@ namespace StreamEducation
             this.cbPublico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPublico.Name = "cbPublico";
             this.cbPublico.Size = new System.Drawing.Size(221, 29);
-            this.cbPublico.TabIndex = 27;
+            this.cbPublico.TabIndex = 3;
             this.cbPublico.Text = "El curso es público";
             this.cbPublico.UseVisualStyleBackColor = true;
             // 

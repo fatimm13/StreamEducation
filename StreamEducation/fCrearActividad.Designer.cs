@@ -45,7 +45,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(110, 39);
-            this.bAceptar.TabIndex = 21;
+            this.bAceptar.TabIndex = 4;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -58,7 +58,7 @@ namespace StreamEducation
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.Size = new System.Drawing.Size(601, 217);
-            this.tDescripcion.TabIndex = 20;
+            this.tDescripcion.TabIndex = 3;
             // 
             // label2
             // 
@@ -67,7 +67,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(31, 194);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 25);
-            this.label2.TabIndex = 19;
+            //this.label2.TabIndex = 19;
             this.label2.Text = "Descripción:";
             // 
             // tNombre
@@ -77,7 +77,7 @@ namespace StreamEducation
             this.tNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(465, 32);
-            this.tNombre.TabIndex = 18;
+            this.tNombre.TabIndex = 1;
             // 
             // label1
             // 
@@ -86,7 +86,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(31, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 25);
-            this.label1.TabIndex = 17;
+            //this.label1.TabIndex = 17;
             this.label1.Text = "Nombre:";
             // 
             // label3
@@ -96,7 +96,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(31, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 25);
-            this.label3.TabIndex = 22;
+            //this.label3.TabIndex = 22;
             this.label3.Text = "Fecha:";
             // 
             // dateTimePicker
@@ -106,7 +106,7 @@ namespace StreamEducation
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(465, 32);
-            this.dateTimePicker.TabIndex = 24;
+            this.dateTimePicker.TabIndex = 2;
             // 
             // fCrearActividad
             // 

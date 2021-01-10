@@ -32,5 +32,9 @@ namespace StreamEducation
             }
         }
 
+        private void fCrearForo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

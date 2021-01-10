@@ -52,7 +52,7 @@
             this.comboRol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboRol.Name = "comboRol";
             this.comboRol.Size = new System.Drawing.Size(101, 56);
-            this.comboRol.TabIndex = 41;
+            this.comboRol.TabIndex = 1;
             // 
             // label3
             // 
@@ -61,7 +61,7 @@
             this.label3.Location = new System.Drawing.Point(76, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 25);
-            this.label3.TabIndex = 40;
+            //this.label3.TabIndex = 40;
             this.label3.Text = "Valoración:";
             // 
             // bEnviar
@@ -71,7 +71,7 @@
             this.bEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bEnviar.Name = "bEnviar";
             this.bEnviar.Size = new System.Drawing.Size(108, 43);
-            this.bEnviar.TabIndex = 39;
+            this.bEnviar.TabIndex = 3;
             this.bEnviar.Text = "Enviar";
             this.bEnviar.UseVisualStyleBackColor = true;
             this.bEnviar.Click += new System.EventHandler(this.bEnviar_Click);
@@ -84,7 +84,7 @@
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.Size = new System.Drawing.Size(527, 194);
-            this.tDescripcion.TabIndex = 38;
+            this.tDescripcion.TabIndex = 2;
             // 
             // label4
             // 
@@ -93,7 +93,7 @@
             this.label4.Location = new System.Drawing.Point(76, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 25);
-            this.label4.TabIndex = 37;
+            //this.label4.TabIndex = 37;
             this.label4.Text = "Reseña:";
             // 
             // labelCurso
@@ -103,7 +103,7 @@
             this.labelCurso.Location = new System.Drawing.Point(231, 48);
             this.labelCurso.Name = "labelCurso";
             this.labelCurso.Size = new System.Drawing.Size(195, 34);
-            this.labelCurso.TabIndex = 36;
+            //this.labelCurso.TabIndex = 36;
             this.labelCurso.Text = "__________";
             // 
             // label1
@@ -113,7 +113,7 @@
             this.label1.Location = new System.Drawing.Point(51, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 34);
-            this.label1.TabIndex = 35;
+            //this.label1.TabIndex = 35;
             this.label1.Text = "Actividad:";
             // 
             // fValoracionActividad

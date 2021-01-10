@@ -47,7 +47,7 @@ namespace StreamEducation
             this.lEventos.Margin = new System.Windows.Forms.Padding(4);
             this.lEventos.Name = "lEventos";
             this.lEventos.Size = new System.Drawing.Size(539, 277);
-            this.lEventos.TabIndex = 48;
+            //this.lEventos.TabIndex = 48;
             // 
             // labelFecha
             // 
@@ -56,7 +56,7 @@ namespace StreamEducation
             this.labelFecha.Location = new System.Drawing.Point(362, 60);
             this.labelFecha.Name = "labelFecha";
             this.labelFecha.Size = new System.Drawing.Size(235, 34);
-            this.labelFecha.TabIndex = 47;
+            //this.labelFecha.TabIndex = 47;
             this.labelFecha.Text = "___________";
             // 
             // label6
@@ -66,7 +66,7 @@ namespace StreamEducation
             this.label6.Location = new System.Drawing.Point(44, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 36);
-            this.label6.TabIndex = 46;
+            //this.label6.TabIndex = 46;
             this.label6.Text = "🗓️";
             // 
             // bVolver
@@ -76,7 +76,7 @@ namespace StreamEducation
             this.bVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bVolver.Name = "bVolver";
             this.bVolver.Size = new System.Drawing.Size(73, 48);
-            this.bVolver.TabIndex = 60;
+            this.bVolver.TabIndex = 1;
             this.bVolver.Text = "↩️";
             this.bVolver.UseVisualStyleBackColor = true;
             this.bVolver.Click += new System.EventHandler(this.bVolver_Click);
@@ -88,7 +88,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(98, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 34);
-            this.label1.TabIndex = 61;
+            //this.label1.TabIndex = 61;
             this.label1.Text = "Eventos del dia";
             // 
             // fEventos

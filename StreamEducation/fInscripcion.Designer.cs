@@ -41,7 +41,7 @@ namespace StreamEducation
             this.bRechazar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bRechazar.Name = "bRechazar";
             this.bRechazar.Size = new System.Drawing.Size(177, 43);
-            this.bRechazar.TabIndex = 10;
+            this.bRechazar.TabIndex = 2;
             this.bRechazar.Text = "Rechazar ❌";
             this.bRechazar.UseVisualStyleBackColor = true;
             this.bRechazar.Click += new System.EventHandler(this.bRechazar_Click);
@@ -53,7 +53,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(177, 43);
-            this.bAceptar.TabIndex = 9;
+            this.bAceptar.TabIndex = 1;
             this.bAceptar.Text = "Aceptar ✔️";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -65,7 +65,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(93, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(334, 25);
-            this.label1.TabIndex = 8;
+            //this.label1.TabIndex = 8;
             this.label1.Text = "Confirme su inscripción al curso";
             // 
             // fInscripcion

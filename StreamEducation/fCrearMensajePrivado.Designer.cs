@@ -46,7 +46,7 @@ namespace StreamEducation
             this.tAsunto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tAsunto.Name = "tAsunto";
             this.tAsunto.Size = new System.Drawing.Size(459, 32);
-            this.tAsunto.TabIndex = 34;
+            this.tAsunto.TabIndex = 2;
             // 
             // label2
             // 
@@ -55,7 +55,7 @@ namespace StreamEducation
             this.label2.Location = new System.Drawing.Point(52, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 25);
-            this.label2.TabIndex = 33;
+            //this.label2.TabIndex = 33;
             this.label2.Text = "Asunto:";
             // 
             // bAceptar
@@ -65,7 +65,7 @@ namespace StreamEducation
             this.bAceptar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bAceptar.Name = "bAceptar";
             this.bAceptar.Size = new System.Drawing.Size(108, 39);
-            this.bAceptar.TabIndex = 31;
+            this.bAceptar.TabIndex = 4;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
             this.bAceptar.Click += new System.EventHandler(this.bAceptar_Click);
@@ -78,7 +78,7 @@ namespace StreamEducation
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.Size = new System.Drawing.Size(577, 230);
-            this.tDescripcion.TabIndex = 30;
+            this.tDescripcion.TabIndex = 3;
             // 
             // label3
             // 
@@ -87,7 +87,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(52, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 25);
-            this.label3.TabIndex = 29;
+            //this.label3.TabIndex = 29;
             this.label3.Text = "Mensaje:";
             // 
             // label1
@@ -97,7 +97,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(52, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 25);
-            this.label1.TabIndex = 35;
+            //this.label1.TabIndex = 35;
             this.label1.Text = "Destinatario:";
             // 
             // bSeleccionarUsuario
@@ -107,7 +107,7 @@ namespace StreamEducation
             this.bSeleccionarUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bSeleccionarUsuario.Name = "bSeleccionarUsuario";
             this.bSeleccionarUsuario.Size = new System.Drawing.Size(48, 34);
-            this.bSeleccionarUsuario.TabIndex = 36;
+            this.bSeleccionarUsuario.TabIndex = 1;
             this.bSeleccionarUsuario.Text = "...";
             this.bSeleccionarUsuario.UseVisualStyleBackColor = true;
             this.bSeleccionarUsuario.Click += new System.EventHandler(this.bSeleccionarUsuario_Click);
@@ -120,7 +120,7 @@ namespace StreamEducation
             this.tDestinatario.Name = "tDestinatario";
             this.tDestinatario.ReadOnly = true;
             this.tDestinatario.Size = new System.Drawing.Size(353, 32);
-            this.tDestinatario.TabIndex = 37;
+            //this.tDestinatario.TabIndex = 37;
             this.tDestinatario.Text = "Seleccione usuario...";
             // 
             // fCrearMensajePrivado
@@ -142,6 +142,7 @@ namespace StreamEducation
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Escribir Mensaje Privado";
+            this.Load += new System.EventHandler(this.fCrearMensajePrivado_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

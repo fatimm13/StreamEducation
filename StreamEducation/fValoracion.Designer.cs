@@ -47,7 +47,7 @@ namespace StreamEducation
             this.label3.Location = new System.Drawing.Point(81, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 25);
-            this.label3.TabIndex = 33;
+            //this.label3.TabIndex = 33;
             this.label3.Text = "Valoración:";
             // 
             // bEnviar
@@ -57,7 +57,7 @@ namespace StreamEducation
             this.bEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bEnviar.Name = "bEnviar";
             this.bEnviar.Size = new System.Drawing.Size(108, 43);
-            this.bEnviar.TabIndex = 31;
+            this.bEnviar.TabIndex = 3;
             this.bEnviar.Text = "Enviar";
             this.bEnviar.UseVisualStyleBackColor = true;
             this.bEnviar.Click += new System.EventHandler(this.bEnviar_Click);
@@ -70,7 +70,7 @@ namespace StreamEducation
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.Size = new System.Drawing.Size(527, 194);
-            this.tDescripcion.TabIndex = 30;
+            this.tDescripcion.TabIndex = 2;
             // 
             // label4
             // 
@@ -79,7 +79,7 @@ namespace StreamEducation
             this.label4.Location = new System.Drawing.Point(81, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 25);
-            this.label4.TabIndex = 29;
+            //this.label4.TabIndex = 29;
             this.label4.Text = "Reseña:";
             // 
             // labelCurso
@@ -89,7 +89,7 @@ namespace StreamEducation
             this.labelCurso.Location = new System.Drawing.Point(207, 48);
             this.labelCurso.Name = "labelCurso";
             this.labelCurso.Size = new System.Drawing.Size(195, 34);
-            this.labelCurso.TabIndex = 28;
+            //this.labelCurso.TabIndex = 28;
             this.labelCurso.Text = "__________";
             // 
             // label1
@@ -99,7 +99,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(56, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 34);
-            this.label1.TabIndex = 26;
+            //this.label1.TabIndex = 26;
             this.label1.Text = "Curso:";
             // 
             // comboRol
@@ -117,7 +117,7 @@ namespace StreamEducation
             this.comboRol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboRol.Name = "comboRol";
             this.comboRol.Size = new System.Drawing.Size(101, 56);
-            this.comboRol.TabIndex = 34;
+            this.comboRol.TabIndex = 1;
             this.comboRol.SelectedIndexChanged += new System.EventHandler(this.comboRol_SelectedIndexChanged);
             // 
             // fValoracion

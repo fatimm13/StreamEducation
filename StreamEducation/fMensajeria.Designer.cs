@@ -44,8 +44,8 @@ namespace StreamEducation
             this.bEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bEnviar.Name = "bEnviar";
             this.bEnviar.Size = new System.Drawing.Size(280, 44);
-            this.bEnviar.TabIndex = 29;
-            this.bEnviar.Text = "✉️ Escribir Mensaje";
+            this.bEnviar.TabIndex = 1;
+            this.bEnviar.Text = "✉️  Escribir Mensaje";
             this.bEnviar.UseVisualStyleBackColor = true;
             this.bEnviar.Click += new System.EventHandler(this.bEnviar_Click);
             // 
@@ -60,7 +60,7 @@ namespace StreamEducation
             this.lMensajes.Margin = new System.Windows.Forms.Padding(4);
             this.lMensajes.Name = "lMensajes";
             this.lMensajes.Size = new System.Drawing.Size(896, 202);
-            this.lMensajes.TabIndex = 44;
+            //this.lMensajes.TabIndex = 44;
             this.lMensajes.SelectedIndexChanged += new System.EventHandler(this.lMensajes_SelectedIndexChanged);
             // 
             // bCerrar
@@ -70,7 +70,7 @@ namespace StreamEducation
             this.bCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bCerrar.Name = "bCerrar";
             this.bCerrar.Size = new System.Drawing.Size(117, 41);
-            this.bCerrar.TabIndex = 45;
+            this.bCerrar.TabIndex = 2;
             this.bCerrar.Text = "Cerrar";
             this.bCerrar.UseVisualStyleBackColor = true;
             this.bCerrar.Click += new System.EventHandler(this.bCerrar_Click);
@@ -82,7 +82,7 @@ namespace StreamEducation
             this.label1.Location = new System.Drawing.Point(50, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(236, 29);
-            this.label1.TabIndex = 46;
+            //this.label1.TabIndex = 46;
             this.label1.Text = "🔔 Notificaciones";
             // 
             // lNotificaciones
@@ -96,7 +96,7 @@ namespace StreamEducation
             this.lNotificaciones.Margin = new System.Windows.Forms.Padding(4);
             this.lNotificaciones.Name = "lNotificaciones";
             this.lNotificaciones.Size = new System.Drawing.Size(896, 102);
-            this.lNotificaciones.TabIndex = 47;
+            //this.lNotificaciones.TabIndex = 47;
             // 
             // label2
             // 
@@ -104,9 +104,9 @@ namespace StreamEducation
             this.label2.Font = new System.Drawing.Font("Verdana", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(50, 258);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 29);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "✉️ Mensajes";
+            this.label2.Size = new System.Drawing.Size(314, 29);
+            //this.label2.TabIndex = 48;
+            this.label2.Text = "✉️ Mensajes Recibidos";
             // 
             // fMensajeria
             // 
