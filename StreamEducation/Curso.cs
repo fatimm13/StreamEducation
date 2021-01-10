@@ -246,7 +246,7 @@ namespace StreamEducation
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
                 string query = "SELECT u.id, u.nombre, u.correo FROM tCursoUsuario c JOIN tUsuario u on u.id = c.usuario WHERE curso = '"
-                    + this.id + "' and UPPER(u.nombre) LIKE '%" + filtro + "%'";
+                    + this.id + "' and UPPER(u.nombre) LIKE '%" + filtro + "%' ORDER BY u.nombre";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -273,7 +273,7 @@ namespace StreamEducation
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
                 string query = "SELECT u.id, u.nombre, u.correo FROM tInscripcion c JOIN tUsuario u on u.id = c.usuario WHERE curso = '"
-                    + this.id + "' and UPPER(u.nombre) LIKE '%" + filtro + "%'";
+                    + this.id + "' and UPPER(u.nombre) LIKE '%" + filtro + "%' ORDER BY u.nombre";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
