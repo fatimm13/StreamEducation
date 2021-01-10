@@ -102,7 +102,6 @@ namespace StreamEducation
 
         private void bForo_Click(object sender, EventArgs e)
         {
-            
             fNoticias ventana = new fNoticias();
             this.Visible = false;
             ventana.ShowDialog();

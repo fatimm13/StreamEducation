@@ -12,6 +12,9 @@ namespace StreamEducation
 {
     public partial class fUsuariosInscritos : Form
     {
+
+        private List<(int, string)> usuarios;
+
         public fUsuariosInscritos()
         {
             InitializeComponent();
@@ -24,12 +27,13 @@ namespace StreamEducation
 
         private void Recarga(string filtro)
         {
+            usuarios = GestorGlobal.CursoActivo.getUsuarios(filtro);
             lUsuarios.Items.Clear();
             lExpulsar.Items.Clear();
-            foreach (Usuario u in GestorGlobal.CursoActivo.getUsuarios(filtro))
+            foreach ((int, string) u in usuarios)
             {
-                lUsuarios.Items.Add(u);
-                lExpulsar.Items.Add("🚫 Expulsar");
+                lUsuarios.Items.Add(u.Item2);
+                lExpulsar.Items.Add("🚫");
             }
         }
 
@@ -48,11 +52,12 @@ namespace StreamEducation
         {
             if (lExpulsar.SelectedIndex >= 0)
             {
-                Usuario usuario = (Usuario)lUsuarios.Items[lExpulsar.SelectedIndex];
+                int id = usuarios[lExpulsar.SelectedIndex].Item1;
                 fConfirmacion ventana = new fConfirmacion();
                 ventana.ShowDialog();
                 if (ventana.Valor)
                 {
+                    Usuario usuario = new Usuario(id);
                     usuario.expulsar(GestorGlobal.CursoActivo.Id);
                     Recarga(tUsuario.Text);
                 }
@@ -68,7 +73,8 @@ namespace StreamEducation
         {
             if (lUsuarios.SelectedIndex >= 0)
             {
-                fVerPerfil ventana = new fVerPerfil((Usuario)lUsuarios.SelectedItem);
+                int id = usuarios[lUsuarios.SelectedIndex].Item1;
+                fVerPerfil ventana = new fVerPerfil(new Usuario(id));
                 ventana.ShowDialog();
             }
         }

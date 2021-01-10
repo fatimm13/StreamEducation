@@ -48,7 +48,7 @@ namespace StreamEducation
 
         private void RecargaNoticias()
         {
-            noticias = Foro.getNoticias();
+            noticias = Noticia.getNoticias();
             lNoticias.Items.Clear();
             foreach ((int, string) n in noticias) lNoticias.Items.Add(n.Item2);
         }
@@ -97,7 +97,7 @@ namespace StreamEducation
             RecargaNoticias();
         }
 
-        private void lForo_SelectedIndexChanged(object sender, EventArgs e)
+        private void lNoticias_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lNoticias.SelectedIndex >= 0)
             {
@@ -123,5 +123,6 @@ namespace StreamEducation
                 ev.ShowDialog();
             }
         }
+
     }
 }

@@ -62,6 +62,7 @@ namespace StreamEducation
         {
             return calendario;
         }
+
         public static void rellenarCalendario()
         {
             calendario = new Dictionary<DateTime, List<string>>();

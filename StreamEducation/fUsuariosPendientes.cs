@@ -13,6 +13,9 @@ namespace StreamEducation
 {
     public partial class fUsuariosPendientes : Form
     {
+
+        private List<(int, string)> usuarios;
+
         public fUsuariosPendientes()
         {
             InitializeComponent();
@@ -25,12 +28,13 @@ namespace StreamEducation
 
         private void Recarga(string filtro)
         {
+            usuarios = GestorGlobal.CursoActivo.getPeticiones(filtro);
             lUsuarios.Items.Clear();
             lAceptar.Items.Clear();
             lRechazar.Items.Clear();
-            foreach (Usuario u in GestorGlobal.CursoActivo.getPeticiones(filtro))
+            foreach ((int, string) u in usuarios)
             {
-                lUsuarios.Items.Add(u);
+                lUsuarios.Items.Add(u.Item2);
                 lAceptar.Items.Add("✔️");
                 lRechazar.Items.Add("❌");
             }
@@ -40,7 +44,8 @@ namespace StreamEducation
         {
             if (lUsuarios.SelectedIndex >= 0)
             {
-                fVerPerfil ventana = new fVerPerfil((Usuario)lUsuarios.SelectedItem);
+                int id = usuarios[lUsuarios.SelectedIndex].Item1;
+                fVerPerfil ventana = new fVerPerfil(new Usuario(id));
                 ventana.ShowDialog();
             }
         }
@@ -49,11 +54,12 @@ namespace StreamEducation
         {
             if (lAceptar.SelectedIndex >= 0)
             {
-                Usuario usuario = (Usuario)lUsuarios.Items[lAceptar.SelectedIndex];
+                int id = usuarios[lAceptar.SelectedIndex].Item1;
                 fConfirmacion ventana = new fConfirmacion();
                 ventana.ShowDialog();
                 if (ventana.Valor)
                 {
+                    Usuario usuario = new Usuario(id);
                     usuario.aceptarInscripcion(GestorGlobal.CursoActivo.Id);
                     Recarga(tUsuario.Text);
                 }
@@ -64,11 +70,12 @@ namespace StreamEducation
         {
             if (lRechazar.SelectedIndex >= 0)
             {
-                Usuario usuario = (Usuario)lUsuarios.Items[lRechazar.SelectedIndex];
+                int id = usuarios[lRechazar.SelectedIndex].Item1;
                 fConfirmacion ventana = new fConfirmacion();
                 ventana.ShowDialog();
                 if (ventana.Valor)
                 {
+                    Usuario usuario = new Usuario(id);
                     usuario.rechazarInscripcion(GestorGlobal.CursoActivo.Id);
                     Recarga(tUsuario.Text);
                 }

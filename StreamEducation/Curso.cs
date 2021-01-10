@@ -238,20 +238,21 @@ namespace StreamEducation
             return lista;
         }
 
-        public List<Usuario> getUsuarios(string filtro)
+        public List<(int, string)> getUsuarios(string filtro)
         {
-            List<Usuario> lista = new List<Usuario>();
+            List<(int, string)> lista = new List<(int, string)>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT usuario FROM tCursoUsuario WHERE curso = '" + this.id + "';";
+                string query = "SELECT u.id, u.nombre, u.correo FROM tCursoUsuario c JOIN tUsuario u on u.id = c.usuario WHERE curso = '"
+                    + this.id + "' and UPPER(u.nombre) LIKE '%" + filtro + "%'";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Usuario u = new Usuario((int)rdr[0]);
-                    if (u.Nombre.ToUpper().Contains(filtro.ToUpper())) { lista.Add(u); }
+                    string escribir = (string)rdr[1] + " (" + (string)rdr[2] + ")";
+                    lista.Add(((int)rdr[0], escribir));
                 }
                 rdr.Close();
                 miBD.Close();
@@ -264,20 +265,21 @@ namespace StreamEducation
             return lista;
         }
 
-        public List<Usuario> getPeticiones(string filtro)
+        public List<(int, string)> getPeticiones(string filtro)
         {
-            List<Usuario> lista = new List<Usuario>();
+            List<(int, string)> lista = new List<(int, string)>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT usuario FROM tInscripcion WHERE curso = '" + this.id + "';";
+                string query = "SELECT u.id, u.nombre, u.correo FROM tInscripcion c JOIN tUsuario u on u.id = c.usuario WHERE curso = '"
+                    + this.id + "' and UPPER(u.nombre) LIKE '%" + filtro + "%'";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Usuario u = new Usuario((int)rdr[0]);
-                    if (u.Nombre.ToUpper().Contains(filtro.ToUpper())) { lista.Add(u); }
+                    string escribir = (string)rdr[1] + " (" + (string)rdr[2] + ")";
+                    lista.Add(((int)rdr[0], escribir));
                 }
                 rdr.Close();
                 miBD.Close();
@@ -297,13 +299,12 @@ namespace StreamEducation
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT nombre,fecha FROM tCurso WHERE publico = 1 ;";
+                string query = "SELECT nombre, fecha FROM tCurso WHERE publico = 1;";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 CultureInfo ci = CultureInfo.CreateSpecificCulture("es-ES");
                 while (rdr.Read())
                 {
-
                     (DateTime, string) p = (DateTime.Parse((string)rdr[1], ci), (string)rdr[0]);
                     lista.Add(p);
                 }

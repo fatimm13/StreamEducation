@@ -124,6 +124,7 @@ namespace StreamEducation
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(16, 31);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
@@ -193,7 +194,6 @@ namespace StreamEducation
             // 
             this.tDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tDescripcion.Enabled = false;
             this.tDescripcion.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tDescripcion.Location = new System.Drawing.Point(12, 437);
             this.tDescripcion.Margin = new System.Windows.Forms.Padding(4);

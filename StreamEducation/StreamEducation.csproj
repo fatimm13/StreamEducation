@@ -229,6 +229,7 @@
     <Compile Include="Foro.cs" />
     <Compile Include="Mensaje.cs" />
     <Compile Include="MensajePrivado.cs" />
+    <Compile Include="Noticia.cs" />
     <Compile Include="Recurso.cs" />
     <Compile Include="RecursoActividad.cs" />
     <Compile Include="Usuario.cs" />
@@ -310,12 +311,6 @@
     </Compile>
     <Compile Include="fPerfil.Designer.cs">
       <DependentUpon>fPerfil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fRecurso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fRecurso.Designer.cs">
-      <DependentUpon>fRecurso.cs</DependentUpon>
     </Compile>
     <Compile Include="fSeleccionCurso.cs">
       <SubType>Form</SubType>
@@ -426,9 +421,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fRecuperarContrasena.resx">
       <DependentUpon>fRecuperarContrasena.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fRecurso.resx">
-      <DependentUpon>fRecurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fSeleccionCurso.resx">
       <DependentUpon>fSeleccionCurso.cs</DependentUpon>

@@ -121,10 +121,9 @@ namespace StreamEducation
             // 
             this.tMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tMensaje.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tMensaje.Enabled = false;
             this.tMensaje.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tMensaje.Location = new System.Drawing.Point(91, 273);
-            this.tMensaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tMensaje.Margin = new System.Windows.Forms.Padding(4);
             this.tMensaje.Multiline = true;
             this.tMensaje.Name = "tMensaje";
             this.tMensaje.ReadOnly = true;

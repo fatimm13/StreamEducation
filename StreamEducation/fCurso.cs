@@ -35,6 +35,7 @@ namespace StreamEducation
         private void Recarga()
         {
             bool usuarioIniciado = GestorGlobal.UsuarioActivo != null;
+            if (!GestorGlobal.CursoActivo.Publico && !usuarioIniciado) { this.Close(); }
             bRegistrarse.Visible = !usuarioIniciado;
             bIniciarSesion.Visible = !usuarioIniciado;
             bPerfil.Visible = usuarioIniciado;
@@ -58,6 +59,7 @@ namespace StreamEducation
             }
             marcarCalendario();
         }
+
         private void marcarCalendario()
         {
             monthCalendar1.RemoveAllBoldedDates();
