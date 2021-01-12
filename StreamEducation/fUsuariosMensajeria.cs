@@ -26,7 +26,7 @@ namespace StreamEducation
 
         private void fUsuariosMensajeria_Load(object sender, EventArgs e)
         {
-            usuarios = Usuario.getUsuarios("", true);
+            usuarios = Usuario.getUsuarios("", false);
             Recarga();
         }
 
@@ -47,13 +47,13 @@ namespace StreamEducation
         private void labelX_Click(object sender, EventArgs e)
         {
             tUsuario.Text = "";
-            usuarios = Usuario.getUsuarios("", true);
+            usuarios = Usuario.getUsuarios("", false);
             Recarga();
         }
 
         private void tUsuario_TextChanged(object sender, EventArgs e)
         {
-            usuarios = Usuario.getUsuarios(tUsuario.Text, true);
+            usuarios = Usuario.getUsuarios(tUsuario.Text, false);
             Recarga();
         }
 

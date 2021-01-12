@@ -431,14 +431,14 @@ namespace StreamEducation
             return res;
         }
 
-        public static List<(int, string, string)> getUsuarios(string filtro, bool conAdmin)
+        public static List<(int, string, string)> getUsuarios(string filtro, bool sinAdmin)
         {
             List<(int, string, string)> lista = new List<(int, string, string)>();
             try
             {
                 MySqlConnection miBD = new MySqlConnection(CONNECTION);
                 miBD.Open();
-                string query = "SELECT id, nombre, correo FROM tUsuario WHERE" + (conAdmin ? " rolAdmin = 0 and " : " ")
+                string query = "SELECT id, nombre, correo FROM tUsuario WHERE" + (sinAdmin ? " rolAdmin = 0 and " : " ")
                     + "UPPER(nombre) LIKE '%" + filtro.ToUpper() + "%' ORDER BY nombre;";
                 MySqlCommand cmd = new MySqlCommand(query, miBD);
                 MySqlDataReader rdr = cmd.ExecuteReader();

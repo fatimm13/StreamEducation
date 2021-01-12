@@ -120,7 +120,7 @@ namespace StreamEducation
             this.tDestinatario.Name = "tDestinatario";
             this.tDestinatario.ReadOnly = true;
             this.tDestinatario.Size = new System.Drawing.Size(353, 32);
-            //this.tDestinatario.TabIndex = 37;
+            this.tDestinatario.TabIndex = 37;
             this.tDestinatario.Text = "Seleccione usuario...";
             // 
             // fCrearMensajePrivado
