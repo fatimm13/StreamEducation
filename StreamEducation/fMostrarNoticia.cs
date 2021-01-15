@@ -95,7 +95,7 @@ namespace StreamEducation
 
         private void bAddMensaje_Click(object sender, EventArgs e)
         {
-            fCrearMensaje ventana = new fCrearMensaje();
+            fCrearMensajeNoticia ventana = new fCrearMensajeNoticia();
             ventana.ShowDialog();
             RecargaMensajes();
         }

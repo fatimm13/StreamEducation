@@ -162,7 +162,6 @@ C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\Stream
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fIniciarSesion.resources
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fOpcionesAdmin.resources
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fPerfil.resources
-C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fRecurso.resources
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fSeleccionCurso.resources
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.Properties.Resources.resources
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.csproj.GenerateResource.cache
@@ -278,3 +277,4 @@ C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\Stream
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fUsuariosRegistrados.resources
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fValoracionActividad.resources
 C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fVerPerfil.resources
+C:\Users\alvar\Documents\GitHub\StreamEducation\StreamEducation\obj\Debug\StreamEducation.fCrearMensajeNoticia.resources

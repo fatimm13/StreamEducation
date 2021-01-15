@@ -79,6 +79,12 @@
     <Compile Include="fCrearActividad.Designer.cs">
       <DependentUpon>fCrearActividad.cs</DependentUpon>
     </Compile>
+    <Compile Include="fCrearMensajeNoticia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCrearMensajeNoticia.Designer.cs">
+      <DependentUpon>fCrearMensajeNoticia.cs</DependentUpon>
+    </Compile>
     <Compile Include="fCrearNoticia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fCrearActividad.resx">
       <DependentUpon>fCrearActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCrearMensajeNoticia.resx">
+      <DependentUpon>fCrearMensajeNoticia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fCrearNoticia.resx">
       <DependentUpon>fCrearNoticia.cs</DependentUpon>
